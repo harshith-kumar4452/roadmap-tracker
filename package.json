@@ -1,0 +1,19 @@
+{
+  "name": "roadmap-tracker",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Personal learning-roadmap tracker: Notion-style roadmap pages, progress, streaks. Express + MongoDB, deployable to Vercel.",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node --env-file-if-exists=.env server.js",
+    "dev": "node --watch --env-file-if-exists=.env server.js",
+    "seed": "node --env-file-if-exists=.env scripts/seed.mjs"
+  },
+  "dependencies": {
+    "express": "5.1.0",
+    "mongodb": "^6.10.0"
+  }
+}
