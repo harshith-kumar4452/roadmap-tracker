@@ -1,0 +1,43 @@
+[
+  {
+    "kind": "project",
+    "title": "AI Code Review & Repository Assistant",
+    "summary": "An AI tool that understands a codebase: summarises repos, reviews pull requests and suggests tests, with a developer in control.",
+    "tags": [
+      "AI",
+      "RAG",
+      "Backend"
+    ],
+    "status": "idea",
+    "body": "[Notion page](https://app.notion.com/p/41b1ffd205bf808baebfc87a2bc7d29b)\n\nBuild an AI tool that understands a codebase, not just a chatbot that answers prompts.\n\n## The problem\nDevelopers spend time understanding unfamiliar repositories, reviewing pull requests, finding risky changes, and writing tests. Build a repository assistant that helps with those workflows while keeping a human developer in control.\n\n## Core features\n- [ ] Connect a GitHub repository and index relevant source files\n- [ ] Summarise a repository, explain selected modules, and answer questions grounded in the codebase\n- [ ] Review pull requests and flag possible bugs, risky changes, missing tests, or security concerns\n- [ ] Suggest test cases and code improvements; require developer approval before any write action\n- [ ] Show evidence for findings (file paths and line references), and let users mark feedback as useful or incorrect\n\n## Suggested tech stack\n| Part | Choice |\n| --- | --- |\n| Backend & APIs | Java + Spring Boot or Python + FastAPI; REST APIs |\n| Repository integration | GitHub App/API, webhooks, OAuth |\n| AI layer | LLM API, embeddings, RAG, tool calling |\n| Storage | PostgreSQL; a vector store such as pgvector or Chroma |\n| Background work | Redis-backed queue or a message broker for indexing jobs |\n| Delivery | Docker, CI/CD, cloud deployment, structured logs and metrics |\n\n## What you will learn\n- API design, OAuth, webhook validation, and secure integration with third-party platforms\n- RAG, chunking, embeddings, retrieval quality, prompt/tool design, and AI evaluation\n- Asynchronous jobs, rate limits, retries, access control, and handling large repositories\n- Testing, observability, deployment, and human-in-the-loop safeguards\n\n## Advanced extension\nAdd a CI check that posts a review summary on a pull request, a benchmark dataset for evaluating findings, and safeguards against prompt injection hidden in repository files.\n\n> Demonstrates AI engineering grounded in real developer workflows, external integrations, and production-minded safeguards."
+  },
+  {
+    "kind": "mindmap",
+    "title": "My learning map",
+    "summary": "All 30 roadmaps, grouped by area.",
+    "tags": [
+      "Overview"
+    ],
+    "body": "- Backend\n  - Node.js Backend (Chai aur Code)\n  - Backend from First Principles\n  - Backend Projects (5 projects)\n  - Microservices\n  - Kafka\n  - Redis\n  - Redis Internals\n- System Design\n  - HLD & LLD\n  - October version\n  - Video list (Roadmap 2)\n  - Missing Topics & Video Map\n  - Arpit System Design Map\n  - HLD Build Projects\n- Core CS\n  - DBMS\n  - Operating Systems\n  - Computer Networks\n  - OOPS\n  - SQL\n- DSA\n  - Striver A2Z\n- Cloud & Tools\n  - AWS\n  - Git\n- Frontend\n  - React\n- Data & ML\n  - Python\n  - Machine Learning\n  - Power BI\n- Placement Prep\n  - Aptitude (October version)\n  - Quantitative Aptitude\n  - Logical Aptitude\n  - Verbal Aptitude\n  - GATE CS 2027"
+  },
+  {
+    "kind": "cheatsheet",
+    "title": "Redis commands",
+    "summary": "The everyday commands for each data type, plus keys, expiry and transactions.",
+    "tags": [
+      "Redis",
+      "Backend"
+    ],
+    "body": "## Strings\n| Command | What it does |\n| --- | --- |\n| `SET key value [EX s] [NX\\|XX]` | Set a value; `EX` adds a TTL, `NX` only if missing, `XX` only if present |\n| `GET key` | Read a value |\n| `INCR key` / `INCRBY key n` | Atomic counter |\n| `MSET k1 v1 k2 v2` / `MGET k1 k2` | Several keys in one round trip |\n| `APPEND key value` | Append to a string |\n\n## Keys and expiry\n| Command | What it does |\n| --- | --- |\n| `EXPIRE key s` / `TTL key` | Set / read time to live (`-1` no TTL, `-2` missing) |\n| `PERSIST key` | Remove the TTL |\n| `DEL key` / `UNLINK key` | Delete (UNLINK frees memory in the background) |\n| `EXISTS key` | 1 if the key exists |\n| `TYPE key` | string, list, set, zset, hash, stream |\n| `SCAN 0 MATCH user:* COUNT 100` | Iterate keys safely; never use `KEYS *` in production |\n\n## Lists\n| Command | What it does |\n| --- | --- |\n| `LPUSH` / `RPUSH key v…` | Push to head / tail |\n| `LPOP` / `RPOP key` | Pop from head / tail |\n| `BLPOP key timeout` | Blocking pop: a simple job queue |\n| `LRANGE key 0 -1` | Read the whole list |\n| `LTRIM key 0 99` | Keep only the first 100 (capped list) |\n\n## Hashes\n| Command | What it does |\n| --- | --- |\n| `HSET key field value …` | Set fields |\n| `HGET key field` / `HGETALL key` | Read one / all fields |\n| `HINCRBY key field n` | Counter inside a hash |\n| `HDEL key field` | Remove a field |\n\n## Sets\n| Command | What it does |\n| --- | --- |\n| `SADD key m…` / `SREM key m` | Add / remove members |\n| `SISMEMBER key m` | Membership test |\n| `SMEMBERS key` / `SCARD key` | All members / count |\n| `SINTER` / `SUNION` / `SDIFF` | Set algebra |\n\n## Sorted sets\n| Command | What it does |\n| --- | --- |\n| `ZADD key score member` | Add with a score |\n| `ZINCRBY key n member` | Bump a score (leaderboards) |\n| `ZRANGE key 0 9 REV WITHSCORES` | Top 10 |\n| `ZRANK` / `ZSCORE key member` | Position / score |\n| `ZRANGEBYSCORE key min max` | Range by score (sliding-window rate limits) |\n\n## Streams and pub/sub\n| Command | What it does |\n| --- | --- |\n| `XADD stream * field value` | Append an entry |\n| `XREAD COUNT 10 STREAMS stream 0` | Read entries |\n| `XGROUP CREATE` / `XREADGROUP` / `XACK` | Consumer groups |\n| `PUBLISH channel msg` / `SUBSCRIBE channel` | Fire-and-forget messaging |\n\n## Transactions and scripts\n```\nMULTI\nINCR page:views\nEXPIRE page:views 3600\nEXEC\n```\n- `WATCH key` before `MULTI` for optimistic locking: `EXEC` returns nil if the key changed.\n- `EVAL \"return redis.call('GET', KEYS[1])\" 1 mykey` runs Lua atomically.\n\n## Inspecting the server\n- `INFO memory`, `INFO stats`: memory use, hits and misses\n- `MEMORY USAGE key`: bytes used by one key\n- `SLOWLOG GET 10`: slowest recent commands\n- `OBJECT ENCODING key`: internal encoding (listpack, hashtable, skiplist…)"
+  },
+  {
+    "kind": "cheatsheet",
+    "title": "Git commands",
+    "summary": "Branching, undoing mistakes, syncing with remotes and digging through history.",
+    "tags": [
+      "Git",
+      "Tools"
+    ],
+    "body": "## Everyday\n```\ngit status\ngit add -p              # stage hunk by hunk\ngit commit -m \"message\"\ngit log --oneline --graph --all\ngit diff                # unstaged changes\ngit diff --staged       # what will be committed\n```\n\n## Branches\n| Command | What it does |\n| --- | --- |\n| `git switch -c feature` | Create and switch to a branch |\n| `git switch main` | Switch branches |\n| `git branch -d feature` | Delete a merged branch |\n| `git merge feature` | Merge into the current branch |\n| `git rebase main` | Replay your commits on top of main |\n\n## Remotes\n| Command | What it does |\n| --- | --- |\n| `git fetch` | Download without changing your branches |\n| `git pull --rebase` | Fetch and rebase your local commits |\n| `git push -u origin feature` | Push and set upstream |\n| `git push --force-with-lease` | Safe force push after a rebase |\n\n## Undoing things\n| Situation | Command |\n| --- | --- |\n| Discard changes in a file | `git restore file` |\n| Unstage a file | `git restore --staged file` |\n| Fix the last commit message or add a file | `git commit --amend` |\n| Undo the last commit, keep changes | `git reset --soft HEAD~1` |\n| Undo a pushed commit safely | `git revert <sha>` |\n| Find a \"lost\" commit | `git reflog` |\n\n## Stash\n```\ngit stash push -m \"wip\"\ngit stash list\ngit stash pop\n```\n\n## Digging through history\n- `git blame -L 10,20 file`: who changed these lines\n- `git log -S \"text\"`: commits that added or removed a string\n- `git bisect start` → `git bisect bad` / `git bisect good <sha>`: binary-search for the commit that broke something\n- `git show <sha>`: one commit's changes"
+  }
+]

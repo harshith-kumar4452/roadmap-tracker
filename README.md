@@ -14,6 +14,9 @@ A personal tracker for learning roadmaps. I kept my roadmaps (backend, system de
 - **Group by level or by topic**, filter by status (To do / In progress / Done), search topics and notes.
 - **Three-step status** (Not started → In progress → Done), a level per topic (Beginner / Intermediate / Advanced), and a private note on each topic.
 - **Public to view, password to edit**: visitors see your progress; only you can change it.
+- **Cheat sheets**: quick-reference pages written in Markdown, with tables, code blocks and links. Filter by tag and search.
+- **Projects**: things to build, each with an Idea / Building / Done status, a feature checklist and its tech stack.
+- **Mindmaps**: write an indented outline and it's drawn as a mind map, with the topic in the centre and branches on both sides.
 - **Import**: paste a Notion page or any Markdown checklist (`- [ ] topic`) to add a new roadmap.
 - Light and dark mode, works on phones.
 
@@ -23,7 +26,7 @@ A personal tracker for learning roadmaps. I kept my roadmaps (backend, system de
 | --- | --- |
 | Frontend | Plain HTML, CSS and JavaScript (no build step), in `public/` |
 | Backend | Node.js + Express 5 (`src/app.js`) |
-| Database | MongoDB Atlas, one document per roadmap with its sections and topics embedded |
+| Database | MongoDB Atlas: `roadmaps` (one document per roadmap, sections and topics embedded) and `pages` (cheat sheets, projects, mindmaps) |
 | Auth | One owner password (`ADMIN_PASSWORD`), HMAC-signed HttpOnly cookie |
 | Hosting | Vercel: `public/` as static files, `api/index.js` as a serverless function |
 
@@ -36,8 +39,10 @@ src/store.js           MongoDB data access
 src/auth.js            Owner login, signed session cookie
 src/parse.js           Markdown / Notion checklist parser
 public/                The web app (index.html, app.js, styles.css)
+public/render.js       Markdown renderer and mind map layout
 seed/roadmaps.json     All roadmaps, ready to load into MongoDB
-scripts/seed.mjs       Loads seed/roadmaps.json into MongoDB
+seed/pages.json        Starter cheat sheets, projects and mindmaps
+scripts/seed.mjs       Loads both seed files into MongoDB
 server.js              Local development server
 vercel.json            Vercel config (static output + /api rewrite)
 ```
@@ -49,13 +54,13 @@ Requires Node.js 20 or newer and a MongoDB database (a free [MongoDB Atlas](http
 ```bash
 npm install
 cp .env.example .env      # then fill in MONGODB_URI and ADMIN_PASSWORD
-npm run seed              # loads the 30 roadmaps into MongoDB
+npm run seed              # loads the 30 roadmaps and starter pages into MongoDB
 npm run dev               # http://localhost:4321
 ```
 
 Click **Log in to edit** and enter your `ADMIN_PASSWORD` to tick topics and edit pages.
 
-`npm run seed` only adds roadmaps that aren't in the database yet. `npm run seed -- --reset` deletes everything first, which also wipes your progress.
+`npm run seed` only adds roadmaps and pages that aren't in the database yet, so it never overwrites your edits. `npm run seed -- --reset` deletes every roadmap first, which also wipes your progress (pages are kept).
 
 ## Deploy to Vercel
 
@@ -82,6 +87,10 @@ All responses are JSON. `GET` routes are public; everything else needs the owner
 | DELETE | `/api/items/:id` | Delete a topic |
 | GET | `/api/stats` | Totals and completion timestamps (for streaks and the heatmap) |
 | POST | `/api/import/markdown` | Create a roadmap from pasted Markdown |
+| GET | `/api/pages?kind=cheatsheet|project|mindmap` | List pages of one kind |
+| GET | `/api/pages/:id` | One page with its Markdown body |
+| POST | `/api/pages` | Create a page (`kind`, `title`) |
+| PATCH / DELETE | `/api/pages/:id` | Edit title, summary, tags, status, body / delete |
 | GET | `/api/me` | Whether you're logged in |
 | POST | `/api/login` / `/api/logout` | Start / end the owner session |
 

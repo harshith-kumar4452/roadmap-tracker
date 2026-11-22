@@ -141,6 +141,44 @@ app.delete('/api/items/:id', async (req, res) => {
   res.status(204).end();
 });
 
+// ---------- pages: cheat sheets, projects, mindmaps ----------
+
+const kind = (v) => {
+  if (!store.PAGE_KINDS.includes(v)) throw httpError(400, `kind must be one of: ${store.PAGE_KINDS.join(', ')}`);
+  return v;
+};
+const tags = (v) => {
+  if (v === undefined) return undefined;
+  if (!Array.isArray(v)) throw httpError(400, 'tags must be a list');
+  return [...new Set(v.map((t) => text(t, 'Tag', { max: 40 })))].slice(0, 12);
+};
+
+app.get('/api/pages', async (req, res) => res.json(await store.listPages(kind(req.query.kind))));
+
+app.get('/api/pages/:id', async (req, res) => res.json(found(await store.getPage(id(req)), 'Page')));
+
+app.post('/api/pages', async (req, res) => {
+  res.status(201).json(await store.createPage({ kind: kind(req.body.kind), title: text(req.body.title, 'Title', { max: 200 }) }));
+});
+
+app.patch('/api/pages/:id', async (req, res) => {
+  const b = req.body;
+  if (b.status !== undefined && b.status !== '' && !store.PROJECT_STATUSES.includes(b.status)) throw httpError(400, 'Unknown status');
+  const patch = {
+    title: text(b.title, 'Title', { required: false, max: 200 }),
+    summary: b.summary === undefined ? undefined : text(b.summary, 'Summary', { required: false, max: 500 }) ?? '',
+    tags: tags(b.tags),
+    status: b.status,
+    body: b.body === undefined ? undefined : text(b.body, 'Body', { required: false, max: 200_000 }) ?? '',
+  };
+  res.json(found(await store.updatePage(id(req), patch), 'Page'));
+});
+
+app.delete('/api/pages/:id', async (req, res) => {
+  found(await store.deletePage(id(req)), 'Page');
+  res.status(204).end();
+});
+
 // ---------- stats & import ----------
 
 app.get('/api/stats', async (req, res) => res.json(await store.stats()));

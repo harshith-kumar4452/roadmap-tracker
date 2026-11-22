@@ -1,3 +1,5 @@
+import { markdown, outline, mindmapSvg } from './render.js';
+
 const view = document.getElementById('view');
 const $ = (sel, el = document) => el.querySelector(sel);
 
@@ -136,15 +138,19 @@ function renderLogin() {
 
 // ---------- routing ----------
 
+function setNav(key) {
+  document.querySelectorAll('[data-nav]').forEach((a) => a.toggleAttribute('aria-current', a.dataset.nav === key));
+}
+
 async function route() {
   const hash = location.hash.slice(1) || '/';
-  document.querySelectorAll('[data-nav]').forEach((a) => {
-    a.toggleAttribute('aria-current', (a.dataset.nav === 'import') === (hash === '/import'));
-  });
+  setNav(hash === '/' || hash.startsWith('/r/') ? 'home' : hash.slice(1));
   try {
     let m;
     if (hash === '/') await renderDashboard();
     else if ((m = hash.match(/^\/r\/([\w-]+)$/))) await renderRoadmap(m[1]);
+    else if ((m = hash.match(/^\/(cheatsheets|projects|mindmaps)$/))) await renderPages(m[1]);
+    else if ((m = hash.match(/^\/p\/([\w-]+)$/))) await renderPage(m[1]);
     else if (hash === '/import' && me.admin) renderImport();
     else if (hash === '/login') renderLogin();
     else location.hash = '#/';
@@ -599,6 +605,205 @@ function renderImport() {
     </section>`;
 }
 
+// ---------- cheat sheets, projects, mindmaps ----------
+
+const KINDS = {
+  cheatsheets: {
+    kind: 'cheatsheet', label: 'Cheat sheets', one: 'cheat sheet', icon: '📄',
+    blurb: 'Quick-reference pages: commands, syntax, formulas, things you keep looking up.',
+    hint: 'Markdown: <code>## Heading</code>, <code>- list</code>, <code>| table |</code>, <code>```code```</code>, <code>`inline`</code>, <code>**bold**</code>, <code>[text](url)</code>',
+  },
+  projects: {
+    kind: 'project', label: 'Projects', one: 'project', icon: '🛠️',
+    blurb: 'Things to build: the idea, the features, the stack, and where each one stands.',
+    hint: 'Markdown: <code>## Heading</code>, <code>- list</code>, <code>- [ ] task</code>, <code>[text](url)</code>, <code>```code```</code>',
+  },
+  mindmaps: {
+    kind: 'mindmap', label: 'Mindmaps', one: 'mindmap', icon: '🧠',
+    blurb: 'Topics laid out as a map, to see how the pieces connect.',
+    hint: 'One idea per line. Indent with two spaces to branch:<br><code>- Caching</code><br><code>&nbsp;&nbsp;- Write-through</code><br>The title is the centre of the map.',
+  },
+};
+const keyOfKind = (kind) => Object.keys(KINDS).find((k) => KINDS[k].kind === kind);
+const PROJECT_STATUS = {
+  idea: { label: 'Idea', cls: 'status-not_started', next: 'building' },
+  building: { label: 'Building', cls: 'status-in_progress', next: 'done' },
+  done: { label: 'Done', cls: 'status-done', next: 'idea' },
+};
+
+let pl = null; // current list page
+let pg = null; // current page
+let editNext = null;
+
+const tagChips = (tags) => (tags?.length ? `<div class="chips">${tags.map((t) => `<span class="chip">${esc(t)}</span>`).join('')}</div>` : '');
+const statusPill = (status, button) => {
+  const s = PROJECT_STATUS[status];
+  if (!s) return '';
+  return button
+    ? `<button type="button" class="pill ${s.cls}" data-act="doc-status" title="Change status">${s.label}</button>`
+    : `<span class="pill ${s.cls}">${s.label}</span>`;
+};
+
+async function renderPages(key) {
+  const k = KINDS[key];
+  document.title = k.label;
+  const items = await api('GET', `/pages?kind=${k.kind}`);
+  pl = { key, items, q: '', tag: '', status: '' };
+  drawPages();
+}
+
+function pageCard(p) {
+  return `
+    <a class="rm-card page-card" href="#/p/${esc(p.id)}">
+      <div class="rm-card-top"><h3>${esc(p.title)}</h3>${statusPill(p.status)}</div>
+      ${p.summary ? `<p class="muted small clamp">${esc(p.summary)}</p>` : ''}
+      <div class="rm-card-meta">${tagChips(p.tags)}<span>Updated ${ago(p.updatedAt)}</span></div>
+    </a>`;
+}
+
+function pageCardsHtml() {
+  const q = pl.q.trim().toLowerCase();
+  const list = pl.items.filter((p) =>
+    (!pl.tag || p.tags?.includes(pl.tag)) &&
+    (!pl.status || p.status === pl.status) &&
+    (!q || `${p.title} ${p.summary} ${(p.tags || []).join(' ')}`.toLowerCase().includes(q)));
+  if (list.length) return list.map(pageCard).join('');
+  const k = KINDS[pl.key];
+  return pl.items.length
+    ? '<p class="empty">Nothing matches.</p>'
+    : `<div class="empty"><p>No ${k.one}s yet.</p>${me.admin ? '' : '<p class="small">Log in to add one.</p>'}</div>`;
+}
+
+function drawPages() {
+  const k = KINDS[pl.key];
+  const tags = [...new Set(pl.items.flatMap((p) => p.tags || []))].sort();
+  const counts = Object.fromEntries(Object.keys(PROJECT_STATUS).map((s) => [s, pl.items.filter((p) => p.status === s).length]));
+  view.innerHTML = `
+    <header class="page-head">
+      <div>
+        <h1>${k.icon} ${esc(k.label)}</h1>
+        <p class="muted">${esc(k.blurb)}</p>
+      </div>
+      ${me.admin ? `
+      <form data-form="new-page" class="row-actions new-page">
+        <input name="title" placeholder="New ${esc(k.one)} title" aria-label="New ${esc(k.one)} title" required>
+        <button class="btn primary">Create</button>
+      </form>` : ''}
+    </header>
+
+    ${pl.items.length ? `
+    <div class="toolbar">
+      ${k.kind === 'project' ? `
+      <div class="seg" role="group" aria-label="Status">
+        <button type="button" data-act="doc-filter" data-s="" aria-pressed="${!pl.status}">All ${pl.items.length}</button>
+        ${Object.entries(PROJECT_STATUS).map(([s, v]) => `<button type="button" data-act="doc-filter" data-s="${s}" aria-pressed="${pl.status === s}">${v.label} ${counts[s]}</button>`).join('')}
+      </div>` : ''}
+      ${tags.length ? `
+      <div class="chips" role="group" aria-label="Filter by tag">
+        ${tags.map((t) => `<button type="button" class="chip" data-act="tag" data-tag="${esc(t)}" aria-pressed="${pl.tag === t}">${esc(t)}</button>`).join('')}
+      </div>` : ''}
+      <input type="search" id="page-search" placeholder="Search ${esc(k.label.toLowerCase())}" aria-label="Search" value="${esc(pl.q)}">
+    </div>` : ''}
+
+    <div id="page-grid" class="grid">${pageCardsHtml()}</div>`;
+
+  $('#page-search')?.addEventListener('input', (e) => {
+    pl.q = e.target.value;
+    $('#page-grid').innerHTML = pageCardsHtml();
+  });
+}
+
+async function renderPage(id) {
+  pg = await api('GET', `/pages/${id}`);
+  // Big maps shrink to unreadable on phones, so they open at actual size there unless you chose otherwise.
+  const fitPref = prefs.get('mm-fit');
+  pg.fit = fitPref ? fitPref === 'fit' : innerWidth > 760;
+  pg.editing = editNext === id && me.admin; // a page you just created opens in the editor
+  editNext = null;
+  drawPage();
+}
+
+function pageBodyHtml(p) {
+  if (!p.body.trim()) {
+    return `<div class="empty panel"><p>This ${esc(KINDS[keyOfKind(p.kind)].one)} is empty.</p>${me.admin ? '<button type="button" class="btn primary" data-act="edit-doc">Start writing</button>' : ''}</div>`;
+  }
+  if (p.kind === 'mindmap') {
+    return `
+      <div class="mm-tools">
+        <div class="seg" role="group" aria-label="Map size">
+          <button type="button" data-act="mm-fit" data-fit="1" aria-pressed="${p.fit}">Fit to screen</button>
+          <button type="button" data-act="mm-fit" data-fit="0" aria-pressed="${!p.fit}">Actual size</button>
+        </div>
+      </div>
+      <div class="mm-wrap ${p.fit ? 'fit' : ''}">${mindmapSvg(outline(p.body, p.title))}</div>
+      <details class="outline"><summary>Outline</summary><article class="md">${markdown(p.body)}</article></details>`;
+  }
+  return `<article class="md">${markdown(p.body)}</article>`;
+}
+
+function previewHtml(p) {
+  if (!p.body.trim()) return '<p class="muted small">Preview shows here as you type.</p>';
+  return p.kind === 'mindmap'
+    ? `<div class="mm-wrap fit">${mindmapSvg(outline(p.body, p.title || 'Untitled'))}</div>`
+    : `<article class="md">${markdown(p.body)}</article>`;
+}
+
+function docEditorHtml(p) {
+  const k = KINDS[keyOfKind(p.kind)];
+  return `
+    <form class="panel stack editor" data-form="edit-doc">
+      <label>Title<input name="title" value="${esc(p.title)}" required maxlength="200"></label>
+      <label>Summary <span class="muted small">one line, shown on the card</span><input name="summary" value="${esc(p.summary)}" maxlength="500"></label>
+      <div class="row-actions">
+        <label class="grow">Tags <span class="muted small">comma separated</span><input name="tags" value="${esc((p.tags || []).join(', '))}"></label>
+        ${p.kind === 'project' ? `<label>Status<select name="status">${Object.entries(PROJECT_STATUS).map(([s, v]) => `<option value="${s}" ${p.status === s ? 'selected' : ''}>${v.label}</option>`).join('')}</select></label>` : ''}
+      </div>
+      <div class="split">
+        <label>${p.kind === 'mindmap' ? 'Outline' : 'Content'} <span class="muted small hint">${k.hint}</span>
+          <textarea name="body" rows="22" class="mono" spellcheck="false">${esc(p.body)}</textarea></label>
+        <div class="preview"><div class="eyebrow">Preview</div><div id="preview">${previewHtml(p)}</div></div>
+      </div>
+      <div class="row-actions">
+        <button class="btn primary">Save</button>
+        <button type="button" class="btn ghost" data-act="cancel-doc">Cancel</button>
+      </div>
+    </form>`;
+}
+
+function drawPage() {
+  const key = keyOfKind(pg.kind);
+  const k = KINDS[key];
+  setNav(key);
+  document.title = pg.title;
+  view.innerHTML = `
+    <a class="back" href="#/${key}">← ${esc(k.label)}</a>
+    <header class="rm-head">
+      <h1>${esc(pg.title)}</h1>
+      <div class="rm-head-actions">
+        ${statusPill(pg.status, me.admin)}
+        ${me.admin && !pg.editing ? `<button type="button" class="btn ghost small" data-act="edit-doc">Edit</button>
+        <button type="button" class="btn ghost small danger" data-act="delete-doc">Delete</button>` : ''}
+      </div>
+    </header>
+    ${pg.editing ? docEditorHtml(pg) : `
+      ${pg.summary || pg.tags?.length ? `<div class="doc-meta">${pg.summary ? `<p class="intro">${esc(pg.summary)}</p>` : ''}${tagChips(pg.tags)}</div>` : ''}
+      ${pageBodyHtml(pg)}
+      <p class="muted small">Updated ${ago(pg.updatedAt)}</p>`}`;
+
+  const form = $('form[data-form="edit-doc"]');
+  if (form) {
+    let timer;
+    form.addEventListener('input', () => {
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        $('#preview').innerHTML = previewHtml({ ...pg, title: form.elements.title.value, body: form.elements.body.value });
+      }, 150);
+    });
+  }
+}
+
+const parseTags = (s) => String(s || '').split(',').map((t) => t.trim()).filter(Boolean);
+
 // ---------- events ----------
 
 document.addEventListener('click', async (e) => {
@@ -708,6 +913,48 @@ document.addEventListener('click', async (e) => {
         await api('DELETE', `/roadmaps/${rm.id}`);
         location.hash = '#/';
         break;
+      case 'tag':
+        pl.tag = pl.tag === btn.dataset.tag ? '' : btn.dataset.tag;
+        drawPages();
+        break;
+      case 'doc-filter':
+        pl.status = btn.dataset.s;
+        drawPages();
+        break;
+      case 'mm-fit':
+        pg.fit = btn.dataset.fit === '1';
+        prefs.set('mm-fit', pg.fit ? 'fit' : 'actual');
+        drawPage();
+        break;
+      case 'edit-doc':
+        pg.editing = true;
+        drawPage();
+        $('form[data-form="edit-doc"] textarea')?.focus();
+        break;
+      case 'cancel-doc':
+        pg.editing = false;
+        drawPage();
+        break;
+      case 'doc-status': {
+        const prev = pg.status;
+        pg.status = PROJECT_STATUS[pg.status]?.next ?? 'idea';
+        drawPage();
+        try {
+          Object.assign(pg, await api('PATCH', `/pages/${pg.id}`, { status: pg.status }));
+        } catch (err) {
+          pg.status = prev;
+          drawPage();
+          throw err;
+        }
+        break;
+      }
+      case 'delete-doc': {
+        const key = keyOfKind(pg.kind);
+        if (!confirm(`Delete "${pg.title}"? This can't be undone.`)) return;
+        await api('DELETE', `/pages/${pg.id}`);
+        location.hash = `#/${key}`;
+        break;
+      }
     }
   } catch (err) {
     toast(err.message);
@@ -765,6 +1012,25 @@ view.addEventListener('submit', async (e) => {
         const r = await api('POST', '/import/markdown', { title: data.title, markdown: data.markdown });
         toast(`Imported ${plural(r.sections.reduce((n, s) => n + s.items.length, 0), 'topic')}`);
         location.hash = `#/r/${r.id}`;
+        return;
+      }
+      case 'new-page': {
+        const p = await api('POST', '/pages', { kind: KINDS[pl.key].kind, title: data.title });
+        editNext = p.id;
+        location.hash = `#/p/${p.id}`;
+        return;
+      }
+      case 'edit-doc': {
+        const updated = await api('PATCH', `/pages/${pg.id}`, {
+          title: data.title,
+          summary: data.summary,
+          tags: parseTags(data.tags),
+          status: pg.kind === 'project' ? data.status : undefined,
+          body: data.body,
+        });
+        Object.assign(pg, updated, { editing: false });
+        drawPage();
+        toast('Saved');
         return;
       }
       case 'new-rm': {

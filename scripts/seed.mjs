@@ -5,6 +5,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { MongoClient } from 'mongodb';
+import { randomBytes } from 'node:crypto';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 if (!process.env.MONGODB_URI) {
@@ -28,6 +29,25 @@ try {
   await col.createIndex({ 'sections.id': 1 });
   await col.createIndex({ 'sections.items.id': 1 });
   console.log(`Seeded ${added} new roadmaps (${seed.length - added} already existed)`);
+
+  // Cheat sheets, projects and mindmaps. Matched on kind + title, so your edits are never overwritten.
+  const pagesFile = path.join(root, 'seed', 'pages.json');
+  if (fs.existsSync(pagesFile)) {
+    const pageSeed = JSON.parse(fs.readFileSync(pagesFile, 'utf8'));
+    const pages = client.db(process.env.MONGODB_DB || 'roadmap_tracker').collection('pages');
+    let addedPages = 0;
+    for (const p of pageSeed) {
+      const now = new Date().toISOString();
+      const res = await pages.updateOne(
+        { kind: p.kind, title: p.title },
+        { $setOnInsert: { _id: randomBytes(6).toString('base64url'), summary: '', tags: [], status: p.kind === 'project' ? 'idea' : '', ...p, createdAt: now, updatedAt: now } },
+        { upsert: true },
+      );
+      if (res.upsertedCount) addedPages++;
+    }
+    await pages.createIndex({ kind: 1, updatedAt: -1 });
+    console.log(`Seeded ${addedPages} new pages (${pageSeed.length - addedPages} already existed)`);
+  }
 } finally {
   await client.close();
 }

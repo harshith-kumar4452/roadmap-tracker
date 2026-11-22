@@ -17,7 +17,7 @@ export const LEVELS = ['', 'Beginner', 'Intermediate', 'Advanced'];
 export const newId = () => randomBytes(6).toString('base64url');
 
 let clientPromise;
-async function roadmaps() {
+async function collection(name) {
   if (!process.env.MONGODB_URI) {
     const err = new Error('MONGODB_URI is not set. Add it to .env (local) or the Vercel project settings.');
     err.status = 500;
@@ -27,8 +27,10 @@ async function roadmaps() {
   // Reused across invocations of the same serverless instance.
   clientPromise ??= new MongoClient(process.env.MONGODB_URI, { maxPoolSize: 5 }).connect();
   const client = await clientPromise;
-  return client.db(process.env.MONGODB_DB || 'roadmap_tracker').collection('roadmaps');
+  return client.db(process.env.MONGODB_DB || 'roadmap_tracker').collection(name);
 }
+const roadmaps = () => collection('roadmaps');
+const pages = () => collection('pages');
 
 const allItems = (doc) => doc.sections.flatMap((s) => s.items.map((i) => ({ ...i, section: s.title })));
 
@@ -153,6 +155,45 @@ export async function deleteItem(id) {
     { $pull: { 'sections.$[].items': { id } } },
   );
   return res.modifiedCount > 0;
+}
+
+// ---------- pages: cheat sheets, projects, mindmaps ----------
+//
+// { _id, kind, title, summary, tags: [string], status, body, createdAt, updatedAt }
+// `body` is Markdown. For a mindmap it is an indented outline; status is only used by projects.
+
+export const PAGE_KINDS = ['cheatsheet', 'project', 'mindmap'];
+export const PROJECT_STATUSES = ['idea', 'building', 'done'];
+
+export async function listPages(kind) {
+  const docs = await (await pages())
+    .find({ kind }, { projection: { body: 0 } })
+    .sort({ updatedAt: -1 })
+    .toArray();
+  return docs.map(publicDoc);
+}
+
+export async function getPage(id) {
+  const doc = await (await pages()).findOne({ _id: id });
+  return doc ? publicDoc(doc) : null;
+}
+
+export async function createPage({ kind, title, summary = '', tags = [], status = kind === 'project' ? 'idea' : '', body = '' }) {
+  const now = new Date().toISOString();
+  const doc = { _id: newId(), kind, title, summary, tags, status, body, createdAt: now, updatedAt: now };
+  await (await pages()).insertOne(doc);
+  return publicDoc(doc);
+}
+
+export async function updatePage(id, patch) {
+  const $set = { updatedAt: new Date().toISOString() };
+  for (const key of ['title', 'summary', 'tags', 'status', 'body']) if (patch[key] !== undefined) $set[key] = patch[key];
+  const res = await (await pages()).findOneAndUpdate({ _id: id }, { $set }, { returnDocument: 'after' });
+  return res ? publicDoc(res) : null;
+}
+
+export async function deletePage(id) {
+  return (await (await pages()).deleteOne({ _id: id })).deletedCount > 0;
 }
 
 // ---------- stats ----------
