@@ -52,6 +52,13 @@ try {
   // Default practice routine (LeetCode/GFG POTD, CodeChef Starters, LeetCode Weekly), only if there is none yet.
   const store = await import('../src/store.js');
   console.log((await store.seedHabits()) ? 'Added the default practice routine' : 'Practice routine already set up');
+
+  // Student profile, only if there isn't one yet (so your edits are kept).
+  const profileFile = path.join(root, 'seed', 'profile.json');
+  if (fs.existsSync(profileFile)) {
+    const added = await store.seedProfile(JSON.parse(fs.readFileSync(profileFile, 'utf8')));
+    console.log(added ? 'Added the profile' : 'Profile already set up');
+  }
 } finally {
   await client.close();
 }

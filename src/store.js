@@ -342,6 +342,29 @@ export async function deleteLink(id) {
   return (await (await links()).deleteOne({ _id: id })).deletedCount > 0;
 }
 
+// ---------- student profile ----------
+// One document (_id "owner"): basic details, education, skills, links and coding profiles.
+
+const profiles = () => collection('profile');
+
+export async function getProfile() {
+  const doc = await (await profiles()).findOne({ _id: 'owner' });
+  if (!doc) return null;
+  const { _id, ...rest } = doc;
+  return rest;
+}
+
+export async function saveProfile(profile) {
+  const doc = { ...profile, updatedAt: new Date().toISOString() };
+  await (await profiles()).replaceOne({ _id: 'owner' }, doc, { upsert: true });
+  return doc;
+}
+
+export async function seedProfile(profile) {
+  const res = await (await profiles()).updateOne({ _id: 'owner' }, { $setOnInsert: { ...profile, updatedAt: new Date().toISOString() } }, { upsert: true });
+  return res.upsertedCount > 0;
+}
+
 // ---------- stats ----------
 
 // Day buckets, streaks and "today" are computed in the browser so they follow the

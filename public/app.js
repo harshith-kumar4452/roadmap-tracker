@@ -239,6 +239,7 @@ async function route() {
     else if (hash === '/tasks') await renderTasks();
     else if (hash === '/resources') await renderResources();
     else if (hash === '/signup') renderSignup();
+    else if (hash === '/profile') await renderProfile();
     else if ((m = hash.match(/^\/r\/([\w-]+)$/))) await renderRoadmap(m[1]);
     else if ((m = hash.match(/^\/(cheatsheets|projects|mindmaps)$/))) await renderPages(m[1]);
     else if ((m = hash.match(/^\/p\/([\w-]+)$/))) await renderPage(m[1]);
@@ -1002,7 +1003,7 @@ function tourSteps() {
     {
       target: '.section-grid',
       title: 'Everything in one place',
-      text: 'Roadmaps with Notion-style pages, Resources with every course link, cheat sheets, project ideas and interactive mind maps.',
+      text: 'Roadmaps with Notion-style pages, Resources with every course link, cheat sheets, project ideas, interactive mind maps, and a profile with your education, skills and live coding stats.',
     },
     {
       target: isPhone() ? '.menu-btn' : '#site-nav',
@@ -1058,6 +1059,7 @@ async function renderLanding() {
     { href: '#/cheatsheets', icon: '📄', title: 'Cheat sheets', text: 'Quick-reference commands and syntax', meta: plural(cheats.length, 'sheet') },
     { href: '#/projects', icon: '🛠️', title: 'Projects', text: 'Things to build and where each one stands', meta: plural(projects.length, 'project') },
     { href: '#/mindmaps', icon: '🧠', title: 'Mindmaps', text: 'How the topics connect', meta: plural(maps.length, 'map') },
+    { href: '#/profile', icon: '👤', title: 'Profile', text: 'Education, skills, achievements and coding profiles', meta: 'Live LeetCode stats' },
   ];
 
   view.innerHTML = `
@@ -1331,6 +1333,268 @@ function drawResources() {
   });
 }
 
+// ---------- student profile ----------
+
+// Coding platforms get a coloured initials badge rather than a copied logo.
+const PLATFORMS = {
+  leetcode: { short: 'LC', color: '#f59e0b' },
+  github: { short: 'GH', color: '#6e7681' },
+  codechef: { short: 'CC', color: '#7c5b3c' },
+  codeforces: { short: 'CF', color: '#1f8acb' },
+  geeksforgeeks: { short: 'GfG', color: '#2f8d46' },
+  gfg: { short: 'GfG', color: '#2f8d46' },
+  hackerrank: { short: 'HR', color: '#16a34a' },
+  atcoder: { short: 'AC', color: '#475569' },
+  kaggle: { short: 'K', color: '#20beff' },
+};
+const platformKey = (p) => String(p || '').toLowerCase().replace(/[^a-z]/g, '');
+const initials = (name) => String(name || '?').split(/\s+/).filter(Boolean).slice(-2).map((w) => w[0]).join('').toUpperCase();
+
+let pf = null;
+
+async function renderProfile() {
+  setNav('profile');
+  const profile = await api('GET', '/profile');
+  pf = { profile, editing: !profile && me.admin };
+  drawProfile();
+}
+
+const contactIcon = {
+  email: '<path d="M3 6.5h18v11H3z"/><path d="m3 7 9 6 9-6"/>',
+  phone: '<path d="M21 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 3.1 4.2 2 2 0 0 1 5.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L9 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/>',
+  linkedin: '<rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/>',
+  github: '<path d="M9 19c-4 1.5-4-2-6-2.5M15 21v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12 12 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/>',
+  portfolio: '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.5 3.8 5.5 3.8 9s-1.2 6.5-3.8 9c-2.6-2.5-3.8-5.5-3.8-9S9.4 5.5 12 3z"/>',
+  resume: '<path d="M12 3v12M7 10l5 5 5-5M5 21h14"/>',
+};
+function contactButtons(c = {}) {
+  const items = [
+    c.email && { k: 'email', href: `mailto:${c.email}`, label: c.email },
+    c.phone && { k: 'phone', href: `tel:${c.phone.replace(/[^+\d]/g, '')}`, label: c.phone },
+    safeUrl(c.linkedin) && { k: 'linkedin', href: c.linkedin, label: 'LinkedIn', ext: true },
+    safeUrl(c.github) && { k: 'github', href: c.github, label: 'GitHub', ext: true },
+    safeUrl(c.portfolio) && { k: 'portfolio', href: c.portfolio, label: 'Portfolio', ext: true },
+    safeUrl(c.resume) && { k: 'resume', href: c.resume, label: 'Resume', ext: true },
+  ].filter(Boolean);
+  return items.map((i) => `<a class="contact-btn${i.k === 'resume' ? ' primary' : ''}" href="${esc(i.href)}"${i.ext ? ' target="_blank" rel="noopener noreferrer"' : ''}><svg viewBox="0 0 24 24" aria-hidden="true">${contactIcon[i.k]}</svg><span>${esc(i.label)}</span></a>`).join('');
+}
+
+function codingCard(c) {
+  const key = platformKey(c.platform);
+  const p = PLATFORMS[key] || { short: initials(c.platform), color: 'var(--accent)' };
+  const url = safeUrl(c.url);
+  const tag = url ? 'a' : 'div';
+  return `
+    <${tag} class="code-card" ${url ? `href="${esc(url)}" target="_blank" rel="noopener noreferrer"` : ''} style="--pc:${p.color}" data-platform="${esc(key)}">
+      <span class="code-badge" aria-hidden="true">${esc(p.short)}</span>
+      <span class="code-body">
+        <strong>${esc(c.platform)}</strong>
+        <span class="muted small">${c.username ? '@' + esc(c.username) : 'Profile'}</span>
+        <span class="code-stat small" data-stat="${esc(key)}"></span>
+      </span>
+      ${url ? `<span class="ext">${icons.ext}</span>` : ''}
+    </${tag}>`;
+}
+
+function profileView(p) {
+  const avatar = safeUrl(p.avatar);
+  return `
+    <section class="profile-hero">
+      <div class="avatar">${avatar ? `<img src="${esc(avatar)}" alt="Photo of ${esc(p.name)}" width="120" height="120" loading="eager" onerror="this.replaceWith(Object.assign(document.createElement('span'),{textContent:'${esc(initials(p.name))}'}))">` : `<span>${esc(initials(p.name))}</span>`}</div>
+      <div class="profile-id">
+        ${p.openTo ? `<p class="eyebrow hero-eyebrow"><span class="pulse" aria-hidden="true"></span>Open to ${esc(p.openTo)}</p>` : ''}
+        <h1>${esc(p.name)}</h1>
+        ${p.headline ? `<p class="lede">${esc(p.headline)}</p>` : ''}
+        ${p.location ? `<p class="muted small profile-loc"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>${esc(p.location)}</p>` : ''}
+        <div class="contact-row">${contactButtons(p.contact)}</div>
+      </div>
+      ${me.admin ? '<button type="button" class="btn ghost small profile-edit" data-act="edit-profile">Edit profile</button>' : ''}
+    </section>
+
+    <dl class="landing-stats profile-kpis" id="profile-kpis">
+      <div><dt>LeetCode solved</dt><dd data-kpi="lc">—</dd></div>
+      <div><dt>Contest rating</dt><dd data-kpi="rating">—</dd></div>
+      <div><dt>Hub topics done</dt><dd data-kpi="topics">—</dd></div>
+      <div><dt>Best routine streak</dt><dd data-kpi="streak">—</dd></div>
+    </dl>
+
+    <div class="profile-grid">
+      <div class="profile-col">
+        ${p.bio ? `<section class="panel"><h2>About</h2><p class="profile-bio">${linkify(p.bio)}</p></section>` : ''}
+
+        ${p.coding?.length ? `
+        <section class="panel">
+          <div class="panel-head"><h2>Coding profiles</h2><span class="muted small" id="stats-note"></span></div>
+          <div class="code-grid">${p.coding.map(codingCard).join('')}</div>
+          <div id="lc-breakdown"></div>
+        </section>` : ''}
+
+        ${p.skills?.length ? `
+        <section class="panel">
+          <h2>Skills</h2>
+          ${p.skills.map((s) => `<div class="skill-group"><div class="eyebrow">${esc(s.group)}</div><div class="chips">${s.items.map((x) => `<span class="chip skill">${esc(x)}</span>`).join('')}</div></div>`).join('')}
+        </section>` : ''}
+      </div>
+
+      <div class="profile-col">
+        ${p.education?.length ? `
+        <section class="panel">
+          <h2>Education</h2>
+          <ol class="timeline">${p.education.map((e) => `
+            <li>
+              <span class="tl-dot" aria-hidden="true"></span>
+              <div class="tl-when muted small">${esc(e.when)}</div>
+              <strong>${esc(e.school)}</strong>
+              ${e.degree ? `<div class="muted small">${esc(e.degree)}</div>` : ''}
+              ${e.score ? `<span class="pill status-done">${esc(e.score)}</span>` : ''}
+            </li>`).join('')}
+          </ol>
+        </section>` : ''}
+
+        ${p.achievements?.length ? `
+        <section class="panel">
+          <h2>Achievements</h2>
+          <ul class="achievements">${p.achievements.map((a) => `
+            <li><span class="trophy" aria-hidden="true">🏆</span><div><strong>${esc(a.title)}</strong>${a.detail ? `<div class="muted small">${esc(a.detail)}</div>` : ''}</div>${a.when ? `<span class="muted small nowrap">${esc(a.when)}</span>` : ''}</li>`).join('')}
+          </ul>
+        </section>` : ''}
+
+        <section class="panel">
+          <div class="panel-head"><h2>Learning now</h2><a class="btn ghost small" href="#/roadmaps">All roadmaps</a></div>
+          <div id="learning-now" class="learning-now muted small">Loading…</div>
+        </section>
+      </div>
+    </div>`;
+}
+
+// Text-area friendly formats for the lists: one item per line, fields split by " | ".
+const lines = (s) => String(s || '').split('\n').map((l) => l.trim()).filter(Boolean);
+const fields = (l) => l.split(/\s*\|\s*/);
+function profileEditor(p = {}) {
+  const c = p.contact || {};
+  const edu = (p.education || []).map((e) => [e.school, e.degree, e.when, e.score].join(' | ')).join('\n');
+  const skills = (p.skills || []).map((s) => `${s.group}: ${s.items.join(', ')}`).join('\n');
+  const coding = (p.coding || []).map((x) => [x.platform, x.username, x.url].join(' | ')).join('\n');
+  const ach = (p.achievements || []).map((a) => [a.title, a.detail, a.when].join(' | ')).join('\n');
+  const input = (name, label, value, attrs = '') => `<label>${label}<input name="${name}" value="${esc(value || '')}" ${attrs}></label>`;
+  return `
+    <form class="panel stack editor profile-form" data-form="profile">
+      <h2>${p.name ? 'Edit profile' : 'Set up your profile'}</h2>
+      <div class="form-grid">
+        ${input('name', 'Full name', p.name, 'required maxlength="100" autocomplete="name"')}
+        ${input('headline', 'Headline', p.headline, 'maxlength="160" placeholder="e.g. Full-stack developer · B.Tech CSE"')}
+        ${input('location', 'Location', p.location, 'maxlength="100"')}
+        ${input('openTo', 'Open to', p.openTo, 'maxlength="120" placeholder="e.g. SWE internships & roles"')}
+        ${input('avatar', 'Photo URL', p.avatar, 'type="url" placeholder="https://…"')}
+      </div>
+      <label>About<textarea name="bio" rows="4" maxlength="2000">${esc(p.bio || '')}</textarea></label>
+      <h3>Contact</h3>
+      <div class="form-grid">
+        ${input('email', 'Email', c.email, 'type="email" autocomplete="email"')}
+        ${input('phone', 'Phone', c.phone, 'type="tel" autocomplete="tel"')}
+        ${input('linkedin', 'LinkedIn URL', c.linkedin, 'type="url"')}
+        ${input('github', 'GitHub URL', c.github, 'type="url"')}
+        ${input('portfolio', 'Portfolio URL', c.portfolio, 'type="url"')}
+        ${input('resume', 'Resume URL', c.resume, 'type="url"')}
+      </div>
+      <label>Coding profiles <span class="muted small hint">one per line: <code>Platform | username | profile URL</code>. LeetCode, GitHub and Codeforces show live stats.</span>
+        <textarea name="coding" rows="4" class="mono">${esc(coding)}</textarea></label>
+      <label>Education <span class="muted small hint">one per line: <code>School | Degree | Dates | Score</code></span>
+        <textarea name="education" rows="4" class="mono">${esc(edu)}</textarea></label>
+      <label>Skills <span class="muted small hint">one group per line: <code>Group: skill, skill, skill</code></span>
+        <textarea name="skills" rows="4" class="mono">${esc(skills)}</textarea></label>
+      <label>Achievements <span class="muted small hint">one per line: <code>Title | Detail | Date</code></span>
+        <textarea name="achievements" rows="3" class="mono">${esc(ach)}</textarea></label>
+      <div class="row-actions">
+        <button class="btn primary">Save profile</button>
+        ${p.name ? '<button type="button" class="btn ghost" data-act="cancel-profile">Cancel</button>' : ''}
+      </div>
+    </form>`;
+}
+
+function readProfileForm(d) {
+  return {
+    name: d.name, headline: d.headline, location: d.location, openTo: d.openTo, avatar: d.avatar, bio: d.bio,
+    contact: { email: d.email, phone: d.phone, linkedin: d.linkedin, github: d.github, portfolio: d.portfolio, resume: d.resume },
+    coding: lines(d.coding).map(fields).map(([platform, username = '', url = '']) => ({ platform, username, url })),
+    education: lines(d.education).map(fields).map(([school, degree = '', when = '', score = '']) => ({ school, degree, when, score })),
+    skills: lines(d.skills).map((l) => {
+      const i = l.indexOf(':');
+      return i < 0 ? { group: 'Skills', items: l.split(',').map((x) => x.trim()).filter(Boolean) } : { group: l.slice(0, i).trim(), items: l.slice(i + 1).split(',').map((x) => x.trim()).filter(Boolean) };
+    }).filter((s) => s.items.length),
+    achievements: lines(d.achievements).map(fields).map(([title, detail = '', when = '']) => ({ title, detail, when })),
+  };
+}
+
+function drawProfile() {
+  const p = pf.profile;
+  if (pf.editing) {
+    setPage('Edit profile', 'Edit your profile.');
+    view.innerHTML = `<a class="back" href="#/">← Home</a>${profileEditor(p || { name: me.name })}`;
+    return;
+  }
+  if (!p) {
+    setPage('Profile', 'Student profile.');
+    view.innerHTML = '<div class="empty big"><h1>No profile yet</h1><p class="muted">The owner hasn\'t set up a profile.</p></div>';
+    return;
+  }
+  setPage(p.name, p.headline || p.bio);
+  view.innerHTML = profileView(p);
+  fillProfileStats(p);
+}
+
+async function fillProfileStats(p) {
+  const kpi = (k, html) => { const el = $(`[data-kpi="${k}"]`); if (el) el.innerHTML = html; };
+  // Learning hub numbers (always available).
+  Promise.all([api('GET', '/stats'), api('GET', `/habits?since=${sinceKey(120)}`), api('GET', '/roadmaps')]).then(([stats, routine, list]) => {
+    if (pf?.profile !== p) return;
+    const state = routineState(routine);
+    kpi('topics', `${stats.done}<small>/ ${stats.total.toLocaleString()}</small>`);
+    kpi('streak', `${Math.max(0, ...routine.habits.map(state.streak))}<small>days</small>`);
+    const active = list.filter((r) => r.done > 0 && r.done < r.total).sort(sorters.recent).slice(0, 4);
+    const box = $('#learning-now');
+    if (box) {
+      box.classList.remove('muted', 'small');
+      box.innerHTML = active.length
+        ? active.map((r) => `<a class="ln-row" href="#/r/${esc(r.id)}"><span>${esc(r.title)}</span><span class="muted small">${r.done}/${r.total}</span>${bar(r.done, r.total, 'sm')}</a>`).join('')
+        : '<p class="muted small">No roadmap started yet.</p>';
+    }
+  }).catch(() => {});
+
+  // Live platform numbers (may be slow or unavailable; the page works without them).
+  try {
+    const s = await api('GET', '/profile/stats');
+    if (pf?.profile !== p) return;
+    const lc = s.leetcode;
+    if (lc) {
+      kpi('lc', `${lc.solved.all ?? 0}<small>problems</small>`);
+      kpi('rating', lc.contest ? `${lc.contest.rating}<small>top ${lc.contest.topPercent}%</small>` : '—');
+      const stat = $('[data-stat="leetcode"]');
+      if (stat) stat.textContent = `${lc.solved.all} solved${lc.contest ? ` · ${lc.contest.rating} rating · ${lc.contest.attended} contests` : ''}`;
+      const bd = $('#lc-breakdown');
+      if (bd) {
+        const row = (k, label) => `
+          <div class="lc-row lc-${k}">
+            <span class="lc-label">${label}</span>
+            <span class="lc-bar"><span style="width:${pct(lc.solved[k] || 0, lc.total[k] || 1)}%"></span></span>
+            <span class="lc-num"><strong>${lc.solved[k] || 0}</strong><span class="muted">/${lc.total[k] || '?'}</span></span>
+          </div>`;
+        bd.innerHTML = `<div class="lc-breakdown"><div class="eyebrow">LeetCode by difficulty</div>${row('easy', 'Easy')}${row('medium', 'Medium')}${row('hard', 'Hard')}</div>`;
+      }
+    }
+    if (s.github) {
+      const stat = $('[data-stat="github"]');
+      if (stat) stat.textContent = `${s.github.repos} public repos · ${s.github.followers} followers`;
+    }
+    if (s.codeforces) {
+      const stat = $('[data-stat="codeforces"]');
+      if (stat) stat.textContent = s.codeforces.rating ? `${s.codeforces.rating} rating · ${s.codeforces.rank}` : 'Unrated';
+    }
+    const note = $('#stats-note');
+    if (note && s.fetchedAt) note.textContent = `Live stats · updated ${ago(s.fetchedAt)}`;
+  } catch { /* stats are a bonus */ }
+}
+
 // ---------- events ----------
 
 document.addEventListener('click', async (e) => {
@@ -1440,6 +1704,15 @@ document.addEventListener('click', async (e) => {
         await api('DELETE', `/roadmaps/${rm.id}`);
         toast(`Deleted ${rm.title}`, null, 'success');
         location.hash = '#/roadmaps';
+        break;
+      case 'edit-profile':
+        pf.editing = true;
+        drawProfile();
+        window.scrollTo(0, 0);
+        break;
+      case 'cancel-profile':
+        pf.editing = false;
+        drawProfile();
         break;
       case 'tour':
         setMenu(false);
@@ -1614,6 +1887,14 @@ view.addEventListener('submit', async (e) => {
         const r = await api('POST', '/import/markdown', { title: data.title, markdown: data.markdown });
         toast(`Imported ${plural(r.sections.reduce((n, s) => n + s.items.length, 0), 'topic')}`);
         location.hash = `#/r/${r.id}`;
+        return;
+      }
+      case 'profile': {
+        pf.profile = await api('PUT', '/profile', readProfileForm(data));
+        pf.editing = false;
+        drawProfile();
+        window.scrollTo(0, 0);
+        toast('Profile saved', null, 'success');
         return;
       }
       case 'add-task': {

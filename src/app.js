@@ -2,6 +2,7 @@ import express from 'express';
 import * as store from './store.js';
 import { parseMarkdown, countItems } from './parse.js';
 import * as auth from './auth.js';
+import { codingStats } from './profile.js';
 
 const app = express();
 app.set('trust proxy', 1);
@@ -292,6 +293,65 @@ app.patch('/api/tasks/:id', async (req, res) => {
 app.delete('/api/tasks/:id', async (req, res) => {
   found(await store.deleteTask(id(req)), 'Task');
   res.status(204).end();
+});
+
+// ---------- student profile ----------
+
+const str = (v, name, max) => (v === undefined || v === null ? '' : text(String(v), name, { required: false, max }) ?? '');
+const list = (v, name, max = 40) => {
+  if (v === undefined) return [];
+  if (!Array.isArray(v)) throw httpError(400, `${name} must be a list`);
+  return v.slice(0, max);
+};
+const urlOrEmpty = (v) => (v ? optionalUrl(v) : '');
+
+function profileBody(b) {
+  return {
+    name: text(b.name, 'Name', { max: 100 }),
+    headline: str(b.headline, 'Headline', 160),
+    bio: str(b.bio, 'About', 2000),
+    location: str(b.location, 'Location', 100),
+    openTo: str(b.openTo, 'Open to', 120),
+    avatar: urlOrEmpty(b.avatar),
+    contact: {
+      email: str(b.contact?.email, 'Email', 120),
+      phone: str(b.contact?.phone, 'Phone', 30),
+      linkedin: urlOrEmpty(b.contact?.linkedin),
+      github: urlOrEmpty(b.contact?.github),
+      portfolio: urlOrEmpty(b.contact?.portfolio),
+      resume: urlOrEmpty(b.contact?.resume),
+    },
+    education: list(b.education, 'Education', 12).map((e) => ({
+      school: text(e.school, 'School', { max: 160 }),
+      degree: str(e.degree, 'Degree', 200),
+      when: str(e.when, 'Dates', 60),
+      score: str(e.score, 'Score', 40),
+    })),
+    skills: list(b.skills, 'Skills', 20).map((s) => ({
+      group: text(s.group, 'Skill group', { max: 60 }),
+      items: list(s.items, 'Skills', 40).map((x) => text(String(x), 'Skill', { max: 40 })),
+    })),
+    coding: list(b.coding, 'Coding profiles', 20).map((c) => ({
+      platform: text(c.platform, 'Platform', { max: 40 }),
+      username: str(c.username, 'Username', 60),
+      url: urlOrEmpty(c.url),
+    })),
+    achievements: list(b.achievements, 'Achievements', 20).map((a) => ({
+      title: text(a.title, 'Achievement', { max: 160 }),
+      detail: str(a.detail, 'Detail', 300),
+      when: str(a.when, 'Date', 40),
+    })),
+  };
+}
+
+app.get('/api/profile', async (req, res) => res.json(await store.getProfile()));
+
+app.put('/api/profile', async (req, res) => res.json(await store.saveProfile(profileBody(req.body || {}))));
+
+// Live LeetCode / GitHub / Codeforces numbers. Cached at the edge for an hour.
+app.get('/api/profile/stats', async (req, res) => {
+  res.set('Cache-Control', 'public, s-maxage=3600, stale-while-revalidate=86400');
+  res.json(await codingStats(await store.getProfile()));
 });
 
 // ---------- resources ----------

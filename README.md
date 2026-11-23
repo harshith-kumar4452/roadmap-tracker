@@ -14,6 +14,7 @@ A personal tracker for learning roadmaps. I kept my roadmaps (backend, system de
   - The routine starts with LeetCode POTD and GFG POTD (daily), CodeChef Starters (Wednesdays) and LeetCode Weekly Contest (Sundays). Add, remove or reschedule items.
   - Tick today's items, or click any square in the 4-week grid to fill in a day you missed logging. Each item shows its streak and its hit rate over the last 30 days.
   - To-dos with a due date, grouped into Overdue, Today, Upcoming and Someday.
+- **Profile**: a student profile with photo, headline, contact buttons (email, phone, LinkedIn, GitHub, portfolio, résumé), education timeline, skills, achievements and coding profiles. LeetCode (solved by difficulty, contest rating), GitHub and Codeforces numbers are fetched live and cached for an hour. Edit it all from the page when logged in.
 - **Resources**: practice and contest sites, your own links (with categories and notes), and the 📚 Resources of every roadmap, all searchable on one page.
 - **Roadmaps dashboard**: overall progress, topics finished today and this week, a day streak, and an activity heatmap.
 - **Pick up where you left off**: the next unfinished topic of your most recently active roadmaps, which you can tick right from the dashboard.
@@ -44,6 +45,7 @@ api/index.js           Vercel serverless entry (wraps the Express app)
 src/app.js             REST API routes and validation
 src/store.js           MongoDB data access
 src/auth.js            Owner login, signed session cookie
+src/profile.js         Live coding-profile stats (LeetCode, GitHub, Codeforces)
 src/parse.js           Markdown / Notion checklist parser
 public/                The web app (index.html, app.js, styles.css)
 public/render.js       Markdown renderer and mind map layout
@@ -111,6 +113,8 @@ All responses are JSON. `GET` routes are public; everything else needs the owner
 | PUT | `/api/habits/:id/checkins/:date` | Tick (`{ "done": true }`) or untick a day |
 | GET / POST | `/api/tasks` | List (owner only) / add tasks |
 | PATCH / DELETE | `/api/tasks/:id` | Edit, complete or delete a task |
+| GET / PUT | `/api/profile` | Read (public) / save (owner) the student profile |
+| GET | `/api/profile/stats` | Live LeetCode, GitHub and Codeforces numbers (cached an hour) |
 | GET | `/api/resources` | Your links plus every roadmap's resources |
 | POST / PATCH / DELETE | `/api/links`, `/api/links/:id` | Manage your links |
 

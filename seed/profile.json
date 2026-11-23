@@ -1,0 +1,38 @@
+{
+  "name": "Kakkirala Harshith Kumar",
+  "headline": "Full-stack developer · B.Tech CSE (Data Science) · IIT Madras B.S. Data Science",
+  "bio": "A Computer Science undergraduate majoring in Data Science, with core skills in machine learning, full-stack engineering and software architecture. I build AI-driven applications that scale across web and mobile, and I'm working towards a Software Engineer role.",
+  "location": "Hyderabad, India",
+  "openTo": "SWE internships & roles",
+  "avatar": "https://my-portifolio-six-tau.vercel.app/assets/img/harshith-320.webp",
+  "contact": {
+    "email": "harshithkumar4452@gmail.com",
+    "phone": "+91 74160 02298",
+    "linkedin": "https://linkedin.com/in/kakkirala-harshithkumar",
+    "github": "https://github.com/harshith-kumar4452",
+    "portfolio": "https://my-portifolio-six-tau.vercel.app/",
+    "resume": "https://my-portifolio-six-tau.vercel.app/assets/Harshith_Resume.pdf"
+  },
+  "education": [
+    { "school": "VNR Vignana Jyothi Institute of Engineering & Technology", "degree": "B.Tech CSE (Hons) — Data Science · Hyderabad", "when": "2024 – 2028", "score": "CGPA 9.1" },
+    { "school": "IIT Madras", "degree": "B.S. in Data Science and Applications (Diploma level)", "when": "Ongoing", "score": "CGPA 8.2" },
+    { "school": "Viswasanthi E.M High School", "degree": "Intermediate CBSE (PCM) · Vuyyuru, Andhra Pradesh", "when": "July 2024", "score": "91.8%" },
+    { "school": "Viswasanthi E.M High School", "degree": "Matriculation (CBSE) · Vuyyuru, Andhra Pradesh", "when": "May 2022", "score": "95.6%" }
+  ],
+  "skills": [
+    { "group": "Languages", "items": ["Python", "JavaScript", "TypeScript", "Java", "C / C++", "SQL"] },
+    { "group": "Frameworks & libraries", "items": ["React", "Next.js", "Node.js", "Express", "React Native", "Scikit-learn", "TensorFlow", "LangChain", "Pandas", "NumPy"] },
+    { "group": "Databases & backend", "items": ["PostgreSQL", "MySQL", "MongoDB", "Supabase", "Firebase", "REST APIs", "Microservices"] },
+    { "group": "Tools & platforms", "items": ["Git & GitHub", "Docker", "Vercel", "Linux", "Figma"] }
+  ],
+  "coding": [
+    { "platform": "LeetCode", "username": "harshith_1510_", "url": "https://leetcode.com/u/harshith_1510_/" },
+    { "platform": "GitHub", "username": "harshith-kumar4452", "url": "https://github.com/harshith-kumar4452" },
+    { "platform": "CodeChef", "username": "harshithkumar", "url": "https://www.codechef.com/users/harshithkumar" }
+  ],
+  "achievements": [
+    { "title": "2nd place · SynthVision Hackathon", "detail": "AI Week by Krithomedh at VNRVJIET: an AI-driven solution built under time pressure.", "when": "Feb 2026" },
+    { "title": "1st place · CONVERGENCE 2K25", "detail": "Project Contest (Software) at a National Technical Symposium hosted at VNRVJIET.", "when": "Nov 2025" },
+    { "title": "Runner-up · VJ Hackathon 2025", "detail": "Organised by CSI, VNRVJIET, among the top engineering teams on campus.", "when": "Oct 2025" }
+  ]
+}
