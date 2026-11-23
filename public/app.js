@@ -1,4 +1,5 @@
 import { markdown, outline, mindmapSvg } from './render.js';
+import { interactiveMindmap } from './mindmap.js';
 
 const view = document.getElementById('view');
 const $ = (sel, el = document) => el.querySelector(sel);
@@ -807,9 +808,6 @@ function drawPages() {
 
 async function renderPage(id) {
   pg = await api('GET', `/pages/${id}`);
-  // Big maps shrink to unreadable on phones, so they open at actual size there unless you chose otherwise.
-  const fitPref = prefs.get('mm-fit');
-  pg.fit = fitPref ? fitPref === 'fit' : innerWidth > 760;
   pg.editing = editNext === id && me.admin; // a page you just created opens in the editor
   editNext = null;
   drawPage();
@@ -821,13 +819,7 @@ function pageBodyHtml(p) {
   }
   if (p.kind === 'mindmap') {
     return `
-      <div class="mm-tools">
-        <div class="seg" role="group" aria-label="Map size">
-          <button type="button" data-act="mm-fit" data-fit="1" aria-pressed="${p.fit}">Fit to screen</button>
-          <button type="button" data-act="mm-fit" data-fit="0" aria-pressed="${!p.fit}">Actual size</button>
-        </div>
-      </div>
-      <div class="mm-wrap ${p.fit ? 'fit' : ''}">${mindmapSvg(outline(p.body, p.title))}</div>
+      <div id="mm-host" class="mm-host"></div>
       <details class="outline"><summary>Outline</summary><article class="md">${markdown(p.body)}</article></details>`;
   }
   return `<article class="md">${markdown(p.body)}</article>`;
@@ -881,6 +873,9 @@ function drawPage() {
       ${pg.summary || pg.tags?.length ? `<div class="doc-meta">${pg.summary ? `<p class="intro">${esc(pg.summary)}</p>` : ''}${tagChips(pg.tags)}</div>` : ''}
       ${pageBodyHtml(pg)}
       <p class="muted small">Updated ${ago(pg.updatedAt)}</p>`}`;
+
+  const host = $('#mm-host');
+  if (host) interactiveMindmap(host, outline(pg.body, pg.title), { storageKey: `rt:mm:${pg.id}` });
 
   const form = $('form[data-form="edit-doc"]');
   if (form) {
@@ -1452,11 +1447,6 @@ document.addEventListener('click', async (e) => {
       case 'doc-filter':
         pl.status = btn.dataset.s;
         drawPages();
-        break;
-      case 'mm-fit':
-        pg.fit = btn.dataset.fit === '1';
-        prefs.set('mm-fit', pg.fit ? 'fit' : 'actual');
-        drawPage();
         break;
       case 'edit-doc':
         pg.editing = true;

@@ -164,15 +164,15 @@ export function outline(md, rootTitle) {
   return root;
 }
 
-const BRANCH_COLORS = ['#0f766e', '#2563eb', '#c2410c', '#7c3aed', '#be185d', '#4d7c0f', '#b45309', '#0369a1'];
+export const BRANCH_COLORS = ['#0f766e', '#2563eb', '#c2410c', '#7c3aed', '#be185d', '#4d7c0f', '#b45309', '#0369a1'];
 let measureCtx;
-function textWidth(s, size, weight) {
+export function textWidth(s, size, weight) {
   measureCtx ??= document.createElement('canvas').getContext('2d');
   measureCtx.font = `${weight} ${size}px Inter, ui-sans-serif, system-ui, sans-serif`;
   return measureCtx.measureText(s).width;
 }
 const MAX_LABEL = 46;
-const label = (s) => {
+export const label = (s) => {
   const clean = String(s).replace(/\[([^\]]+)\]\([^)]+\)/g, '$1').replace(/[*`]/g, '');
   return clean.length > MAX_LABEL ? clean.slice(0, MAX_LABEL - 1) + '…' : clean;
 };

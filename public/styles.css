@@ -701,3 +701,82 @@ button.rc:hover { outline: 2px solid color-mix(in srgb, var(--accent) 55%, trans
 img { max-width: 100%; height: auto; }
 .footer-links a { padding: 0; border-radius: 0; white-space: normal; background: none; }
 .footer-links a:hover { background: none; }
+
+/* ---------- interactive mind map ---------- */
+
+.mmi {
+  display: grid; grid-template-rows: auto 1fr auto; gap: 8px;
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+  box-shadow: var(--shadow); padding: 10px; outline: none;
+}
+.mmi-bar { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.mmi-search { flex: 1 1 180px; padding: 6px 10px; font-size: 0.9rem; }
+.mmi-count { min-width: 0; }
+.mmi-tools { display: flex; align-items: center; gap: 4px; margin-left: auto; }
+.mmi-sep { width: 1px; height: 20px; background: var(--border); margin: 0 4px; }
+.mmi-btn {
+  display: inline-flex; align-items: center; gap: 6px; height: 32px; min-width: 32px; padding: 0 8px;
+  border: 1px solid var(--border); border-radius: 8px; background: var(--surface); color: var(--text);
+  font: inherit; font-size: 0.82rem; font-weight: 500; cursor: pointer; justify-content: center;
+}
+.mmi-btn:hover { background: var(--surface-2); }
+.mmi-btn[aria-pressed="true"] { background: var(--accent-soft); border-color: var(--accent); }
+.mmi-btn svg { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.mmi-svg {
+  display: block; width: 100%; height: clamp(380px, 68vh, 760px);
+  background: radial-gradient(circle, color-mix(in srgb, var(--border) 70%, transparent) 1px, transparent 1.2px) 0 0 / 22px 22px;
+  border-radius: 9px; cursor: grab; touch-action: none; user-select: none; -webkit-user-select: none;
+}
+.mmi-svg.panning { cursor: grabbing; }
+.mmi-hint { margin: 0; }
+.mmi-view { transform-origin: 0 0; }
+.mmi-view.animate { transition: transform 0.35s ease; }
+
+.mmi-node { transition: transform 0.34s ease, opacity 0.34s ease; cursor: default; outline: none; }
+.mmi-node.has-kids, .mmi-node.d0 { cursor: pointer; }
+.mmi-edge { fill: none; stroke-linecap: round; transition: d 0.34s ease, opacity 0.34s ease, stroke-opacity 0.2s; }
+.mmi-edge.d1 { stroke-width: 2.5; }
+.mmi-edge.d2 { stroke-width: 1.5; stroke-opacity: 0.8; }
+.mmi-root { fill: var(--accent); }
+.mmi-root-text { fill: var(--on-accent); font-size: 16px; font-weight: 600; }
+.mmi-branch { fill: var(--surface); stroke-width: 2; transition: fill 0.15s; }
+.mmi-branch-text { font-size: 14px; font-weight: 600; }
+.mmi-leaf-text { fill: var(--text); font-size: 13px; }
+.mmi-hitbox { fill: transparent; }
+.mmi-under { stroke-width: 1.5; stroke-opacity: 0.45; transition: stroke-opacity 0.15s; }
+.mmi-badge text { fill: #fff; font-size: 10.5px; font-weight: 700; }
+.mmi-link { cursor: pointer; }
+.mmi-link circle { fill: var(--surface-2); stroke: var(--border); }
+.mmi-link path { fill: none; stroke: var(--accent); stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; }
+.mmi-link:hover circle { fill: var(--accent-soft); stroke: var(--accent); }
+.mmi-node.has-kids:hover .mmi-branch, .mmi-node.d1:focus-visible .mmi-branch { fill: var(--surface-2); }
+.mmi-node.has-kids:hover .mmi-under { stroke-opacity: 1; }
+.mmi-node:focus-visible .mmi-hitbox, .mmi-node:focus-visible .mmi-root, .mmi-node:focus-visible .mmi-branch { stroke: var(--accent); stroke-width: 2.5; stroke-dasharray: 3 3; }
+
+/* hover: trace the path to the centre; search: highlight matches */
+.mmi-svg.tracing .mmi-node:not(.on), .mmi-svg.searching .mmi-node:not(.hit):not(.d0) { opacity: 0.35; }
+.mmi-svg.tracing .mmi-edge:not(.on), .mmi-svg.searching .mmi-edge { stroke-opacity: 0.25; }
+.mmi-svg.tracing .mmi-edge.on { stroke-width: 3; }
+.mmi-node.hit .mmi-hitbox, .mmi-node.hit .mmi-branch { fill: color-mix(in srgb, #facc15 38%, transparent); }
+.mmi-node.hit .mmi-leaf-text { font-weight: 600; }
+
+/* full screen */
+.mmi.full { position: fixed; inset: 0; z-index: 70; border-radius: 0; border: 0; padding: 12px; }
+.mmi.full .mmi-svg { height: 100%; }
+html.mmi-locked, html.mmi-locked body { overflow: hidden; }
+
+@media (prefers-color-scheme: dark) {
+  .mmi-branch-text, .mmi-edge, .mmi-under, .mmi-branch { filter: brightness(1.45); }
+  .mmi-badge text { fill: #0b0b0b; }
+  .mmi-badge circle { filter: brightness(1.45); }
+}
+@media (max-width: 640px) {
+  .mmi { padding: 8px; }
+  .mmi-btn span { display: none; }
+  .mmi-tools { margin-left: 0; width: 100%; justify-content: space-between; }
+  .mmi-sep { display: none; }
+  .mmi-svg { height: 62vh; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mmi-node, .mmi-edge, .mmi-view.animate { transition: none; }
+}

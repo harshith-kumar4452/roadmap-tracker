@@ -22,7 +22,7 @@ A personal tracker for learning roadmaps. I kept my roadmaps (backend, system de
 - **One owner account**: create it once at `/#/signup` (name, username, password). After that sign-up closes; visitors can view everything except Tasks, and only you can edit.
 - **Cheat sheets**: quick-reference pages written in Markdown, with tables, code blocks and links. Filter by tag and search.
 - **Projects**: things to build, each with an Idea / Building / Done status, a feature checklist and its tech stack.
-- **Mindmaps**: write an indented outline and it's drawn as a mind map, with the topic in the centre and branches on both sides.
+- **Mindmaps**: write an indented outline and it becomes an interactive mind map. Click a branch to fold or unfold it, drag to pan, pinch or Ctrl + scroll to zoom, search to find nodes, and open links straight from the map. Folded branches are remembered.
 - **Import**: paste a Notion page or any Markdown checklist (`- [ ] topic`) to add a new roadmap.
 - Light and dark mode, a menu on phones, and a custom 404 page.
 
@@ -46,6 +46,7 @@ src/auth.js            Owner login, signed session cookie
 src/parse.js           Markdown / Notion checklist parser
 public/                The web app (index.html, app.js, styles.css)
 public/render.js       Markdown renderer and mind map layout
+public/mindmap.js      Interactive mind map (fold, pan, zoom, search)
 seed/roadmaps.json     All roadmaps, ready to load into MongoDB
 seed/pages.json        Starter cheat sheets, projects and mindmaps
 scripts/seed.mjs       Loads both seed files into MongoDB
