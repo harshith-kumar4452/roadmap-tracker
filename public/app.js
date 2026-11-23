@@ -178,6 +178,10 @@ function setNav(key) {
 async function route() {
   const hash = location.hash.slice(1) || '/';
   setNav(hash === '/roadmaps' || hash.startsWith('/r/') ? 'roadmaps' : hash.slice(1));
+  // The first request after the server has been idle can take a few seconds; show that something is happening.
+  const loading = setTimeout(() => {
+    view.innerHTML = '<div class="loading" role="status"><span class="spinner" aria-hidden="true"></span>Loading…</div>';
+  }, 250);
   try {
     let m;
     if (hash === '/') await renderLanding();
@@ -193,6 +197,8 @@ async function route() {
     else location.hash = '#/';
   } catch (err) {
     view.innerHTML = `<div class="empty"><h2>Couldn't load this page</h2><p class="muted">${esc(err.message)}</p><a class="btn" href="#/">Back to home</a></div>`;
+  } finally {
+    clearTimeout(loading);
   }
 }
 window.addEventListener('hashchange', () => { route(); window.scrollTo(0, 0); });
