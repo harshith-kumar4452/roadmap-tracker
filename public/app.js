@@ -1,5 +1,7 @@
 import { markdown, outline, mindmapSvg } from './render.js';
 import { interactiveMindmap } from './mindmap.js';
+import { floatField, bindParallax } from './floaters.js';
+import { startTour, tourSeen } from './tour.js';
 
 const view = document.getElementById('view');
 const $ = (sel, el = document) => el.querySelector(sel);
@@ -977,6 +979,59 @@ function routineGrid(data, state, days, editable = false) {
 
 const sinceKey = (days) => dayKey(addDays(new Date(), -days));
 
+// ---------- guided tour ----------
+
+const isPhone = () => matchMedia('(max-width: 760px)').matches;
+function tourSteps() {
+  return [
+    {
+      target: null,
+      title: 'Welcome to your learning hub 👋',
+      text: 'Roadmaps, a daily practice routine and your notes, all in one place. This takes about 30 seconds.',
+    },
+    {
+      target: '.landing-stats',
+      title: 'Progress at a glance',
+      text: 'Topics finished across every roadmap, your learning streak, and how today\'s practice routine is going.',
+    },
+    {
+      target: '.routine-panel',
+      title: 'Daily practice routine',
+      text: 'LeetCode and GFG POTDs every day, CodeChef Starters on Wednesdays and LeetCode Weekly on Sundays. Green squares are days done; streaks skip days that aren\'t scheduled.',
+    },
+    {
+      target: '.section-grid',
+      title: 'Everything in one place',
+      text: 'Roadmaps with Notion-style pages, Resources with every course link, cheat sheets, project ideas and interactive mind maps.',
+    },
+    {
+      target: isPhone() ? '.menu-btn' : '#site-nav',
+      title: 'Jump between sections',
+      text: isPhone() ? 'Open this menu to move between Roadmaps, Resources, Cheat sheets, Projects and Mindmaps.' : `Move between sections from here.${me.admin ? ' Tasks holds your routine and to-do list.' : ''}`,
+    },
+    {
+      target: '#auth',
+      title: me.admin ? 'You\'re logged in' : me.hasAccount ? 'Log in to make changes' : 'Create your account',
+      text: me.admin
+        ? 'You can tick topics, log your routine and edit every page. Log out here when you\'re done.'
+        : me.hasAccount
+          ? 'Anyone can look around. Logging in lets you tick topics, log your routine and edit pages.'
+          : 'Set up the owner account to start ticking topics and logging your routine.',
+    },
+    {
+      target: '.help-btn',
+      title: 'Replay this tour any time',
+      text: 'Click the ? button whenever you want a refresher.',
+    },
+  ];
+}
+
+let pendingTour = false;
+function maybeStartTour() {
+  if (pendingTour) { pendingTour = false; setTimeout(() => startTour(tourSteps()), 250); return; }
+  if (!tourSeen()) setTimeout(() => { if ((location.hash.slice(1) || '/') === '/' && !document.querySelector('.tour-layer')) startTour(tourSteps()); }, 900);
+}
+
 // ---------- landing ----------
 
 async function renderLanding() {
@@ -1007,13 +1062,17 @@ async function renderLanding() {
 
   view.innerHTML = `
     <section class="landing-hero">
-      <p class="eyebrow">${first ? `${esc(first)}'s learning hub` : 'Learning hub'}</p>
-      <h1>Backend, system design, DSA and core CS, <span class="accent">one day at a time.</span></h1>
-      <p class="lede">${plural(list.length, 'roadmap')} and ${stats.total.toLocaleString()} topics, a daily problem-solving routine, weekly contests, and the notes that go with them.</p>
-      <div class="row-actions">
-        <a class="btn primary" href="#/roadmaps">Open roadmaps</a>
-        ${me.admin ? '<a class="btn" href="#/tasks">Today\'s tasks</a>' : me.hasAccount ? '<a class="btn" href="#/login">Log in</a>' : '<a class="btn" href="#/signup">Create your account</a>'}
+      <div class="hero-copy">
+        <p class="eyebrow hero-eyebrow"><span class="pulse" aria-hidden="true"></span>${first ? `${esc(first)}'s learning hub` : 'Learning hub'}</p>
+        <h1>Backend, system design, DSA and core CS, <span class="accent">one day at a time.</span></h1>
+        <p class="lede">${plural(list.length, 'roadmap')} and ${stats.total.toLocaleString()} topics, a daily problem-solving routine, weekly contests, and the notes that go with them.</p>
+        <div class="row-actions">
+          <a class="btn primary" href="#/roadmaps">Open roadmaps</a>
+          ${me.admin ? '<a class="btn" href="#/tasks">Today\'s tasks</a>' : me.hasAccount ? '<a class="btn" href="#/login">Log in</a>' : '<a class="btn" href="#/signup">Create your account</a>'}
+          <button type="button" class="btn ghost" data-act="tour">Take the tour</button>
+        </div>
       </div>
+      ${floatField()}
     </section>
 
     <dl class="landing-stats">
@@ -1024,7 +1083,7 @@ async function renderLanding() {
     </dl>
 
     ${routine.habits.length ? `
-    <section class="panel">
+    <section class="panel routine-panel">
       <div class="panel-head"><h2>Practice routine</h2>${me.admin ? '<a class="btn ghost small" href="#/tasks">Open tasks</a>' : '<span class="muted small">Last 14 days</span>'}</div>
       ${routineGrid(routine, state, 14)}
     </section>` : ''}
@@ -1041,6 +1100,9 @@ async function renderLanding() {
           </a>`).join('')}
       </div>
     </section>`;
+
+  bindParallax($('.landing-hero'));
+  maybeStartTour();
 }
 
 // ---------- tasks: routine + to-dos (owner only) ----------
@@ -1378,6 +1440,11 @@ document.addEventListener('click', async (e) => {
         await api('DELETE', `/roadmaps/${rm.id}`);
         toast(`Deleted ${rm.title}`, null, 'success');
         location.hash = '#/roadmaps';
+        break;
+      case 'tour':
+        setMenu(false);
+        if ((location.hash.slice(1) || '/') === '/') startTour(tourSteps());
+        else { pendingTour = true; location.hash = '#/'; }
         break;
       case 'habit': {
         const habitId = btn.closest('[data-habit]').dataset.habit;

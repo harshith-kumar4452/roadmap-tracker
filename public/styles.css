@@ -780,3 +780,105 @@ html.mmi-locked, html.mmi-locked body { overflow: hidden; }
 @media (prefers-reduced-motion: reduce) {
   .mmi-node, .mmi-edge, .mmi-view.animate { transition: none; }
 }
+
+/* ---------- home hero with floating topic icons ---------- */
+
+.landing-hero {
+  position: relative; max-width: none; display: block; padding: 40px 0 24px;
+  min-height: 440px; isolation: isolate; --px: 0; --py: 0;
+}
+.hero-copy { position: relative; z-index: 2; display: grid; gap: 14px; max-width: 600px; }
+.hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; width: fit-content; padding: 4px 10px 4px 8px; border-radius: 99px; background: var(--accent-soft); color: var(--accent-strong); font-weight: 600; }
+.pulse { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 60%, transparent); animation: pulse 2.2s ease-out infinite; }
+@keyframes pulse { 70% { box-shadow: 0 0 0 8px transparent; } 100% { box-shadow: 0 0 0 0 transparent; } }
+
+.float-field { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
+.float-chip {
+  position: absolute; left: var(--x); top: var(--y);
+  transform: translate(calc(-50% + var(--px) * var(--depth) * -18px), calc(-50% + var(--py) * var(--depth) * -18px));
+  transition: transform 0.6s cubic-bezier(.2,.7,.2,1);
+  opacity: 0; animation: chip-in 0.7s ease-out forwards; animation-delay: calc(var(--i) * 60ms + 150ms);
+}
+.float-inner {
+  display: inline-flex; align-items: center; gap: 8px; white-space: nowrap;
+  padding: 8px 12px 8px 9px; border-radius: 14px;
+  background: color-mix(in srgb, var(--surface) 88%, transparent);
+  border: 1px solid color-mix(in srgb, var(--c) 28%, var(--border));
+  box-shadow: 0 6px 20px -8px color-mix(in srgb, var(--c) 45%, transparent), var(--shadow);
+  backdrop-filter: blur(6px);
+  font-size: 0.82rem; font-weight: 600; color: var(--text);
+  animation: drift var(--dur) ease-in-out infinite alternate; animation-delay: var(--delay);
+}
+.float-inner svg {
+  width: 26px; height: 26px; padding: 4px; border-radius: 8px; flex: none;
+  fill: none; stroke: var(--c); stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round;
+  background: color-mix(in srgb, var(--c) 13%, transparent);
+}
+@keyframes drift {
+  0% { transform: translate(0, 0) rotate(-2deg); }
+  50% { transform: translate(6px, -10px) rotate(1.5deg); }
+  100% { transform: translate(-4px, 6px) rotate(-1deg); }
+}
+@keyframes chip-in { from { opacity: 0; } to { opacity: 1; } }
+@media (prefers-color-scheme: dark) {
+  .float-inner svg { stroke: color-mix(in srgb, var(--c) 55%, white); background: color-mix(in srgb, var(--c) 24%, transparent); }
+}
+
+/* Medium screens: fewer chips, kept to the right. */
+@media (max-width: 1000px) { .float-chip.wide-only { display: none; } }
+
+/* Phones: the chips get their own band under the text instead of sitting behind it. */
+@media (max-width: 760px) {
+  .landing-hero { min-height: 0; padding-top: 16px; }
+  .float-field { position: relative; inset: auto; height: 210px; margin: 18px -8px 0; }
+  .float-chip { left: var(--mx); top: var(--my); transform: translate(0, -50%); }
+  .float-inner { padding: 6px 10px 6px 7px; font-size: 0.76rem; }
+  .float-inner svg { width: 22px; height: 22px; padding: 3px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .float-inner, .pulse { animation: none; }
+  .float-chip { animation: none; opacity: 1; transition: none; }
+}
+
+/* ---------- tour ---------- */
+
+.help-btn {
+  display: grid; place-items: center; width: 36px; height: 36px; flex: none;
+  border: 1px solid var(--border); border-radius: 10px; background: var(--surface); color: var(--muted); cursor: pointer;
+}
+.help-btn:hover { color: var(--text); background: var(--surface-2); }
+.help-btn svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+
+.tour-layer { position: fixed; inset: 0; z-index: 90; }
+.tour-dim i { position: fixed; display: block; background: rgb(10 12 14 / 0.58); transition: all 0.3s ease; }
+.tour-spot {
+  position: fixed; border-radius: 8px; pointer-events: none;
+  box-shadow: 0 0 0 3px var(--accent), 0 0 0 7px color-mix(in srgb, var(--accent) 30%, transparent);
+  transition: top 0.35s ease, left 0.35s ease, width 0.35s ease, height 0.35s ease;
+}
+.tour-layer.centred .tour-spot { box-shadow: none; }
+.tour-pop {
+  position: fixed; width: min(360px, calc(100vw - 24px)); display: grid; gap: 8px;
+  background: var(--surface); color: var(--text); border: 1px solid var(--border); border-radius: 16px;
+  padding: 18px 18px 14px; box-shadow: 0 24px 60px -12px rgb(0 0 0 / 0.45);
+  opacity: 0; transform: translateY(6px); transition: opacity 0.2s ease, transform 0.2s ease, top 0.35s ease, left 0.35s ease;
+}
+.tour-pop.in { opacity: 1; transform: none; }
+.tour-step { font: 600 0.72rem/1 ui-monospace, Consolas, monospace; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent-strong); }
+.tour-title { font-size: 1.12rem; }
+.tour-text { color: var(--muted); font-size: 0.92rem; }
+.tour-foot { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 6px; flex-wrap: wrap; }
+.tour-dots { display: flex; gap: 5px; }
+.tour-dots i { width: 6px; height: 6px; border-radius: 99px; background: var(--border); transition: width 0.2s, background 0.2s; }
+.tour-dots i.on { width: 18px; background: var(--accent); }
+.tour-btns { display: flex; gap: 6px; margin-left: auto; }
+.tour-btns [hidden] { display: none; }
+.tour-layer.out { opacity: 0; transition: opacity 0.2s; }
+html.touring { scroll-behavior: auto; }
+@media (prefers-reduced-motion: reduce) { .tour-spot, .tour-pop, .tour-dim i { transition: none; } }
+@media (max-width: 760px) { .help-btn { width: 40px; height: 40px; } }
+/* The icons get the right-hand column; the text keeps the left. */
+@media (min-width: 761px) {
+  .hero-copy { max-width: min(600px, 54%); }
+  .float-field { left: 56%; right: 0; }
+}

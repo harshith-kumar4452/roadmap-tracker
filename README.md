@@ -8,7 +8,8 @@ A personal tracker for learning roadmaps. I kept my roadmaps (backend, system de
 
 ## Features
 
-- **Home page**: your name, overall progress, learning and routine streaks, the last two weeks of your practice routine, and a card for every section.
+- **Home page**: a hero with floating icons for every topic you study (they drift and lean towards the pointer), your progress and streaks, the last two weeks of your practice routine, and a card for every section.
+- **Quick tour**: a 7-step guided tour that spotlights each part of the home page. It runs on your first visit, and the **?** button in the header replays it any time.
 - **Tasks** (private): a daily practice routine and a to-do list.
   - The routine starts with LeetCode POTD and GFG POTD (daily), CodeChef Starters (Wednesdays) and LeetCode Weekly Contest (Sundays). Add, remove or reschedule items.
   - Tick today's items, or click any square in the 4-week grid to fill in a day you missed logging. Each item shows its streak and its hit rate over the last 30 days.
@@ -47,6 +48,8 @@ src/parse.js           Markdown / Notion checklist parser
 public/                The web app (index.html, app.js, styles.css)
 public/render.js       Markdown renderer and mind map layout
 public/mindmap.js      Interactive mind map (fold, pan, zoom, search)
+public/tour.js         Guided tour (spotlight, steps, keyboard support)
+public/floaters.js     Floating topic icons on the home page
 seed/roadmaps.json     All roadmaps, ready to load into MongoDB
 seed/pages.json        Starter cheat sheets, projects and mindmaps
 scripts/seed.mjs       Loads both seed files into MongoDB
