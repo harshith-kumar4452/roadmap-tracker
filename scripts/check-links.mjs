@@ -40,7 +40,8 @@ const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
 async function check(url) {
   let target = url;
   const host = new URL(url).hostname.replace(/^www\.|^m\./, '');
-  if (host === 'youtube.com' || host === 'youtu.be') {
+  // Only videos and playlists go through oEmbed; search, channel and other YouTube pages are fetched directly.
+  if (host === 'youtu.be' || (host === 'youtube.com' && /\/(watch|playlist|shorts)\b/.test(new URL(url).pathname))) {
     target = `https://www.youtube.com/oembed?format=json&url=${encodeURIComponent(url)}`;
   }
   for (let attempt = 0; attempt < 2; attempt++) {
