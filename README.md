@@ -24,7 +24,7 @@ A personal tracker for learning roadmaps. I kept my roadmaps (backend, system de
 - **Projects**: things to build, each with an Idea / Building / Done status, a feature checklist and its tech stack.
 - **Mindmaps**: write an indented outline and it's drawn as a mind map, with the topic in the centre and branches on both sides.
 - **Import**: paste a Notion page or any Markdown checklist (`- [ ] topic`) to add a new roadmap.
-- Light and dark mode, works on phones.
+- Light and dark mode, a menu on phones, and a custom 404 page.
 
 ## Tech stack
 
@@ -49,6 +49,7 @@ public/render.js       Markdown renderer and mind map layout
 seed/roadmaps.json     All roadmaps, ready to load into MongoDB
 seed/pages.json        Starter cheat sheets, projects and mindmaps
 scripts/seed.mjs       Loads both seed files into MongoDB
+scripts/check-links.mjs Checks every stored link and reports broken ones
 server.js              Local development server
 vercel.json            Vercel config (static output + /api rewrite)
 ```

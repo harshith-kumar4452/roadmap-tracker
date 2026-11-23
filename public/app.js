@@ -6,18 +6,23 @@ const $ = (sel, el = document) => el.querySelector(sel);
 // ---------- helpers ----------
 
 async function api(method, url, body) {
-  const res = await fetch('/api' + url, {
-    method,
-    headers: body ? { 'Content-Type': 'application/json' } : {},
-    body: body ? JSON.stringify(body) : undefined,
-    credentials: 'same-origin',
-  });
+  let res;
+  try {
+    res = await fetch('/api' + url, {
+      method,
+      headers: body ? { 'Content-Type': 'application/json' } : {},
+      body: body ? JSON.stringify(body) : undefined,
+      credentials: 'same-origin',
+    });
+  } catch {
+    throw new Error("Can't reach the server. Check your connection and try again.");
+  }
   const data = res.status === 204 ? null : await res.json().catch(() => null);
   if (res.status === 401 && method !== 'GET' && url !== '/login') {
     me.admin = false;
     renderAuth();
   }
-  if (!res.ok) throw new Error(data?.error || `Request failed (${res.status})`);
+  if (!res.ok) throw new Error(data?.error || (res.status >= 500 ? 'Something went wrong on the server. Try again in a moment.' : `Request failed (${res.status})`));
   return data;
 }
 
@@ -96,13 +101,25 @@ const tick = (done, title) => me.admin
   : `<span class="tick readonly" role="img" aria-label="${done ? 'Done' : 'Not done'}" data-checked="${done}">${icons.check}</span>`;
 
 let toastTimer;
-function toast(message, action) {
+function toast(message, action, kind = 'info') {
   const el = $('#toast');
+  el.dataset.kind = kind;
+  el.setAttribute('role', kind === 'error' ? 'alert' : 'status');
   el.innerHTML = `<span>${esc(message)}</span>${action ? `<button type="button">${esc(action.label)}</button>` : ''}`;
   el.hidden = false;
   if (action) el.querySelector('button').onclick = () => { el.hidden = true; action.run(); };
   clearTimeout(toastTimer);
-  toastTimer = setTimeout(() => { el.hidden = true; }, action ? 6000 : 3500);
+  toastTimer = setTimeout(() => { el.hidden = true; }, action ? 6000 : kind === 'error' ? 6000 : 3500);
+}
+
+// ---------- page title & description ----------
+
+const SITE = 'Learning hub';
+function setPage(title, description) {
+  document.title = title ? `${title} · ${SITE}` : me.name ? `${me.name} · ${SITE}` : SITE;
+  const desc = String(description || '').replace(/\s+/g, ' ').trim().slice(0, 160);
+  for (const sel of ['meta[name="description"]', 'meta[property="og:description"]']) $(sel)?.setAttribute('content', desc);
+  $('meta[property="og:title"]')?.setAttribute('content', document.title);
 }
 
 // ---------- auth ----------
@@ -111,6 +128,8 @@ const me = { admin: false, editingEnabled: false, hasAccount: false, name: null 
 
 function renderAuth() {
   document.body.classList.toggle('is-admin', me.admin);
+  $('#year').textContent = new Date().getFullYear();
+  $('#owner').textContent = me.name || 'Learning hub';
   $('#auth').innerHTML = me.admin
     ? '<button type="button" class="btn ghost small" data-act="logout">Log out</button>'
     : me.hasAccount
@@ -126,7 +145,7 @@ async function loadMe() {
 function renderLogin() {
   if (!me.hasAccount) { location.hash = '#/signup'; return; }
   if (me.admin) { location.hash = '#/tasks'; return; }
-  document.title = 'Log in';
+  setPage('Log in', 'Log in to your learning hub.');
   view.innerHTML = `
     <section class="auth-card panel">
       <span class="brand-mark big" aria-hidden="true"></span>
@@ -144,7 +163,7 @@ function renderLogin() {
 
 function renderSignup() {
   if (me.hasAccount) { location.hash = me.admin ? '#/tasks' : '#/login'; return; }
-  document.title = 'Create your account';
+  setPage('Create your account', 'Set up the owner account for this learning hub.');
   view.innerHTML = `
     <section class="auth-card panel">
       <span class="brand-mark big" aria-hidden="true"></span>
@@ -164,6 +183,34 @@ function renderSignup() {
       </form>
     </section>`;
 }
+
+function renderNotFound() {
+  setPage('Page not found', "This page doesn't exist.");
+  view.innerHTML = `
+    <section class="notfound">
+      <p class="eyebrow">Error 404</p>
+      <h1>This page doesn't exist</h1>
+      <p class="muted">The link may be old, or the address has a typo.</p>
+      <div class="row-actions">
+        <a class="btn primary" href="#/">Go to the home page</a>
+        <a class="btn" href="#/roadmaps">Browse roadmaps</a>
+      </div>
+    </section>`;
+}
+
+// ---------- mobile menu ----------
+
+const menuBtn = $('.menu-btn');
+function setMenu(open) {
+  document.body.classList.toggle('menu-open', open);
+  menuBtn.setAttribute('aria-expanded', String(open));
+  menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+}
+menuBtn.addEventListener('click', () => setMenu(!document.body.classList.contains('menu-open')));
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && document.body.classList.contains('menu-open')) { setMenu(false); menuBtn.focus(); } });
+document.addEventListener('click', (e) => {
+  if (document.body.classList.contains('menu-open') && !e.target.closest('.topbar')) setMenu(false);
+});
 
 // ---------- routing ----------
 
@@ -194,14 +241,14 @@ async function route() {
     else if ((m = hash.match(/^\/p\/([\w-]+)$/))) await renderPage(m[1]);
     else if (hash === '/import' && me.admin) renderImport();
     else if (hash === '/login') renderLogin();
-    else location.hash = '#/';
+    else renderNotFound();
   } catch (err) {
     view.innerHTML = `<div class="empty"><h2>Couldn't load this page</h2><p class="muted">${esc(err.message)}</p><a class="btn" href="#/">Back to home</a></div>`;
   } finally {
     clearTimeout(loading);
   }
 }
-window.addEventListener('hashchange', () => { route(); window.scrollTo(0, 0); });
+window.addEventListener('hashchange', () => { setMenu(false); route(); window.scrollTo(0, 0); });
 
 // ---------- dashboard ----------
 
@@ -288,7 +335,7 @@ function roadmapCard(r) {
 }
 
 async function renderDashboard() {
-  document.title = 'Roadmaps';
+  setPage('Roadmaps', 'Progress across every learning roadmap: backend, system design, DSA, core CS and aptitude.');
   setNav('roadmaps');
   const [list, stats] = await Promise.all([api('GET', '/roadmaps'), api('GET', '/stats')]);
   if (!list.length) {
@@ -536,7 +583,7 @@ function drawRoadmap() {
   const done = items.filter((i) => i.status === 'done').length;
   const inProgress = items.filter((i) => i.status === 'in_progress').length;
   const next = items.find((i) => i.status !== 'done');
-  document.title = rm.title;
+  setPage(rm.title, rm.intro || `${rm.title}: ${plural(items.length, 'topic')}, ${pct(done, items.length)}% done.`);
   const filterLabels = { all: 'All', todo: 'To do', in_progress: 'In progress', done: 'Done' };
   const notion = safeUrl(rm.notionUrl);
 
@@ -603,7 +650,7 @@ async function patchItem(id, body, optimistic) {
     Object.assign(item, await api('PATCH', `/items/${id}`, body));
   } catch (err) {
     Object.assign(item, prev);
-    toast(err.message);
+    toast(err.message, null, 'error');
   }
   drawRoadmap();
 }
@@ -626,7 +673,7 @@ function openNoteEditor(row, item) {
 // ---------- add roadmaps (owner only) ----------
 
 function renderImport() {
-  document.title = 'Add roadmaps';
+  setPage('Add roadmaps', 'Import a roadmap from Notion or Markdown.');
   view.innerHTML = `
     <a class="back" href="#/roadmaps">← All roadmaps</a>
     <h1 class="page-title">Add roadmaps</h1>
@@ -691,7 +738,7 @@ const statusPill = (status, button) => {
 
 async function renderPages(key) {
   const k = KINDS[key];
-  document.title = k.label;
+  setPage(k.label, k.blurb);
   const items = await api('GET', `/pages?kind=${k.kind}`);
   pl = { key, items, q: '', tag: '', status: '' };
   drawPages();
@@ -819,7 +866,7 @@ function drawPage() {
   const key = keyOfKind(pg.kind);
   const k = KINDS[key];
   setNav(key);
-  document.title = pg.title;
+  setPage(pg.title, pg.summary || `${k.one[0].toUpperCase()}${k.one.slice(1)}: ${pg.title}`);
   view.innerHTML = `
     <a class="back" href="#/${key}">← ${esc(k.label)}</a>
     <header class="rm-head">
@@ -938,7 +985,7 @@ const sinceKey = (days) => dayKey(addDays(new Date(), -days));
 // ---------- landing ----------
 
 async function renderLanding() {
-  document.title = me.name ? `${me.name} · Learning hub` : 'Learning hub';
+  setPage('', `${me.name ? `${me.name}'s` : 'A'} learning hub: roadmaps, a daily practice routine, contests, cheat sheets, projects and mind maps.`);
   const [list, stats, routine, ...pageLists] = await Promise.all([
     api('GET', '/roadmaps'),
     api('GET', '/stats'),
@@ -1006,7 +1053,7 @@ async function renderLanding() {
 let tk = null;
 
 async function renderTasks() {
-  document.title = 'Tasks';
+  setPage('Tasks', 'Daily practice routine and to-do list.');
   if (!me.admin) {
     view.innerHTML = `
       <div class="empty big">
@@ -1145,7 +1192,7 @@ function drawTasks() {
 let rs = null;
 
 async function renderResources() {
-  document.title = 'Resources';
+  setPage('Resources', 'Every course, playlist, practice site and link in one place.');
   const [data, routine] = await Promise.all([api('GET', '/resources'), api('GET', `/habits?since=${todayKey()}`)]);
   rs = { ...data, habits: routine.habits, q: '' };
   drawResources();
@@ -1334,6 +1381,7 @@ document.addEventListener('click', async (e) => {
       case 'delete-rm':
         if (!confirm(`Delete "${rm.title}" and all its progress? This can't be undone.`)) return;
         await api('DELETE', `/roadmaps/${rm.id}`);
+        toast(`Deleted ${rm.title}`, null, 'success');
         location.hash = '#/roadmaps';
         break;
       case 'habit': {
@@ -1363,6 +1411,7 @@ document.addEventListener('click', async (e) => {
         await api('DELETE', `/habits/${habitId}`);
         tk.routine.habits = tk.routine.habits.filter((x) => x.id !== habitId);
         drawTasks();
+        toast(`Removed ${h.title}`, null, 'success');
         break;
       }
       case 'task-toggle': {
@@ -1384,6 +1433,7 @@ document.addEventListener('click', async (e) => {
         await api('DELETE', `/tasks/${taskId}`);
         tk.tasks = tk.tasks.filter((x) => x.id !== taskId);
         drawTasks();
+        toast('Task deleted', null, 'success');
         break;
       }
       case 'link-delete': {
@@ -1392,6 +1442,7 @@ document.addEventListener('click', async (e) => {
         await api('DELETE', `/links/${l.id}`);
         rs.links = rs.links.filter((x) => x.id !== l.id);
         $('#res-body').innerHTML = resourcesHtml();
+        toast('Link removed', null, 'success');
         break;
       }
       case 'tag':
@@ -1433,12 +1484,13 @@ document.addEventListener('click', async (e) => {
         const key = keyOfKind(pg.kind);
         if (!confirm(`Delete "${pg.title}"? This can't be undone.`)) return;
         await api('DELETE', `/pages/${pg.id}`);
+        toast(`Deleted ${pg.title}`, null, 'success');
         location.hash = `#/${key}`;
         break;
       }
     }
   } catch (err) {
-    toast(err.message);
+    toast(err.message, null, 'error');
   }
 });
 
@@ -1464,7 +1516,7 @@ view.addEventListener('submit', async (e) => {
         const r = await api('POST', '/signup', { name: data.name, username: data.username, password: data.password, setupKey: data.setupKey });
         Object.assign(me, { admin: true, hasAccount: true, name: r.name });
         renderAuth();
-        toast('Account created. You are logged in.');
+        toast('Account created. You are logged in.', null, 'success');
         location.hash = '#/tasks';
         return;
       }
@@ -1480,11 +1532,13 @@ view.addEventListener('submit', async (e) => {
         rm.sections.push(await api('POST', `/roadmaps/${rm.id}/sections`, { title: data.title }));
         rm.group = 'topic';
         drawRoadmap();
+        toast('Section added', null, 'success');
         return;
       case 'note': {
         const id = form.closest('[data-item]').dataset.item;
         Object.assign(findItem(id), await api('PATCH', `/items/${id}`, { note: data.note }));
         drawRoadmap();
+        toast('Note saved', null, 'success');
         return;
       }
       case 'edit-page': {
@@ -1496,7 +1550,7 @@ view.addEventListener('submit', async (e) => {
         });
         Object.assign(rm, { title: updated.title, intro: updated.intro, resources: updated.resources, notes: updated.notes, editing: false });
         drawRoadmap();
-        toast('Page saved');
+        toast('Page saved', null, 'success');
         return;
       }
       case 'import-md': {
@@ -1508,6 +1562,7 @@ view.addEventListener('submit', async (e) => {
       case 'add-task': {
         tk.tasks.push(await api('POST', '/tasks', { title: data.title, date: data.date || null }));
         drawTasks();
+        toast('Task added', null, 'success');
         $('form[data-form="add-task"] input[name="title"]')?.focus();
         return;
       }
@@ -1515,12 +1570,13 @@ view.addEventListener('submit', async (e) => {
         const daysValue = data.days === 'daily' ? [0, 1, 2, 3, 4, 5, 6] : data.days === 'weekdays' ? [1, 2, 3, 4, 5] : [Number(data.days)];
         tk.routine.habits.push(await api('POST', '/habits', { title: data.title, url: data.url || undefined, days: daysValue }));
         drawTasks();
+        toast(`Added ${data.title} to your routine`, null, 'success');
         return;
       }
       case 'add-link': {
         rs.links.push(await api('POST', '/links', { title: data.title, url: data.url, category: data.category, note: data.note }));
         drawResources();
-        toast('Link added');
+        toast('Link added', null, 'success');
         return;
       }
       case 'new-page': {
@@ -1539,7 +1595,7 @@ view.addEventListener('submit', async (e) => {
         });
         Object.assign(pg, updated, { editing: false });
         drawPage();
-        toast('Saved');
+        toast('Saved', null, 'success');
         return;
       }
       case 'new-rm': {
@@ -1549,7 +1605,7 @@ view.addEventListener('submit', async (e) => {
       }
     }
   } catch (err) {
-    toast(err.message);
+    toast(err.message, null, 'error');
   } finally {
     if (submit.isConnected) submit.disabled = false;
   }

@@ -9,6 +9,7 @@ const root = path.dirname(fileURLToPath(import.meta.url));
 const local = express();
 local.use(express.static(path.join(root, 'public')));
 local.use(app);
+local.use((req, res) => res.status(404).sendFile(path.join(root, 'public', '404.html')));
 
 const port = Number(process.env.PORT) || 4321;
 local.listen(port, '127.0.0.1', () => console.log(`Roadmap tracker running at http://localhost:${port}`));
