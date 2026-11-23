@@ -107,13 +107,15 @@ function toast(message, action) {
 
 // ---------- auth ----------
 
-const me = { admin: false, editingEnabled: false };
+const me = { admin: false, editingEnabled: false, hasAccount: false, name: null };
 
 function renderAuth() {
   document.body.classList.toggle('is-admin', me.admin);
   $('#auth').innerHTML = me.admin
     ? '<button type="button" class="btn ghost small" data-act="logout">Log out</button>'
-    : '<a class="btn ghost small" href="#/login">Log in to edit</a>';
+    : me.hasAccount
+      ? '<a class="btn ghost small" href="#/login">Log in</a>'
+      : '<a class="btn primary small" href="#/signup">Create account</a>';
 }
 
 async function loadMe() {
@@ -122,16 +124,43 @@ async function loadMe() {
 }
 
 function renderLogin() {
+  if (!me.hasAccount) { location.hash = '#/signup'; return; }
+  if (me.admin) { location.hash = '#/tasks'; return; }
   document.title = 'Log in';
   view.innerHTML = `
-    <a class="back" href="#/">← All roadmaps</a>
-    <section class="panel login">
-      <h1>Log in to edit</h1>
-      <p class="muted">Anyone can view these roadmaps. Ticking topics and editing pages needs the owner password.</p>
-      ${me.editingEnabled ? '' : '<p class="warn">Editing is turned off on this server: <code>ADMIN_PASSWORD</code> is not set.</p>'}
+    <section class="auth-card panel">
+      <span class="brand-mark big" aria-hidden="true"></span>
+      <div>
+        <h1>Welcome back${me.name ? `, ${esc(me.name.split(' ')[0])}` : ''}</h1>
+        <p class="muted">Log in to tick off today's tasks and edit your pages.</p>
+      </div>
       <form data-form="login" class="stack">
-        <input type="password" name="password" autocomplete="current-password" placeholder="Password" aria-label="Password" required autofocus>
-        <div><button class="btn primary">Log in</button></div>
+        <label>Username<input name="username" autocomplete="username" autocapitalize="none" spellcheck="false" required autofocus></label>
+        <label>Password<input type="password" name="password" autocomplete="current-password" required></label>
+        <button class="btn primary">Log in</button>
+      </form>
+    </section>`;
+}
+
+function renderSignup() {
+  if (me.hasAccount) { location.hash = me.admin ? '#/tasks' : '#/login'; return; }
+  document.title = 'Create your account';
+  view.innerHTML = `
+    <section class="auth-card panel">
+      <span class="brand-mark big" aria-hidden="true"></span>
+      <div>
+        <h1>Create your account</h1>
+        <p class="muted">This site has one owner: you. Once your account exists, sign-up closes and everyone else can only view.</p>
+      </div>
+      ${me.editingEnabled ? '' : '<p class="warn">Sign-up is turned off: <code>ADMIN_PASSWORD</code> is not set on the server.</p>'}
+      <form data-form="signup" class="stack">
+        <label>Your name<input name="name" autocomplete="name" placeholder="Shown on your home page" required maxlength="80" autofocus></label>
+        <label>Username<input name="username" autocomplete="username" autocapitalize="none" spellcheck="false" required pattern="[A-Za-z0-9._\\-]{3,40}" title="3–40 letters, numbers, dots, dashes or underscores"></label>
+        <label>Password<input type="password" name="password" autocomplete="new-password" minlength="8" required></label>
+        <label>Confirm password<input type="password" name="confirm" autocomplete="new-password" minlength="8" required></label>
+        <label>Setup key <span class="muted small">the <code>ADMIN_PASSWORD</code> from your server settings, so nobody else can claim the site</span>
+          <input type="password" name="setupKey" autocomplete="off" required></label>
+        <button class="btn primary">Create account</button>
       </form>
     </section>`;
 }
@@ -139,15 +168,23 @@ function renderLogin() {
 // ---------- routing ----------
 
 function setNav(key) {
-  document.querySelectorAll('[data-nav]').forEach((a) => a.toggleAttribute('aria-current', a.dataset.nav === key));
+  document.querySelectorAll('[data-nav]').forEach((a) => {
+    a.toggleAttribute('aria-current', a.dataset.nav === key);
+    // On phones the tab row scrolls sideways; keep the current tab visible.
+    if (a.dataset.nav === key) a.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+  });
 }
 
 async function route() {
   const hash = location.hash.slice(1) || '/';
-  setNav(hash === '/' || hash.startsWith('/r/') ? 'home' : hash.slice(1));
+  setNav(hash === '/roadmaps' || hash.startsWith('/r/') ? 'roadmaps' : hash.slice(1));
   try {
     let m;
-    if (hash === '/') await renderDashboard();
+    if (hash === '/') await renderLanding();
+    else if (hash === '/roadmaps') await renderDashboard();
+    else if (hash === '/tasks') await renderTasks();
+    else if (hash === '/resources') await renderResources();
+    else if (hash === '/signup') renderSignup();
     else if ((m = hash.match(/^\/r\/([\w-]+)$/))) await renderRoadmap(m[1]);
     else if ((m = hash.match(/^\/(cheatsheets|projects|mindmaps)$/))) await renderPages(m[1]);
     else if ((m = hash.match(/^\/p\/([\w-]+)$/))) await renderPage(m[1]);
@@ -155,7 +192,7 @@ async function route() {
     else if (hash === '/login') renderLogin();
     else location.hash = '#/';
   } catch (err) {
-    view.innerHTML = `<div class="empty"><h2>Couldn't load this page</h2><p class="muted">${esc(err.message)}</p><a class="btn" href="#/">Back to dashboard</a></div>`;
+    view.innerHTML = `<div class="empty"><h2>Couldn't load this page</h2><p class="muted">${esc(err.message)}</p><a class="btn" href="#/">Back to home</a></div>`;
   }
 }
 window.addEventListener('hashchange', () => { route(); window.scrollTo(0, 0); });
@@ -246,6 +283,7 @@ function roadmapCard(r) {
 
 async function renderDashboard() {
   document.title = 'Roadmaps';
+  setNav('roadmaps');
   const [list, stats] = await Promise.all([api('GET', '/roadmaps'), api('GET', '/stats')]);
   if (!list.length) {
     view.innerHTML = `
@@ -291,6 +329,7 @@ async function renderDashboard() {
       <div class="toolbar">
         <h2 class="h2">All roadmaps</h2>
         <div class="toolbar-right">
+          ${me.admin ? '<a class="btn small" href="#/import">Add roadmaps</a>' : ''}
           <input type="search" id="rm-search" placeholder="Filter roadmaps" aria-label="Filter roadmaps">
           <select id="rm-sort" aria-label="Sort roadmaps">
             <option value="recent">Recently active</option>
@@ -496,7 +535,7 @@ function drawRoadmap() {
   const notion = safeUrl(rm.notionUrl);
 
   view.innerHTML = `
-    <a class="back" href="#/">← All roadmaps</a>
+    <a class="back" href="#/roadmaps">← All roadmaps</a>
     <header class="rm-head">
       <h1>${esc(rm.title)}</h1>
       <div class="rm-head-actions">
@@ -583,7 +622,7 @@ function openNoteEditor(row, item) {
 function renderImport() {
   document.title = 'Add roadmaps';
   view.innerHTML = `
-    <a class="back" href="#/">← All roadmaps</a>
+    <a class="back" href="#/roadmaps">← All roadmaps</a>
     <h1 class="page-title">Add roadmaps</h1>
 
     <section class="panel">
@@ -804,6 +843,384 @@ function drawPage() {
 
 const parseTags = (s) => String(s || '').split(',').map((t) => t.trim()).filter(Boolean);
 
+// ---------- routine helpers ----------
+
+const DAY_NAMES = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+const fromKey = (k) => { const [y, m, d] = k.split('-').map(Number); return new Date(y, m - 1, d); };
+const addDays = (d, n) => { const x = new Date(d); x.setDate(x.getDate() + n); return x; };
+const todayKey = () => dayKey(new Date());
+
+function scheduleLabel(days) {
+  if (days.length === 7) return 'Daily';
+  if (days.length === 5 && [1, 2, 3, 4, 5].every((d) => days.includes(d))) return 'Weekdays';
+  if (days.length === 1) return `Every ${DAY_NAMES[days[0]]}`;
+  return days.map((d) => DAY_NAMES[d].slice(0, 3)).join(', ');
+}
+
+const isDue = (h, date) => h.days.includes(date.getDay());
+
+function routineState({ habits, checkins }) {
+  const done = new Set(checkins.map((c) => `${c.habitId}:${c.date}`));
+  const isDone = (h, key) => done.has(`${h.id}:${key}`);
+  const today = startOfDay(new Date());
+  // Days before a routine item existed are neither done nor missed.
+  const started = (h, key) => !h.createdAt || key >= dayKey(new Date(h.createdAt));
+  const streak = (h) => {
+    // Consecutive scheduled days completed. Today only breaks the streak once it's over.
+    let n = 0;
+    let d = new Date(today);
+    if (isDue(h, d) && !isDone(h, dayKey(d))) d = addDays(d, -1);
+    for (let i = 0; i < 120; i++, d = addDays(d, -1)) {
+      if (!isDue(h, d)) continue;
+      if (!isDone(h, dayKey(d))) break;
+      n++;
+    }
+    return n;
+  };
+  const rate = (h, days = 30) => {
+    let due = 0;
+    let hit = 0;
+    for (let i = 0; i < days; i++) {
+      const d = addDays(today, -i);
+      if (!isDue(h, d)) continue;
+      if (i === 0 && !isDone(h, dayKey(d))) continue; // today isn't missed yet
+      if (!started(h, dayKey(d)) && !isDone(h, dayKey(d))) continue;
+      due++;
+      if (isDone(h, dayKey(d))) hit++;
+    }
+    return due ? Math.round((hit * 100) / due) : null;
+  };
+  const nextDue = (h) => {
+    for (let i = 1; i <= 7; i++) if (isDue(h, addDays(today, i))) return addDays(today, i);
+    return null;
+  };
+  return { isDone, started, streak, rate, nextDue, today };
+}
+
+// editable: on the Tasks page every scheduled square is a button, so past days can be ticked too.
+function routineGrid(data, state, days, editable = false) {
+  const cols = Array.from({ length: days }, (_, i) => addDays(state.today, i - days + 1));
+  return `
+    <div class="rgrid-wrap">
+      <table class="rgrid">
+        <thead><tr><th></th>${cols.map((d) => `<th class="${dayKey(d) === todayKey() ? 'is-today' : ''}"><span>${DAY_NAMES[d.getDay()][0]}</span><small>${d.getDate()}</small></th>`).join('')}<th class="r">Streak</th></tr></thead>
+        <tbody>${data.habits.map((h) => `
+          <tr data-habit="${esc(h.id)}">
+            <th scope="row">${esc(h.title)}</th>
+            ${cols.map((d) => {
+              const k = dayKey(d);
+              const label = `${h.title}, ${d.toLocaleDateString(undefined, { weekday: 'short', month: 'short', day: 'numeric' })}`;
+              if (!isDue(h, d)) return `<td><i class="rc off" title="${esc(label)}: not scheduled"></i></td>`;
+              const done = state.isDone(h, k);
+              const [cls, status] = done ? ['done', 'done']
+                : k === todayKey() ? ['due', 'due today']
+                : state.started(h, k) ? ['miss', 'missed'] : ['pre', 'before you started'];
+              return editable
+                ? `<td><button type="button" class="rc ${cls}" data-act="habit" data-date="${k}" aria-pressed="${done}" title="${esc(label)}: ${status}. Click to ${done ? 'untick' : 'tick'}." aria-label="${esc(label)}: ${status}"></button></td>`
+                : `<td><i class="rc ${cls}" title="${esc(label)}: ${status}"></i></td>`;
+            }).join('')}
+            <td class="r"><strong>${state.streak(h)}</strong></td>
+          </tr>`).join('')}
+        </tbody>
+      </table>
+    </div>
+    <div class="rgrid-legend muted small"><span><i class="rc done"></i> Done</span><span><i class="rc miss"></i> Missed</span><span><i class="rc due"></i> Due today</span><span><i class="rc pre"></i> Before you started</span><span><i class="rc off"></i> Not scheduled</span></div>`;
+}
+
+const sinceKey = (days) => dayKey(addDays(new Date(), -days));
+
+// ---------- landing ----------
+
+async function renderLanding() {
+  document.title = me.name ? `${me.name} · Learning hub` : 'Learning hub';
+  const [list, stats, routine, ...pageLists] = await Promise.all([
+    api('GET', '/roadmaps'),
+    api('GET', '/stats'),
+    api('GET', `/habits?since=${sinceKey(120)}`),
+    ...['cheatsheet', 'project', 'mindmap'].map((k) => api('GET', `/pages?kind=${k}`)),
+  ]);
+  const [cheats, projects, maps] = pageLists;
+  const act = activity(stats.doneAt);
+  const state = routineState(routine);
+  const dueToday = routine.habits.filter((h) => isDue(h, state.today));
+  const doneToday = dueToday.filter((h) => state.isDone(h, todayKey())).length;
+  const bestStreak = Math.max(0, ...routine.habits.map(state.streak));
+  const first = me.name ? me.name.split(' ')[0] : null;
+  const started = list.filter((r) => r.done > 0).length;
+
+  const sections = [
+    { href: '#/roadmaps', icon: '🗺️', title: 'Roadmaps', text: `${plural(list.length, 'roadmap')}, ${started} under way`, meta: `${pct(stats.done, stats.total)}% done` },
+    ...(me.admin ? [{ href: '#/tasks', icon: '✅', title: 'Tasks', text: 'Daily POTDs, contests and your to-do list', meta: dueToday.length ? `${doneToday}/${dueToday.length} today` : 'Nothing due' }] : []),
+    { href: '#/resources', icon: '🔗', title: 'Resources', text: 'Every course, playlist and practice site in one list', meta: 'All links' },
+    { href: '#/cheatsheets', icon: '📄', title: 'Cheat sheets', text: 'Quick-reference commands and syntax', meta: plural(cheats.length, 'sheet') },
+    { href: '#/projects', icon: '🛠️', title: 'Projects', text: 'Things to build and where each one stands', meta: plural(projects.length, 'project') },
+    { href: '#/mindmaps', icon: '🧠', title: 'Mindmaps', text: 'How the topics connect', meta: plural(maps.length, 'map') },
+  ];
+
+  view.innerHTML = `
+    <section class="landing-hero">
+      <p class="eyebrow">${first ? `${esc(first)}'s learning hub` : 'Learning hub'}</p>
+      <h1>Backend, system design, DSA and core CS, <span class="accent">one day at a time.</span></h1>
+      <p class="lede">${plural(list.length, 'roadmap')} and ${stats.total.toLocaleString()} topics, a daily problem-solving routine, weekly contests, and the notes that go with them.</p>
+      <div class="row-actions">
+        <a class="btn primary" href="#/roadmaps">Open roadmaps</a>
+        ${me.admin ? '<a class="btn" href="#/tasks">Today\'s tasks</a>' : me.hasAccount ? '<a class="btn" href="#/login">Log in</a>' : '<a class="btn" href="#/signup">Create your account</a>'}
+      </div>
+    </section>
+
+    <dl class="landing-stats">
+      <div><dt>Topics done</dt><dd>${stats.done}<small>/ ${stats.total.toLocaleString()}</small></dd></div>
+      <div><dt>Learning streak</dt><dd>${act.streak}<small>${act.streak === 1 ? 'day' : 'days'}</small></dd></div>
+      <div><dt>Routine today</dt><dd>${doneToday}<small>/ ${dueToday.length}</small></dd></div>
+      <div><dt>Best routine streak</dt><dd>${bestStreak}</dd></div>
+    </dl>
+
+    ${routine.habits.length ? `
+    <section class="panel">
+      <div class="panel-head"><h2>Practice routine</h2>${me.admin ? '<a class="btn ghost small" href="#/tasks">Open tasks</a>' : '<span class="muted small">Last 14 days</span>'}</div>
+      ${routineGrid(routine, state, 14)}
+    </section>` : ''}
+
+    <section>
+      <h2 class="h2">Everything here</h2>
+      <div class="section-grid">
+        ${sections.map((s) => `
+          <a class="section-card" href="${s.href}">
+            <span class="section-icon" aria-hidden="true">${s.icon}</span>
+            <h3>${esc(s.title)}</h3>
+            <p class="muted small">${esc(s.text)}</p>
+            <span class="section-meta">${esc(s.meta)}</span>
+          </a>`).join('')}
+      </div>
+    </section>`;
+}
+
+// ---------- tasks: routine + to-dos (owner only) ----------
+
+let tk = null;
+
+async function renderTasks() {
+  document.title = 'Tasks';
+  if (!me.admin) {
+    view.innerHTML = `
+      <div class="empty big">
+        <h1>Tasks are private</h1>
+        <p class="muted">${me.hasAccount ? 'Log in to see your routine and to-do list.' : 'Create your account to start tracking your routine and tasks.'}</p>
+        <a class="btn primary" href="${me.hasAccount ? '#/login' : '#/signup'}">${me.hasAccount ? 'Log in' : 'Create account'}</a>
+      </div>`;
+    return;
+  }
+  const [routine, tasks] = await Promise.all([api('GET', `/habits?since=${sinceKey(120)}`), api('GET', '/tasks')]);
+  tk = { routine, tasks, showManage: tk?.showManage ?? false };
+  drawTasks();
+}
+
+function habitRow(h, state, key) {
+  const done = state.isDone(h, key);
+  const url = safeUrl(h.url);
+  const s = state.streak(h);
+  const r = state.rate(h);
+  return `
+    <li class="habit ${done ? 'is-done' : ''}" data-habit="${esc(h.id)}">
+      <button class="tick" type="button" role="checkbox" aria-checked="${done}" data-act="habit" data-date="${key}" aria-label="${done ? 'Mark not done' : 'Mark done'}: ${esc(h.title)}">${icons.check}</button>
+      <div class="habit-body">
+        ${url ? `<a class="item-title" href="${esc(url)}" target="_blank" rel="noopener noreferrer">${esc(h.title)}<span class="ext">${icons.ext}</span></a>` : `<span class="item-title">${esc(h.title)}</span>`}
+        <span class="muted small">${esc(scheduleLabel(h.days))}${r !== null ? ` · ${r}% last 30 days` : ''}</span>
+      </div>
+      <span class="streak ${s ? 'on' : ''}" title="Current streak">${s ? '🔥' : ''} ${s}</span>
+    </li>`;
+}
+
+function taskRow(t) {
+  const today = todayKey();
+  const due = t.date ? fromKey(t.date) : null;
+  const dateLabel = !t.date ? '' : t.date === today ? 'Today'
+    : t.date === dayKey(addDays(new Date(), 1)) ? 'Tomorrow'
+    : t.date === dayKey(addDays(new Date(), -1)) ? 'Yesterday'
+    : due.toLocaleDateString(undefined, { weekday: 'short', month: 'short', day: 'numeric' });
+  const overdue = !t.done && t.date && t.date < today;
+  return `
+    <li class="task-row ${t.done ? 'is-done' : ''}" data-task="${esc(t.id)}">
+      <button class="tick" type="button" role="checkbox" aria-checked="${t.done}" data-act="task-toggle" aria-label="${t.done ? 'Mark not done' : 'Mark done'}: ${esc(t.title)}">${icons.check}</button>
+      <span class="task-title">${linkify(t.title)}</span>
+      ${dateLabel ? `<span class="pill ${overdue ? 'overdue' : ''}">${esc(dateLabel)}</span>` : ''}
+      <button type="button" class="icon-btn" data-act="task-delete" title="Delete task" aria-label="Delete task: ${esc(t.title)}">${icons.trash}</button>
+    </li>`;
+}
+
+function drawTasks() {
+  const { routine, tasks } = tk;
+  const state = routineState(routine);
+  const key = todayKey();
+  const due = routine.habits.filter((h) => isDue(h, state.today));
+  const notToday = routine.habits.filter((h) => !isDue(h, state.today));
+  const doneToday = due.filter((h) => state.isDone(h, key)).length;
+  const open = tasks.filter((t) => !t.done);
+  const groups = [
+    ['Overdue', open.filter((t) => t.date && t.date < key)],
+    ['Today', open.filter((t) => t.date === key)],
+    ['Upcoming', open.filter((t) => t.date && t.date > key)],
+    ['Someday', open.filter((t) => !t.date)],
+  ];
+  const doneRecent = tasks.filter((t) => t.done).sort((a, b) => (b.doneAt || '').localeCompare(a.doneAt || ''));
+  const tasksToday = groups[0][1].length + groups[1][1].length;
+  const dateText = state.today.toLocaleDateString(undefined, { weekday: 'long', day: 'numeric', month: 'long' });
+  const dayOptions = `<option value="daily">Daily</option><option value="weekdays">Weekdays (Mon–Fri)</option>${DAY_NAMES.map((d, i) => `<option value="${i}">Every ${d}</option>`).join('')}`;
+
+  view.innerHTML = `
+    <section class="hero">
+      <div>
+        <p class="eyebrow">${esc(dateText)}</p>
+        <h1>${due.length && doneToday === due.length && !tasksToday ? 'All done for today 🎉' : 'Today'}</h1>
+        <p class="muted">${due.length ? `${doneToday} of ${plural(due.length, 'routine item')} done` : 'Nothing in your routine today'} · ${plural(tasksToday, 'task')} left${groups[0][1].length ? ` (${groups[0][1].length} overdue)` : ''}</p>
+      </div>
+      <dl class="kpis">
+        <div><dt>Routine</dt><dd>${doneToday}/${due.length}</dd></div>
+        <div><dt>Tasks left</dt><dd>${tasksToday}</dd></div>
+        <div><dt>Best streak</dt><dd>${Math.max(0, ...routine.habits.map(state.streak))}</dd></div>
+      </dl>
+    </section>
+
+    <div class="tasks-layout">
+      <section class="panel">
+        <div class="panel-head"><h2>Today's routine</h2><button type="button" class="btn ghost small" data-act="toggle-manage">${tk.showManage ? 'Done editing' : 'Edit routine'}</button></div>
+        ${due.length ? `<ul class="habits">${due.map((h) => habitRow(h, state, key)).join('')}</ul>` : '<p class="muted">Nothing scheduled today.</p>'}
+        ${notToday.length ? `
+          <div class="not-today">
+            <div class="eyebrow">Not today</div>
+            <ul>${notToday.map((h) => { const n = state.nextDue(h); return `<li><span>${esc(h.title)}</span><span class="muted small">${n ? `Next: ${n.toLocaleDateString(undefined, { weekday: 'long' })}` : ''}</span></li>`; }).join('')}</ul>
+          </div>` : ''}
+        ${tk.showManage ? `
+          <div class="manage">
+            <ul class="manage-list">${routine.habits.map((h) => `
+              <li data-habit="${esc(h.id)}">
+                <span>${esc(h.title)} <span class="muted small">· ${esc(scheduleLabel(h.days))}</span></span>
+                <button type="button" class="icon-btn" data-act="habit-delete" title="Remove" aria-label="Remove ${esc(h.title)} from routine">${icons.trash}</button>
+              </li>`).join('')}</ul>
+            <form data-form="add-habit" class="add-habit">
+              <input name="title" placeholder="e.g. Codeforces Div 2" aria-label="Routine item name" required maxlength="120">
+              <input name="url" type="url" placeholder="Link (optional)" aria-label="Link">
+              <select name="days" aria-label="Schedule">${dayOptions}</select>
+              <button class="btn">Add</button>
+            </form>
+          </div>` : ''}
+      </section>
+
+      <section class="panel">
+        <div class="panel-head"><h2>Tasks</h2></div>
+        <form data-form="add-task" class="add-task">
+          <input name="title" placeholder="Add a task, e.g. Revise Redis persistence" aria-label="New task" required maxlength="300">
+          <input name="date" type="date" value="${key}" aria-label="Due date">
+          <button class="btn primary">Add</button>
+        </form>
+        ${groups.map(([label, list]) => list.length ? `
+          <div class="task-group ${label === 'Overdue' ? 'overdue' : ''}">
+            <div class="eyebrow">${label} · ${list.length}</div>
+            <ul class="tasks">${list.map(taskRow).join('')}</ul>
+          </div>` : '').join('')}
+        ${!open.length ? '<p class="muted">No open tasks. Add one above.</p>' : ''}
+        ${doneRecent.length ? `
+          <details class="task-group">
+            <summary class="eyebrow">Done · ${doneRecent.length} in the last 30 days</summary>
+            <ul class="tasks">${doneRecent.map(taskRow).join('')}</ul>
+          </details>` : ''}
+      </section>
+    </div>
+
+    ${routine.habits.length ? `
+    <section class="panel">
+      <div class="panel-head"><h2>Last 4 weeks</h2><span class="muted small">Click a square to tick or untick that day. Streaks skip days that aren't scheduled.</span></div>
+      ${routineGrid(routine, state, 28, true)}
+    </section>` : ''}`;
+}
+
+// ---------- resources ----------
+
+let rs = null;
+
+async function renderResources() {
+  document.title = 'Resources';
+  const [data, routine] = await Promise.all([api('GET', '/resources'), api('GET', `/habits?since=${todayKey()}`)]);
+  rs = { ...data, habits: routine.habits, q: '' };
+  drawResources();
+}
+
+const linkLi = (title, url, extra = '') => {
+  const u = safeUrl(url);
+  let host = '';
+  try { host = u ? new URL(u).hostname.replace(/^www\./, '') : ''; } catch { /* not a URL */ }
+  return `<li>${u ? `<a href="${esc(u)}" target="_blank" rel="noopener noreferrer">${esc(title)}</a>` : esc(title)}${host ? ` <span class="host">${esc(host)}</span>` : ''}${extra}</li>`;
+};
+
+function resourcesHtml() {
+  const q = rs.q.trim().toLowerCase();
+  const match = (...parts) => !q || parts.join(' ').toLowerCase().includes(q);
+  const practice = rs.habits.filter((h) => h.url && match(h.title, h.url));
+  const mine = rs.links.filter((l) => match(l.title, l.url, l.category, l.note));
+  const cats = [...new Set(mine.map((l) => l.category || 'Other'))].sort();
+  const fromRm = rs.roadmaps
+    .map((r) => ({ ...r, resources: r.resources.filter((x) => x.title && match(x.title, x.url, r.title)) }))
+    .filter((r) => r.resources.length);
+  const total = practice.length + mine.length + fromRm.reduce((n, r) => n + r.resources.length, 0);
+  if (!total) return '<p class="empty">Nothing matches.</p>';
+  return `
+    ${practice.length ? `
+    <section class="res-section">
+      <h2>🏁 Practice & contests</h2>
+      <ul class="res-list">${practice.map((h) => linkLi(h.title, h.url, ` <span class="muted small">· ${esc(scheduleLabel(h.days))}</span>`)).join('')}</ul>
+    </section>` : ''}
+    ${mine.length ? `
+    <section class="res-section">
+      <h2>⭐ My links</h2>
+      <div class="res-cols">${cats.map((c) => `
+        <div class="res-card">
+          <h3>${esc(c)}</h3>
+          <ul class="res-list">${mine.filter((l) => (l.category || 'Other') === c).map((l) => linkLi(l.title, l.url,
+            `${l.note ? `<div class="muted small">${esc(l.note)}</div>` : ''}${me.admin ? ` <button type="button" class="link danger" data-act="link-delete" data-link="${esc(l.id)}">Remove</button>` : ''}`)).join('')}</ul>
+        </div>`).join('')}
+      </div>
+    </section>` : ''}
+    ${fromRm.length ? `
+    <section class="res-section">
+      <h2>📚 From your roadmaps</h2>
+      <div class="res-cols">${fromRm.map((r) => `
+        <div class="res-card">
+          <h3><a href="#/r/${esc(r.id)}">${esc(r.title)}</a></h3>
+          <ul class="res-list">${r.resources.map((x) => linkLi(x.title, x.url)).join('')}</ul>
+        </div>`).join('')}
+      </div>
+    </section>` : ''}`;
+}
+
+function drawResources() {
+  const cats = [...new Set(rs.links.map((l) => l.category).filter(Boolean))].sort();
+  view.innerHTML = `
+    <header class="page-head">
+      <div>
+        <h1>🔗 Resources</h1>
+        <p class="muted">Every course, playlist, practice site and link, in one place.</p>
+      </div>
+    </header>
+    ${me.admin ? `
+    <form data-form="add-link" class="panel add-link">
+      <h2>Add a link</h2>
+      <div class="add-link-fields">
+        <input name="title" placeholder="Title" aria-label="Title" required maxlength="200">
+        <input name="url" type="url" placeholder="https://…" aria-label="URL" required>
+        <input name="category" placeholder="Category, e.g. YouTube" aria-label="Category" list="link-cats" maxlength="60">
+        <datalist id="link-cats">${cats.map((c) => `<option value="${esc(c)}">`).join('')}</datalist>
+        <input name="note" placeholder="Note (optional)" aria-label="Note" maxlength="500">
+        <button class="btn primary">Add</button>
+      </div>
+    </form>` : ''}
+    <input type="search" id="res-search" placeholder="Search resources" aria-label="Search resources" value="${esc(rs.q)}">
+    <div id="res-body" class="res-body">${resourcesHtml()}</div>`;
+  $('#res-search').addEventListener('input', (e) => {
+    rs.q = e.target.value;
+    $('#res-body').innerHTML = resourcesHtml();
+  });
+}
+
 // ---------- events ----------
 
 document.addEventListener('click', async (e) => {
@@ -911,8 +1328,66 @@ document.addEventListener('click', async (e) => {
       case 'delete-rm':
         if (!confirm(`Delete "${rm.title}" and all its progress? This can't be undone.`)) return;
         await api('DELETE', `/roadmaps/${rm.id}`);
-        location.hash = '#/';
+        location.hash = '#/roadmaps';
         break;
+      case 'habit': {
+        const habitId = btn.closest('[data-habit]').dataset.habit;
+        const date = btn.dataset.date;
+        const list = tk.routine.checkins;
+        const was = list.some((c) => c.habitId === habitId && c.date === date);
+        tk.routine.checkins = was ? list.filter((c) => !(c.habitId === habitId && c.date === date)) : [...list, { habitId, date }];
+        drawTasks();
+        try {
+          await api('PUT', `/habits/${habitId}/checkins/${date}`, { done: !was });
+        } catch (err) {
+          tk.routine.checkins = list;
+          drawTasks();
+          throw err;
+        }
+        break;
+      }
+      case 'toggle-manage':
+        tk.showManage = !tk.showManage;
+        drawTasks();
+        break;
+      case 'habit-delete': {
+        const habitId = btn.closest('[data-habit]').dataset.habit;
+        const h = tk.routine.habits.find((x) => x.id === habitId);
+        if (!confirm(`Remove "${h.title}" from your routine? Its history is deleted too.`)) return;
+        await api('DELETE', `/habits/${habitId}`);
+        tk.routine.habits = tk.routine.habits.filter((x) => x.id !== habitId);
+        drawTasks();
+        break;
+      }
+      case 'task-toggle': {
+        const t = tk.tasks.find((x) => x.id === btn.closest('[data-task]').dataset.task);
+        const prev = { ...t };
+        Object.assign(t, { done: !t.done, doneAt: t.done ? null : new Date().toISOString() });
+        drawTasks();
+        try {
+          Object.assign(t, await api('PATCH', `/tasks/${t.id}`, { done: t.done }));
+        } catch (err) {
+          Object.assign(t, prev);
+          drawTasks();
+          throw err;
+        }
+        break;
+      }
+      case 'task-delete': {
+        const taskId = btn.closest('[data-task]').dataset.task;
+        await api('DELETE', `/tasks/${taskId}`);
+        tk.tasks = tk.tasks.filter((x) => x.id !== taskId);
+        drawTasks();
+        break;
+      }
+      case 'link-delete': {
+        const l = rs.links.find((x) => x.id === btn.dataset.link);
+        if (!confirm(`Remove "${l.title}"?`)) return;
+        await api('DELETE', `/links/${l.id}`);
+        rs.links = rs.links.filter((x) => x.id !== l.id);
+        $('#res-body').innerHTML = resourcesHtml();
+        break;
+      }
       case 'tag':
         pl.tag = pl.tag === btn.dataset.tag ? '' : btn.dataset.tag;
         drawPages();
@@ -970,13 +1445,23 @@ view.addEventListener('submit', async (e) => {
   submit.disabled = true;
   try {
     switch (form.dataset.form) {
-      case 'login':
-        await api('POST', '/login', { password: data.password });
-        me.admin = true;
+      case 'login': {
+        const r = await api('POST', '/login', { username: data.username, password: data.password });
+        Object.assign(me, { admin: true, name: r.name });
         renderAuth();
-        toast('Logged in. You can edit now.');
-        location.hash = '#/';
+        toast(`Welcome back, ${r.name.split(' ')[0]}`);
+        location.hash = '#/tasks';
         return;
+      }
+      case 'signup': {
+        if (data.password !== data.confirm) throw new Error("The two passwords don't match");
+        const r = await api('POST', '/signup', { name: data.name, username: data.username, password: data.password, setupKey: data.setupKey });
+        Object.assign(me, { admin: true, hasAccount: true, name: r.name });
+        renderAuth();
+        toast('Account created. You are logged in.');
+        location.hash = '#/tasks';
+        return;
+      }
       case 'add-item': {
         const secId = form.dataset.sec;
         const item = await api('POST', `/sections/${secId}/items`, { title: data.title, url: data.url || undefined });
@@ -1012,6 +1497,24 @@ view.addEventListener('submit', async (e) => {
         const r = await api('POST', '/import/markdown', { title: data.title, markdown: data.markdown });
         toast(`Imported ${plural(r.sections.reduce((n, s) => n + s.items.length, 0), 'topic')}`);
         location.hash = `#/r/${r.id}`;
+        return;
+      }
+      case 'add-task': {
+        tk.tasks.push(await api('POST', '/tasks', { title: data.title, date: data.date || null }));
+        drawTasks();
+        $('form[data-form="add-task"] input[name="title"]')?.focus();
+        return;
+      }
+      case 'add-habit': {
+        const daysValue = data.days === 'daily' ? [0, 1, 2, 3, 4, 5, 6] : data.days === 'weekdays' ? [1, 2, 3, 4, 5] : [Number(data.days)];
+        tk.routine.habits.push(await api('POST', '/habits', { title: data.title, url: data.url || undefined, days: daysValue }));
+        drawTasks();
+        return;
+      }
+      case 'add-link': {
+        rs.links.push(await api('POST', '/links', { title: data.title, url: data.url, category: data.category, note: data.note }));
+        drawResources();
+        toast('Link added');
         return;
       }
       case 'new-page': {

@@ -43,18 +43,56 @@ const notes = (list) => {
 
 // ---------- auth ----------
 
-app.get('/api/me', (req, res) => res.json({ admin: auth.isAdmin(req), editingEnabled: auth.editingEnabled() }));
+app.get('/api/me', async (req, res) => {
+  const account = await store.getAccount();
+  res.json({
+    admin: auth.isAdmin(req),
+    editingEnabled: auth.editingEnabled(),
+    hasAccount: Boolean(account),
+    name: account?.name ?? null,
+  });
+});
 
-app.post('/api/login', (req, res) => {
-  const ip = req.ip || 'unknown';
-  if (!auth.editingEnabled()) throw httpError(400, 'Editing is turned off: ADMIN_PASSWORD is not set on the server.');
-  if (auth.tooManyAttempts(ip)) throw httpError(429, 'Too many attempts. Try again in 15 minutes.');
-  if (!auth.checkPassword(req.body?.password)) {
-    auth.recordFailure(ip);
-    throw httpError(401, 'Wrong password');
+const guardAttempts = (req) => {
+  if (!auth.editingEnabled()) throw httpError(400, 'Accounts are turned off: ADMIN_PASSWORD is not set on the server.');
+  if (auth.tooManyAttempts(req.ip || 'unknown')) throw httpError(429, 'Too many attempts. Try again in 15 minutes.');
+};
+
+// First-time setup: creates the single owner account. Needs the setup key (ADMIN_PASSWORD)
+// so nobody else can claim the site before you do. Closed once the account exists.
+app.post('/api/signup', async (req, res) => {
+  guardAttempts(req);
+  if (await store.getAccount()) throw httpError(409, 'An account already exists. Log in instead.');
+  const b = req.body || {};
+  if (!auth.checkSetupKey(b.setupKey)) {
+    auth.recordFailure(req.ip || 'unknown');
+    throw httpError(401, 'Wrong setup key');
+  }
+  const name = text(b.name, 'Name', { max: 80 });
+  const username = text(b.username, 'Username', { max: 40 }).toLowerCase();
+  if (!/^[a-z0-9._-]{3,40}$/.test(username)) throw httpError(400, 'Username: 3–40 letters, numbers, dots, dashes or underscores');
+  if (typeof b.password !== 'string' || b.password.length < 8) throw httpError(400, 'Password must be at least 8 characters');
+  if (b.password.length > 200) throw httpError(400, 'Password is too long');
+  const account = await store.createAccount({ name, username, ...(await auth.hashPassword(b.password)) });
+  if (!account) throw httpError(409, 'An account already exists. Log in instead.');
+  await store.seedHabits();
+  auth.setSession(req, res);
+  res.status(201).json({ admin: true, name });
+});
+
+app.post('/api/login', async (req, res) => {
+  guardAttempts(req);
+  const account = await store.getAccount();
+  if (!account) throw httpError(409, 'No account yet. Create one first.');
+  const b = req.body || {};
+  const sameUser = typeof b.username === 'string' && b.username.trim().toLowerCase() === account.username;
+  const ok = await auth.verifyPassword(b.password, account); // always run, so timing doesn't reveal the username
+  if (!sameUser || !ok) {
+    auth.recordFailure(req.ip || 'unknown');
+    throw httpError(401, 'Wrong username or password');
   }
   auth.setSession(req, res);
-  res.json({ admin: true });
+  res.json({ admin: true, name: account.name });
 });
 
 app.post('/api/logout', (req, res) => {
@@ -176,6 +214,107 @@ app.patch('/api/pages/:id', async (req, res) => {
 
 app.delete('/api/pages/:id', async (req, res) => {
   found(await store.deletePage(id(req)), 'Page');
+  res.status(204).end();
+});
+
+// ---------- routine (habits), check-ins and tasks ----------
+
+const DATE = /^\d{4}-\d{2}-\d{2}$/;
+const date = (v, name = 'date') => {
+  if (typeof v !== 'string' || !DATE.test(v) || Number.isNaN(Date.parse(v))) throw httpError(400, `${name} must be YYYY-MM-DD`);
+  return v;
+};
+const days = (v) => {
+  if (v === undefined) return undefined;
+  if (!Array.isArray(v) || !v.length || v.some((d) => !Number.isInteger(d) || d < 0 || d > 6)) {
+    throw httpError(400, 'days must be a non-empty list of weekdays 0–6 (0 = Sunday)');
+  }
+  return [...new Set(v)].sort();
+};
+const ownerOnly = (req) => {
+  if (!auth.isAdmin(req)) throw httpError(401, 'Log in to see your tasks');
+};
+
+// The routine and its check-ins are public, like roadmap progress.
+app.get('/api/habits', async (req, res) => {
+  const since = req.query.since ? date(req.query.since, 'since') : new Date(Date.now() - 120 * 86400000).toISOString().slice(0, 10);
+  const [habits, checkins] = await Promise.all([store.listHabits(), store.listCheckins(since)]);
+  res.json({ habits, checkins });
+});
+
+app.post('/api/habits', async (req, res) => {
+  res.status(201).json(await store.createHabit({
+    title: text(req.body.title, 'Name', { max: 120 }),
+    url: optionalUrl(req.body.url) ?? null,
+    days: days(req.body.days) ?? [0, 1, 2, 3, 4, 5, 6],
+  }));
+});
+
+app.patch('/api/habits/:id', async (req, res) => {
+  res.json(found(await store.updateHabit(id(req), {
+    title: text(req.body.title, 'Name', { required: false, max: 120 }),
+    url: optionalUrl(req.body.url),
+    days: days(req.body.days),
+  }), 'Routine item'));
+});
+
+app.delete('/api/habits/:id', async (req, res) => {
+  found(await store.deleteHabit(id(req)), 'Routine item');
+  res.status(204).end();
+});
+
+app.put('/api/habits/:id/checkins/:date', async (req, res) => {
+  res.json(found(await store.setCheckin(id(req), date(req.params.date), req.body?.done !== false), 'Routine item'));
+});
+
+// Tasks are private: only the owner can see them.
+app.get('/api/tasks', async (req, res) => {
+  ownerOnly(req);
+  res.json(await store.listTasks());
+});
+
+app.post('/api/tasks', async (req, res) => {
+  res.status(201).json(await store.createTask({
+    title: text(req.body.title, 'Task', { max: 300 }),
+    date: req.body.date ? date(req.body.date) : null,
+  }));
+});
+
+app.patch('/api/tasks/:id', async (req, res) => {
+  const b = req.body;
+  res.json(found(await store.updateTask(id(req), {
+    title: text(b.title, 'Task', { required: false, max: 300 }),
+    date: b.date === undefined ? undefined : b.date ? date(b.date) : null,
+    done: b.done === undefined ? undefined : Boolean(b.done),
+  }), 'Task'));
+});
+
+app.delete('/api/tasks/:id', async (req, res) => {
+  found(await store.deleteTask(id(req)), 'Task');
+  res.status(204).end();
+});
+
+// ---------- resources ----------
+
+app.get('/api/resources', async (req, res) => res.json(await store.listResources()));
+
+const linkBody = (b, required) => ({
+  title: text(b.title, 'Title', { required, max: 200 }),
+  url: (() => {
+    const u = optionalUrl(b.url);
+    if (required && !u) throw httpError(400, 'Link URL is required');
+    return u ?? undefined;
+  })(),
+  category: text(b.category, 'Category', { required: false, max: 60 }),
+  note: text(b.note, 'Note', { required: false, max: 500 }),
+});
+
+app.post('/api/links', async (req, res) => res.status(201).json(await store.createLink(linkBody(req.body, true))));
+
+app.patch('/api/links/:id', async (req, res) => res.json(found(await store.updateLink(id(req), linkBody(req.body, false)), 'Link')));
+
+app.delete('/api/links/:id', async (req, res) => {
+  found(await store.deleteLink(id(req)), 'Link');
   res.status(204).end();
 });
 

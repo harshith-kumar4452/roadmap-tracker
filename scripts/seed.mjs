@@ -48,6 +48,11 @@ try {
     await pages.createIndex({ kind: 1, updatedAt: -1 });
     console.log(`Seeded ${addedPages} new pages (${pageSeed.length - addedPages} already existed)`);
   }
+
+  // Default practice routine (LeetCode/GFG POTD, CodeChef Starters, LeetCode Weekly), only if there is none yet.
+  const store = await import('../src/store.js');
+  console.log((await store.seedHabits()) ? 'Added the default practice routine' : 'Practice routine already set up');
 } finally {
   await client.close();
 }
+process.exit(0); // the store module keeps its own connection open

@@ -1,23 +1,41 @@
-import { createHash, createHmac, timingSafeEqual } from 'node:crypto';
+import { createHash, createHmac, randomBytes, scrypt, timingSafeEqual } from 'node:crypto';
+import { promisify } from 'node:util';
 
-// A single owner password (ADMIN_PASSWORD). Anyone can read; editing needs a
-// signed session cookie, which is issued after the password is checked.
+// One owner account (name, username, scrypt-hashed password) stored in MongoDB.
+// Anyone can read the public pages; editing needs a signed session cookie.
+//
+// ADMIN_PASSWORD (env) has two jobs:
+//  - the one-time setup key that /signup asks for, so a stranger can't claim the site first;
+//  - the secret that signs session cookies (unless SESSION_SECRET is set).
 
+const scryptAsync = promisify(scrypt);
 const COOKIE = 'rt_session';
 const MAX_AGE_S = 60 * 60 * 24 * 30; // 30 days
 
-const password = () => process.env.ADMIN_PASSWORD || '';
-// Sessions are signed with SESSION_SECRET, or the password itself, so changing the password logs everyone out.
-const secret = () => process.env.SESSION_SECRET || password();
+const setupKey = () => process.env.ADMIN_PASSWORD || '';
+const secret = () => process.env.SESSION_SECRET || setupKey();
 
 const sha = (s) => createHash('sha256').update(String(s)).digest();
 const sign = (value) => createHmac('sha256', secret()).update(value).digest('base64url');
 
-export const editingEnabled = () => Boolean(password());
+export const editingEnabled = () => Boolean(secret());
 
-export function checkPassword(candidate) {
-  if (!editingEnabled() || typeof candidate !== 'string') return false;
-  return timingSafeEqual(sha(candidate), sha(password()));
+export function checkSetupKey(candidate) {
+  if (!setupKey() || typeof candidate !== 'string') return false;
+  return timingSafeEqual(sha(candidate), sha(setupKey()));
+}
+
+export async function hashPassword(password) {
+  const salt = randomBytes(16).toString('base64url');
+  const hash = (await scryptAsync(password, salt, 64)).toString('base64url');
+  return { salt, hash };
+}
+
+export async function verifyPassword(password, account) {
+  if (typeof password !== 'string' || !account) return false;
+  const given = await scryptAsync(password, account.salt, 64);
+  const expected = Buffer.from(account.hash, 'base64url');
+  return given.length === expected.length && timingSafeEqual(given, expected);
 }
 
 function readCookie(req) {

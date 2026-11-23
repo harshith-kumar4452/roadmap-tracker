@@ -8,12 +8,18 @@ A personal tracker for learning roadmaps. I kept my roadmaps (backend, system de
 
 ## Features
 
-- **Dashboard**: overall progress, topics finished today and this week, a day streak, and an activity heatmap.
+- **Home page**: your name, overall progress, learning and routine streaks, the last two weeks of your practice routine, and a card for every section.
+- **Tasks** (private): a daily practice routine and a to-do list.
+  - The routine starts with LeetCode POTD and GFG POTD (daily), CodeChef Starters (Wednesdays) and LeetCode Weekly Contest (Sundays). Add, remove or reschedule items.
+  - Tick today's items, or click any square in the 4-week grid to fill in a day you missed logging. Each item shows its streak and its hit rate over the last 30 days.
+  - To-dos with a due date, grouped into Overdue, Today, Upcoming and Someday.
+- **Resources**: practice and contest sites, your own links (with categories and notes), and the 📚 Resources of every roadmap, all searchable on one page.
+- **Roadmaps dashboard**: overall progress, topics finished today and this week, a day streak, and an activity heatmap.
 - **Pick up where you left off**: the next unfinished topic of your most recently active roadmaps, which you can tick right from the dashboard.
 - **Notion-style roadmap pages**: 📚 Resources, the intro, notes sections (what the playlist doesn't cover, mini project, how it lines up with other roadmaps), then the **Course Index** table with Name, Level, Topic, Status and Link.
 - **Group by level or by topic**, filter by status (To do / In progress / Done), search topics and notes.
 - **Three-step status** (Not started → In progress → Done), a level per topic (Beginner / Intermediate / Advanced), and a private note on each topic.
-- **Public to view, password to edit**: visitors see your progress; only you can change it.
+- **One owner account**: create it once at `/#/signup` (name, username, password). After that sign-up closes; visitors can view everything except Tasks, and only you can edit.
 - **Cheat sheets**: quick-reference pages written in Markdown, with tables, code blocks and links. Filter by tag and search.
 - **Projects**: things to build, each with an Idea / Building / Done status, a feature checklist and its tech stack.
 - **Mindmaps**: write an indented outline and it's drawn as a mind map, with the topic in the centre and branches on both sides.
@@ -26,8 +32,8 @@ A personal tracker for learning roadmaps. I kept my roadmaps (backend, system de
 | --- | --- |
 | Frontend | Plain HTML, CSS and JavaScript (no build step), in `public/` |
 | Backend | Node.js + Express 5 (`src/app.js`) |
-| Database | MongoDB Atlas: `roadmaps` (one document per roadmap, sections and topics embedded) and `pages` (cheat sheets, projects, mindmaps) |
-| Auth | One owner password (`ADMIN_PASSWORD`), HMAC-signed HttpOnly cookie |
+| Database | MongoDB Atlas: `roadmaps` (sections and topics embedded), `pages` (cheat sheets, projects, mindmaps), `habits` + `checkins` (routine), `tasks`, `links`, `accounts` |
+| Auth | One owner account (scrypt-hashed password), HMAC-signed HttpOnly session cookie. `ADMIN_PASSWORD` is the one-time setup key for sign-up and signs the cookie |
 | Hosting | Vercel: `public/` as static files, `api/index.js` as a serverless function |
 
 ## Project structure
@@ -58,7 +64,7 @@ npm run seed              # loads the 30 roadmaps and starter pages into MongoDB
 npm run dev               # http://localhost:4321
 ```
 
-Click **Log in to edit** and enter your `ADMIN_PASSWORD` to tick topics and edit pages.
+Open **Create account** (`/#/signup`), pick a name, username and password, and enter your `ADMIN_PASSWORD` as the setup key. That key stops anyone else from claiming the site before you do. After that, log in with your username and password.
 
 `npm run seed` only adds roadmaps and pages that aren't in the database yet, so it never overwrites your edits. `npm run seed -- --reset` deletes every roadmap first, which also wipes your progress (pages are kept).
 
@@ -68,6 +74,7 @@ Click **Log in to edit** and enter your `ADMIN_PASSWORD` to tick topics and edit
 2. Import this repository at [vercel.com/new](https://vercel.com/new). Keep the framework preset at **Other** and leave the build settings empty.
 3. Under **Environment Variables**, add `MONGODB_URI` and `ADMIN_PASSWORD`.
 4. Deploy. Run `npm run seed` once from your machine (with the same `MONGODB_URI` in `.env`) to load the roadmaps.
+5. Open `/#/signup` on the live site and create your account, using `ADMIN_PASSWORD` as the setup key.
 
 ## API
 
@@ -91,8 +98,16 @@ All responses are JSON. `GET` routes are public; everything else needs the owner
 | GET | `/api/pages/:id` | One page with its Markdown body |
 | POST | `/api/pages` | Create a page (`kind`, `title`) |
 | PATCH / DELETE | `/api/pages/:id` | Edit title, summary, tags, status, body / delete |
-| GET | `/api/me` | Whether you're logged in |
+| GET | `/api/me` | Whether you're logged in, whether an account exists, your name |
+| POST | `/api/signup` | Create the owner account (needs the setup key; closed once it exists) |
 | POST | `/api/login` / `/api/logout` | Start / end the owner session |
+| GET | `/api/habits?since=YYYY-MM-DD` | Routine items and check-ins |
+| POST / PATCH / DELETE | `/api/habits`, `/api/habits/:id` | Add, edit, remove a routine item (`days`: 0 = Sunday … 6) |
+| PUT | `/api/habits/:id/checkins/:date` | Tick (`{ "done": true }`) or untick a day |
+| GET / POST | `/api/tasks` | List (owner only) / add tasks |
+| PATCH / DELETE | `/api/tasks/:id` | Edit, complete or delete a task |
+| GET | `/api/resources` | Your links plus every roadmap's resources |
+| POST / PATCH / DELETE | `/api/links`, `/api/links/:id` | Manage your links |
 
 ## Credits
 

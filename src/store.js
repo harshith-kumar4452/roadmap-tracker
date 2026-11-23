@@ -31,6 +31,11 @@ async function collection(name) {
 }
 const roadmaps = () => collection('roadmaps');
 const pages = () => collection('pages');
+const accounts = () => collection('accounts');
+const habits = () => collection('habits');
+const checkins = () => collection('checkins');
+const tasks = () => collection('tasks');
+const links = () => collection('links');
 
 const allItems = (doc) => doc.sections.flatMap((s) => s.items.map((i) => ({ ...i, section: s.title })));
 
@@ -194,6 +199,147 @@ export async function updatePage(id, patch) {
 
 export async function deletePage(id) {
   return (await (await pages()).deleteOne({ _id: id })).deletedCount > 0;
+}
+
+// ---------- owner account ----------
+// There is exactly one account (_id "owner"). The unique _id also stops two signups racing.
+
+export async function getAccount() {
+  return (await accounts()).findOne({ _id: 'owner' });
+}
+
+export async function createAccount({ name, username, salt, hash }) {
+  const doc = { _id: 'owner', name, username, salt, hash, createdAt: new Date().toISOString() };
+  try {
+    await (await accounts()).insertOne(doc);
+  } catch (err) {
+    if (err.code === 11000) return null; // already exists
+    throw err;
+  }
+  return doc;
+}
+
+// ---------- routine (habits) and daily check-ins ----------
+//
+// habits:   { _id, title, url, days: [0-6] (0 = Sunday), position, createdAt }
+// checkins: { _id: "<habitId>:<YYYY-MM-DD>", habitId, date, at }
+// Dates are the browser's local calendar day, so "today" follows the viewer's time zone.
+
+export const DEFAULT_HABITS = [
+  { title: 'LeetCode POTD', url: 'https://leetcode.com/problemset/', days: [0, 1, 2, 3, 4, 5, 6] },
+  { title: 'GFG POTD', url: 'https://www.geeksforgeeks.org/problem-of-the-day', days: [0, 1, 2, 3, 4, 5, 6] },
+  { title: 'CodeChef Starters', url: 'https://www.codechef.com/contests', days: [3] },
+  { title: 'LeetCode Weekly Contest', url: 'https://leetcode.com/contest/', days: [0] },
+];
+
+export async function listHabits() {
+  return (await (await habits()).find({}).sort({ position: 1, createdAt: 1 }).toArray()).map(publicDoc);
+}
+
+export async function seedHabits() {
+  const col = await habits();
+  if (await col.countDocuments()) return false;
+  const now = new Date().toISOString();
+  await col.insertMany(DEFAULT_HABITS.map((h, position) => ({ _id: newId(), ...h, position, createdAt: now })));
+  return true;
+}
+
+export async function createHabit({ title, url = null, days }) {
+  const col = await habits();
+  const doc = { _id: newId(), title, url, days, position: await col.countDocuments(), createdAt: new Date().toISOString() };
+  await col.insertOne(doc);
+  return publicDoc(doc);
+}
+
+export async function updateHabit(id, patch) {
+  const $set = {};
+  for (const key of ['title', 'url', 'days']) if (patch[key] !== undefined) $set[key] = patch[key];
+  const res = await (await habits()).findOneAndUpdate({ _id: id }, { $set }, { returnDocument: 'after' });
+  return res ? publicDoc(res) : null;
+}
+
+export async function deleteHabit(id) {
+  const ok = (await (await habits()).deleteOne({ _id: id })).deletedCount > 0;
+  if (ok) await (await checkins()).deleteMany({ habitId: id });
+  return ok;
+}
+
+export async function listCheckins(since) {
+  const docs = await (await checkins()).find({ date: { $gte: since } }, { projection: { _id: 0, habitId: 1, date: 1 } }).toArray();
+  return docs;
+}
+
+export async function setCheckin(habitId, date, done) {
+  if (!(await (await habits()).countDocuments({ _id: habitId }))) return null;
+  const col = await checkins();
+  const _id = `${habitId}:${date}`;
+  if (done) await col.updateOne({ _id }, { $setOnInsert: { habitId, date, at: new Date().toISOString() } }, { upsert: true });
+  else await col.deleteOne({ _id });
+  return { habitId, date, done };
+}
+
+// ---------- tasks ----------
+// { _id, title, date: "YYYY-MM-DD" | null (someday), done, doneAt, createdAt }
+
+export async function listTasks() {
+  const monthAgo = new Date(Date.now() - 30 * 86400000).toISOString();
+  const docs = await (await tasks())
+    .find({ $or: [{ done: false }, { doneAt: { $gte: monthAgo } }] })
+    .sort({ date: 1, createdAt: 1 })
+    .toArray();
+  return docs.map(publicDoc);
+}
+
+export async function createTask({ title, date = null }) {
+  const doc = { _id: newId(), title, date, done: false, doneAt: null, createdAt: new Date().toISOString() };
+  await (await tasks()).insertOne(doc);
+  return publicDoc(doc);
+}
+
+export async function updateTask(id, patch) {
+  const $set = {};
+  for (const key of ['title', 'date']) if (patch[key] !== undefined) $set[key] = patch[key];
+  if (patch.done !== undefined) {
+    $set.done = patch.done;
+    $set.doneAt = patch.done ? new Date().toISOString() : null;
+  }
+  const res = await (await tasks()).findOneAndUpdate({ _id: id }, { $set }, { returnDocument: 'after' });
+  return res ? publicDoc(res) : null;
+}
+
+export async function deleteTask(id) {
+  return (await (await tasks()).deleteOne({ _id: id })).deletedCount > 0;
+}
+
+// ---------- resources ----------
+// Your own links ({ _id, title, url, category, note }) plus the 📚 Resources of every roadmap.
+
+export async function listResources() {
+  const [mine, fromRoadmaps] = await Promise.all([
+    (await links()).find({}).sort({ category: 1, title: 1 }).toArray(),
+    (await roadmaps()).find({ 'resources.0': { $exists: true } }, { projection: { title: 1, resources: 1, position: 1 } }).sort({ position: 1, title: 1 }).toArray(),
+  ]);
+  return {
+    links: mine.map(publicDoc),
+    roadmaps: fromRoadmaps.map((r) => ({ id: r._id, title: r.title, resources: r.resources })),
+  };
+}
+
+export async function createLink({ title, url, category = '', note = '' }) {
+  const doc = { _id: newId(), title, url, category, note, createdAt: new Date().toISOString() };
+  await (await links()).insertOne(doc);
+  return publicDoc(doc);
+}
+
+export async function updateLink(id, patch) {
+  const $set = {};
+  for (const key of ['title', 'url', 'category', 'note']) if (patch[key] !== undefined) $set[key] = patch[key];
+  const res = await (await links()).findOneAndUpdate({ _id: id }, { $set }, { returnDocument: 'after' });
+  return res ? publicDoc(res) : null;
+}
+
+export async function deleteLink(id) {
+  return (await (await links()).deleteOne({ _id: id })).deletedCount > 0;
 }
 
 // ---------- stats ----------
