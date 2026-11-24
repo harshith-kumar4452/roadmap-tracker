@@ -47,23 +47,50 @@ function readCookie(req) {
   return null;
 }
 
-export function isAdmin(req) {
-  if (!editingEnabled()) return false;
+export function getSession(req) {
+  if (!editingEnabled()) return null;
   const raw = readCookie(req);
-  if (!raw) return false;
-  const [payload, exp, sig] = raw.split('.');
-  if (payload !== 'admin' || !exp || !sig || Number(exp) < Date.now()) return false;
-  const expected = Buffer.from(sign(`${payload}.${exp}`));
-  const given = Buffer.from(sig);
-  return expected.length === given.length && timingSafeEqual(expected, given);
+  if (!raw) return null;
+  const parts = raw.split('.');
+  // Legacy format: admin.<exp>.<sig>
+  if (parts.length === 3) {
+    const [payload, exp, sig] = parts;
+    if (payload !== 'admin' || !exp || !sig || Number(exp) < Date.now()) return null;
+    const expected = Buffer.from(sign(`${payload}.${exp}`));
+    const given = Buffer.from(sig);
+    if (expected.length === given.length && timingSafeEqual(expected, given)) {
+      return { role: 'admin', username: 'owner' };
+    }
+    return null;
+  }
+  // Current format: <role>.<username>.<exp>.<sig>
+  if (parts.length === 4) {
+    const [role, username, exp, sig] = parts;
+    if ((role !== 'admin' && role !== 'member') || !username || !exp || !sig || Number(exp) < Date.now()) return null;
+    const expected = Buffer.from(sign(`${role}.${username}.${exp}`));
+    const given = Buffer.from(sig);
+    if (expected.length === given.length && timingSafeEqual(expected, given)) {
+      return { role, username };
+    }
+  }
+  return null;
+}
+
+export function isAuthenticated(req) {
+  return Boolean(getSession(req));
+}
+
+export function isAdmin(req) {
+  return getSession(req)?.role === 'admin';
 }
 
 const secureFlag = (req) =>
   req.secure || req.headers['x-forwarded-proto'] === 'https' ? '; Secure' : '';
 
-export function setSession(req, res) {
+export function setSession(req, res, { role = 'admin', username = 'owner' } = {}) {
   const exp = Date.now() + MAX_AGE_S * 1000;
-  const value = `admin.${exp}.${sign(`admin.${exp}`)}`;
+  const payload = `${role}.${username}.${exp}`;
+  const value = `${payload}.${sign(payload)}`;
   res.setHeader('Set-Cookie', `${COOKIE}=${value}; HttpOnly; Path=/; Max-Age=${MAX_AGE_S}; SameSite=Lax${secureFlag(req)}`);
 }
 

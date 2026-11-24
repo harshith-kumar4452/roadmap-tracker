@@ -25,22 +25,22 @@ const G = {
 // x / y place each chip as a percentage of the hero on wide screens; mx / my on phones.
 // depth sets how much it follows the mouse; dur / delay vary the drift so they never sync.
 const CHIPS = [
-  { g: 'db', label: 'DBMS', color: '#0f766e', x: 58, y: 8, mx: 2, my: 8, depth: 1.2, dur: 7.5, delay: 0 },
-  { g: 'bolt', label: 'Redis', color: '#dc2626', x: 76, y: 4, mx: 36, my: 8, depth: 2, dur: 6.4, delay: -1.2 },
-  { g: 'server', label: 'Backend', color: '#2563eb', x: 90, y: 22, mx: 28, my: 60, depth: 1.4, dur: 8.2, delay: -3 },
-  { g: 'nodes', label: 'System design', color: '#7c3aed', x: 66, y: 30, mx: 4, my: 34, depth: 2.4, dur: 9, delay: -2.1 },
-  { g: 'tree', label: 'DSA', color: '#c2410c', x: 84, y: 46, mx: 2, my: 60, depth: 1, dur: 7, delay: -4.2 },
-  { g: 'stream', label: 'Kafka', color: '#0369a1', x: 60, y: 56, mx: 26, my: 86, depth: 1.8, dur: 8.6, delay: -1.6 },
-  { g: 'branch', label: 'Git', color: '#ea580c', x: 94, y: 66, mx: 74, my: 34, depth: 1.3, dur: 6.8, delay: -5 },
-  { g: 'cloud', label: 'AWS', color: '#0891b2', x: 74, y: 76, mx: 64, my: 60, depth: 2.2, dur: 9.4, delay: -2.8 },
-  { g: 'chip', label: 'OS', color: '#4d7c0f', x: 54, y: 84, mx: 4, my: 86, depth: 1.6, dur: 7.8, delay: -3.6 },
-  { g: 'globe', label: 'Networks', color: '#0d9488', x: 88, y: 88, mx: 56, my: 86, depth: 1.1, dur: 8.8, delay: -0.6 },
-  { g: 'code', label: 'POTD', color: '#ca8a04', x: 70, y: 18, mx: 48, my: 34, depth: 2.6, dur: 6.2, delay: -4.6 },
-  { g: 'trophy', label: 'Contests', color: '#b45309', x: 96, y: 4, mx: 66, my: 8, depth: 1.5, dur: 7.2, delay: -2.4 },
-  { g: 'spark', label: 'ML', color: '#be185d', x: 80, y: 60, mx: 0, my: 0, depth: 2, dur: 8, delay: -1 },
-  { g: 'atom', label: 'React', color: '#0284c7', x: 64, y: 44, mx: 0, my: 0, depth: 1.2, dur: 9.2, delay: -3.3 },
-  { g: 'table', label: 'SQL', color: '#15803d', x: 92, y: 36, mx: 0, my: 0, depth: 1.7, dur: 7.4, delay: -5.4 },
-  { g: 'sigma', label: 'Aptitude', color: '#9333ea', x: 56, y: 70, mx: 0, my: 0, depth: 2.1, dur: 8.4, delay: -2 },
+  { g: 'db', label: 'DBMS', color: '#0f766e', x: 58, y: 8, mx: 2, my: 8, depth: 1.2, dur: 7.5, delay: 0, href: '#/r/AO9qIhb-' },
+  { g: 'bolt', label: 'Redis', color: '#dc2626', x: 76, y: 4, mx: 36, my: 8, depth: 2, dur: 6.4, delay: -1.2, href: '#/r/RbCJw5X-' },
+  { g: 'server', label: 'Backend', color: '#2563eb', x: 90, y: 22, mx: 28, my: 60, depth: 1.4, dur: 8.2, delay: -3, href: '#/r/mtYv4vj7' },
+  { g: 'nodes', label: 'System design', color: '#7c3aed', x: 66, y: 30, mx: 4, my: 34, depth: 2.4, dur: 9, delay: -2.1, href: '#/r/D26fnyjb' },
+  { g: 'tree', label: 'DSA', color: '#c2410c', x: 84, y: 46, mx: 2, my: 60, depth: 1, dur: 7, delay: -4.2, href: '#/r/u3NA5_Fv' },
+  { g: 'stream', label: 'Kafka', color: '#0369a1', x: 60, y: 56, mx: 26, my: 86, depth: 1.8, dur: 8.6, delay: -1.6, href: '#/r/sUtO4qRy' },
+  { g: 'branch', label: 'Git', color: '#ea580c', x: 94, y: 66, mx: 74, my: 34, depth: 1.3, dur: 6.8, delay: -5, href: '#/r/vC2-idT0' },
+  { g: 'cloud', label: 'AWS', color: '#0891b2', x: 74, y: 76, mx: 64, my: 60, depth: 2.2, dur: 9.4, delay: -2.8, href: '#/r/Qo2JMbXk' },
+  { g: 'chip', label: 'OS', color: '#4d7c0f', x: 54, y: 84, mx: 4, my: 86, depth: 1.6, dur: 7.8, delay: -3.6, href: '#/r/fldB676-' },
+  { g: 'globe', label: 'Networks', color: '#0d9488', x: 88, y: 88, mx: 56, my: 86, depth: 1.1, dur: 8.8, delay: -0.6, href: '#/r/J1HYpIdN' },
+  { g: 'code', label: 'POTD', color: '#ca8a04', x: 70, y: 18, mx: 48, my: 34, depth: 2.6, dur: 6.2, delay: -4.6, href: '#/roadmaps' },
+  { g: 'trophy', label: 'Contests', color: '#b45309', x: 96, y: 4, mx: 66, my: 8, depth: 1.5, dur: 7.2, delay: -2.4, href: '#/roadmaps' },
+  { g: 'spark', label: 'ML', color: '#be185d', x: 80, y: 60, mx: 0, my: 0, depth: 2, dur: 8, delay: -1, href: '#/r/LL4yMJQY' },
+  { g: 'atom', label: 'React', color: '#0284c7', x: 64, y: 44, mx: 0, my: 0, depth: 1.2, dur: 9.2, delay: -3.3, href: '#/r/vcyjR_LO' },
+  { g: 'table', label: 'SQL', color: '#15803d', x: 92, y: 36, mx: 0, my: 0, depth: 1.7, dur: 7.4, delay: -5.4, href: '#/r/gProJmhk' },
+  { g: 'sigma', label: 'Aptitude', color: '#9333ea', x: 56, y: 70, mx: 0, my: 0, depth: 2.1, dur: 8.4, delay: -2, href: '#/r/i_95H7fD' },
 ];
 
 // x above is laid out for the right-hand side of the hero (54–96%); the field itself now
@@ -49,9 +49,9 @@ const fieldX = (x) => (10 + ((x - 54) / 42) * 80).toFixed(1);
 
 export function floatField() {
   return `<div class="float-field" aria-hidden="true">${CHIPS.map((c, i) => `
-    <span class="float-chip${c.mx || c.my ? '' : ' wide-only'}" style="--x:${fieldX(c.x)}%;--y:${c.y}%;--mx:${c.mx}%;--my:${c.my}%;--depth:${c.depth};--dur:${c.dur}s;--delay:${c.delay}s;--c:${c.color};--i:${i}">
+    <a class="float-chip${c.mx || c.my ? '' : ' wide-only'}" href="${c.href}" style="--x:${fieldX(c.x)}%;--y:${c.y}%;--mx:${c.mx}%;--my:${c.my}%;--depth:${c.depth};--dur:${c.dur}s;--delay:${c.delay}s;--c:${c.color};--i:${i}">
       <span class="float-inner"><svg viewBox="0 0 24 24">${G[c.g]}</svg><span>${c.label}</span></span>
-    </span>`).join('')}
+    </a>`).join('')}
   </div>`;
 }
 

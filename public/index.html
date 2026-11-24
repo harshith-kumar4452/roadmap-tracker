@@ -18,7 +18,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Round">
   <link rel="stylesheet" href="/styles.css">
+  <script>try{var t=localStorage.getItem('rt:theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;}catch(e){}</script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js" defer></script>
 </head>
 <body>
   <a class="skip" href="#view">Skip to content</a>
@@ -29,14 +32,18 @@
         <span class="brand-name">Learning hub</span>
       </a>
       <nav id="site-nav" aria-label="Main">
+        <a href="#/" data-nav="home">Home</a>
         <a href="#/roadmaps" data-nav="roadmaps">Roadmaps</a>
         <a href="#/tasks" data-nav="tasks" class="admin-only">Tasks</a>
-        <a href="#/resources" data-nav="resources">Resources</a>
-        <a href="#/cheatsheets" data-nav="cheatsheets">Cheat sheets</a>
+        <a href="#/library" data-nav="library">Library</a>
         <a href="#/projects" data-nav="projects">Projects</a>
-        <a href="#/mindmaps" data-nav="mindmaps">Mindmaps</a>
-        <a href="#/profile" data-nav="profile">Profile</a>
       </nav>
+      <a href="#/profile" class="profile-icon-btn" data-nav="profile" title="Profile" aria-label="Profile">
+        <span class="material-icons-round" aria-hidden="true">account_circle</span>
+      </a>
+      <button type="button" class="theme-btn" data-act="theme" title="Switch theme" aria-label="Switch light or dark theme">
+        <span class="material-icons-round" aria-hidden="true">dark_mode</span>
+      </button>
       <button type="button" class="help-btn" data-act="tour" title="Take the tour" aria-label="Take a quick tour of this site">
         <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 0 1 4.9.8c0 1.7-2.4 2.2-2.4 3.7M12 17h.01"/></svg>
       </button>
@@ -61,7 +68,7 @@
         <a href="#/cheatsheets">Cheat sheets</a>
         <a href="#/projects">Projects</a>
         <a href="#/mindmaps">Mindmaps</a>
-        <a href="#/profile">Profile</a>
+        <a href="#/profile" class="admin-only">Profile</a>
       </nav>
       <nav class="footer-links" aria-label="Elsewhere">
         <a href="https://my-portifolio-six-tau.vercel.app/" target="_blank" rel="noopener">Portfolio</a>

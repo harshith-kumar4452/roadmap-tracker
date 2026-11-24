@@ -45,12 +45,15 @@ const notes = (list) => {
 // ---------- auth ----------
 
 app.get('/api/me', async (req, res) => {
-  const account = await store.getAccount();
+  const session = auth.getSession(req);
+  const account = session ? await store.findAccountByUsername(session.username) : null;
+  const owner = await store.getAccount();
   res.json({
-    admin: auth.isAdmin(req),
+    authenticated: Boolean(session),
+    admin: session?.role === 'admin',
     editingEnabled: auth.editingEnabled(),
-    hasAccount: Boolean(account),
-    name: account?.name ?? null,
+    hasAccount: Boolean(owner),
+    name: session ? (account?.name ?? owner?.name ?? session.username) : null,
   });
 });
 
@@ -59,52 +62,61 @@ const guardAttempts = (req) => {
   if (auth.tooManyAttempts(req.ip || 'unknown')) throw httpError(429, 'Too many attempts. Try again in 15 minutes.');
 };
 
-// First-time setup: creates the single owner account. Needs the setup key (ADMIN_PASSWORD)
-// so nobody else can claim the site before you do. Closed once the account exists.
 app.post('/api/signup', async (req, res) => {
   guardAttempts(req);
-  if (await store.getAccount()) throw httpError(409, 'An account already exists. Log in instead.');
   const b = req.body || {};
-  if (!auth.checkSetupKey(b.setupKey)) {
-    auth.recordFailure(req.ip || 'unknown');
-    throw httpError(401, 'Wrong setup key');
+  const ownerExists = Boolean(await store.getAccount());
+  let role = 'member';
+  if (!ownerExists && b.setupKey) {
+    if (!auth.checkSetupKey(b.setupKey)) {
+      auth.recordFailure(req.ip || 'unknown');
+      throw httpError(401, 'Wrong setup key');
+    }
+    role = 'admin';
   }
   const name = text(b.name, 'Name', { max: 80 });
   const username = text(b.username, 'Username', { max: 40 }).toLowerCase();
   if (!/^[a-z0-9._-]{3,40}$/.test(username)) throw httpError(400, 'Username: 3–40 letters, numbers, dots, dashes or underscores');
   if (typeof b.password !== 'string' || b.password.length < 8) throw httpError(400, 'Password must be at least 8 characters');
   if (b.password.length > 200) throw httpError(400, 'Password is too long');
-  const account = await store.createAccount({ name, username, ...(await auth.hashPassword(b.password)) });
-  if (!account) throw httpError(409, 'An account already exists. Log in instead.');
-  await store.seedHabits();
-  auth.setSession(req, res);
-  res.status(201).json({ admin: true, name });
+  const account = await store.createAccount({ name, username, role, ...(await auth.hashPassword(b.password)) });
+  if (!account) throw httpError(409, 'That username is already taken. Try another or log in.');
+  if (role === 'admin') await store.seedHabits();
+  auth.setSession(req, res, { role, username });
+  res.status(201).json({ authenticated: true, admin: role === 'admin', name });
 });
 
 app.post('/api/login', async (req, res) => {
   guardAttempts(req);
-  const account = await store.getAccount();
-  if (!account) throw httpError(409, 'No account yet. Create one first.');
   const b = req.body || {};
-  const sameUser = typeof b.username === 'string' && b.username.trim().toLowerCase() === account.username;
-  const ok = await auth.verifyPassword(b.password, account); // always run, so timing doesn't reveal the username
-  if (!sameUser || !ok) {
+  const username = typeof b.username === 'string' ? b.username.trim().toLowerCase() : '';
+  const account = username ? await store.findAccountByUsername(username) : null;
+  const ok = await auth.verifyPassword(b.password, account || { salt: 'dummy', hash: 'dummy' });
+  if (!account || !ok) {
     auth.recordFailure(req.ip || 'unknown');
     throw httpError(401, 'Wrong username or password');
   }
-  auth.setSession(req, res);
-  res.json({ admin: true, name: account.name });
+  const role = account._id === 'owner' || account.role === 'admin' ? 'admin' : 'member';
+  auth.setSession(req, res, { role, username: account.username });
+  res.json({ authenticated: true, admin: role === 'admin', name: account.name });
 });
 
 app.post('/api/logout', (req, res) => {
   auth.clearSession(req, res);
-  res.json({ admin: false });
+  res.json({ authenticated: false, admin: false });
 });
 
-// Everything that changes data needs the owner session.
+// Overview lists are public; opening a specific roadmap, page, or links requires login.
+// Editing requires the owner session.
+const AUTH_GET_ROUTES = [/^\/roadmaps\/[^/]+$/, /^\/pages\/[^/]+$/, /^\/resources$/];
 app.use('/api', (req, res, next) => {
-  if (req.method === 'GET') return next();
-  if (!auth.isAdmin(req)) throw httpError(401, 'Log in to make changes');
+  if (req.method === 'GET') {
+    if (AUTH_GET_ROUTES.some((re) => re.test(req.path)) && !auth.isAuthenticated(req)) {
+      throw httpError(401, 'Log in to open this roadmap or view its links');
+    }
+    return next();
+  }
+  if (!auth.isAdmin(req)) throw httpError(401, 'Log in as owner to make changes');
   next();
 });
 
@@ -344,13 +356,17 @@ function profileBody(b) {
   };
 }
 
-app.get('/api/profile', async (req, res) => res.json(await store.getProfile()));
+app.get('/api/profile', async (req, res) => {
+  if (!auth.isAdmin(req)) throw httpError(401, 'Log in to view profile');
+  res.json(await store.getProfile());
+});
 
 app.put('/api/profile', async (req, res) => res.json(await store.saveProfile(profileBody(req.body || {}))));
 
-// Live LeetCode / GitHub / Codeforces numbers. Cached at the edge for an hour.
+// Live LeetCode / GitHub / Codeforces numbers. Cached privately for an hour.
 app.get('/api/profile/stats', async (req, res) => {
-  res.set('Cache-Control', 'public, s-maxage=3600, stale-while-revalidate=86400');
+  if (!auth.isAdmin(req)) throw httpError(401, 'Log in to view profile');
+  res.set('Cache-Control', 'private, max-age=3600');
   res.json(await codingStats(await store.getProfile()));
 });
 

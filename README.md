@@ -14,11 +14,11 @@ A personal tracker for learning roadmaps. I kept my roadmaps (backend, system de
   - The routine starts with LeetCode POTD and GFG POTD (daily), CodeChef Starters (Wednesdays) and LeetCode Weekly Contest (Sundays). Add, remove or reschedule items.
   - Tick today's items, or click any square in the 4-week grid to fill in a day you missed logging. Each item shows its streak and its hit rate over the last 30 days.
   - To-dos with a due date, grouped into Overdue, Today, Upcoming and Someday.
-- **Profile**: a student profile with photo, headline, contact buttons (email, phone, LinkedIn, GitHub, portfolio, résumé), education timeline, skills, achievements and coding profiles. LeetCode (solved by difficulty, contest rating), GitHub and Codeforces numbers are fetched live and cached for an hour. Edit it all from the page when logged in.
-- **Resources**: practice and contest sites, your own links (with categories and notes), and the 📚 Resources of every roadmap, all searchable on one page.
+- **Profile**: a student profile with photo, headline, contact buttons (email, phone, LinkedIn, GitHub, portfolio, resume), education timeline, skills, achievements and coding profiles. LeetCode (solved by difficulty, contest rating), GitHub and Codeforces numbers are fetched live and cached for an hour. Edit it all from the page when logged in.
+- **Resources**: practice and contest sites, your own links (with categories and notes), and the Resources of every roadmap, all searchable on one page.
 - **Roadmaps dashboard**: overall progress, topics finished today and this week, a day streak, and an activity heatmap.
 - **Pick up where you left off**: the next unfinished topic of your most recently active roadmaps, which you can tick right from the dashboard.
-- **Notion-style roadmap pages**: 📚 Resources, the intro, notes sections (what the playlist doesn't cover, mini project, how it lines up with other roadmaps), then the **Course Index** table with Name, Level, Topic, Status and Link.
+- **Notion-style roadmap pages**: Resources, the intro, notes sections (what the playlist doesn't cover, mini project, how it lines up with other roadmaps), then the **Course Index** table with Name, Level, Topic, Status and Link.
 - **Group by level or by topic**, filter by status (To do / In progress / Done), search topics and notes.
 - **Three-step status** (Not started → In progress → Done), a level per topic (Beginner / Intermediate / Advanced), and a private note on each topic.
 - **One owner account**: create it once at `/#/signup` (name, username, password). After that sign-up closes; visitors can view everything except Tasks, and only you can edit.

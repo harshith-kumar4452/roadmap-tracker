@@ -208,8 +208,16 @@ export async function getAccount() {
   return (await accounts()).findOne({ _id: 'owner' });
 }
 
-export async function createAccount({ name, username, salt, hash }) {
-  const doc = { _id: 'owner', name, username, salt, hash, createdAt: new Date().toISOString() };
+export async function findAccountByUsername(username) {
+  return (await accounts()).findOne({ username: String(username || '').trim().toLowerCase() });
+}
+
+export async function createAccount({ name, username, salt, hash, role = 'admin' }) {
+  const cleanUser = String(username || '').trim().toLowerCase();
+  const id = role === 'admin' ? 'owner' : `user:${cleanUser}`;
+  const existing = await findAccountByUsername(cleanUser);
+  if (existing) return null;
+  const doc = { _id: id, role, name, username: cleanUser, salt, hash, createdAt: new Date().toISOString() };
   try {
     await (await accounts()).insertOne(doc);
   } catch (err) {

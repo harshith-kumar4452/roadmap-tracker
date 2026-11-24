@@ -1,6 +1,8 @@
 import { markdown, outline, mindmapSvg } from './render.js';
 import { interactiveMindmap } from './mindmap.js';
 import { floatField, bindParallax } from './floaters.js';
+import { storyHtml, initStory, playIntro } from './story.js';
+import { buddySvg, initBuddy, buddyReact } from './buddy.js';
 import { startTour, tourSeen } from './tour.js';
 
 const view = document.getElementById('view');
@@ -101,7 +103,7 @@ function itemTitle(it) {
 
 const tick = (done, title) => me.admin
   ? `<button class="tick" type="button" role="checkbox" aria-checked="${done}" data-act="toggle" aria-label="${done ? 'Mark not done' : 'Mark done'}: ${esc(title)}">${icons.check}</button>`
-  : `<span class="tick readonly" role="img" aria-label="${done ? 'Done' : 'Not done'}" data-checked="${done}">${icons.check}</span>`;
+  : `<button class="tick readonly" type="button" data-act="readonly-tick" aria-label="${done ? 'Done' : 'Not done'}: ${esc(title)}" data-checked="${done}">${icons.check}</button>`;
 
 let toastTimer;
 function toast(message, action, kind = 'info') {
@@ -125,19 +127,40 @@ function setPage(title, description) {
   $('meta[property="og:title"]')?.setAttribute('content', document.title);
 }
 
+// ---------- theme ----------
+
+const currentTheme = () => {
+  const saved = prefs.get('theme');
+  if (saved === 'light' || saved === 'dark') return saved;
+  return matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+};
+function syncThemeBtn() {
+  const dark = currentTheme() === 'dark';
+  const icon = document.querySelector('.theme-btn .material-icons-round');
+  const btn = document.querySelector('.theme-btn');
+  if (icon) icon.textContent = dark ? 'light_mode' : 'dark_mode';
+  if (btn) btn.setAttribute('aria-label', dark ? 'Switch to light theme' : 'Switch to dark theme');
+}
+function toggleTheme() {
+  const next = currentTheme() === 'dark' ? 'light' : 'dark';
+  document.documentElement.dataset.theme = next;
+  prefs.set('theme', next);
+  syncThemeBtn();
+}
+syncThemeBtn();
+
 // ---------- auth ----------
 
-const me = { admin: false, editingEnabled: false, hasAccount: false, name: null };
+const me = { authenticated: false, admin: false, editingEnabled: false, hasAccount: false, name: null };
 
 function renderAuth() {
   document.body.classList.toggle('is-admin', me.admin);
+  document.body.classList.toggle('is-auth', me.authenticated);
   $('#year').textContent = new Date().getFullYear();
   $('#owner').textContent = me.name || 'Learning hub';
-  $('#auth').innerHTML = me.admin
+  $('#auth').innerHTML = me.authenticated
     ? '<button type="button" class="btn ghost small" data-act="logout">Log out</button>'
-    : me.hasAccount
-      ? '<a class="btn ghost small" href="#/login">Log in</a>'
-      : '<a class="btn primary small" href="#/signup">Create account</a>';
+    : '<a class="btn ghost small" href="#/login">Log in</a><a class="btn primary small" href="#/signup">Sign up</a>';
 }
 
 async function loadMe() {
@@ -146,44 +169,45 @@ async function loadMe() {
 }
 
 function renderLogin() {
-  if (!me.hasAccount) { location.hash = '#/signup'; return; }
-  if (me.admin) { location.hash = '#/tasks'; return; }
-  setPage('Log in', 'Log in to your learning hub.');
+  if (me.authenticated) { location.hash = '#/roadmaps'; return; }
+  setPage('Log in', 'Log in to access roadmaps, links, and your learning hub.');
   view.innerHTML = `
     <section class="auth-card panel">
       <span class="brand-mark big" aria-hidden="true"></span>
       <div>
-        <h1>Welcome back${me.name ? `, ${esc(me.name.split(' ')[0])}` : ''}</h1>
-        <p class="muted">Log in to tick off today's tasks and edit your pages.</p>
+        <h1>Welcome back</h1>
+        <p class="muted">Log in to access all roadmaps, resource links, cheat sheets, and mindmaps.</p>
       </div>
       <form data-form="login" class="stack">
         <label>Username<input name="username" autocomplete="username" autocapitalize="none" spellcheck="false" required autofocus></label>
         <label>Password<input type="password" name="password" autocomplete="current-password" required></label>
         <button class="btn primary">Log in</button>
       </form>
+      <p class="muted small">New here? <a href="#/signup">Create an account</a></p>
     </section>`;
 }
 
 function renderSignup() {
-  if (me.hasAccount) { location.hash = me.admin ? '#/tasks' : '#/login'; return; }
-  setPage('Create your account', 'Set up the owner account for this learning hub.');
+  if (me.authenticated) { location.hash = '#/roadmaps'; return; }
+  setPage('Sign up', 'Create an account to access roadmaps and resource links.');
   view.innerHTML = `
     <section class="auth-card panel">
       <span class="brand-mark big" aria-hidden="true"></span>
       <div>
         <h1>Create your account</h1>
-        <p class="muted">This site has one owner: you. Once your account exists, sign-up closes and everyone else can only view.</p>
+        <p class="muted">Sign up to unlock all roadmaps, resource links, cheat sheets, and mindmaps.</p>
       </div>
-      ${me.editingEnabled ? '' : '<p class="warn">Sign-up is turned off: <code>ADMIN_PASSWORD</code> is not set on the server.</p>'}
+      ${me.editingEnabled ? '' : '<p class="warn">Accounts are turned off: <code>ADMIN_PASSWORD</code> is not set on the server.</p>'}
       <form data-form="signup" class="stack">
-        <label>Your name<input name="name" autocomplete="name" placeholder="Shown on your home page" required maxlength="80" autofocus></label>
+        <label>Your name<input name="name" autocomplete="name" placeholder="Your name" required maxlength="80" autofocus></label>
         <label>Username<input name="username" autocomplete="username" autocapitalize="none" spellcheck="false" required pattern="[A-Za-z0-9._\\-]{3,40}" title="3–40 letters, numbers, dots, dashes or underscores"></label>
         <label>Password<input type="password" name="password" autocomplete="new-password" minlength="8" required></label>
         <label>Confirm password<input type="password" name="confirm" autocomplete="new-password" minlength="8" required></label>
-        <label>Setup key <span class="muted small">the <code>ADMIN_PASSWORD</code> from your server settings, so nobody else can claim the site</span>
-          <input type="password" name="setupKey" autocomplete="off" required></label>
+        ${!me.hasAccount ? `<label>Owner setup key <span class="muted small">(optional, leave blank for a standard account)</span>
+          <input type="password" name="setupKey" autocomplete="off"></label>` : ''}
         <button class="btn primary">Create account</button>
       </form>
+      <p class="muted small">Already have an account? <a href="#/login">Log in</a></p>
     </section>`;
 }
 
@@ -191,14 +215,18 @@ function renderNotFound() {
   setPage('Page not found', "This page doesn't exist.");
   view.innerHTML = `
     <section class="notfound">
+      <div class="notfound-box" title="Click Pip to peek!">${buddySvg('box')}</div>
       <p class="eyebrow">Error 404</p>
-      <h1>This page doesn't exist</h1>
-      <p class="muted">The link may be old, or the address has a typo.</p>
+      <h1>Pip couldn't find that page</h1>
+      <p class="muted">The link may be old, or the address has a typo. Pip is hiding in this box until you head back.</p>
       <div class="row-actions">
         <a class="btn primary" href="#/">Go to the home page</a>
         <a class="btn" href="#/roadmaps">Browse roadmaps</a>
       </div>
     </section>`;
+  view.querySelector('.notfound-box')?.addEventListener('click', (e) => {
+    e.currentTarget.classList.toggle('peek');
+  });
 }
 
 // ---------- mobile menu ----------
@@ -225,9 +253,52 @@ function setNav(key) {
   });
 }
 
+function renderAuthGate(kind = 'roadmap') {
+  const copy = {
+    roadmap: {
+      title: 'Log in to open this roadmap',
+      text: 'You can browse the roadmap overview freely, but opening a specific roadmap and its topic links requires an account.',
+      back: { label: 'Back to roadmaps', href: '#/roadmaps' },
+    },
+    resources: {
+      title: 'Log in to view resource links',
+      text: 'All curated course links, playlists, and practice sites are unlocked once you sign in.',
+      back: { label: 'Back to home', href: '#/' },
+    },
+    page: {
+      title: 'Log in to open this page',
+      text: 'Sign in or create a free account to read full cheat sheets, project specs, and interactive mindmaps.',
+      back: { label: 'Back to home', href: '#/' },
+    },
+  }[kind] || {
+    title: 'Log in to continue',
+    text: 'Sign in or create an account to open this content.',
+    back: { label: 'Back to home', href: '#/' },
+  };
+  setPage('Log in required', copy.text);
+  view.innerHTML = `
+    ${kind === 'resources' ? libraryTabsHtml('resources') : ''}
+    <section class="auth-gate panel">
+      <div class="auth-gate-buddy">${buddySvg('gate')}</div>
+      <p class="eyebrow">Members only</p>
+      <h1>${copy.title}</h1>
+      <p class="muted">${copy.text}</p>
+      <div class="row-actions">
+        <a class="btn primary" href="#/login">Log in</a>
+        <a class="btn" href="#/signup">Create account</a>
+        <a class="btn ghost" href="${copy.back.href}">${copy.back.label}</a>
+      </div>
+    </section>`;
+}
+
 async function route() {
   const hash = location.hash.slice(1) || '/';
-  setNav(hash === '/roadmaps' || hash.startsWith('/r/') ? 'roadmaps' : hash.slice(1));
+  setNav(
+    hash === '/' ? 'home'
+      : (hash === '/roadmaps' || hash.startsWith('/r/')) ? 'roadmaps'
+      : (hash === '/library' || hash === '/resources' || hash === '/cheatsheets' || hash === '/mindmaps' || hash.startsWith('/p/')) ? 'library'
+      : hash.slice(1),
+  );
   // The first request after the server has been idle can take a few seconds; show that something is happening.
   const loading = setTimeout(() => {
     view.innerHTML = '<div class="loading" role="status"><span class="spinner" aria-hidden="true"></span>Loading…</div>';
@@ -235,16 +306,25 @@ async function route() {
   try {
     let m;
     if (hash === '/') await renderLanding();
+    else if (hash === '/signup') renderSignup();
+    else if (hash === '/login') renderLogin();
     else if (hash === '/roadmaps') await renderDashboard();
     else if (hash === '/tasks') await renderTasks();
-    else if (hash === '/resources') await renderResources();
-    else if (hash === '/signup') renderSignup();
     else if (hash === '/profile') await renderProfile();
-    else if ((m = hash.match(/^\/r\/([\w-]+)$/))) await renderRoadmap(m[1]);
-    else if ((m = hash.match(/^\/(cheatsheets|projects|mindmaps)$/))) await renderPages(m[1]);
-    else if ((m = hash.match(/^\/p\/([\w-]+)$/))) await renderPage(m[1]);
-    else if (hash === '/import' && me.admin) renderImport();
-    else if (hash === '/login') renderLogin();
+    else if (hash === '/library') {
+      if (!me.authenticated) await renderPages('cheatsheets');
+      else await renderResources();
+    } else if (hash === '/resources') {
+      if (!me.authenticated) renderAuthGate('resources');
+      else await renderResources();
+    } else if ((m = hash.match(/^\/r\/([\w-]+)$/))) {
+      if (!me.authenticated) renderAuthGate('roadmap');
+      else await renderRoadmap(m[1]);
+    } else if ((m = hash.match(/^\/(cheatsheets|projects|mindmaps)$/))) await renderPages(m[1]);
+    else if ((m = hash.match(/^\/p\/([\w-]+)$/))) {
+      if (!me.authenticated) renderAuthGate('page');
+      else await renderPage(m[1]);
+    } else if (hash === '/import' && me.admin) renderImport();
     else renderNotFound();
   } catch (err) {
     view.innerHTML = `<div class="empty"><h2>Couldn't load this page</h2><p class="muted">${esc(err.message)}</p><a class="btn" href="#/">Back to home</a></div>`;
@@ -322,8 +402,22 @@ function continueCard(r) {
     </article>`;
 }
 
+const JOB_ROLES = [
+  { id: 'all', label: 'All roles', icon: 'apps', desc: 'Every learning roadmap across all tracks.' },
+  { id: 'backend', label: 'Backend Engineer', icon: 'dns', desc: 'APIs, Node.js, Python, SQL/DBMS, Redis caching, Kafka, and microservices.', match: /backend|node\.js|microservices|kafka|redis|sql|dbms|python|git/i },
+  { id: 'system_design', label: 'System Design', icon: 'hub', desc: 'HLD, LLD, distributed systems, scalability, and architecture build projects.', match: /system design|hld|microservices|kafka|redis internals|arpit/i },
+  { id: 'sde', label: 'SDE / Core CS', icon: 'code', desc: 'DSA problem solving and core CS fundamentals: OS, DBMS, Networks, OOPS.', match: /dsa|operating systems|computer networks|dbms|oops|git|gate/i },
+  { id: 'frontend', label: 'Frontend / Full Stack', icon: 'web', desc: 'React UI engineering paired with backend, SQL, and Git workflows.', match: /react|node\.js|backend|sql|git/i },
+  { id: 'cloud', label: 'Cloud / DevOps', icon: 'cloud', desc: 'AWS cloud infrastructure, networking, OS, Kafka, and distributed services.', match: /cloud|aws|kafka|microservices|computer networks|operating systems|git/i },
+  { id: 'data_ml', label: 'Data / ML Engineer', icon: 'psychology', desc: 'Machine learning, Python, Power BI analytics, SQL, and databases.', match: /\bml\b|python|power bi|sql|dbms/i },
+  { id: 'aptitude', label: 'Placement / GATE', icon: 'school', desc: 'Quantitative, logical, verbal aptitude, GATE CS, and DSA interview prep.', match: /aptitude|gate|dsa/i },
+];
+
+const rolesFor = (r) => JOB_ROLES.filter((role) => role.id !== 'all' && role.match.test(r.title));
+
 function roadmapCard(r) {
   const p = pct(r.done, r.total);
+  const roles = rolesFor(r).slice(0, 2);
   return `
     <a class="rm-card ${p === 100 ? 'complete' : ''}" href="#/r/${esc(r.id)}">
       <div class="rm-card-top">
@@ -331,6 +425,7 @@ function roadmapCard(r) {
         <span class="pct">${p === 100 ? 'Done' : p + '%'}</span>
       </div>
       ${bar(r.done, r.total)}
+      ${roles.length ? `<div class="rm-roles">${roles.map((ro) => `<span class="rm-role-tag">${esc(ro.label)}</span>`).join('')}</div>` : ''}
       <div class="rm-card-meta">
         <span>${r.done} / ${plural(r.total, 'topic')}${r.inProgress ? ` · ${r.inProgress} in progress` : ''}</span>
         <span>${r.lastDoneAt ? 'Active ' + ago(r.lastDoneAt) : r.done ? 'Imported progress' : 'Not started'}</span>
@@ -384,7 +479,10 @@ async function renderDashboard() {
 
     <section>
       <div class="toolbar">
-        <h2 class="h2">All roadmaps</h2>
+        <div>
+          <h2 class="h2">All roadmaps</h2>
+          <p class="muted small" id="rm-role-desc"></p>
+        </div>
         <div class="toolbar-right">
           ${me.admin ? '<a class="btn small" href="#/import">Add roadmaps</a>' : ''}
           <input type="search" id="rm-search" placeholder="Filter roadmaps" aria-label="Filter roadmaps">
@@ -396,19 +494,68 @@ async function renderDashboard() {
           </select>
         </div>
       </div>
+
+      <div class="rm-filters">
+        <div class="chips role-chips" role="group" aria-label="Filter by job role">
+          ${JOB_ROLES.map((role) => {
+            const count = role.id === 'all' ? list.length : list.filter((r) => role.match.test(r.title)).length;
+            return `<button type="button" class="chip role-chip" data-role="${role.id}" aria-pressed="false">
+              <span class="material-icons-round" aria-hidden="true">${role.icon}</span>
+              <span>${esc(role.label)}</span>
+              <span class="chip-count">${count}</span>
+            </button>`;
+          }).join('')}
+        </div>
+        <div class="seg" role="group" aria-label="Filter by status">
+          <button type="button" data-rm-status="all" aria-pressed="true">All</button>
+          <button type="button" data-rm-status="in_progress" aria-pressed="false">In progress</button>
+          <button type="button" data-rm-status="not_started" aria-pressed="false">Not started</button>
+          <button type="button" data-rm-status="done" aria-pressed="false">Done</button>
+        </div>
+      </div>
+
       <div class="grid" id="rm-grid"></div>
     </section>`;
 
   const grid = $('#rm-grid');
   const search = $('#rm-search');
   const sort = $('#rm-sort');
+  const roleDesc = $('#rm-role-desc');
+  const roleBtns = [...document.querySelectorAll('[data-role]')];
+  const statusBtns = [...document.querySelectorAll('[data-rm-status]')];
+
+  let activeRole = JOB_ROLES.some((r) => r.id === prefs.get('rm-role')) ? prefs.get('rm-role') : 'all';
+  let activeStatus = ['all', 'in_progress', 'not_started', 'done'].includes(prefs.get('rm-status')) ? prefs.get('rm-status') : 'all';
   sort.value = sorters[prefs.get('sort')] ? prefs.get('sort') : 'recent';
+
+  const rmStatus = (r) => {
+    if (r.total > 0 && r.done === r.total) return 'done';
+    if (r.done > 0 || r.inProgress > 0) return 'in_progress';
+    return 'not_started';
+  };
+
   const draw = () => {
     prefs.set('sort', sort.value);
+    prefs.set('rm-role', activeRole);
+    prefs.set('rm-status', activeStatus);
+
+    roleBtns.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.role === activeRole)));
+    statusBtns.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.rmStatus === activeStatus)));
+
+    const roleObj = JOB_ROLES.find((r) => r.id === activeRole) || JOB_ROLES[0];
     const q = search.value.trim().toLowerCase();
-    const rows = list.filter((r) => r.title.toLowerCase().includes(q)).sort(sorters[sort.value]);
-    grid.innerHTML = rows.map(roadmapCard).join('') || '<p class="muted">No roadmaps match that filter.</p>';
+    const rows = list
+      .filter((r) => activeRole === 'all' || roleObj.match.test(r.title))
+      .filter((r) => activeStatus === 'all' || rmStatus(r) === activeStatus)
+      .filter((r) => !q || r.title.toLowerCase().includes(q))
+      .sort(sorters[sort.value]);
+
+    roleDesc.textContent = `${roleObj.desc} Showing ${rows.length} of ${list.length}.`;
+    grid.innerHTML = rows.map(roadmapCard).join('') || '<p class="empty">No roadmaps match those filters.</p>';
   };
+
+  roleBtns.forEach((b) => b.addEventListener('click', () => { activeRole = b.dataset.role; draw(); }));
+  statusBtns.forEach((b) => b.addEventListener('click', () => { activeStatus = b.dataset.rmStatus; draw(); }));
   search.addEventListener('input', draw);
   sort.addEventListener('change', draw);
   draw();
@@ -430,7 +577,7 @@ async function renderRoadmap(id) {
     ...data,
     filter: prefs.get('filter') || 'all',
     q: '',
-    group: prefs.get('group:' + id) || (leveled >= items.length / 2 && items.length ? 'level' : 'topic'),
+    group: prefs.get('group:' + id) || 'topic',
     editing: false,
   };
   drawRoadmap();
@@ -445,12 +592,13 @@ function groups() {
     .filter((g) => g.items.length);
 }
 
-function itemRow(i) {
+function itemRow(i, idx) {
   const status = STATUS[i.status] ?? STATUS.not_started;
   const url = safeUrl(i.url);
   return `
     <div class="row ${i.status === 'done' ? 'is-done' : ''}" role="row" data-item="${esc(i.id)}">
       <div class="c-name" role="cell">
+        <span class="row-num">${idx + 1}</span>
         ${tick(i.status === 'done', i.title)}
         <div class="name-body">
           ${itemTitle(i)}
@@ -505,7 +653,7 @@ function groupsHtml() {
           <div class="row head" role="row">
             <div role="columnheader">Name</div><div role="columnheader">Level</div><div role="columnheader">Topic</div><div role="columnheader">Status</div><div role="columnheader"><span class="sr-only">Link</span></div>
           </div>
-          ${rows.map(itemRow).join('')}
+          ${rows.map((i) => itemRow(i, g.items.indexOf(i))).join('')}
         </div>
         ${me.admin && g.sectionId ? `
         <div class="sec-foot">
@@ -705,17 +853,17 @@ function renderImport() {
 
 const KINDS = {
   cheatsheets: {
-    kind: 'cheatsheet', label: 'Cheat sheets', one: 'cheat sheet', icon: '📄',
+    kind: 'cheatsheet', label: 'Cheat sheets', one: 'cheat sheet', icon: '<span class="material-icons-round">description</span>',
     blurb: 'Quick-reference pages: commands, syntax, formulas, things you keep looking up.',
     hint: 'Markdown: <code>## Heading</code>, <code>- list</code>, <code>| table |</code>, <code>```code```</code>, <code>`inline`</code>, <code>**bold**</code>, <code>[text](url)</code>',
   },
   projects: {
-    kind: 'project', label: 'Projects', one: 'project', icon: '🛠️',
+    kind: 'project', label: 'Projects', one: 'project', icon: '<span class="material-icons-round">build</span>',
     blurb: 'Things to build: the idea, the features, the stack, and where each one stands.',
     hint: 'Markdown: <code>## Heading</code>, <code>- list</code>, <code>- [ ] task</code>, <code>[text](url)</code>, <code>```code```</code>',
   },
   mindmaps: {
-    kind: 'mindmap', label: 'Mindmaps', one: 'mindmap', icon: '🧠',
+    kind: 'mindmap', label: 'Mindmaps', one: 'mindmap', icon: '<span class="material-icons-round">psychology</span>',
     blurb: 'Topics laid out as a map, to see how the pieces connect.',
     hint: 'One idea per line. Indent with two spaces to branch:<br><code>- Caching</code><br><code>&nbsp;&nbsp;- Write-through</code><br>The title is the centre of the map.',
   },
@@ -770,11 +918,27 @@ function pageCardsHtml() {
     : `<div class="empty"><p>No ${k.one}s yet.</p>${me.admin ? '' : '<p class="small">Log in to add one.</p>'}</div>`;
 }
 
+function libraryTabsHtml(active) {
+  const tabs = [
+    { key: 'resources', href: '#/resources', label: 'Resources', icon: 'link' },
+    { key: 'cheatsheets', href: '#/cheatsheets', label: 'Cheat sheets', icon: 'description' },
+    { key: 'mindmaps', href: '#/mindmaps', label: 'Mindmaps', icon: 'psychology' },
+  ];
+  return `
+    <nav class="lib-tabs" aria-label="Library sections">
+      ${tabs.map((t) => `<a href="${t.href}" class="lib-tab${active === t.key ? ' is-active' : ''}"${active === t.key ? ' aria-current="page"' : ''}>
+        <span class="material-icons-round" aria-hidden="true">${t.icon}</span>
+        <span>${t.label}</span>
+      </a>`).join('')}
+    </nav>`;
+}
+
 function drawPages() {
   const k = KINDS[pl.key];
   const tags = [...new Set(pl.items.flatMap((p) => p.tags || []))].sort();
   const counts = Object.fromEntries(Object.keys(PROJECT_STATUS).map((s) => [s, pl.items.filter((p) => p.status === s).length]));
   view.innerHTML = `
+    ${pl.key === 'cheatsheets' || pl.key === 'mindmaps' ? libraryTabsHtml(pl.key) : ''}
     <header class="page-head">
       <div>
         <h1>${k.icon} ${esc(k.label)}</h1>
@@ -1037,12 +1201,14 @@ function maybeStartTour() {
 
 async function renderLanding() {
   setPage('', `${me.name ? `${me.name}'s` : 'A'} learning hub: roadmaps, a daily practice routine, contests, cheat sheets, projects and mind maps.`);
+  const introPromise = playIntro();
   const [list, stats, routine, ...pageLists] = await Promise.all([
     api('GET', '/roadmaps'),
     api('GET', '/stats'),
     api('GET', `/habits?since=${sinceKey(120)}`),
     ...['cheatsheet', 'project', 'mindmap'].map((k) => api('GET', `/pages?kind=${k}`)),
   ]);
+  await introPromise;
   const [cheats, projects, maps] = pageLists;
   const act = activity(stats.doneAt);
   const state = routineState(routine);
@@ -1053,13 +1219,13 @@ async function renderLanding() {
   const started = list.filter((r) => r.done > 0).length;
 
   const sections = [
-    { href: '#/roadmaps', icon: '🗺️', title: 'Roadmaps', text: `${plural(list.length, 'roadmap')}, ${started} under way`, meta: `${pct(stats.done, stats.total)}% done` },
-    ...(me.admin ? [{ href: '#/tasks', icon: '✅', title: 'Tasks', text: 'Daily POTDs, contests and your to-do list', meta: dueToday.length ? `${doneToday}/${dueToday.length} today` : 'Nothing due' }] : []),
-    { href: '#/resources', icon: '🔗', title: 'Resources', text: 'Every course, playlist and practice site in one list', meta: 'All links' },
-    { href: '#/cheatsheets', icon: '📄', title: 'Cheat sheets', text: 'Quick-reference commands and syntax', meta: plural(cheats.length, 'sheet') },
-    { href: '#/projects', icon: '🛠️', title: 'Projects', text: 'Things to build and where each one stands', meta: plural(projects.length, 'project') },
-    { href: '#/mindmaps', icon: '🧠', title: 'Mindmaps', text: 'How the topics connect', meta: plural(maps.length, 'map') },
-    { href: '#/profile', icon: '👤', title: 'Profile', text: 'Education, skills, achievements and coding profiles', meta: 'Live LeetCode stats' },
+    { href: '#/roadmaps', icon: '<span class="material-icons-round">map</span>', title: 'Roadmaps', text: `${plural(list.length, 'roadmap')}, ${started} under way`, meta: `${pct(stats.done, stats.total)}% done` },
+    ...(me.admin ? [{ href: '#/tasks', icon: '<span class="material-icons-round">check_circle</span>', title: 'Tasks', text: 'Daily POTDs, contests and your to-do list', meta: dueToday.length ? `${doneToday}/${dueToday.length} today` : 'Nothing due' }] : []),
+    { href: '#/resources', icon: '<span class="material-icons-round">link</span>', title: 'Resources', text: 'Every course, playlist and practice site in one list', meta: 'All links' },
+    { href: '#/cheatsheets', icon: '<span class="material-icons-round">description</span>', title: 'Cheat sheets', text: 'Quick-reference commands and syntax', meta: plural(cheats.length, 'sheet') },
+    { href: '#/projects', icon: '<span class="material-icons-round">build</span>', title: 'Projects', text: 'Things to build and where each one stands', meta: plural(projects.length, 'project') },
+    { href: '#/mindmaps', icon: '<span class="material-icons-round">psychology</span>', title: 'Mindmaps', text: 'How the topics connect', meta: plural(maps.length, 'map') },
+    ...(me.admin ? [{ href: '#/profile', icon: '<span class="material-icons-round">person</span>', title: 'Profile', text: 'Education, skills, achievements and coding profiles', meta: 'Live LeetCode stats' }] : []),
   ];
 
   view.innerHTML = `
@@ -1084,6 +1250,8 @@ async function renderLanding() {
       <div><dt>Best routine streak</dt><dd>${bestStreak}</dd></div>
     </dl>
 
+    ${storyHtml({ roadmapsCount: list.length, topicsCount: stats.total, doneCount: stats.done, streak: act.streak })}
+
     ${routine.habits.length ? `
     <section class="panel routine-panel">
       <div class="panel-head"><h2>Practice routine</h2>${me.admin ? '<a class="btn ghost small" href="#/tasks">Open tasks</a>' : '<span class="muted small">Last 14 days</span>'}</div>
@@ -1104,6 +1272,7 @@ async function renderLanding() {
     </section>`;
 
   bindParallax($('.landing-hero'));
+  initStory(view);
   maybeStartTour();
 }
 
@@ -1307,9 +1476,10 @@ function resourcesHtml() {
 function drawResources() {
   const cats = [...new Set(rs.links.map((l) => l.category).filter(Boolean))].sort();
   view.innerHTML = `
+    ${libraryTabsHtml('resources')}
     <header class="page-head">
       <div>
-        <h1>🔗 Resources</h1>
+        <h1><span class="material-icons-round">link</span> Resources</h1>
         <p class="muted">Every course, playlist, practice site and link, in one place.</p>
       </div>
     </header>
@@ -1354,6 +1524,16 @@ let pf = null;
 
 async function renderProfile() {
   setNav('profile');
+  if (!me.admin) {
+    setPage('Profile', 'Owner profile.');
+    view.innerHTML = `
+      <div class="empty big">
+        <h1>Profile is private</h1>
+        <p class="muted">${me.hasAccount ? 'Log in to view and edit your profile.' : 'Create your account to set up your profile.'}</p>
+        <a class="btn primary" href="${me.hasAccount ? '#/login' : '#/signup'}">${me.hasAccount ? 'Log in' : 'Create account'}</a>
+      </div>`;
+    return;
+  }
   const profile = await api('GET', '/profile');
   pf = { profile, editing: !profile && me.admin };
   drawProfile();
@@ -1614,9 +1794,18 @@ document.addEventListener('click', async (e) => {
     switch (act) {
       case 'logout':
         await api('POST', '/logout');
+        me.authenticated = false;
         me.admin = false;
+        me.name = null;
         renderAuth();
+        location.hash = '#/';
         route();
+        break;
+      case 'readonly-tick':
+        toast(
+          me.hasAccount ? 'Log in to mark topics done.' : 'Create your owner account to mark topics done.',
+          { label: me.hasAccount ? 'Log in' : 'Sign up', run: () => { location.hash = me.hasAccount ? '#/login' : '#/signup'; } },
+        );
         break;
       case 'toggle': {
         if (location.hash.startsWith('#/r/') && rm) {
@@ -1713,6 +1902,9 @@ document.addEventListener('click', async (e) => {
       case 'cancel-profile':
         pf.editing = false;
         drawProfile();
+        break;
+      case 'theme':
+        toggleTheme();
         break;
       case 'tour':
         setMenu(false);
@@ -1835,19 +2027,19 @@ view.addEventListener('submit', async (e) => {
     switch (form.dataset.form) {
       case 'login': {
         const r = await api('POST', '/login', { username: data.username, password: data.password });
-        Object.assign(me, { admin: true, name: r.name });
+        Object.assign(me, { authenticated: true, admin: Boolean(r.admin), name: r.name });
         renderAuth();
         toast(`Welcome back, ${r.name.split(' ')[0]}`);
-        location.hash = '#/tasks';
+        location.hash = '#/roadmaps';
         return;
       }
       case 'signup': {
         if (data.password !== data.confirm) throw new Error("The two passwords don't match");
-        const r = await api('POST', '/signup', { name: data.name, username: data.username, password: data.password, setupKey: data.setupKey });
-        Object.assign(me, { admin: true, hasAccount: true, name: r.name });
+        const r = await api('POST', '/signup', { name: data.name, username: data.username, password: data.password, setupKey: data.setupKey || undefined });
+        Object.assign(me, { authenticated: true, admin: Boolean(r.admin), hasAccount: me.hasAccount || Boolean(r.admin), name: r.name });
         renderAuth();
         toast('Account created. You are logged in.', null, 'success');
-        location.hash = '#/tasks';
+        location.hash = '#/roadmaps';
         return;
       }
       case 'add-item': {
@@ -1949,4 +2141,16 @@ view.addEventListener('submit', async (e) => {
   }
 });
 
-loadMe().then(route);
+let cachedRoadmaps = null;
+loadMe().then(async () => {
+  initBuddy({
+    getMe: () => me,
+    getRoadmaps: async () => (cachedRoadmaps ??= await api('GET', '/roadmaps').catch(() => [])),
+    replayIntro: () => playIntro(true),
+    startTour: () => {
+      if ((location.hash.slice(1) || '/') === '/') startTour(tourSteps());
+      else { pendingTour = true; location.hash = '#/'; }
+    },
+  });
+  await route();
+});
