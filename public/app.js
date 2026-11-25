@@ -3,6 +3,8 @@ import { interactiveMindmap } from './mindmap.js';
 import { floatField, bindParallax } from './floaters.js';
 import { storyHtml, initStory, playIntro } from './story.js';
 import { buddySvg, initBuddy, buddyReact } from './buddy.js';
+import { renderRoleHubView } from './role-hub.js';
+import { renderPlannerView, checkTodayNotifications } from './planner.js';
 import { startTour, tourSeen } from './tour.js';
 
 const view = document.getElementById('view');
@@ -295,7 +297,7 @@ async function route() {
   const hash = location.hash.slice(1) || '/';
   setNav(
     hash === '/' ? 'home'
-      : (hash === '/roadmaps' || hash.startsWith('/r/')) ? 'roadmaps'
+      : (hash === '/roadmaps' || hash.startsWith('/r/') || hash.startsWith('/g/') || hash.startsWith('/role/')) ? 'roadmaps'
       : (hash === '/library' || hash === '/resources' || hash === '/cheatsheets' || hash === '/mindmaps' || hash.startsWith('/p/')) ? 'library'
       : hash.slice(1),
   );
@@ -309,6 +311,11 @@ async function route() {
     else if (hash === '/signup') renderSignup();
     else if (hash === '/login') renderLogin();
     else if (hash === '/roadmaps') await renderDashboard();
+    else if (hash === '/planner' || hash === '/calendar') {
+      setPage(hash === '/calendar' ? 'Calendar' : 'Study Planner & Calendar', 'Multi-agent sprint study planner, calendar, and reminders.');
+      await renderPlannerView({ view, api, esc, roles: JOB_ROLES, toast });
+      if (hash === '/calendar') $('.cal-panel')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
     else if (hash === '/tasks') await renderTasks();
     else if (hash === '/profile') await renderProfile();
     else if (hash === '/library') {
@@ -317,6 +324,10 @@ async function route() {
     } else if (hash === '/resources') {
       if (!me.authenticated) renderAuthGate('resources');
       else await renderResources();
+    } else if ((m = hash.match(/^\/role\/([\w-]+)$/))) {
+      await renderRoleHub(m[1]);
+    } else if ((m = hash.match(/^\/g\/([\w-]+)$/))) {
+      await renderRoadmapGroup(m[1]);
     } else if ((m = hash.match(/^\/r\/([\w-]+)$/))) {
       if (!me.authenticated) renderAuthGate('roadmap');
       else await renderRoadmap(m[1]);
@@ -403,34 +414,122 @@ function continueCard(r) {
 }
 
 const JOB_ROLES = [
-  { id: 'all', label: 'All roles', icon: 'apps', desc: 'Every learning roadmap across all tracks.' },
-  { id: 'backend', label: 'Backend Engineer', icon: 'dns', desc: 'APIs, Node.js, Python, SQL/DBMS, Redis caching, Kafka, and microservices.', match: /backend|node\.js|microservices|kafka|redis|sql|dbms|python|git/i },
-  { id: 'system_design', label: 'System Design', icon: 'hub', desc: 'HLD, LLD, distributed systems, scalability, and architecture build projects.', match: /system design|hld|microservices|kafka|redis internals|arpit/i },
-  { id: 'sde', label: 'SDE / Core CS', icon: 'code', desc: 'DSA problem solving and core CS fundamentals: OS, DBMS, Networks, OOPS.', match: /dsa|operating systems|computer networks|dbms|oops|git|gate/i },
-  { id: 'frontend', label: 'Frontend / Full Stack', icon: 'web', desc: 'React UI engineering paired with backend, SQL, and Git workflows.', match: /react|node\.js|backend|sql|git/i },
-  { id: 'cloud', label: 'Cloud / DevOps', icon: 'cloud', desc: 'AWS cloud infrastructure, networking, OS, Kafka, and distributed services.', match: /cloud|aws|kafka|microservices|computer networks|operating systems|git/i },
-  { id: 'data_ml', label: 'Data / ML Engineer', icon: 'psychology', desc: 'Machine learning, Python, Power BI analytics, SQL, and databases.', match: /\bml\b|python|power bi|sql|dbms/i },
-  { id: 'aptitude', label: 'Placement / GATE', icon: 'school', desc: 'Quantitative, logical, verbal aptitude, GATE CS, and DSA interview prep.', match: /aptitude|gate|dsa/i },
+  { id: 'all', label: 'All roles', icon: 'apps', desc: 'Every learning roadmap arranged by target job role.' },
+  { id: 'sde', label: 'SDE', icon: 'code', desc: 'DSA, Core Subjects (OS & CN), Databases (DBMS & SQL), System Design (OOPS, LLD, HLD), and Git.', match: /dsa|operating systems|computer networks|dbms|\bsql\b|system design|hld|lld|arpit|oops|git/i },
+  { id: 'backend', label: 'Backend Engineer', icon: 'dns', desc: 'Backend engineering, Databases (DBMS & SQL), Redis, Kafka, Microservices, System Design, and Python.', match: /backend|node\.js|microservices|kafka|redis|dbms|\bsql\b|system design|hld|arpit|python|git/i },
+  { id: 'data_engineer', label: 'Data Engineer', icon: 'storage', desc: 'Python, Databases (DBMS & SQL), Kafka streaming, Cloud (AWS), and Backend pipelines.', match: /python|dbms|\bsql\b|kafka|cloud|aws|backend/i },
+  { id: 'data_analyst', label: 'Data Analyst', icon: 'analytics', desc: 'Power BI, SQL & Databases, Python, and Aptitude for analytics.', match: /power bi|\bsql\b|dbms|python|aptitude/i },
+  { id: 'ai_engineer', label: 'AI Engineer', icon: 'psychology', desc: 'Machine Learning, Python, Databases (DBMS & SQL), and Cloud (AWS).', match: /\bml\b|python|dbms|\bsql\b|cloud|aws/i },
+  { id: 'frontend', label: 'Frontend / Full Stack', icon: 'web', desc: 'Web Development (React & Backend), Databases, and Git.', match: /react|backend|node\.js|\bsql\b|git/i },
+  { id: 'aptitude', label: 'Placement / GATE', icon: 'school', desc: 'Aptitude Roadmaps, DSA, GATE CS 2027, and Core Subjects.', match: /aptitude|gate|dsa|operating systems|computer networks/i },
 ];
 
-const rolesFor = (r) => JOB_ROLES.filter((role) => role.id !== 'all' && role.match.test(r.title));
+const ROADMAP_GROUPS = [
+  { slug: 'core-subjects', title: 'Core Subjects', desc: 'Operating Systems and Computer Networks fundamentals.', icon: 'memory', match: /operating systems|computer networks/i },
+  { slug: 'databases', title: 'Databases (DBMS & SQL)', desc: 'Database management systems, normalization, indexing, and SQL.', icon: 'storage', match: /dbms|\bsql\b/i },
+  { slug: 'web-development', title: 'Web Development', desc: 'Frontend (React) and Backend engineering (Node.js, APIs, projects).', icon: 'web', match: /backend|react/i },
+  { slug: 'system-design', title: 'System Design', desc: 'OOPS, Low-Level Design (LLD), High-Level Design (HLD), and architecture projects.', icon: 'hub', match: /system design|hld|lld|arpit|oops/i },
+  { slug: 'aptitude', title: 'Aptitude Roadmaps', desc: 'Quantitative, logical, verbal, and full aptitude preparation.', icon: 'school', match: /aptitude/i },
+  { slug: 'redis', title: 'Redis Roadmaps', desc: 'Redis fundamentals and Redis internals.', icon: 'bolt', match: /^redis\b/i },
+];
+
+function bundleRoadmaps(list) {
+  const buckets = new Map();
+  const out = [];
+  for (const r of list) {
+    const grp = ROADMAP_GROUPS.find((g) => g.match.test(r.title));
+    if (!grp) {
+      out.push(r);
+      continue;
+    }
+    let b = buckets.get(grp.slug);
+    if (!b) {
+      b = {
+        isGroup: true,
+        slug: grp.slug,
+        title: grp.title,
+        desc: grp.desc,
+        icon: grp.icon,
+        items: [],
+        done: 0,
+        total: 0,
+        inProgress: 0,
+        lastDoneAt: null,
+        searchText: grp.title.toLowerCase(),
+      };
+      buckets.set(grp.slug, b);
+      out.push(b);
+    }
+    b.items.push(r);
+    b.done += r.done;
+    b.total += r.total;
+    b.inProgress += r.inProgress || 0;
+    b.searchText += ' ' + r.title.toLowerCase();
+    if (r.lastDoneAt && (!b.lastDoneAt || r.lastDoneAt > b.lastDoneAt)) b.lastDoneAt = r.lastDoneAt;
+  }
+  return out.map((entry) => (entry.isGroup && entry.items.length === 1 ? entry.items[0] : entry));
+}
+
+const rolesFor = (r) => {
+  const text = r.isGroup ? r.items.map((i) => i.title).join(' ') : r.title;
+  return JOB_ROLES.filter((role) => role.id !== 'all' && role.match.test(text));
+};
 
 function roadmapCard(r) {
   const p = pct(r.done, r.total);
   const roles = rolesFor(r).slice(0, 2);
+  const href = r.isGroup ? `#/g/${esc(r.slug)}` : `#/r/${esc(r.id)}`;
   return `
-    <a class="rm-card ${p === 100 ? 'complete' : ''}" href="#/r/${esc(r.id)}">
+    <a class="rm-card ${r.isGroup ? 'rm-bundle' : ''} ${p === 100 ? 'complete' : ''}" href="${href}">
       <div class="rm-card-top">
         <h3>${esc(r.title)}</h3>
         <span class="pct">${p === 100 ? 'Done' : p + '%'}</span>
       </div>
       ${bar(r.done, r.total)}
-      ${roles.length ? `<div class="rm-roles">${roles.map((ro) => `<span class="rm-role-tag">${esc(ro.label)}</span>`).join('')}</div>` : ''}
+      <div class="rm-roles">
+        ${r.isGroup ? `<span class="rm-bundle-badge"><span class="material-icons-round" aria-hidden="true">folder_copy</span>${r.items.length} roadmaps</span>` : ''}
+        ${roles.map((ro) => `<span class="rm-role-tag">${esc(ro.label)}</span>`).join('')}
+      </div>
       <div class="rm-card-meta">
         <span>${r.done} / ${plural(r.total, 'topic')}${r.inProgress ? ` · ${r.inProgress} in progress` : ''}</span>
         <span>${r.lastDoneAt ? 'Active ' + ago(r.lastDoneAt) : r.done ? 'Imported progress' : 'Not started'}</span>
       </div>
     </a>`;
+}
+
+async function renderRoleHub(roleId) {
+  const role = JOB_ROLES.find((r) => r.id === roleId && r.id !== 'all');
+  if (!role) { renderNotFound(); return; }
+  const list = await api('GET', '/roadmaps');
+  const bundled = bundleRoadmaps(list);
+  const allItems = list.filter((r) => role.match.test(r.title));
+  const cards = bundled.filter((r) => (r.isGroup ? r.items.some((i) => role.match.test(i.title)) : role.match.test(r.title)));
+  setPage(`${role.label} Track`, role.desc);
+  renderRoleHubView({ role, cards, allItems, view, esc, bar, pct, plural, roadmapCard });
+}
+
+async function renderRoadmapGroup(slug) {
+  const grp = ROADMAP_GROUPS.find((g) => g.slug === slug);
+  if (!grp) { renderNotFound(); return; }
+  const list = await api('GET', '/roadmaps');
+  const items = list.filter((r) => grp.match.test(r.title)).sort((a, b) => a.title.localeCompare(b.title));
+  if (!items.length) { renderNotFound(); return; }
+  const done = items.reduce((n, r) => n + r.done, 0);
+  const total = items.reduce((n, r) => n + r.total, 0);
+  setPage(grp.title, grp.desc);
+  view.innerHTML = `
+    <a class="back" href="#/roadmaps">← All roadmaps</a>
+    <header class="page-head">
+      <div>
+        <h1><span class="material-icons-round">${grp.icon}</span> ${esc(grp.title)}</h1>
+        <p class="muted">${esc(grp.desc)}</p>
+      </div>
+    </header>
+    <div class="rm-progress">
+      ${bar(done, total, 'lg')}
+      <div class="rm-progress-meta"><strong>${pct(done, total)}%</strong><span class="muted">${done} of ${plural(total, 'topic')} done across ${plural(items.length, 'roadmap')}</span></div>
+    </div>
+    <div class="grid">${items.map(roadmapCard).join('')}</div>`;
 }
 
 async function renderDashboard() {
@@ -480,11 +579,26 @@ async function renderDashboard() {
     <section>
       <div class="toolbar">
         <div>
-          <h2 class="h2">All roadmaps</h2>
+          <h2 class="h2">Explore roadmaps</h2>
           <p class="muted small" id="rm-role-desc"></p>
         </div>
         <div class="toolbar-right">
+          <div class="seg" role="group" aria-label="Browse mode">
+            <button type="button" data-rm-mode="subject" aria-pressed="true">Filter by Subject</button>
+            <button type="button" data-rm-mode="role" aria-pressed="false">Filter by Role</button>
+          </div>
           ${me.admin ? '<a class="btn small" href="#/import">Add roadmaps</a>' : ''}
+        </div>
+      </div>
+
+      <div class="rm-filters" id="rm-subject-controls">
+        <div class="seg" role="group" aria-label="Filter by status">
+          <button type="button" data-rm-status="all" aria-pressed="true">All</button>
+          <button type="button" data-rm-status="in_progress" aria-pressed="false">In progress</button>
+          <button type="button" data-rm-status="not_started" aria-pressed="false">Not started</button>
+          <button type="button" data-rm-status="done" aria-pressed="false">Done</button>
+        </div>
+        <div class="toolbar-right">
           <input type="search" id="rm-search" placeholder="Filter roadmaps" aria-label="Filter roadmaps">
           <select id="rm-sort" aria-label="Sort roadmaps">
             <option value="recent">Recently active</option>
@@ -495,36 +609,18 @@ async function renderDashboard() {
         </div>
       </div>
 
-      <div class="rm-filters">
-        <div class="chips role-chips" role="group" aria-label="Filter by job role">
-          ${JOB_ROLES.map((role) => {
-            const count = role.id === 'all' ? list.length : list.filter((r) => role.match.test(r.title)).length;
-            return `<button type="button" class="chip role-chip" data-role="${role.id}" aria-pressed="false">
-              <span class="material-icons-round" aria-hidden="true">${role.icon}</span>
-              <span>${esc(role.label)}</span>
-              <span class="chip-count">${count}</span>
-            </button>`;
-          }).join('')}
-        </div>
-        <div class="seg" role="group" aria-label="Filter by status">
-          <button type="button" data-rm-status="all" aria-pressed="true">All</button>
-          <button type="button" data-rm-status="in_progress" aria-pressed="false">In progress</button>
-          <button type="button" data-rm-status="not_started" aria-pressed="false">Not started</button>
-          <button type="button" data-rm-status="done" aria-pressed="false">Done</button>
-        </div>
-      </div>
-
-      <div class="grid" id="rm-grid"></div>
+      <div id="rm-grid"></div>
     </section>`;
 
   const grid = $('#rm-grid');
   const search = $('#rm-search');
   const sort = $('#rm-sort');
   const roleDesc = $('#rm-role-desc');
-  const roleBtns = [...document.querySelectorAll('[data-role]')];
+  const subjectControls = $('#rm-subject-controls');
+  const modeBtns = [...document.querySelectorAll('[data-rm-mode]')];
   const statusBtns = [...document.querySelectorAll('[data-rm-status]')];
 
-  let activeRole = JOB_ROLES.some((r) => r.id === prefs.get('rm-role')) ? prefs.get('rm-role') : 'all';
+  let activeMode = ['subject', 'role'].includes(prefs.get('rm-mode')) ? prefs.get('rm-mode') : 'subject';
   let activeStatus = ['all', 'in_progress', 'not_started', 'done'].includes(prefs.get('rm-status')) ? prefs.get('rm-status') : 'all';
   sort.value = sorters[prefs.get('sort')] ? prefs.get('sort') : 'recent';
 
@@ -534,27 +630,67 @@ async function renderDashboard() {
     return 'not_started';
   };
 
+  const bundled = bundleRoadmaps(list);
+
+  const jobRoleCard = (role) => {
+    const items = list.filter((r) => role.match.test(r.title));
+    const done = items.reduce((n, r) => n + r.done, 0);
+    const total = items.reduce((n, r) => n + r.total, 0);
+    const p = pct(done, total);
+    return `
+      <a class="rm-card role-job-card" href="#/role/${esc(role.id)}">
+        <div class="rm-card-top">
+          <div class="role-card-title">
+            <span class="material-icons-round role-card-icon" aria-hidden="true">${role.icon}</span>
+            <h3>${esc(role.label)}</h3>
+          </div>
+          <span class="pct">${p}%</span>
+        </div>
+        <p class="muted small">${esc(role.desc)}</p>
+        ${bar(done, total)}
+        <div class="rm-roles">
+          <span class="rm-bundle-badge">${plural(items.length, 'roadmap')}</span>
+          <span class="rm-role-tag">Resources</span>
+          <span class="rm-role-tag">Interviews</span>
+          <span class="rm-role-tag">Playground</span>
+        </div>
+        <div class="rm-card-meta">
+          <span>${done} / ${plural(total, 'topic')}</span>
+          <span>Open track -></span>
+        </div>
+      </a>`;
+  };
+
   const draw = () => {
     prefs.set('sort', sort.value);
-    prefs.set('rm-role', activeRole);
+    prefs.set('rm-mode', activeMode);
     prefs.set('rm-status', activeStatus);
 
-    roleBtns.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.role === activeRole)));
+    modeBtns.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.rmMode === activeMode)));
     statusBtns.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.rmStatus === activeStatus)));
+    subjectControls.hidden = activeMode === 'role';
+    subjectControls.style.display = activeMode === 'role' ? 'none' : '';
 
-    const roleObj = JOB_ROLES.find((r) => r.id === activeRole) || JOB_ROLES[0];
+    if (activeMode === 'role') {
+      const roles = JOB_ROLES.filter((r) => r.id !== 'all');
+      roleDesc.textContent = 'Pick a job role to access its roadmaps, curated resources, interview experiences, and playground.';
+      grid.className = 'grid';
+      grid.innerHTML = roles.map(jobRoleCard).join('');
+      return;
+    }
+
     const q = search.value.trim().toLowerCase();
-    const rows = list
-      .filter((r) => activeRole === 'all' || roleObj.match.test(r.title))
+    const rows = bundled
       .filter((r) => activeStatus === 'all' || rmStatus(r) === activeStatus)
-      .filter((r) => !q || r.title.toLowerCase().includes(q))
+      .filter((r) => !q || (r.searchText || r.title.toLowerCase()).includes(q))
       .sort(sorters[sort.value]);
 
-    roleDesc.textContent = `${roleObj.desc} Showing ${rows.length} of ${list.length}.`;
+    roleDesc.textContent = `Showing ${rows.length} of ${bundled.length} subject cards (${list.length} total roadmaps).`;
+    grid.className = 'grid';
     grid.innerHTML = rows.map(roadmapCard).join('') || '<p class="empty">No roadmaps match those filters.</p>';
   };
 
-  roleBtns.forEach((b) => b.addEventListener('click', () => { activeRole = b.dataset.role; draw(); }));
+  modeBtns.forEach((b) => b.addEventListener('click', () => { activeMode = b.dataset.rmMode; draw(); }));
   statusBtns.forEach((b) => b.addEventListener('click', () => { activeStatus = b.dataset.rmStatus; draw(); }));
   search.addEventListener('input', draw);
   sort.addEventListener('change', draw);
@@ -2153,4 +2289,5 @@ loadMe().then(async () => {
     },
   });
   await route();
+  setTimeout(() => checkTodayNotifications(toast), 1800);
 });
