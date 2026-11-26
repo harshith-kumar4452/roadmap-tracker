@@ -164,11 +164,33 @@ export async function updateItem(id, patch) {
     { arrayFilters: [{ 'i.id': id }], returnDocument: 'after' },
   );
   if (!doc) return null;
-  for (const s of doc.sections) {
-    const item = s.items.find((i) => i.id === id);
-    if (item) return item;
+  let item = null;
+  for (const s of doc.sections) item ??= s.items.find((i) => i.id === id);
+  if (item && patch.status !== undefined) await syncSameQuestion(doc, item);
+  return item;
+}
+
+const urlCount = (doc, url) => doc.sections.reduce((n, s) => n + s.items.filter((i) => i.url === url).length, 0);
+
+// The same question can sit in more than one roadmap (a LeetCode question in both the
+// JavaScript roadmap and the JavaScript practice list, a video in two system design roadmaps).
+// Ticking it in one ticks it everywhere. Only a link that appears once in its roadmap counts as
+// "the question": a link shared by many topics of one roadmap (a whole playlist, a list page) is
+// a general link, and those topics are left alone.
+async function syncSameQuestion(doc, item) {
+  if (!item.url || urlCount(doc, item.url) !== 1) return;
+  const col = await roadmaps();
+  const others = await col
+    .find({ _id: { $ne: doc._id }, 'sections.items.url': item.url }, { projection: { 'sections.items.url': 1, 'sections.items.id': 1 } })
+    .toArray();
+  for (const other of others) {
+    if (urlCount(other, item.url) !== 1) continue;
+    await col.updateOne(
+      { _id: other._id },
+      { $set: { 'sections.$[].items.$[same].status': item.status, 'sections.$[].items.$[same].doneAt': item.doneAt } },
+      { arrayFilters: [{ 'same.url': item.url }] },
+    );
   }
-  return null;
 }
 
 export async function deleteItem(id) {
