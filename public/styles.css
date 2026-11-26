@@ -468,6 +468,7 @@ button.pill:hover { filter: brightness(0.95); outline: 1px solid var(--border); 
 .site-gfg { --site: #2f8d46; }
 .site-datalemur { --site: #3b6fd8; }
 .site-code360 { --site: #e0692c; }
+.site-exercism { --site: #604fcd; }
 .qicon { display: grid; place-items: center; color: var(--muted); text-decoration: none; transition: color 0.15s, background-color 0.15s; }
 .qicon .material-icons-round { font-size: 20px; }
 .qicon:hover { background: var(--surface-2); }

@@ -30044,6 +30044,33 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "_0yadjxT",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Hello, World!",
+            "url": "https://www.hackerrank.com/challenges/js10-hello-world/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · 10 Days of JavaScript, Day 0"
+          },
+          {
+            "id": "Lnn9fJXW",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Hello World",
+            "url": "https://exercism.org/tracks/javascript/exercises/hello-world",
+            "level": "Beginner",
+            "note": "Practice · Exercism · practice exercise, difficulty 1/10"
+          },
+          {
+            "id": "OgkzkWpB",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Lucian's Luscious Lasagna",
+            "url": "https://exercism.org/tracks/javascript/exercises/lasagna",
+            "level": "Beginner",
+            "note": "Practice · Exercism · learning exercise: basics"
           }
         ]
       },
@@ -30113,6 +30140,69 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "6E97CfcH",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Data Types",
+            "url": "https://www.hackerrank.com/challenges/js10-data-types/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · 10 Days of JavaScript, Day 0"
+          },
+          {
+            "id": "h4WJHkqj",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Let and Const",
+            "url": "https://www.hackerrank.com/challenges/js10-let-and-const/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · 10 Days of JavaScript, Day 1"
+          },
+          {
+            "id": "Cia5GcAW",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Arithmetic Operators",
+            "url": "https://www.hackerrank.com/challenges/js10-arithmetic-operators/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · 10 Days of JavaScript, Day 1"
+          },
+          {
+            "id": "mu4gVt5M",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Freelancer Rates",
+            "url": "https://exercism.org/tracks/javascript/exercises/freelancer-rates",
+            "level": "Beginner",
+            "note": "Practice · Exercism · learning exercise: numbers, arithmetic operators"
+          },
+          {
+            "id": "EQ-aAevM",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Lucky Numbers",
+            "url": "https://exercism.org/tracks/javascript/exercises/lucky-numbers",
+            "level": "Beginner",
+            "note": "Practice · Exercism · learning exercise: type conversion"
+          },
+          {
+            "id": "dz8bmElW",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Amusement Park",
+            "url": "https://exercism.org/tracks/javascript/exercises/amusement-park",
+            "level": "Beginner",
+            "note": "Practice · Exercism · learning exercise: null undefined"
+          },
+          {
+            "id": "gcEU2xEe",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Recycling Robot",
+            "url": "https://exercism.org/tracks/javascript/exercises/recycling-robot",
+            "level": "Beginner",
+            "note": "Practice · Exercism · learning exercise: type checking"
           }
         ]
       },
@@ -30146,6 +30236,123 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "230PS2J-",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Template Literals",
+            "url": "https://www.hackerrank.com/challenges/js10-template-literals/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · 10 Days of JavaScript, Day 5"
+          },
+          {
+            "id": "MuwxrafM",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Bitwise Operators",
+            "url": "https://www.hackerrank.com/challenges/js10-bitwise/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · 10 Days of JavaScript, Day 6"
+          },
+          {
+            "id": "rGCwtTfi",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "JavaScript Dates",
+            "url": "https://www.hackerrank.com/challenges/js10-date/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · 10 Days of JavaScript, Day 6"
+          },
+          {
+            "id": "lrBzXxkr",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Regular Expressions II",
+            "url": "https://www.hackerrank.com/challenges/js10-regexp-2/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · 10 Days of JavaScript, Day 7"
+          },
+          {
+            "id": "tZqeuUif",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Regular Expressions III",
+            "url": "https://www.hackerrank.com/challenges/js10-regexp-3/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · 10 Days of JavaScript, Day 7"
+          },
+          {
+            "id": "cNJ1hkU_",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Poetry Club Door Policy",
+            "url": "https://exercism.org/tracks/javascript/exercises/poetry-club-door-policy",
+            "level": "Beginner",
+            "note": "Practice · Exercism · learning exercise: strings"
+          },
+          {
+            "id": "tWfeQ-AY",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Custom Signs",
+            "url": "https://exercism.org/tracks/javascript/exercises/custom-signs",
+            "level": "Beginner",
+            "note": "Practice · Exercism · learning exercise: conditionals ternary, template strings"
+          },
+          {
+            "id": "Cz0IQeiS",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Appointment Time",
+            "url": "https://exercism.org/tracks/javascript/exercises/appointment-time",
+            "level": "Beginner",
+            "note": "Practice · Exercism · learning exercise: dates"
+          },
+          {
+            "id": "9FrXoYgd",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Regular Chatbot",
+            "url": "https://exercism.org/tracks/javascript/exercises/regular-chatbot",
+            "level": "Beginner",
+            "note": "Practice · Exercism · learning exercise: regular expressions"
+          },
+          {
+            "id": "wdb2o5aV",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Two Fer",
+            "url": "https://exercism.org/tracks/javascript/exercises/two-fer",
+            "level": "Beginner",
+            "note": "Practice · Exercism · practice exercise, difficulty 1/10"
+          },
+          {
+            "id": "-M_n6K1N",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Reverse String",
+            "url": "https://exercism.org/tracks/javascript/exercises/reverse-string",
+            "level": "Beginner",
+            "note": "Practice · Exercism · practice exercise, difficulty 2/10"
+          },
+          {
+            "id": "mwD3HB4D",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Pangram",
+            "url": "https://exercism.org/tracks/javascript/exercises/pangram",
+            "level": "Beginner",
+            "note": "Practice · Exercism · practice exercise, difficulty 2/10"
+          },
+          {
+            "id": "P7nK_-Oy",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Gigasecond",
+            "url": "https://exercism.org/tracks/javascript/exercises/gigasecond",
+            "level": "Beginner",
+            "note": "Practice · Exercism · practice exercise, difficulty 1/10"
           }
         ]
       },
@@ -30197,6 +30404,141 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "gAJ5Auwd",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Arrays",
+            "url": "https://www.hackerrank.com/challenges/js10-arrays/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · 10 Days of JavaScript, Day 3"
+          },
+          {
+            "id": "sZAFgUEh",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Create a Rectangle Object",
+            "url": "https://www.hackerrank.com/challenges/js10-objects/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · 10 Days of JavaScript, Day 4"
+          },
+          {
+            "id": "mHTmQ1mv",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Count Objects",
+            "url": "https://www.hackerrank.com/challenges/js10-count-objects/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · 10 Days of JavaScript, Day 4"
+          },
+          {
+            "id": "izkTjOy9",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Elyses Enchantments",
+            "url": "https://exercism.org/tracks/javascript/exercises/elyses-enchantments",
+            "level": "Beginner",
+            "note": "Practice · Exercism · learning exercise: arrays"
+          },
+          {
+            "id": "k0ko0tu8",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "High Score Board",
+            "url": "https://exercism.org/tracks/javascript/exercises/high-score-board",
+            "level": "Beginner",
+            "note": "Practice · Exercism · learning exercise: objects"
+          },
+          {
+            "id": "Dk2ZTbr7",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Elyses Destructured Enchantments",
+            "url": "https://exercism.org/tracks/javascript/exercises/elyses-destructured-enchantments",
+            "level": "Beginner",
+            "note": "Practice · Exercism · learning exercise: array destructuring, object destructuring"
+          },
+          {
+            "id": "4TTT6TDm",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Train Driver",
+            "url": "https://exercism.org/tracks/javascript/exercises/train-driver",
+            "level": "Beginner",
+            "note": "Practice · Exercism · learning exercise: rest and spread"
+          },
+          {
+            "id": "mmIUbAHd",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Ozan's Playlist",
+            "url": "https://exercism.org/tracks/javascript/exercises/ozans-playlist",
+            "level": "Beginner",
+            "note": "Practice · Exercism · learning exercise: sets"
+          },
+          {
+            "id": "skhr9maR",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Chunk Array",
+            "url": "https://leetcode.com/problems/chunk-array/",
+            "level": "Beginner",
+            "note": "Practice · LeetCode #2677"
+          },
+          {
+            "id": "XkePBhWW",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Is Object Empty",
+            "url": "https://leetcode.com/problems/is-object-empty/",
+            "level": "Beginner",
+            "note": "Practice · LeetCode #2727"
+          },
+          {
+            "id": "z4yzD0aj",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Compact Object",
+            "url": "https://leetcode.com/problems/compact-object/",
+            "level": "Intermediate",
+            "note": "Practice · LeetCode #2705"
+          },
+          {
+            "id": "rh1pMWwc",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Group By",
+            "url": "https://leetcode.com/problems/group-by/",
+            "level": "Intermediate",
+            "note": "Practice · LeetCode #2631"
+          },
+          {
+            "id": "kJD61_Pg",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Join Two Arrays by ID",
+            "url": "https://leetcode.com/problems/join-two-arrays-by-id/",
+            "level": "Intermediate",
+            "note": "Practice · LeetCode #2722"
+          },
+          {
+            "id": "_5dS6meZ",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Flatten Deeply Nested Array",
+            "url": "https://leetcode.com/problems/flatten-deeply-nested-array/",
+            "level": "Intermediate",
+            "note": "Practice · LeetCode #2625"
+          },
+          {
+            "id": "SvVZyJ83",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Snail Traversal",
+            "url": "https://leetcode.com/problems/snail-traversal/",
+            "level": "Intermediate",
+            "note": "Practice · LeetCode #2624"
           }
         ]
       },
@@ -30266,6 +30608,87 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "Z5Ij-BfT",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Functions",
+            "url": "https://www.hackerrank.com/challenges/js10-function/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · 10 Days of JavaScript, Day 1"
+          },
+          {
+            "id": "bFP472hb",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Arrow Functions",
+            "url": "https://www.hackerrank.com/challenges/js10-arrows/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · 10 Days of JavaScript, Day 5"
+          },
+          {
+            "id": "7stiPTGb",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Lasagna Master",
+            "url": "https://exercism.org/tracks/javascript/exercises/lasagna-master",
+            "level": "Beginner",
+            "note": "Practice · Exercism · learning exercise: functions"
+          },
+          {
+            "id": "fuOLDz2Y",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Fruit Picker",
+            "url": "https://exercism.org/tracks/javascript/exercises/fruit-picker",
+            "level": "Beginner",
+            "note": "Practice · Exercism · learning exercise: callbacks"
+          },
+          {
+            "id": "P3Y5M6t5",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Pizza Order",
+            "url": "https://exercism.org/tracks/javascript/exercises/pizza-order",
+            "level": "Beginner",
+            "note": "Practice · Exercism · learning exercise: recursion"
+          },
+          {
+            "id": "0oNfRFnM",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Create Hello World Function",
+            "url": "https://leetcode.com/problems/create-hello-world-function/",
+            "level": "Beginner",
+            "note": "Practice · LeetCode #2667"
+          },
+          {
+            "id": "sWacTTvh",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Return Length of Arguments Passed",
+            "url": "https://leetcode.com/problems/return-length-of-arguments-passed/",
+            "level": "Beginner",
+            "note": "Practice · LeetCode #2703"
+          },
+          {
+            "id": "nWzOOdHg",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Function Composition",
+            "url": "https://leetcode.com/problems/function-composition/",
+            "level": "Beginner",
+            "note": "Practice · LeetCode #2629"
+          },
+          {
+            "id": "decycOBw",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Allow One Function Call",
+            "url": "https://leetcode.com/problems/allow-one-function-call/",
+            "level": "Beginner",
+            "note": "Practice · LeetCode #2666"
           }
         ]
       },
@@ -30317,6 +30740,150 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "knf_NO4l",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Conditional Statements: If-Else",
+            "url": "https://www.hackerrank.com/challenges/js10-if-else/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · 10 Days of JavaScript, Day 2"
+          },
+          {
+            "id": "J54q-Pni",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Conditional Statements: Switch",
+            "url": "https://www.hackerrank.com/challenges/js10-switch/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · 10 Days of JavaScript, Day 2"
+          },
+          {
+            "id": "OvgjACXq",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Loops",
+            "url": "https://www.hackerrank.com/challenges/js10-loops/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · 10 Days of JavaScript, Day 2"
+          },
+          {
+            "id": "j1_hLLMz",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Try, Catch, and Finally",
+            "url": "https://www.hackerrank.com/challenges/js10-try-catch-and-finally/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · 10 Days of JavaScript, Day 3"
+          },
+          {
+            "id": "2bXiLOtu",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Throw",
+            "url": "https://www.hackerrank.com/challenges/js10-throw/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · 10 Days of JavaScript, Day 3"
+          },
+          {
+            "id": "YZ9jJKzP",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Annalyn's Infiltration",
+            "url": "https://exercism.org/tracks/javascript/exercises/annalyns-infiltration",
+            "level": "Beginner",
+            "note": "Practice · Exercism · learning exercise: booleans"
+          },
+          {
+            "id": "7MDHSiT6",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Vehicle Purchase",
+            "url": "https://exercism.org/tracks/javascript/exercises/vehicle-purchase",
+            "level": "Beginner",
+            "note": "Practice · Exercism · learning exercise: comparison, conditionals"
+          },
+          {
+            "id": "SG5VgbCa",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Bird Watcher",
+            "url": "https://exercism.org/tracks/javascript/exercises/bird-watcher",
+            "level": "Beginner",
+            "note": "Practice · Exercism · learning exercise: increment decrement, for loops"
+          },
+          {
+            "id": "jtc_zGAS",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Mixed Juices",
+            "url": "https://exercism.org/tracks/javascript/exercises/mixed-juices",
+            "level": "Beginner",
+            "note": "Practice · Exercism · learning exercise: while loops, conditionals switch"
+          },
+          {
+            "id": "yAsY2e7O",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Elyses Looping Enchantments",
+            "url": "https://exercism.org/tracks/javascript/exercises/elyses-looping-enchantments",
+            "level": "Beginner",
+            "note": "Practice · Exercism · learning exercise: array loops"
+          },
+          {
+            "id": "P3QyayPf",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Elyses Analytic Enchantments",
+            "url": "https://exercism.org/tracks/javascript/exercises/elyses-analytic-enchantments",
+            "level": "Beginner",
+            "note": "Practice · Exercism · learning exercise: arrow functions, array analysis"
+          },
+          {
+            "id": "RnMmlMkk",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Elyses Transformative Enchantments",
+            "url": "https://exercism.org/tracks/javascript/exercises/elyses-transformative-enchantments",
+            "level": "Beginner",
+            "note": "Practice · Exercism · learning exercise: array transformations"
+          },
+          {
+            "id": "Hh0kmnqN",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Apply Transform Over Each Element in Array",
+            "url": "https://leetcode.com/problems/apply-transform-over-each-element-in-array/",
+            "level": "Beginner",
+            "note": "Practice · LeetCode #2635"
+          },
+          {
+            "id": "VQiVNsuX",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Filter Elements from Array",
+            "url": "https://leetcode.com/problems/filter-elements-from-array/",
+            "level": "Beginner",
+            "note": "Practice · LeetCode #2634"
+          },
+          {
+            "id": "QjTixhw0",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Array Reduce Transformation",
+            "url": "https://leetcode.com/problems/array-reduce-transformation/",
+            "level": "Beginner",
+            "note": "Practice · LeetCode #2626"
+          },
+          {
+            "id": "xtYPHFjJ",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Sort By",
+            "url": "https://leetcode.com/problems/sort-by/",
+            "level": "Beginner",
+            "note": "Practice · LeetCode #2724"
           }
         ]
       },
@@ -30377,6 +30944,33 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "fOGx-89x",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Create a Button",
+            "url": "https://www.hackerrank.com/challenges/js10-create-a-button/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · 10 Days of JavaScript, Day 8"
+          },
+          {
+            "id": "rccaB72m",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Buttons Container",
+            "url": "https://www.hackerrank.com/challenges/js10-buttons-container/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · 10 Days of JavaScript, Day 8"
+          },
+          {
+            "id": "yrsgqbM8",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Binary Calculator",
+            "url": "https://www.hackerrank.com/challenges/js10-binary-calculator/problem",
+            "level": "Intermediate",
+            "note": "Practice · HackerRank · 10 Days of JavaScript, Day 9"
           }
         ]
       },
@@ -30428,6 +31022,96 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "1cEVRsSj",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Translation Service",
+            "url": "https://exercism.org/tracks/javascript/exercises/translation-service",
+            "level": "Beginner",
+            "note": "Practice · Exercism · learning exercise: promises"
+          },
+          {
+            "id": "OZ3IGhAh",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Sleep",
+            "url": "https://leetcode.com/problems/sleep/",
+            "level": "Beginner",
+            "note": "Practice · LeetCode #2621"
+          },
+          {
+            "id": "4uibY0WB",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Add Two Promises",
+            "url": "https://leetcode.com/problems/add-two-promises/",
+            "level": "Beginner",
+            "note": "Practice · LeetCode #2723"
+          },
+          {
+            "id": "JEjtBnQM",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Timeout Cancellation",
+            "url": "https://leetcode.com/problems/timeout-cancellation/",
+            "level": "Beginner",
+            "note": "Practice · LeetCode #2715"
+          },
+          {
+            "id": "n1WOalv6",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Interval Cancellation",
+            "url": "https://leetcode.com/problems/interval-cancellation/",
+            "level": "Beginner",
+            "note": "Practice · LeetCode #2725"
+          },
+          {
+            "id": "pFn3lpUt",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Promises",
+            "url": "https://exercism.org/tracks/javascript/exercises/promises",
+            "level": "Intermediate",
+            "note": "Practice · Exercism · practice exercise, difficulty 6/10"
+          },
+          {
+            "id": "71FMGZaX",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Promise Time Limit",
+            "url": "https://leetcode.com/problems/promise-time-limit/",
+            "level": "Intermediate",
+            "note": "Practice · LeetCode #2637"
+          },
+          {
+            "id": "I6U6kFsl",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Cache With Time Limit",
+            "url": "https://leetcode.com/problems/cache-with-time-limit/",
+            "level": "Intermediate",
+            "note": "Practice · LeetCode #2622"
+          },
+          {
+            "id": "Wbf--Bpg",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Debounce",
+            "url": "https://leetcode.com/problems/debounce/",
+            "level": "Intermediate",
+            "note": "Practice · LeetCode #2627"
+          },
+          {
+            "id": "LihogWiO",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Execute Asynchronous Functions in Parallel",
+            "url": "https://leetcode.com/problems/execute-asynchronous-functions-in-parallel/",
+            "level": "Intermediate",
+            "note": "Practice · LeetCode #2721"
           }
         ]
       },
@@ -30497,6 +31181,96 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "LkWF2dxg",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Classes",
+            "url": "https://www.hackerrank.com/challenges/js10-class/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · 10 Days of JavaScript, Day 4"
+          },
+          {
+            "id": "MHYg7epg",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Inheritance",
+            "url": "https://www.hackerrank.com/challenges/js10-inheritance/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · 10 Days of JavaScript, Day 5"
+          },
+          {
+            "id": "GLagKQh9",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Windowing System",
+            "url": "https://exercism.org/tracks/javascript/exercises/windowing-system",
+            "level": "Beginner",
+            "note": "Practice · Exercism · learning exercise: classes"
+          },
+          {
+            "id": "6snhrfpc",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Factory Sensors",
+            "url": "https://exercism.org/tracks/javascript/exercises/factory-sensors",
+            "level": "Beginner",
+            "note": "Practice · Exercism · learning exercise: errors, inheritance"
+          },
+          {
+            "id": "4pIBzJfC",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Array Prototype Last",
+            "url": "https://leetcode.com/problems/array-prototype-last/",
+            "level": "Beginner",
+            "note": "Practice · LeetCode #2619"
+          },
+          {
+            "id": "mMRWDkkC",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Calculator with Method Chaining",
+            "url": "https://leetcode.com/problems/calculator-with-method-chaining/",
+            "level": "Beginner",
+            "note": "Practice · LeetCode #2726"
+          },
+          {
+            "id": "PAhmzDo8",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Array Wrapper",
+            "url": "https://leetcode.com/problems/array-wrapper/",
+            "level": "Beginner",
+            "note": "Practice · LeetCode #2695"
+          },
+          {
+            "id": "cBUv1WDp",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Event Emitter",
+            "url": "https://leetcode.com/problems/event-emitter/",
+            "level": "Intermediate",
+            "note": "Practice · LeetCode #2694"
+          },
+          {
+            "id": "_2-GyYkt",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Call Function with Custom Context",
+            "url": "https://leetcode.com/problems/call-function-with-custom-context/",
+            "level": "Intermediate",
+            "note": "Practice · LeetCode #2693"
+          },
+          {
+            "id": "pPG9H-ug",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Check if Object Instance of Class",
+            "url": "https://leetcode.com/problems/check-if-object-instance-of-class/",
+            "level": "Intermediate",
+            "note": "Practice · LeetCode #2618"
           }
         ]
       },
@@ -30530,6 +31304,87 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "CAjvxrFh",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Coordinate Transformation",
+            "url": "https://exercism.org/tracks/javascript/exercises/coordinate-transformation",
+            "level": "Beginner",
+            "note": "Practice · Exercism · learning exercise: closures"
+          },
+          {
+            "id": "jWSz8hw6",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Counter",
+            "url": "https://leetcode.com/problems/counter/",
+            "level": "Beginner",
+            "note": "Practice · LeetCode #2620"
+          },
+          {
+            "id": "USCm4qcB",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Counter II",
+            "url": "https://leetcode.com/problems/counter-ii/",
+            "level": "Beginner",
+            "note": "Practice · LeetCode #2665"
+          },
+          {
+            "id": "-mVCKVlX",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "To Be Or Not To Be",
+            "url": "https://leetcode.com/problems/to-be-or-not-to-be/",
+            "level": "Beginner",
+            "note": "Practice · LeetCode #2704"
+          },
+          {
+            "id": "r_jw3zpJ",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Generate Fibonacci Sequence",
+            "url": "https://leetcode.com/problems/generate-fibonacci-sequence/",
+            "level": "Beginner",
+            "note": "Practice · LeetCode #2648"
+          },
+          {
+            "id": "zP5dckKd",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Memoize",
+            "url": "https://leetcode.com/problems/memoize/",
+            "level": "Intermediate",
+            "note": "Practice · LeetCode #2623"
+          },
+          {
+            "id": "3yQiMNN3",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Nested Array Generator",
+            "url": "https://leetcode.com/problems/nested-array-generator/",
+            "level": "Intermediate",
+            "note": "Practice · LeetCode #2649"
+          },
+          {
+            "id": "CcGlzQAp",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Memoize II",
+            "url": "https://leetcode.com/problems/memoize-ii/",
+            "level": "Advanced",
+            "note": "Practice · LeetCode #2630"
+          },
+          {
+            "id": "s4OxmfWD",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Design Cancellable Function",
+            "url": "https://leetcode.com/problems/design-cancellable-function/",
+            "level": "Advanced",
+            "note": "Practice · LeetCode #2650"
           }
         ]
       }

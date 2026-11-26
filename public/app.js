@@ -734,6 +734,7 @@ function groups() {
 const SITES = [
   [/leetcode\.com/, 'LeetCode'], [/takeuforward\.org\/(practice|plus)/, 'TUF'], [/hackerrank\.com/, 'HackerRank'],
   [/codechef\.com/, 'CodeChef'], [/geeksforgeeks\.org/, 'GFG'], [/datalemur\.com/, 'DataLemur'], [/codingninjas|naukri\.com\/code360/, 'Code360'],
+  [/exercism\.org/, 'Exercism'],
 ];
 const siteOf = (url) => SITES.find(([re]) => re.test(url))?.[1];
 
@@ -754,8 +755,8 @@ function itemLinks(i) {
 
 // Links sit in fixed slots, one per site/kind used anywhere in the group, so icons line up from
 // row to row (as on the TUF sheet). A question without that link shows a faint placeholder.
-const SITE_ORDER = ['TUF', 'LeetCode', 'GFG', 'HackerRank', 'CodeChef', 'DataLemur', 'Code360'];
-const SITE_SHORT = { TUF: 'TUF', LeetCode: 'LC', GFG: 'GFG', HackerRank: 'HR', CodeChef: 'CC', DataLemur: 'DL', Code360: 'C360' };
+const SITE_ORDER = ['TUF', 'LeetCode', 'GFG', 'HackerRank', 'CodeChef', 'Exercism', 'DataLemur', 'Code360'];
+const SITE_SHORT = { TUF: 'TUF', LeetCode: 'LC', GFG: 'GFG', HackerRank: 'HR', CodeChef: 'CC', Exercism: 'EX', DataLemur: 'DL', Code360: 'C360' };
 const KIND_ICON = { article: 'article', video: 'smart_display' };
 const slotKey = (l) => (l.kind === 'practice' ? `p:${l.site}` : l.kind);
 const slotRank = (k) => (k.startsWith('p:') ? (SITE_ORDER.indexOf(k.slice(2)) + 1 || 50) : k === 'article' ? 100 : 101);
@@ -787,7 +788,7 @@ function linksHtml(i, slots = groupSlots([i])) {
 
 // Notes written by the importers ("LeetCode #1 · 71k likes", "takeUforward A2Z · Fundamentals")
 // are shown as quiet metadata; anything else is the owner's own note.
-const IMPORT_NOTE = /^(LeetCode #|HackerRank\b|CodeChef\b|takeUforward A2Z|Source:)/;
+const IMPORT_NOTE = /^(LeetCode #|HackerRank\b|CodeChef\b|takeUforward A2Z|Source:|Practice · )/;
 // The sheet's sub-topic slugs read as "Faqs hard", "1d dp", "Triessubc"; show them as TUF does.
 const prettySub = (s) => s
   .replace(/^faqs\s*(hard|medium|dll)?$/i, (_, k) => (k ? `FAQs (${k.toLowerCase() === 'dll' ? 'DLL' : k[0].toUpperCase() + k.slice(1).toLowerCase()})` : 'FAQs'))
@@ -795,7 +796,13 @@ const prettySub = (s) => s
   .replace(/\b(1d|2d|dp|lis|mcm|ll|dll|bst|bt|ii)\b/gi, (m) => m.toUpperCase())
   .replace(/\beratosthenes\b/i, 'Eratosthenes')
   .replace(/^On answers$/i, 'On answers (binary search)');
-const subTopicOf = (i) => prettySub(/^takeUforward A2Z · (.+)$/.exec(noteText(i.note))?.[1] ?? '');
+// A topic's sub-group: the TUF sheet's sub-topic, or "Practice" for questions added after a
+// video course's lessons.
+const subTopicOf = (i) => {
+  const note = noteText(i.note);
+  if (note.startsWith('Practice · ')) return 'Practice';
+  return prettySub(/^takeUforward A2Z · (.+)$/.exec(note)?.[1] ?? '');
+};
 
 // Practice lists read better as Easy / Medium / Hard, the way the question sites label them.
 const isPracticeList = () => /practice/i.test(rm?.title ?? '');
@@ -808,7 +815,7 @@ const noteText = (n) => (n || '').replace(/\s*·?\s*Also on \w+: https?:\/\/\S+/
 function itemRow(i, slots) {
   const note = noteText(i.note);
   const imported = IMPORT_NOTE.test(note);
-  const meta = imported ? note.replace(/^takeUforward A2Z · .*$/, '') : '';
+  const meta = imported ? note.replace(/^takeUforward A2Z · .*$/, '').replace(/^Practice · /, '') : '';
   const next = STATUS[STATUS[i.status]?.next ?? 'in_progress'];
   return `
     <div class="row ${i.status === 'done' ? 'is-done' : ''} ${i.status === 'in_progress' ? 'is-doing' : ''}" role="row" data-item="${esc(i.id)}">
@@ -835,19 +842,32 @@ function itemRow(i, slots) {
     </div>`;
 }
 
-// Sub-topic headings inside a step (Fundamentals, FAQs (Medium)...), each with its own count.
+// Sub-topic headings inside a step (Fundamentals, FAQs (Medium)... or Videos / Practice), each
+// with its own count. Link slots are worked out per sub-group, so a video lesson doesn't carry
+// empty slots for the practice sites below it.
 function rowsHtml(g, rows) {
-  const slots = groupSlots(g.items);
+  const grouped = rm.group === 'topic' && g.items.some((x) => subTopicOf(x));
+  const label = (x) => {
+    if (!grouped) return '';
+    const sub = subTopicOf(x);
+    if (sub) return sub;
+    return /youtu\.?be/.test(x.url || '') ? 'Videos' : 'Topics';
+  };
+  const slotsFor = new Map();
+  const slots = (sub) => {
+    if (!slotsFor.has(sub)) slotsFor.set(sub, groupSlots(grouped ? g.items.filter((x) => label(x) === sub) : g.items));
+    return slotsFor.get(sub);
+  };
   let last = null;
   return rows.map((i) => {
-    const sub = rm.group === 'topic' ? subTopicOf(i) : '';
+    const sub = label(i);
     let head = '';
     if (sub && sub !== last) {
-      const of = g.items.filter((x) => subTopicOf(x) === sub);
+      const of = g.items.filter((x) => label(x) === sub);
       head = `<div class="subhead" role="row"><span role="cell">${esc(sub)}</span><span class="sec-count">${of.filter((x) => x.status === 'done').length} / ${of.length}</span></div>`;
     }
     last = sub;
-    return head + itemRow(i, slots);
+    return head + itemRow(i, slots(sub));
   }).join('');
 }
 
