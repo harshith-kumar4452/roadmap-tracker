@@ -29963,6 +29963,579 @@
     ]
   },
   {
+    "id": "gvbA57Tq",
+    "title": "JavaScript Roadmap (Chai aur Code)",
+    "intro": "JavaScript from first principles to engine internals: data types, functions and scope, the DOM, async code and promises, prototypes and classes, then closures. This roadmap covers all 51 videos of the Chai aur Javascript series (Hindi), in playlist order. All videos are free. Level labels are my own.",
+    "notionUrl": null,
+    "resources": [
+      {
+        "title": "Chai aur Javascript playlist (51 videos, Hindi)",
+        "url": "https://www.youtube.com/playlist?list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37"
+      },
+      {
+        "title": "MDN: JavaScript Guide",
+        "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide"
+      },
+      {
+        "title": "javascript.info",
+        "url": "https://javascript.info/"
+      },
+      {
+        "title": "roadmap.sh: JavaScript Roadmap",
+        "url": "https://roadmap.sh/javascript"
+      }
+    ],
+    "notes": [
+      {
+        "heading": "Not covered by the playlist",
+        "lines": [
+          "ES modules (import / export) and how bundlers use them",
+          "Error handling in depth: try / catch / finally, custom errors, async errors",
+          "Modern syntax: optional chaining, nullish coalescing, spread / rest in depth",
+          "Map, Set, WeakMap, iterators and generators",
+          "async / await patterns: running in parallel, timeouts, cancelling with AbortController",
+          "Tooling: npm, linting, and testing JavaScript code"
+        ]
+      },
+      {
+        "heading": "Mini project",
+        "lines": [
+          "Build a small app with no framework: a task board that renders from an array, edits the DOM on events, saves to localStorage, and loads data from a public API with fetch, showing loading and error states. Then refactor it into classes and ES modules."
+        ]
+      },
+      {
+        "heading": "Fill the gaps with your other roadmaps",
+        "lines": [
+          "Practise closures, promises and array utilities: JavaScript Practice: LeetCode (after the Functions and Async topics).",
+          "Build UIs with components and state: React Frontend Roadmap, then Frontend & React Practice: HackerRank.",
+          "Run JavaScript on the server: Node.js Backend Roadmap (Chai aur Code).",
+          "Save and share your code: Git Roadmap."
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "id": "VEpQbCuQ",
+        "title": "Getting Started",
+        "items": [
+          {
+            "id": "6pB0BgyH",
+            "title": "1. JavaScript for beginners",
+            "url": "https://www.youtube.com/watch?v=Hr5iLG7sUa0&list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37&index=1",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": ""
+          },
+          {
+            "id": "vkMNcavC",
+            "title": "2. Setting up the environment on your machine",
+            "url": "https://www.youtube.com/watch?v=cvoLc3deAdQ&list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37&index=2",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": ""
+          },
+          {
+            "id": "RYTSIsXQ",
+            "title": "3. Save and work on GitHub",
+            "url": "https://www.youtube.com/watch?v=-GoKoR6aLcY&list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37&index=3",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": ""
+          }
+        ]
+      },
+      {
+        "id": "_pWqYUeA",
+        "title": "Variables and Data Types",
+        "items": [
+          {
+            "id": "iKCKOEAx",
+            "title": "4. let, const and var",
+            "url": "https://www.youtube.com/watch?v=yY0bKZNYmJs&list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37&index=4",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": ""
+          },
+          {
+            "id": "BNzlwZU5",
+            "title": "5. Data types and ECMA standards",
+            "url": "https://www.youtube.com/watch?v=-9knnv97wSc&list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37&index=5",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": ""
+          },
+          {
+            "id": "hq9VHIHR",
+            "title": "6. Data type conversion",
+            "url": "https://www.youtube.com/watch?v=X7hDBhd_L5U&list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37&index=6",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": ""
+          },
+          {
+            "id": "YekHM-SF",
+            "title": "7. Why string to number conversion is confusing",
+            "url": "https://www.youtube.com/watch?v=N9el4APFtAo&list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37&index=7",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": ""
+          },
+          {
+            "id": "vvmYx7Wn",
+            "title": "8. Comparing data types",
+            "url": "https://www.youtube.com/watch?v=giP2uXMlv4c&list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37&index=8",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": ""
+          },
+          {
+            "id": "lWeHOkI5",
+            "title": "9. Data types summary",
+            "url": "https://www.youtube.com/watch?v=suMvZWjjKbo&list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37&index=9",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": ""
+          },
+          {
+            "id": "oyldRqC0",
+            "title": "10. Stack and heap memory",
+            "url": "https://www.youtube.com/watch?v=7gwc-1czolw&list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37&index=10",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": ""
+          }
+        ]
+      },
+      {
+        "id": "1BF6dcAs",
+        "title": "Strings, Numbers and Dates",
+        "items": [
+          {
+            "id": "KHXPrVfy",
+            "title": "11. Strings",
+            "url": "https://www.youtube.com/watch?v=fozwNnFunlo&list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37&index=11",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": ""
+          },
+          {
+            "id": "OYG1jd8M",
+            "title": "12. Numbers and Math",
+            "url": "https://www.youtube.com/watch?v=_KqpeDc47Ro&list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37&index=12",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": ""
+          },
+          {
+            "id": "6igwS0p0",
+            "title": "13. Date and time in depth",
+            "url": "https://www.youtube.com/watch?v=tGLCuoumaGY&list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37&index=13",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": ""
+          }
+        ]
+      },
+      {
+        "id": "xK2Dz0io",
+        "title": "Arrays and Objects",
+        "items": [
+          {
+            "id": "-28Z1krj",
+            "title": "14. Arrays",
+            "url": "https://www.youtube.com/watch?v=cejBux2gtEE&list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37&index=14",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": ""
+          },
+          {
+            "id": "iLjoh-4u",
+            "title": "15. Arrays part 2",
+            "url": "https://www.youtube.com/watch?v=m6azhgyCi-k&list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37&index=15",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": ""
+          },
+          {
+            "id": "tb2ClL1F",
+            "title": "16. Objects in depth",
+            "url": "https://www.youtube.com/watch?v=vVYOHmqQDCU&list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37&index=16",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": ""
+          },
+          {
+            "id": "DDlQ6MYb",
+            "title": "17. Objects part 2",
+            "url": "https://www.youtube.com/watch?v=4lb2pXWWXJI&list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37&index=17",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": ""
+          },
+          {
+            "id": "sRS8L5ka",
+            "title": "18. Object destructuring and intro to JSON APIs",
+            "url": "https://www.youtube.com/watch?v=AViTh83k-IE&list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37&index=18",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": ""
+          }
+        ]
+      },
+      {
+        "id": "Qa_HST_2",
+        "title": "Functions and Scope",
+        "items": [
+          {
+            "id": "Afg4raWl",
+            "title": "19. Functions and parameters",
+            "url": "https://www.youtube.com/watch?v=Bn56WahG_t0&list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37&index=19",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": ""
+          },
+          {
+            "id": "F6dfj5PO",
+            "title": "20. Functions with objects and arrays",
+            "url": "https://www.youtube.com/watch?v=t7ZHPhgdA4U&list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37&index=20",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": ""
+          },
+          {
+            "id": "LAGO5X_P",
+            "title": "21. Global and local scope",
+            "url": "https://www.youtube.com/watch?v=cHHU0jXfjKY&list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37&index=21",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": ""
+          },
+          {
+            "id": "o2cOw7PD",
+            "title": "22. Scope levels and hoisting",
+            "url": "https://www.youtube.com/watch?v=eWwge2YpHhc&list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37&index=22",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": ""
+          },
+          {
+            "id": "HVkTenCn",
+            "title": "23. this and arrow functions",
+            "url": "https://www.youtube.com/watch?v=9ksqBa8_txM&list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37&index=23",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": ""
+          },
+          {
+            "id": "xEgEL7mE",
+            "title": "24. Immediately invoked function expressions (IIFE)",
+            "url": "https://www.youtube.com/watch?v=GAIbn16Iytc&list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37&index=24",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": ""
+          },
+          {
+            "id": "ZXRjL7OG",
+            "title": "25. How JavaScript executes code, and the call stack",
+            "url": "https://www.youtube.com/watch?v=ByhtOgF6uYM&list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37&index=25",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": ""
+          }
+        ]
+      },
+      {
+        "id": "HhrKWRQH",
+        "title": "Control Flow and Loops",
+        "items": [
+          {
+            "id": "npKC2kvv",
+            "title": "26. Control flow in one shot",
+            "url": "https://www.youtube.com/watch?v=0P_YvC6Gg0c&list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37&index=26",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": ""
+          },
+          {
+            "id": "N9fH57Ga",
+            "title": "27. for loops with break and continue",
+            "url": "https://www.youtube.com/watch?v=Y1cpFsXrEgY&list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37&index=27",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": ""
+          },
+          {
+            "id": "ueEqsFGF",
+            "title": "28. while and do-while loops",
+            "url": "https://www.youtube.com/watch?v=w3Q55-l47P0&list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37&index=28",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": ""
+          },
+          {
+            "id": "U7XCcbuH",
+            "title": "29. Higher-order array loops",
+            "url": "https://www.youtube.com/watch?v=M0YImBHQsWU&list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37&index=29",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": ""
+          },
+          {
+            "id": "xsS4CMoW",
+            "title": "30. filter, map and reduce",
+            "url": "https://www.youtube.com/watch?v=9MfwYoWKKVE&list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37&index=30",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": ""
+          }
+        ]
+      },
+      {
+        "id": "2UOoA8Xl",
+        "title": "DOM and Events",
+        "items": [
+          {
+            "id": "f5VfRQpO",
+            "title": "31. Introduction to the DOM",
+            "url": "https://www.youtube.com/watch?v=DcjNkHtDj8A&list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37&index=31",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": ""
+          },
+          {
+            "id": "oxtcGxnk",
+            "title": "32. DOM selectors, NodeList and HTMLCollection",
+            "url": "https://www.youtube.com/watch?v=Ab6K57WjWTE&list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37&index=32",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": ""
+          },
+          {
+            "id": "wU9Rg-AJ",
+            "title": "33. Creating new elements in the DOM",
+            "url": "https://www.youtube.com/watch?v=xAvTgCsCHLs&list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37&index=33",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": ""
+          },
+          {
+            "id": "Sc57HaxQ",
+            "title": "34. Editing and removing elements",
+            "url": "https://www.youtube.com/watch?v=VQlY-X_eeTE&list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37&index=34",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": ""
+          },
+          {
+            "id": "P_KsJYO_",
+            "title": "35. Build 4 JavaScript projects for beginners",
+            "url": "https://www.youtube.com/watch?v=EGqHVjU-fas&list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37&index=35",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": ""
+          },
+          {
+            "id": "jQSpaETY",
+            "title": "36. Events",
+            "url": "https://www.youtube.com/watch?v=_ALUMTa8BAE&list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37&index=36",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": ""
+          }
+        ]
+      },
+      {
+        "id": "G2MZ0isR",
+        "title": "Async JavaScript",
+        "items": [
+          {
+            "id": "tI2G1Vx3",
+            "title": "37. Async JavaScript fundamentals",
+            "url": "https://www.youtube.com/watch?v=zgt5oTD3rRc&list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37&index=37",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": ""
+          },
+          {
+            "id": "DLKBXVrS",
+            "title": "38. 2 projects with async JavaScript",
+            "url": "https://www.youtube.com/watch?v=efrW5-IYoCU&list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37&index=38",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": ""
+          },
+          {
+            "id": "obKPTxlz",
+            "title": "39. API requests and the V8 engine",
+            "url": "https://www.youtube.com/watch?v=pDPAcYdSse8&list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37&index=39",
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": ""
+          },
+          {
+            "id": "H4JAVs6z",
+            "title": "40. Promises",
+            "url": "https://www.youtube.com/watch?v=NJwRQgsu1Q8&list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37&index=40",
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": ""
+          },
+          {
+            "id": "OR20ZvcH",
+            "title": "41. fetch",
+            "url": "https://www.youtube.com/watch?v=Rive84an6Lc&list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37&index=41",
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": ""
+          }
+        ]
+      },
+      {
+        "id": "7YPsZgqO",
+        "title": "OOP and Prototypes",
+        "items": [
+          {
+            "id": "Zg-H4Yh1",
+            "title": "42. Object-oriented JavaScript",
+            "url": "https://www.youtube.com/watch?v=pN-Qmv4zBcI&list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37&index=42",
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": ""
+          },
+          {
+            "id": "M2ct_pSg",
+            "title": "43. Prototypes",
+            "url": "https://www.youtube.com/watch?v=uMI5cNeHTOc&list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37&index=43",
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": ""
+          },
+          {
+            "id": "_kyPITn_",
+            "title": "44. call and this",
+            "url": "https://www.youtube.com/watch?v=-owpuf4lbyU&list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37&index=44",
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": ""
+          },
+          {
+            "id": "N60UZpH-",
+            "title": "45. Class, constructor and static",
+            "url": "https://www.youtube.com/watch?v=u6mVHkMpoMk&list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37&index=45",
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": ""
+          },
+          {
+            "id": "qsjTIK1L",
+            "title": "46. bind",
+            "url": "https://www.youtube.com/watch?v=75dMiOY_4ac&list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37&index=46",
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": ""
+          },
+          {
+            "id": "D0t-9ipH",
+            "title": "47. Objects, revisited",
+            "url": "https://www.youtube.com/watch?v=jss2rL9kv6s&list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37&index=47",
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": ""
+          },
+          {
+            "id": "2J2NVTxO",
+            "title": "48. Getters, setters and stack overflow",
+            "url": "https://www.youtube.com/watch?v=t6vLhF-iSxQ&list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37&index=48",
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": ""
+          }
+        ]
+      },
+      {
+        "id": "FXwKWwfB",
+        "title": "Closures and Engine Internals",
+        "items": [
+          {
+            "id": "e-kQx-GL",
+            "title": "49. Lexical scoping and closures",
+            "url": "https://www.youtube.com/watch?v=VaH09NXQZ58&list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37&index=49",
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": ""
+          },
+          {
+            "id": "2btq6Vr3",
+            "title": "50. JavaScript ends with a story",
+            "url": "https://www.youtube.com/watch?v=z9PINyinqwo&list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37&index=50",
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": ""
+          },
+          {
+            "id": "fR5H9uQQ",
+            "title": "51. Arrays inside V8: packed vs holey, JSVU and V8 debug",
+            "url": "https://www.youtube.com/watch?v=ZRS485LxX0s&list=PLu71SKxNbfoBuX3f4EOACle2y-tRC5Q37&index=51",
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "vcyjR_LO",
     "title": "React Frontend Roadmap",
     "intro": "Source: Chai aur react with projects by Chai aur Code, 35 videos, all free. Every link opens that video inside the playlist. Level labels are my own.",
