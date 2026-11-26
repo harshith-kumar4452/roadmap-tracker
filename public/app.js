@@ -1080,8 +1080,27 @@ async function patchItem(id, body, optimistic) {
   } catch (err) {
     Object.assign(item, prev);
     toast(err.message, null, 'error');
+    drawRoadmap();
+    return;
   }
   drawRoadmap();
+  if (body.status !== undefined) await refreshSyncedStatuses();
+}
+
+// A status change also updates the same question elsewhere, which can be in this roadmap too
+// (a TUF question and its LeetCode twin). Pick those changes up without a reload.
+async function refreshSyncedStatuses() {
+  const shownId = rm?.id;
+  let fresh;
+  try { fresh = await api('GET', `/roadmaps/${shownId}`); } catch { return; }
+  if (!rm || rm.id !== shownId) return;
+  const byId = new Map(fresh.sections.flatMap((s) => s.items).map((i) => [i.id, i]));
+  let changed = 0;
+  for (const it of allItems()) {
+    const f = byId.get(it.id);
+    if (f && (f.status !== it.status || f.doneAt !== it.doneAt)) { it.status = f.status; it.doneAt = f.doneAt; changed++; }
+  }
+  if (changed) drawRoadmap();
 }
 
 function openNoteEditor(row, item) {

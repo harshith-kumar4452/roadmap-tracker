@@ -170,25 +170,57 @@ export async function updateItem(id, patch) {
   return item;
 }
 
-const urlCount = (doc, url) => doc.sections.reduce((n, s) => n + s.items.filter((i) => i.url === url).length, 0);
+// One key per question page, so the same question matches however its link was written
+// (trailing slash, www, query string on a problem page).
+function linkKey(url) {
+  if (!url) return null;
+  let u;
+  try { u = new URL(url); } catch { return null; }
+  const host = u.hostname.replace(/^www\./, '').toLowerCase();
+  const parts = u.pathname.split('/').filter(Boolean);
+  if (host === 'leetcode.com' && parts[0] === 'problems' && parts[1]) return `leetcode:${parts[1].toLowerCase()}`;
+  if (host === 'hackerrank.com' && parts[0] === 'challenges' && parts[1]) return `hackerrank:${parts[1].toLowerCase()}`;
+  if (host === 'codechef.com' && parts[0] === 'problems' && parts[1]) return `codechef:${parts[1].toUpperCase()}`;
+  if (host === 'youtu.be' && parts[0]) return `youtube:${parts[0]}${u.searchParams.get('t') ? `@${u.searchParams.get('t')}` : ''}`;
+  if (host === 'youtube.com' && u.searchParams.get('v')) return `youtube:${u.searchParams.get('v')}${u.searchParams.get('t') ? `@${u.searchParams.get('t')}` : ''}`;
+  return `${host}${u.pathname.replace(/\/+$/, '')}${u.search}`;
+}
 
-// The same question can sit in more than one roadmap (a LeetCode question in both the
-// JavaScript roadmap and the JavaScript practice list, a video in two system design roadmaps).
-// Ticking it in one ticks it everywhere. Only a link that appears once in its roadmap counts as
-// "the question": a link shared by many topics of one roadmap (a whole playlist, a list page) is
-// a general link, and those topics are left alone.
+// A question's main key is its own link; its other keys are the practice links it carries
+// (a TUF question's LeetCode link). Article and video links are not the question.
+const mainKey = (it) => linkKey(it.url);
+const allKeys = (it) => new Set([it.url, ...(it.links ?? []).filter((l) => l.kind === 'practice').map((l) => l.url)].map(linkKey).filter(Boolean));
+
+// The same question can sit in several places: a LeetCode question in the JavaScript roadmap and
+// the JavaScript practice list, a TUF question whose LeetCode link is also a LeetCode pick, a
+// video in two system design roadmaps. Ticking it in one place ticks it everywhere.
+//   - Two questions match when one's main link is among the other's links. Two different TUF
+//     questions that both point to the same LeetCode question don't match each other.
+//   - A link that is the main link of several topics in one roadmap (a whole playlist, a list
+//     page) is a general link, not a question, and never matches.
 async function syncSameQuestion(doc, item) {
-  if (!item.url || urlCount(doc, item.url) !== 1) return;
   const col = await roadmaps();
-  const others = await col
-    .find({ _id: { $ne: doc._id }, 'sections.items.url': item.url }, { projection: { 'sections.items.url': 1, 'sections.items.id': 1 } })
-    .toArray();
-  for (const other of others) {
-    if (urlCount(other, item.url) !== 1) continue;
+  const docs = await col.find({}, { projection: { 'sections.items.id': 1, 'sections.items.url': 1, 'sections.items.links': 1 } }).toArray();
+  const general = new Map(docs.map((d) => {
+    const count = new Map();
+    for (const s of d.sections) for (const it of s.items) { const k = mainKey(it); if (k) count.set(k, (count.get(k) ?? 0) + 1); }
+    return [d._id, new Set([...count].filter(([, n]) => n > 1).map(([k]) => k))];
+  }));
+  const ownMain = (d, it) => { const k = mainKey(it); return k && !general.get(d._id).has(k) ? k : null; };
+  const sMain = ownMain(doc, item);
+  const sKeys = allKeys(item);
+  for (const d of docs) {
+    const ids = [];
+    for (const s of d.sections) for (const it of s.items) {
+      if (it.id === item.id) continue;
+      const tMain = ownMain(d, it);
+      if ((sMain && allKeys(it).has(sMain)) || (tMain && sKeys.has(tMain))) ids.push(it.id);
+    }
+    if (!ids.length) continue;
     await col.updateOne(
-      { _id: other._id },
+      { _id: d._id },
       { $set: { 'sections.$[].items.$[same].status': item.status, 'sections.$[].items.$[same].doneAt': item.doneAt } },
-      { arrayFilters: [{ 'same.url': item.url }] },
+      { arrayFilters: [{ 'same.id': { $in: ids } }] },
     );
   }
 }
