@@ -752,20 +752,50 @@ function itemLinks(i) {
   return out;
 }
 
+// Links sit in fixed slots, one per site/kind used anywhere in the group, so icons line up from
+// row to row (as on the TUF sheet). A question without that link shows a faint placeholder.
+const SITE_ORDER = ['TUF', 'LeetCode', 'GFG', 'HackerRank', 'CodeChef', 'DataLemur', 'Code360'];
+const SITE_SHORT = { TUF: 'TUF', LeetCode: 'LC', GFG: 'GFG', HackerRank: 'HR', CodeChef: 'CC', DataLemur: 'DL', Code360: 'C360' };
 const KIND_ICON = { article: 'article', video: 'smart_display' };
-function linksHtml(i) {
-  const links = itemLinks(i);
-  const order = { practice: 0, article: 1, video: 2 };
-  return links.sort((a, b) => order[a.kind] - order[b.kind]).map((l) => {
-    const attrs = `href="${esc(l.url)}" target="_blank" rel="noopener noreferrer"`;
-    if (l.kind === 'practice') {
-      const key = l.site.toLowerCase().replace(/[^a-z0-9]/g, '');
-      return `<a class="qlink site-${key}" ${attrs} title="Solve on ${esc(l.site)}" aria-label="Solve ${esc(i.title)} on ${esc(l.site)}"><span class="qdot" aria-hidden="true"></span>${esc(l.site)}</a>`;
-    }
-    const label = l.kind === 'video' ? 'Watch the video' : l.site === 'Link' ? 'Open the link' : 'Read the article';
-    return `<a class="qicon qicon-${l.kind}" ${attrs} title="${label}" aria-label="${label}: ${esc(i.title)}"><span class="material-icons-round" aria-hidden="true">${KIND_ICON[l.kind]}</span></a>`;
+const slotKey = (l) => (l.kind === 'practice' ? `p:${l.site}` : l.kind);
+const slotRank = (k) => (k.startsWith('p:') ? (SITE_ORDER.indexOf(k.slice(2)) + 1 || 50) : k === 'article' ? 100 : 101);
+
+function groupSlots(items) {
+  const keys = new Set(items.flatMap((i) => itemLinks(i).map(slotKey)));
+  return [...keys].sort((a, b) => slotRank(a) - slotRank(b));
+}
+
+function linkHtml(i, l) {
+  const attrs = `href="${esc(l.url)}" target="_blank" rel="noopener noreferrer"`;
+  if (l.kind === 'practice') {
+    const key = l.site.toLowerCase().replace(/[^a-z0-9]/g, '');
+    return `<a class="qbadge site-${key}" ${attrs} title="Solve on ${esc(l.site)}" aria-label="Solve ${esc(i.title)} on ${esc(l.site)}">${esc(SITE_SHORT[l.site] ?? l.site.slice(0, 3))}</a>`;
+  }
+  const label = l.kind === 'video' ? 'Watch the video' : l.site === 'Link' ? 'Open the link' : 'Read the article';
+  return `<a class="qicon qicon-${l.kind}" ${attrs} title="${label}" aria-label="${label}: ${esc(i.title)}"><span class="material-icons-round" aria-hidden="true">${KIND_ICON[l.kind]}</span></a>`;
+}
+
+function linksHtml(i, slots = groupSlots([i])) {
+  const byKey = new Map(itemLinks(i).map((l) => [slotKey(l), l]));
+  return slots.map((k) => {
+    const l = byKey.get(k);
+    if (l) return linkHtml(i, l);
+    const what = k.startsWith('p:') ? `Not on ${k.slice(2)}` : `No ${k}`;
+    return `<span class="qslot-empty ${k.startsWith('p:') ? 'is-badge' : ''}" title="${esc(what)}" aria-hidden="true"></span>`;
   }).join('');
 }
+
+// Notes written by the importers ("LeetCode #1 · 71k likes", "takeUforward A2Z · Fundamentals")
+// are shown as quiet metadata; anything else is the owner's own note.
+const IMPORT_NOTE = /^(LeetCode #|HackerRank\b|CodeChef\b|takeUforward A2Z|Source:)/;
+// The sheet's sub-topic slugs read as "Faqs hard", "1d dp", "Triessubc"; show them as TUF does.
+const prettySub = (s) => s
+  .replace(/^faqs\s*(hard|medium|dll)?$/i, (_, k) => (k ? `FAQs (${k.toLowerCase() === 'dll' ? 'DLL' : k[0].toUpperCase() + k.slice(1).toLowerCase()})` : 'FAQs'))
+  .replace(/^triessubc$/i, 'Tries')
+  .replace(/\b(1d|2d|dp|lis|mcm|ll|dll|bst|bt|ii)\b/gi, (m) => m.toUpperCase())
+  .replace(/\beratosthenes\b/i, 'Eratosthenes')
+  .replace(/^On answers$/i, 'On answers (binary search)');
+const subTopicOf = (i) => prettySub(/^takeUforward A2Z · (.+)$/.exec(noteText(i.note))?.[1] ?? '');
 
 // Practice lists read better as Easy / Medium / Hard, the way the question sites label them.
 const isPracticeList = () => /practice/i.test(rm?.title ?? '');
@@ -773,31 +803,52 @@ const DIFFICULTY = { Beginner: 'Easy', Intermediate: 'Medium', Advanced: 'Hard' 
 const levelLabel = (l) => (isPracticeList() ? DIFFICULTY[l] ?? l : l);
 const noteText = (n) => (n || '').replace(/\s*·?\s*Also on \w+: https?:\/\/\S+/g, '').trim();
 
-function itemRow(i, idx) {
-  const status = STATUS[i.status] ?? STATUS.not_started;
+// One line per question, like the TUF sheet: tick, title with its difficulty tag, then the
+// link slots on the right. Source details sit quietly under the title.
+function itemRow(i, slots) {
   const note = noteText(i.note);
+  const imported = IMPORT_NOTE.test(note);
+  const meta = imported ? note.replace(/^takeUforward A2Z · .*$/, '') : '';
+  const next = STATUS[STATUS[i.status]?.next ?? 'in_progress'];
   return `
-    <div class="row ${i.status === 'done' ? 'is-done' : ''}" role="row" data-item="${esc(i.id)}">
+    <div class="row ${i.status === 'done' ? 'is-done' : ''} ${i.status === 'in_progress' ? 'is-doing' : ''}" role="row" data-item="${esc(i.id)}">
       <div class="c-name" role="cell">
-        <span class="row-num">${idx + 1}</span>
         ${tick(i.status === 'done', i.title)}
         <div class="name-body">
-          ${itemTitle(i)}
+          <div class="title-line">
+            ${itemTitle(i)}
+            ${levelPill(i.level)}
+            ${i.status === 'in_progress' ? '<span class="pill status-in_progress">In progress</span>' : ''}
+          </div>
           ${rm.group === 'level' ? `<span class="topic">${esc(i.sectionTitle)}</span>` : ''}
-          ${note ? `<p class="note">${linkify(note)}</p>` : ''}
+          ${meta ? `<span class="meta">${linkify(meta)}</span>` : ''}
+          ${note && !imported ? `<p class="note">${linkify(note)}</p>` : ''}
           ${i.status === 'done' && i.doneAt ? `<span class="done-at">Done ${ago(i.doneAt)}</span>` : ''}
         </div>
         ${me.admin ? `<div class="item-actions">
-          <button type="button" class="icon-btn" data-act="note" title="${i.note ? 'Edit note' : 'Add note'}" aria-label="Note for ${esc(i.title)}">${icons.note}</button>
+          <button type="button" class="icon-btn" data-act="status" title="Mark ${next.label.toLowerCase()}" aria-label="Mark ${esc(i.title)} ${next.label.toLowerCase()}"><span class="material-icons-round" aria-hidden="true">timelapse</span></button>
+          <button type="button" class="icon-btn" data-act="note" title="${note && !imported ? 'Edit note' : 'Add note'}" aria-label="Note for ${esc(i.title)}">${icons.note}</button>
           <button type="button" class="icon-btn danger" data-act="delete-item" title="Delete topic" aria-label="Delete ${esc(i.title)}">${icons.trash}</button>
         </div>` : ''}
       </div>
-      <div class="c-links" role="cell">${linksHtml(i)}</div>
-      <div class="c-level" role="cell">${levelPill(i.level)}</div>
-      <div class="c-status" role="cell">${me.admin
-        ? `<button type="button" class="pill status-${i.status}" data-act="status" title="Change status">${status.label}</button>`
-        : `<span class="pill status-${i.status}">${status.label}</span>`}</div>
+      <div class="c-links" role="cell">${linksHtml(i, slots)}</div>
     </div>`;
+}
+
+// Sub-topic headings inside a step (Fundamentals, FAQs (Medium)...), each with its own count.
+function rowsHtml(g, rows) {
+  const slots = groupSlots(g.items);
+  let last = null;
+  return rows.map((i) => {
+    const sub = rm.group === 'topic' ? subTopicOf(i) : '';
+    let head = '';
+    if (sub && sub !== last) {
+      const of = g.items.filter((x) => subTopicOf(x) === sub);
+      head = `<div class="subhead" role="row"><span role="cell">${esc(sub)}</span><span class="sec-count">${of.filter((x) => x.status === 'done').length} / ${of.length}</span></div>`;
+    }
+    last = sub;
+    return head + itemRow(i, slots);
+  }).join('');
 }
 
 function levelPill(level) {
@@ -807,18 +858,29 @@ function levelPill(level) {
   return level ? `<span class="${cls}">${esc(label)}</span>` : '';
 }
 
-// Done / total for each level, shown as three tiles under the overall progress bar.
-function levelStatsHtml(items) {
+// Overall progress card, as on the TUF sheet: the big done / total figure with its bar, and
+// done / total for each level beside it.
+function progressCardHtml(items) {
+  const done = items.filter((i) => i.status === 'done').length;
+  const doing = items.filter((i) => i.status === 'in_progress').length;
   const tiles = LEVELS.map((l) => {
     const of = items.filter((i) => i.level === l);
     return of.length ? { l, total: of.length, done: of.filter((i) => i.status === 'done').length } : null;
   }).filter(Boolean);
-  if (!tiles.length) return '';
-  return `<div class="lvl-stats">${tiles.map((t) => `
-    <div class="lvl-tile lvl-${t.l.toLowerCase()}">
-      <div class="lvl-tile-top"><span>${esc(levelLabel(t.l))}</span><strong>${t.done}<span class="muted">/${t.total}</span></strong></div>
-      ${bar(t.done, t.total, 'sm')}
-    </div>`).join('')}</div>`;
+  return `
+    <section class="prog-card" aria-label="Progress">
+      <div class="prog-main">
+        <div class="eyebrow">Overall progress</div>
+        <div class="prog-num"><strong>${done}</strong><span>/ ${items.length}</span><em>${pct(done, items.length)}%</em></div>
+        ${bar(done, items.length, 'lg')}
+        ${doing ? `<span class="muted small">${doing} in progress</span>` : ''}
+      </div>
+      ${tiles.length ? `<div class="lvl-stats">${tiles.map((t) => `
+        <div class="lvl-tile lvl-${t.l.toLowerCase()}">
+          <div class="lvl-tile-top"><span>${esc(levelLabel(t.l))}</span><strong>${t.done}<span class="muted"> / ${t.total}</span></strong></div>
+          ${bar(t.done, t.total, 'sm')}
+        </div>`).join('')}</div>` : ''}
+    </section>`;
 }
 
 function groupsHtml() {
@@ -844,14 +906,11 @@ function groupsHtml() {
         <summary>
           <span class="chev">${icons.chev}</span>
           ${head}
-          <span class="sec-count">${done}/${total}</span>
           ${bar(done, total, 'sm')}
+          <span class="sec-count">${done} / ${total}</span>
         </summary>
-        <div class="table" role="table">
-          <div class="row head" role="row">
-            <div role="columnheader">${practice ? 'Question' : 'Name'}</div><div role="columnheader">${practice ? 'Solve / learn' : 'Links'}</div><div role="columnheader">${practice ? 'Difficulty' : 'Level'}</div><div role="columnheader">Status</div>
-          </div>
-          ${rows.map((i) => itemRow(i, g.items.indexOf(i))).join('')}
+        <div class="table" role="table" aria-label="${esc(practice ? 'Questions' : 'Topics')} in ${esc(g.title)}">
+          ${rowsHtml(g, rows)}
         </div>
         ${me.admin && g.sectionId ? `
         <div class="sec-foot">
@@ -931,7 +990,6 @@ function parseNotes(textValue) {
 function drawRoadmap() {
   const items = allItems();
   const done = items.filter((i) => i.status === 'done').length;
-  const inProgress = items.filter((i) => i.status === 'in_progress').length;
   const next = items.find((i) => i.status !== 'done');
   setPage(rm.title, rm.intro || `${rm.title}: ${plural(items.length, 'topic')}, ${pct(done, items.length)}% done.`);
   const filterLabels = { all: 'All', todo: 'To do', in_progress: 'In progress', done: 'Done' };
@@ -948,11 +1006,7 @@ function drawRoadmap() {
       </div>
     </header>
 
-    <div class="rm-progress">
-      ${bar(done, items.length, 'lg')}
-      <div class="rm-progress-meta"><strong>${pct(done, items.length)}%</strong><span class="muted">${done} of ${plural(items.length, isPracticeList() ? 'question' : 'topic')} done${inProgress ? ` · ${inProgress} in progress` : ''}</span></div>
-      ${levelStatsHtml(items)}
-    </div>
+    ${progressCardHtml(items)}
 
     ${rm.editing ? editorHtml() : pageDetailsHtml()}
 
