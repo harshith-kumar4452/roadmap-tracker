@@ -29,6 +29,20 @@ async function collection(name) {
   const client = await clientPromise;
   return client.db(process.env.MONGODB_DB || 'roadmap_tracker').collection(name);
 }
+// Short-lived in-memory cache for read-heavy lookups (the database is remote, so each
+// query costs a round trip). Any write request busts it; the TTL bounds staleness when
+// another serverless instance wrote.
+const cache = new Map();
+const TTL_MS = 30_000;
+export const bustCache = () => cache.clear();
+function cached(key, fn) {
+  const hit = cache.get(key);
+  if (hit && hit.exp > Date.now()) return hit.value;
+  const value = fn().catch((err) => { cache.delete(key); throw err; });
+  cache.set(key, { value, exp: Date.now() + TTL_MS });
+  return value;
+}
+
 const roadmaps = () => collection('roadmaps');
 const pages = () => collection('pages');
 const accounts = () => collection('accounts');
@@ -58,10 +72,13 @@ const publicDoc = ({ _id, ...rest }) => ({ id: _id, ...rest });
 
 // ---------- roadmaps ----------
 
-export async function listRoadmaps() {
-  const docs = await (await roadmaps()).find({}).sort({ position: 1, title: 1 }).toArray();
+export const listRoadmaps = () => cached('roadmaps', async () => {
+  const docs = await (await roadmaps())
+    .find({}, { projection: { title: 1, position: 1, 'sections.title': 1, 'sections.items.id': 1, 'sections.items.title': 1, 'sections.items.url': 1, 'sections.items.status': 1, 'sections.items.doneAt': 1 } })
+    .sort({ position: 1, title: 1 })
+    .toArray();
   return docs.map(summary);
-}
+});
 
 export async function getRoadmap(id) {
   const doc = await (await roadmaps()).findOne({ _id: id });
@@ -204,9 +221,7 @@ export async function deletePage(id) {
 // ---------- owner account ----------
 // There is exactly one account (_id "owner"). The unique _id also stops two signups racing.
 
-export async function getAccount() {
-  return (await accounts()).findOne({ _id: 'owner' });
-}
+export const getAccount = () => cached('owner', async () => (await accounts()).findOne({ _id: 'owner' }));
 
 export async function findAccountByUsername(username) {
   return (await accounts()).findOne({ username: String(username || '').trim().toLowerCase() });
@@ -377,7 +392,8 @@ export async function seedProfile(profile) {
 
 // Day buckets, streaks and "today" are computed in the browser so they follow the
 // viewer's time zone rather than the server's (Vercel runs in UTC).
-export async function stats() {
+export const stats = () => cached('stats', statsUncached);
+async function statsUncached() {
   const docs = await (await roadmaps())
     .find({}, { projection: { 'sections.items.status': 1, 'sections.items.doneAt': 1 } })
     .toArray();

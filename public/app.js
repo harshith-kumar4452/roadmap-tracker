@@ -5,6 +5,7 @@ import { storyHtml, initStory, playIntro } from './story.js';
 import { buddySvg, initBuddy, buddyReact } from './buddy.js';
 import { renderRoleHubView } from './role-hub.js';
 import { renderPlannerView, checkTodayNotifications } from './planner.js';
+import { dsaPatternsHtml, bindDsaPatterns } from './dsa-patterns.js';
 import { startTour, tourSeen } from './tour.js';
 
 const view = document.getElementById('view');
@@ -917,12 +918,15 @@ function drawRoadmap() {
 
     <div id="groups">${groupsHtml()}</div>
 
+    ${rm.id === 'u3NA5_Fv' || /\bdsa\b/i.test(rm.title) ? dsaPatternsHtml({ esc, bar, icons }) : ''}
+
     ${me.admin ? `
     <form class="add-section" data-form="add-section">
       <input name="title" placeholder="New topic group (section) name" aria-label="New section name" required>
       <button class="btn">Add section</button>
     </form>` : ''}`;
 
+  bindDsaPatterns(view, { esc, bar, icons });
   $('#item-search').addEventListener('input', (e) => {
     rm.q = e.target.value;
     $('#groups').innerHTML = groupsHtml();
@@ -1356,6 +1360,8 @@ async function renderLanding() {
 
   const sections = [
     { href: '#/roadmaps', icon: '<span class="material-icons-round">map</span>', title: 'Roadmaps', text: `${plural(list.length, 'roadmap')}, ${started} under way`, meta: `${pct(stats.done, stats.total)}% done` },
+    { href: '#/planner', icon: '<span class="material-icons-round">auto_awesome</span>', title: 'Study Planner', text: 'Multi-agent sprint schedule, goals and notifications', meta: '3-sprint plan' },
+    { href: '#/calendar', icon: '<span class="material-icons-round">calendar_month</span>', title: 'Calendar', text: 'Track sprint days, upcoming exams and interviews', meta: 'Schedule & events' },
     ...(me.admin ? [{ href: '#/tasks', icon: '<span class="material-icons-round">check_circle</span>', title: 'Tasks', text: 'Daily POTDs, contests and your to-do list', meta: dueToday.length ? `${doneToday}/${dueToday.length} today` : 'Nothing due' }] : []),
     { href: '#/resources', icon: '<span class="material-icons-round">link</span>', title: 'Resources', text: 'Every course, playlist and practice site in one list', meta: 'All links' },
     { href: '#/cheatsheets', icon: '<span class="material-icons-round">description</span>', title: 'Cheat sheets', text: 'Quick-reference commands and syntax', meta: plural(cheats.length, 'sheet') },
@@ -1372,7 +1378,7 @@ async function renderLanding() {
         <p class="lede">${plural(list.length, 'roadmap')} and ${stats.total.toLocaleString()} topics, a daily problem-solving routine, weekly contests, and the notes that go with them.</p>
         <div class="row-actions">
           <a class="btn primary" href="#/roadmaps">Open roadmaps</a>
-          ${me.admin ? '<a class="btn" href="#/tasks">Today\'s tasks</a>' : me.hasAccount ? '<a class="btn" href="#/login">Log in</a>' : '<a class="btn" href="#/signup">Create your account</a>'}
+          ${me.admin ? '<a class="btn" href="#/tasks">Today\'s tasks</a>' : me.authenticated ? '<a class="btn" href="#/planner">Study planner</a>' : '<a class="btn" href="#/login">Log in</a>'}
           <button type="button" class="btn ghost" data-act="tour">Take the tour</button>
         </div>
       </div>

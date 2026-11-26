@@ -46,8 +46,10 @@ const notes = (list) => {
 
 app.get('/api/me', async (req, res) => {
   const session = auth.getSession(req);
-  const account = session ? await store.findAccountByUsername(session.username) : null;
-  const owner = await store.getAccount();
+  const [account, owner] = await Promise.all([
+    session ? store.findAccountByUsername(session.username) : null,
+    store.getAccount(),
+  ]);
   res.json({
     authenticated: Boolean(session),
     admin: session?.role === 'admin',
@@ -81,6 +83,7 @@ app.post('/api/signup', async (req, res) => {
   if (b.password.length > 200) throw httpError(400, 'Password is too long');
   const account = await store.createAccount({ name, username, role, ...(await auth.hashPassword(b.password)) });
   if (!account) throw httpError(409, 'That username is already taken. Try another or log in.');
+  store.bustCache();
   if (role === 'admin') await store.seedHabits();
   auth.setSession(req, res, { role, username });
   res.status(201).json({ authenticated: true, admin: role === 'admin', name });
@@ -110,6 +113,7 @@ app.post('/api/logout', (req, res) => {
 // Editing requires the owner session.
 const AUTH_GET_ROUTES = [/^\/roadmaps\/[^/]+$/, /^\/pages\/[^/]+$/, /^\/resources$/];
 app.use('/api', (req, res, next) => {
+  if (req.method !== 'GET') res.on('finish', store.bustCache);
   if (req.method === 'GET') {
     if (AUTH_GET_ROUTES.some((re) => re.test(req.path)) && !auth.isAuthenticated(req)) {
       throw httpError(401, 'Log in to open this roadmap or view its links');

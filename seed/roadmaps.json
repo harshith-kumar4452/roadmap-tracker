@@ -13824,6 +13824,2914 @@
     ]
   },
   {
+    "id": "gq65TeaG",
+    "title": "SQL Practice – 310 Questions",
+    "intro": "310 SQL questions from LeetCode SQL 50, takeUforward, DataLemur, HackerRank and CodeChef, grouped into 13 topics. Inside each topic they run Easy, then Medium, then Hard. A question that appears on two sites is listed once, with both sources in its note.",
+    "notionUrl": "https://app.notion.com/p/41f1ffd205bf800f8257e92bde6a0c70",
+    "resources": [
+      {
+        "title": "LeetCode SQL 50",
+        "url": "https://leetcode.com/studyplan/top-sql-50/"
+      },
+      {
+        "title": "takeUforward SQL practice",
+        "url": "https://takeuforward.org/practice/sql"
+      },
+      {
+        "title": "DataLemur SQL interview questions",
+        "url": "https://datalemur.com/sql-interview-questions"
+      },
+      {
+        "title": "HackerRank SQL",
+        "url": "https://www.hackerrank.com/domains/sql"
+      },
+      {
+        "title": "CodeChef SQL case studies",
+        "url": "https://www.codechef.com/practice/course/sql-case-studies-topic-wise/SQLBP01"
+      }
+    ],
+    "notes": [
+      {
+        "heading": "How to use this list",
+        "lines": [
+          "Pair it with the SQL Roadmap: learn a concept there, then solve that topic here.",
+          "DataLemur questions have no direct link: open the DataLemur list and search by the name; the company that asked it is in brackets.",
+          "🔒 marks DataLemur premium questions. The note on each question shows which sites have it."
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "id": "9LVsuPBb",
+        "title": "Select & Filtering",
+        "items": [
+          {
+            "id": "0saHGh1E",
+            "title": "Recyclable and Low Fat Products",
+            "url": "https://leetcode.com/problems/recyclable-and-low-fat-products/",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: LeetCode"
+          },
+          {
+            "id": "x1OCisOL",
+            "title": "Big Countries",
+            "url": "https://leetcode.com/problems/big-countries/",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: LeetCode + takeUforward"
+          },
+          {
+            "id": "0TFbNUSI",
+            "title": "Article Views I",
+            "url": "https://leetcode.com/problems/article-views-i/",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: LeetCode"
+          },
+          {
+            "id": "rKQMgJuh",
+            "title": "Not Boring Movies",
+            "url": "https://leetcode.com/problems/not-boring-movies/",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: LeetCode"
+          },
+          {
+            "id": "56Zrv1U2",
+            "title": "Odd Non-Boring Movies",
+            "url": "https://takeuforward.org/practice/sql/odd-non-boring-movies",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward · Hint: MOD"
+          },
+          {
+            "id": "hsj6Jlkj",
+            "title": "Find Salaries Outside the Expected Range",
+            "url": "https://takeuforward.org/practice/sql/find-salaries-outside-the-expected-range",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward · Hint: NOT BETWEEN"
+          },
+          {
+            "id": "61Acq5K3",
+            "title": "Profitable Customers in 2021",
+            "url": "https://takeuforward.org/practice/sql/profitable-customers-in-2021",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward"
+          },
+          {
+            "id": "sdOPJe_Z",
+            "title": "Find Records Excluding a Given Set of Values",
+            "url": "https://takeuforward.org/practice/sql/find-records-excluding-a-given-set-of-values",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward"
+          },
+          {
+            "id": "GqcHLPKW",
+            "title": "Unfinished Parts (Tesla)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · Find it in the DataLemur question list"
+          },
+          {
+            "id": "fjTOt1KU",
+            "title": "Revising the Select Query I",
+            "url": "https://www.hackerrank.com/challenges/revising-the-select-query/problem",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: HackerRank"
+          },
+          {
+            "id": "Y6SAZcwr",
+            "title": "Revising the Select Query II",
+            "url": "https://www.hackerrank.com/challenges/revising-the-select-query-2/problem",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: HackerRank"
+          },
+          {
+            "id": "_l_twyCf",
+            "title": "Select All",
+            "url": "https://www.hackerrank.com/challenges/select-all-sql/problem",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: HackerRank"
+          },
+          {
+            "id": "0HKuiAes",
+            "title": "Select By ID",
+            "url": "https://www.hackerrank.com/challenges/select-by-id/problem",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: HackerRank"
+          },
+          {
+            "id": "yKhpJmvo",
+            "title": "Japanese Cities' Attributes",
+            "url": "https://www.hackerrank.com/challenges/japanese-cities-attributes/problem",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: HackerRank"
+          },
+          {
+            "id": "gzcACp8O",
+            "title": "Japanese Cities' Names",
+            "url": "https://www.hackerrank.com/challenges/japanese-cities-name/problem",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: HackerRank"
+          },
+          {
+            "id": "O5uvOtdv",
+            "title": "Weather Observation Station 1",
+            "url": "https://www.hackerrank.com/challenges/weather-observation-station-1/problem",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: HackerRank"
+          },
+          {
+            "id": "pv8pDCBD",
+            "title": "Weather Observation Station 3",
+            "url": "https://www.hackerrank.com/challenges/weather-observation-station-3/problem",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: HackerRank"
+          },
+          {
+            "id": "60-aia96",
+            "title": "Employee Names",
+            "url": "https://www.hackerrank.com/challenges/name-of-employees/problem",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: HackerRank"
+          },
+          {
+            "id": "pYH1gaPc",
+            "title": "Employee Salaries",
+            "url": "https://www.hackerrank.com/challenges/salary-of-employees/problem",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: HackerRank"
+          },
+          {
+            "id": "BCFy70_V",
+            "title": "All Products",
+            "url": "https://www.codechef.com/practice/course/sql-case-studies-topic-wise/SQLBP01/problems/SQLPBP11",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: CodeChef"
+          },
+          {
+            "id": "RWvBCmXh",
+            "title": "High Price of Products",
+            "url": "https://www.codechef.com/practice/course/sql-case-studies-topic-wise/SQLBP01/problems/SQLPBP12",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: CodeChef"
+          },
+          {
+            "id": "Db7kETRZ",
+            "title": "Distinct Companies",
+            "url": "https://www.codechef.com/practice/course/sql-case-studies-topic-wise/SQLBP01/problems/SQLPBP13",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: CodeChef"
+          },
+          {
+            "id": "KYyeNZSF",
+            "title": "List of Movies with Ratings",
+            "url": "https://www.codechef.com/practice/course/sql-case-studies-topic-wise/SQLBP01/problems/SQLPBP01",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: CodeChef"
+          },
+          {
+            "id": "AP2fzB1t",
+            "title": "Salary of Employees",
+            "url": "https://www.codechef.com/practice/course/sql-case-studies-topic-wise/SQLBP01/problems/SQLPBP08",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: CodeChef"
+          }
+        ]
+      },
+      {
+        "id": "bKVMhCmD",
+        "title": "Conditional Logic & NULL Handling",
+        "items": [
+          {
+            "id": "W2KP_hwg",
+            "title": "Find Customer Referee",
+            "url": "https://leetcode.com/problems/find-customer-referee/",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: LeetCode"
+          },
+          {
+            "id": "Rf_A8uO2",
+            "title": "Triangle Judgement",
+            "url": "https://leetcode.com/problems/triangle-judgement/",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: LeetCode"
+          },
+          {
+            "id": "o0IqvTVd",
+            "title": "Non-Referred Customers",
+            "url": "https://takeuforward.org/practice/sql/non-referred-customers",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward"
+          },
+          {
+            "id": "6vK8-iTB",
+            "title": "Valid Triangle Check",
+            "url": "https://takeuforward.org/practice/sql/valid-triangle-check",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward"
+          },
+          {
+            "id": "JXb3Kn7j",
+            "title": "Special Bonus Calculation",
+            "url": "https://takeuforward.org/practice/sql/special-bonus-calculation",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward"
+          },
+          {
+            "id": "7VGyfxYW",
+            "title": "Laptop vs. Mobile Viewership (NY Times)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · Find it in the DataLemur question list"
+          },
+          {
+            "id": "EvEPc2rx",
+            "title": "Final Account Balance (PayPal)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · Find it in the DataLemur question list"
+          },
+          {
+            "id": "mY1goBeF",
+            "title": "App Click-through Rate (Facebook)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · Find it in the DataLemur question list"
+          },
+          {
+            "id": "ALqOOZb8",
+            "title": "Type of Triangle",
+            "url": "https://www.hackerrank.com/challenges/what-type-of-triangle/problem",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: HackerRank"
+          },
+          {
+            "id": "0lp66-co",
+            "title": "Handling NULL Values",
+            "url": "https://www.codechef.com/practice/course/sql-case-studies-topic-wise/SQLBP01/problems/SQLPBP07",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: CodeChef"
+          },
+          {
+            "id": "LTnPqeQN",
+            "title": "Subject Matter Experts (Accenture)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · 🔒 DataLemur premium · Find it in the DataLemur question list"
+          },
+          {
+            "id": "sc8qjQ0c",
+            "title": "Exchange Seats",
+            "url": "https://leetcode.com/problems/exchange-seats/",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: LeetCode"
+          },
+          {
+            "id": "rdywX9o_",
+            "title": "Node Classification",
+            "url": "https://takeuforward.org/practice/sql/node-classification",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward"
+          },
+          {
+            "id": "23YyoZhr",
+            "title": "Swap Consecutive Seats",
+            "url": "https://takeuforward.org/practice/sql/swap-consecutive-seats",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward"
+          },
+          {
+            "id": "USUXTJru",
+            "title": "Sending vs. Opening Snaps (Snapchat)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · Find it in the DataLemur question list"
+          },
+          {
+            "id": "thsswETM",
+            "title": "Fill Missing Client Data (Accenture)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · 🔒 DataLemur premium · Find it in the DataLemur question list"
+          }
+        ]
+      },
+      {
+        "id": "ouqvEtR4",
+        "title": "String Functions & Pattern Matching",
+        "items": [
+          {
+            "id": "DHOejwZa",
+            "title": "Invalid Tweets",
+            "url": "https://leetcode.com/problems/invalid-tweets/",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: LeetCode"
+          },
+          {
+            "id": "ZqaWtQNO",
+            "title": "Fix Names in a Table",
+            "url": "https://leetcode.com/problems/fix-names-in-a-table/",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: LeetCode"
+          },
+          {
+            "id": "H18QVsQF",
+            "title": "Patients With a Condition",
+            "url": "https://leetcode.com/problems/patients-with-a-condition/",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: LeetCode"
+          },
+          {
+            "id": "lf1_AO_z",
+            "title": "Find Users With Valid E-Mails",
+            "url": "https://leetcode.com/problems/find-users-with-valid-e-mails/",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: LeetCode"
+          },
+          {
+            "id": "hlllfkoZ",
+            "title": "Exceeding Tweet Length",
+            "url": "https://takeuforward.org/practice/sql/exceeding-tweet-length",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward"
+          },
+          {
+            "id": "7JrNr1iO",
+            "title": "Filter Records Excluding a Specific Pattern",
+            "url": "https://takeuforward.org/practice/sql/filter-records-excluding-a-specific-pattern",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward"
+          },
+          {
+            "id": "ZM8RcZ-u",
+            "title": "Weather Observation Station 5",
+            "url": "https://www.hackerrank.com/challenges/weather-observation-station-5/problem",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: HackerRank"
+          },
+          {
+            "id": "thKwcZfv",
+            "title": "Weather Observation Station 6",
+            "url": "https://www.hackerrank.com/challenges/weather-observation-station-6/problem",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: HackerRank"
+          },
+          {
+            "id": "7aiAzUjy",
+            "title": "Weather Observation Station 7",
+            "url": "https://www.hackerrank.com/challenges/weather-observation-station-7/problem",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: HackerRank"
+          },
+          {
+            "id": "ETOL-wZC",
+            "title": "Weather Observation Station 8",
+            "url": "https://www.hackerrank.com/challenges/weather-observation-station-8/problem",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: HackerRank"
+          },
+          {
+            "id": "zDUmJkJ5",
+            "title": "Weather Observation Station 9",
+            "url": "https://www.hackerrank.com/challenges/weather-observation-station-9/problem",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: HackerRank"
+          },
+          {
+            "id": "rQUaFxcZ",
+            "title": "Weather Observation Station 10",
+            "url": "https://www.hackerrank.com/challenges/weather-observation-station-10/problem",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: HackerRank"
+          },
+          {
+            "id": "KwCVI2WG",
+            "title": "Weather Observation Station 11",
+            "url": "https://www.hackerrank.com/challenges/weather-observation-station-11/problem",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: HackerRank"
+          },
+          {
+            "id": "-Ze8VBAD",
+            "title": "Weather Observation Station 12",
+            "url": "https://www.hackerrank.com/challenges/weather-observation-station-12/problem",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: HackerRank"
+          },
+          {
+            "id": "xBuUiWht",
+            "title": "Higher Than 75 Marks",
+            "url": "https://www.hackerrank.com/challenges/more-than-75-marks/problem",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: HackerRank"
+          },
+          {
+            "id": "DnM4fDge",
+            "title": "Locate People",
+            "url": "https://www.codechef.com/practice/course/sql-case-studies-topic-wise/SQLBP01/problems/SQLPBP15",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: CodeChef"
+          },
+          {
+            "id": "I0p4eYp-",
+            "title": "ApplePay Volume (Visa)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · 🔒 DataLemur premium · Find it in the DataLemur question list"
+          },
+          {
+            "id": "WRDxSUQO",
+            "title": "The PADS",
+            "url": "https://www.hackerrank.com/challenges/the-pads/problem",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: HackerRank"
+          }
+        ]
+      },
+      {
+        "id": "J9Jiqbxl",
+        "title": "Aggregation & Grouping",
+        "items": [
+          {
+            "id": "Bvqw-CeN",
+            "title": "Percentage of Users Attended a Contest",
+            "url": "https://leetcode.com/problems/percentage-of-users-attended-a-contest/",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: LeetCode"
+          },
+          {
+            "id": "KcgdupXs",
+            "title": "Queries Quality and Percentage",
+            "url": "https://leetcode.com/problems/queries-quality-and-percentage/",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: LeetCode"
+          },
+          {
+            "id": "HZ1mRmWy",
+            "title": "Number of Unique Subjects Taught by Each Teacher",
+            "url": "https://leetcode.com/problems/number-of-unique-subjects-taught-by-each-teacher/",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: LeetCode"
+          },
+          {
+            "id": "hN6R1jY_",
+            "title": "Classes With at Least 5 Students",
+            "url": "https://leetcode.com/problems/classes-with-at-least-5-students/",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: LeetCode"
+          },
+          {
+            "id": "x1kBOSeR",
+            "title": "Find Followers Count",
+            "url": "https://leetcode.com/problems/find-followers-count/",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: LeetCode"
+          },
+          {
+            "id": "gPi5FAOi",
+            "title": "Biggest Single Number",
+            "url": "https://leetcode.com/problems/biggest-single-number/",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: LeetCode"
+          },
+          {
+            "id": "ZO4okc5P",
+            "title": "Primary Department for Each Employee",
+            "url": "https://leetcode.com/problems/primary-department-for-each-employee/",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: LeetCode"
+          },
+          {
+            "id": "tgSYrILU",
+            "title": "Group Sold Products By The Date",
+            "url": "https://leetcode.com/problems/group-sold-products-by-the-date/",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: LeetCode"
+          },
+          {
+            "id": "CNinoxWj",
+            "title": "List the Products Ordered in a Period",
+            "url": "https://leetcode.com/problems/list-the-products-ordered-in-a-period/",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: LeetCode"
+          },
+          {
+            "id": "saWql81t",
+            "title": "Email Duplicates",
+            "url": "https://takeuforward.org/practice/sql/email-duplicates",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward"
+          },
+          {
+            "id": "3Rx_wLBn",
+            "title": "Query Quality Analysis",
+            "url": "https://takeuforward.org/practice/sql/query-quality-analysis",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward"
+          },
+          {
+            "id": "Uz74KH9E",
+            "title": "Highest Order Placing Customer",
+            "url": "https://takeuforward.org/practice/sql/highest-order-placing-customer",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward"
+          },
+          {
+            "id": "JSNWQ6Ee",
+            "title": "Unique Subjects per Teacher",
+            "url": "https://takeuforward.org/practice/sql/unique-subjects-per-teacher",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward"
+          },
+          {
+            "id": "iXacvKWj",
+            "title": "First Login Analysis",
+            "url": "https://takeuforward.org/practice/sql/first-login-analysis",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward"
+          },
+          {
+            "id": "N6PczBbQ",
+            "title": "Large Classes",
+            "url": "https://takeuforward.org/practice/sql/large-classes",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward"
+          },
+          {
+            "id": "zKMKjMc6",
+            "title": "Average Experience by Project",
+            "url": "https://takeuforward.org/practice/sql/average-experience-by-project",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward"
+          },
+          {
+            "id": "zvp_1w6Z",
+            "title": "Product Selling Price Report",
+            "url": "https://takeuforward.org/practice/sql/product-selling-price-report",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward"
+          },
+          {
+            "id": "oNAEDwYg",
+            "title": "Instant Food Delivery",
+            "url": "https://takeuforward.org/practice/sql/instant-food-delivery",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward"
+          },
+          {
+            "id": "LaLr8MQA",
+            "title": "Contest Participation Rate",
+            "url": "https://takeuforward.org/practice/sql/contest-participation-rate",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward"
+          },
+          {
+            "id": "2frm7fNF",
+            "title": "Highest Non-Repeating Number",
+            "url": "https://takeuforward.org/practice/sql/highest-non-repeating-number",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward"
+          },
+          {
+            "id": "L0gsvEbk",
+            "title": "User Follower Count",
+            "url": "https://takeuforward.org/practice/sql/user-follower-count",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward"
+          },
+          {
+            "id": "1kPtjxWv",
+            "title": "Order Count per Customer",
+            "url": "https://takeuforward.org/practice/sql/order-count-per-customer",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward"
+          },
+          {
+            "id": "ZoYeEurC",
+            "title": "Updated Bank Balances",
+            "url": "https://takeuforward.org/practice/sql/updated-bank-balances",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward"
+          },
+          {
+            "id": "7mAUiP2F",
+            "title": "CRM Automotive Sales Analysis",
+            "url": "https://takeuforward.org/practice/sql/crm-automotive-sales-analysis",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward"
+          },
+          {
+            "id": "-UUuWVHh",
+            "title": "Employee Work Time Summary",
+            "url": "https://takeuforward.org/practice/sql/employee-work-time-summary",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward"
+          },
+          {
+            "id": "afTR_N1g",
+            "title": "Frequent Actor-Director Duos",
+            "url": "https://takeuforward.org/practice/sql/frequent-actor-director-duos",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward"
+          },
+          {
+            "id": "eQg4_tAQ",
+            "title": "Warehouse Stock Manager",
+            "url": "https://takeuforward.org/practice/sql/warehouse-stock-manager",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward"
+          },
+          {
+            "id": "1wtTCBgX",
+            "title": "Histogram of Tweets (Twitter)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · Find it in the DataLemur question list"
+          },
+          {
+            "id": "1fqYpFus",
+            "title": "Data Science Skills (LinkedIn)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · Find it in the DataLemur question list"
+          },
+          {
+            "id": "VArxjjBg",
+            "title": "Average Post Hiatus Part 1 (Facebook)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · Find it in the DataLemur question list"
+          },
+          {
+            "id": "SjExT4SN",
+            "title": "Teams Power Users (Microsoft)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · Find it in the DataLemur question list"
+          },
+          {
+            "id": "guT0Ld9s",
+            "title": "Duplicate Job Listings (LinkedIn)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · Find it in the DataLemur question list"
+          },
+          {
+            "id": "oPxBXbZk",
+            "title": "Average Review Ratings (Amazon)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · Find it in the DataLemur question list"
+          },
+          {
+            "id": "k36jDnG7",
+            "title": "IBM db2 Product Analytics (IBM)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · Find it in the DataLemur question list"
+          },
+          {
+            "id": "TENH9xd6",
+            "title": "Cards Issued Difference (JPMorgan)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · Find it in the DataLemur question list"
+          },
+          {
+            "id": "MpJvBTQV",
+            "title": "Compressed Mean (Alibaba)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · Find it in the DataLemur question list"
+          },
+          {
+            "id": "-h8_2RCR",
+            "title": "Pharmacy Analytics Part 1 (CVS Health)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · Find it in the DataLemur question list"
+          },
+          {
+            "id": "BxGVXQbN",
+            "title": "Pharmacy Analytics Part 2 (CVS Health)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · Find it in the DataLemur question list"
+          },
+          {
+            "id": "CvyFim5R",
+            "title": "Pharmacy Analytics Part 3 (CVS Health)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · Find it in the DataLemur question list"
+          },
+          {
+            "id": "CryBziKN",
+            "title": "Patient Support Analysis Part 1 (UnitedHealth)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · Find it in the DataLemur question list"
+          },
+          {
+            "id": "nsSmx9t5",
+            "title": "Weather Observation Station 2",
+            "url": "https://www.hackerrank.com/challenges/weather-observation-station-2/problem",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: HackerRank"
+          },
+          {
+            "id": "Hc1x_oW5",
+            "title": "Weather Observation Station 4",
+            "url": "https://www.hackerrank.com/challenges/weather-observation-station-4/problem",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: HackerRank"
+          },
+          {
+            "id": "Vt5dEMYn",
+            "title": "Revising Aggregations - The Count Function",
+            "url": "https://www.hackerrank.com/challenges/revising-aggregations-the-count-function/problem",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: HackerRank"
+          },
+          {
+            "id": "rAQUc96w",
+            "title": "Revising Aggregations - The Sum Function",
+            "url": "https://www.hackerrank.com/challenges/revising-aggregations-sum/problem",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: HackerRank"
+          },
+          {
+            "id": "7XxkVimK",
+            "title": "Revising Aggregations - Averages",
+            "url": "https://www.hackerrank.com/challenges/revising-aggregations-the-average-function/problem",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: HackerRank"
+          },
+          {
+            "id": "8VdHLt4f",
+            "title": "Average Population",
+            "url": "https://www.hackerrank.com/challenges/average-population/problem",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: HackerRank"
+          },
+          {
+            "id": "b6B4kMGw",
+            "title": "Japan Population",
+            "url": "https://www.hackerrank.com/challenges/japan-population/problem",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: HackerRank"
+          },
+          {
+            "id": "zpUo0tOz",
+            "title": "Population Density Difference",
+            "url": "https://www.hackerrank.com/challenges/population-density-difference/problem",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: HackerRank"
+          },
+          {
+            "id": "L3E3sMvP",
+            "title": "The Blunder",
+            "url": "https://www.hackerrank.com/challenges/the-blunder/problem",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: HackerRank"
+          },
+          {
+            "id": "tBET4qfA",
+            "title": "Top Earners",
+            "url": "https://www.hackerrank.com/challenges/earnings-of-employees/problem",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: HackerRank"
+          },
+          {
+            "id": "HPLCZ93C",
+            "title": "Weather Observation Station 13",
+            "url": "https://www.hackerrank.com/challenges/weather-observation-station-13/problem",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: HackerRank"
+          },
+          {
+            "id": "vA52LYbh",
+            "title": "Weather Observation Station 14",
+            "url": "https://www.hackerrank.com/challenges/weather-observation-station-14/problem",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: HackerRank"
+          },
+          {
+            "id": "ev8jjjgq",
+            "title": "Weather Observation Station 15",
+            "url": "https://www.hackerrank.com/challenges/weather-observation-station-15/problem",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: HackerRank"
+          },
+          {
+            "id": "PmlUA3_0",
+            "title": "Weather Observation Station 16",
+            "url": "https://www.hackerrank.com/challenges/weather-observation-station-16/problem",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: HackerRank"
+          },
+          {
+            "id": "SHbcCuJc",
+            "title": "Weather Observation Station 17",
+            "url": "https://www.hackerrank.com/challenges/weather-observation-station-17/problem",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: HackerRank"
+          },
+          {
+            "id": "IAohmTh9",
+            "title": "Average Salary",
+            "url": "https://www.codechef.com/practice/course/sql-case-studies-topic-wise/SQLBP01/problems/SQLPBP14",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: CodeChef"
+          },
+          {
+            "id": "4uSMm2ew",
+            "title": "Fiction Collection Size",
+            "url": "https://www.codechef.com/practice/course/sql-case-studies-topic-wise/SQLBP01/problems/SQLPBP02",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: CodeChef"
+          },
+          {
+            "id": "mAuF6L66",
+            "title": "Department of Each Employee",
+            "url": "https://www.codechef.com/practice/course/sql-case-studies-topic-wise/SQLBP01/problems/SQLPBP09",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: CodeChef"
+          },
+          {
+            "id": "mjWXBVPw",
+            "title": "Most Expensive Purchase (Amazon)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · 🔒 DataLemur premium · Find it in the DataLemur question list"
+          },
+          {
+            "id": "jakv2iFE",
+            "title": "Highest Number of Products (eBay)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · 🔒 DataLemur premium · Find it in the DataLemur question list"
+          },
+          {
+            "id": "PtRl57lC",
+            "title": "Spare Server Capacity (Microsoft)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · 🔒 DataLemur premium · Find it in the DataLemur question list"
+          },
+          {
+            "id": "5-1vgymC",
+            "title": "Top Rated Businesses (Yelp)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · 🔒 DataLemur premium · Find it in the DataLemur question list"
+          },
+          {
+            "id": "ImbJZCaU",
+            "title": "Ad Campaign ROAS (Google)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · 🔒 DataLemur premium · Find it in the DataLemur question list"
+          },
+          {
+            "id": "HPqX-Nom",
+            "title": "Product Line Revenue (NVIDIA)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · 🔒 DataLemur premium · Find it in the DataLemur question list"
+          },
+          {
+            "id": "KtzJhk-B",
+            "title": "Webinar Popularity (Snowflake)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · 🔒 DataLemur premium · Find it in the DataLemur question list"
+          },
+          {
+            "id": "QMQnb_gp",
+            "title": "Monthly Transactions I",
+            "url": "https://leetcode.com/problems/monthly-transactions-i/",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: LeetCode"
+          },
+          {
+            "id": "VvJwHY0e",
+            "title": "Customers Who Bought All Products",
+            "url": "https://leetcode.com/problems/customers-who-bought-all-products/",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: LeetCode"
+          },
+          {
+            "id": "CMnkGTqt",
+            "title": "Immediate First Orders Percentage",
+            "url": "https://takeuforward.org/practice/sql/immediate-first-orders-percentage",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward"
+          },
+          {
+            "id": "R1DOD1bL",
+            "title": "Employees with the Highest Salary in Each Department",
+            "url": "https://takeuforward.org/practice/sql/employees-with-the-highest-salary-in-each-department",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward"
+          },
+          {
+            "id": "4pifhkd1",
+            "title": "Football Team Scores",
+            "url": "https://takeuforward.org/practice/sql/football-team-scores",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward"
+          },
+          {
+            "id": "rpWIDVcZ",
+            "title": "A & B Buyers Without C",
+            "url": "https://takeuforward.org/practice/sql/a-b-buyers-without-c",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward"
+          },
+          {
+            "id": "qzm7Oypt",
+            "title": "Apples vs Oranges",
+            "url": "https://takeuforward.org/practice/sql/apples-vs-oranges",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward"
+          },
+          {
+            "id": "5iPXunGo",
+            "title": "Call Count Between Pairs",
+            "url": "https://takeuforward.org/practice/sql/call-count-between-pairs",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward"
+          },
+          {
+            "id": "tZ0ZjOmC",
+            "title": "Supercloud Customer (Microsoft)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · Find it in the DataLemur question list"
+          },
+          {
+            "id": "ak8XiBaN",
+            "title": "Compressed Mode (Alibaba)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · Find it in the DataLemur question list"
+          },
+          {
+            "id": "iuI01PZz",
+            "title": "Patient Support Analysis Part 2 (UnitedHealth)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · Find it in the DataLemur question list"
+          },
+          {
+            "id": "0qVcZUO-",
+            "title": "Weather Observation Station 18",
+            "url": "https://www.hackerrank.com/challenges/weather-observation-station-18/problem",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: HackerRank"
+          },
+          {
+            "id": "YvRkR1dg",
+            "title": "Weather Observation Station 19",
+            "url": "https://www.hackerrank.com/challenges/weather-observation-station-19/problem",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: HackerRank"
+          },
+          {
+            "id": "148Hal3n",
+            "title": "Pharmacy Analytics Part 4 (CVS Health)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · 🔒 DataLemur premium · Find it in the DataLemur question list"
+          },
+          {
+            "id": "m0R2rlgp",
+            "title": "User Session Activity (Twitter)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · 🔒 DataLemur premium · Find it in the DataLemur question list"
+          },
+          {
+            "id": "mMZkH7Ct",
+            "title": "Sales Team Compensation (Oracle)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · 🔒 DataLemur premium · Find it in the DataLemur question list"
+          },
+          {
+            "id": "BNeYUgs-",
+            "title": "Average Deal Size Part 2 (Salesforce)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · 🔒 DataLemur premium · Find it in the DataLemur question list"
+          },
+          {
+            "id": "lAv2dX1N",
+            "title": "Invalid Search Results (Google)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · 🔒 DataLemur premium · Find it in the DataLemur question list"
+          },
+          {
+            "id": "1X8xL_gf",
+            "title": "Compensation Outliers (Accenture)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · 🔒 DataLemur premium · Find it in the DataLemur question list"
+          },
+          {
+            "id": "Y0EEeFqF",
+            "title": "Maximize Prime Item Inventory (Amazon)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · Find it in the DataLemur question list"
+          },
+          {
+            "id": "_treBbd3",
+            "title": "Median Google Search Frequency (Google)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · Find it in the DataLemur question list"
+          },
+          {
+            "id": "43SkSaW1",
+            "title": "Patient Support Analysis Part 3 (UnitedHealth)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · Find it in the DataLemur question list"
+          },
+          {
+            "id": "5l5Zxpsa",
+            "title": "Patient Support Analysis Part 4 (UnitedHealth)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · Find it in the DataLemur question list"
+          },
+          {
+            "id": "CWCAt3qE",
+            "title": "Uniquely Staffed Consultants (Accenture)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · 🔒 DataLemur premium · Find it in the DataLemur question list"
+          }
+        ]
+      },
+      {
+        "id": "Jrd0MCYM",
+        "title": "Joins",
+        "items": [
+          {
+            "id": "eGENV4eI",
+            "title": "Replace Employee ID With The Unique Identifier",
+            "url": "https://leetcode.com/problems/replace-employee-id-with-the-unique-identifier/",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: LeetCode"
+          },
+          {
+            "id": "yqSfyazo",
+            "title": "Product Sales Analysis I",
+            "url": "https://leetcode.com/problems/product-sales-analysis-i/",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: LeetCode"
+          },
+          {
+            "id": "ImZHga8F",
+            "title": "Employee Bonus",
+            "url": "https://leetcode.com/problems/employee-bonus/",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: LeetCode"
+          },
+          {
+            "id": "kDMMk8vp",
+            "title": "Students and Examinations",
+            "url": "https://leetcode.com/problems/students-and-examinations/",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: LeetCode"
+          },
+          {
+            "id": "W7Mab4oJ",
+            "title": "Average Selling Price",
+            "url": "https://leetcode.com/problems/average-selling-price/",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: LeetCode"
+          },
+          {
+            "id": "IqnpGsXN",
+            "title": "Project Employees I",
+            "url": "https://leetcode.com/problems/project-employees-i/",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: LeetCode"
+          },
+          {
+            "id": "wwCQ90yk",
+            "title": "Match Employees With Their Salaries",
+            "url": "https://takeuforward.org/practice/sql/match-employees-with-their-salaries",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward"
+          },
+          {
+            "id": "BCS4xsO-",
+            "title": "Low Bonus Employees",
+            "url": "https://takeuforward.org/practice/sql/low-bonus-employees",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward"
+          },
+          {
+            "id": "UWVHgyux",
+            "title": "Visitors Without Transactions",
+            "url": "https://takeuforward.org/practice/sql/visitors-without-transactions",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward"
+          },
+          {
+            "id": "ekhyzZg-",
+            "title": "Customer Orders Overview",
+            "url": "https://takeuforward.org/practice/sql/customer-orders-overview",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward"
+          },
+          {
+            "id": "ihOljKp9",
+            "title": "Most Frequent Travellers",
+            "url": "https://takeuforward.org/practice/sql/most-frequent-travellers",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward"
+          },
+          {
+            "id": "5swY_oa_",
+            "title": "Sales Analysis",
+            "url": "https://takeuforward.org/practice/sql/sales-analysis",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward"
+          },
+          {
+            "id": "PBSEgAdK",
+            "title": "Students Enrolled in Courses",
+            "url": "https://takeuforward.org/practice/sql/students-enrolled-in-courses",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward"
+          },
+          {
+            "id": "0dDSfn_d",
+            "title": "Employees With or Without Salary Records",
+            "url": "https://takeuforward.org/practice/sql/employees-with-or-without-salary-records",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward"
+          },
+          {
+            "id": "iHc4ez-5",
+            "title": "Employees and Their Departments",
+            "url": "https://takeuforward.org/practice/sql/employees-and-their-departments",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward"
+          },
+          {
+            "id": "sIOdXJxV",
+            "title": "Employees With Confirmed Salary Records",
+            "url": "https://takeuforward.org/practice/sql/employees-with-confirmed-salary-records",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward"
+          },
+          {
+            "id": "HKi5dWh_",
+            "title": "Table Join Operation",
+            "url": "https://takeuforward.org/practice/sql/table-join-operation",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward"
+          },
+          {
+            "id": "JAlNqSrS",
+            "title": "Generate All Possible User-Category Pairs",
+            "url": "https://takeuforward.org/practice/sql/generate-all-possible-user-category-pairs",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward"
+          },
+          {
+            "id": "6-rLOinr",
+            "title": "Cities With Completed Trades (Robinhood)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · Find it in the DataLemur question list"
+          },
+          {
+            "id": "JJP8CLlh",
+            "title": "Second Day Confirmation (TikTok)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · Find it in the DataLemur question list"
+          },
+          {
+            "id": "NVo6rI0I",
+            "title": "Population Census",
+            "url": "https://www.hackerrank.com/challenges/asian-population/problem",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: HackerRank"
+          },
+          {
+            "id": "B54r9hmG",
+            "title": "African Cities",
+            "url": "https://www.hackerrank.com/challenges/african-cities/problem",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: HackerRank"
+          },
+          {
+            "id": "HaJ5mqG5",
+            "title": "Average Population of Each Continent",
+            "url": "https://www.hackerrank.com/challenges/average-population-of-each-continent/problem",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: HackerRank"
+          },
+          {
+            "id": "iM8BkMPV",
+            "title": "QuickBooks vs TurboTax (Intuit)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · 🔒 DataLemur premium · Find it in the DataLemur question list"
+          },
+          {
+            "id": "nMET0xrY",
+            "title": "LinkedIn Power Creators Part 1 (LinkedIn)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · 🔒 DataLemur premium · Find it in the DataLemur question list"
+          },
+          {
+            "id": "jGSjH_5h",
+            "title": "Trade In Payouts (Apple)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · 🔒 DataLemur premium · Find it in the DataLemur question list"
+          },
+          {
+            "id": "N1neJXR4",
+            "title": "Who Made Quota? (Oracle)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · 🔒 DataLemur premium · Find it in the DataLemur question list"
+          },
+          {
+            "id": "Az481OWr",
+            "title": "LinkedIn Power Creators Part 2 (LinkedIn)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · 🔒 DataLemur premium · Find it in the DataLemur question list"
+          },
+          {
+            "id": "jtzw3lB8",
+            "title": "Confirmation Rate",
+            "url": "https://leetcode.com/problems/confirmation-rate/",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: LeetCode"
+          },
+          {
+            "id": "rbgWkdEZ",
+            "title": "Suggested Pages",
+            "url": "https://takeuforward.org/practice/sql/suggested-pages",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward"
+          },
+          {
+            "id": "6u3qioER",
+            "title": "Boolean Expression Evaluator",
+            "url": "https://takeuforward.org/practice/sql/boolean-expression-evaluator",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward"
+          },
+          {
+            "id": "xMMuB38K",
+            "title": "Suspended Accounts",
+            "url": "https://takeuforward.org/practice/sql/suspended-accounts",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward"
+          },
+          {
+            "id": "rKYik0v_",
+            "title": "Signup Activation Rate (TikTok)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · Find it in the DataLemur question list"
+          },
+          {
+            "id": "d7Yz3zRF",
+            "title": "International Call Percentage (Verizon)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · Find it in the DataLemur question list"
+          },
+          {
+            "id": "QT8nWuSQ",
+            "title": "New Companies",
+            "url": "https://www.hackerrank.com/challenges/the-company/problem",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: HackerRank"
+          },
+          {
+            "id": "GzyRlmK6",
+            "title": "The Report",
+            "url": "https://www.hackerrank.com/challenges/the-report/problem",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: HackerRank"
+          },
+          {
+            "id": "WOwJM_sx",
+            "title": "Top Competitors",
+            "url": "https://www.hackerrank.com/challenges/full-score/problem",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: HackerRank"
+          },
+          {
+            "id": "pM4F6NsH",
+            "title": "Ollivander's Inventory",
+            "url": "https://www.hackerrank.com/challenges/harry-potter-and-wands/problem",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: HackerRank"
+          },
+          {
+            "id": "1HpXkNjT",
+            "title": "Challenges",
+            "url": "https://www.hackerrank.com/challenges/challenges/problem",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: HackerRank"
+          },
+          {
+            "id": "Krs5KJg7",
+            "title": "Contest Leaderboard",
+            "url": "https://www.hackerrank.com/challenges/contest-leaderboard/problem",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: HackerRank"
+          },
+          {
+            "id": "2EAlxdDG",
+            "title": "Placements",
+            "url": "https://www.hackerrank.com/challenges/placements/problem",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: HackerRank"
+          },
+          {
+            "id": "MCcolBzW",
+            "title": "Player Performance Insights",
+            "url": "https://www.codechef.com/practice/course/sql-case-studies-topic-wise/SQLBP01/problems/SQLPBP04",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: CodeChef"
+          },
+          {
+            "id": "ab-aFwv8",
+            "title": "Player Details",
+            "url": "https://www.codechef.com/practice/course/sql-case-studies-topic-wise/SQLBP01/problems/SQLPBP05",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: CodeChef"
+          },
+          {
+            "id": "Ij33oxW8",
+            "title": "Booking Referral Source (Airbnb)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · 🔒 DataLemur premium · Find it in the DataLemur question list"
+          },
+          {
+            "id": "6UBMBrG1",
+            "title": "Google Maps Flagged UGC (Google)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · 🔒 DataLemur premium · Find it in the DataLemur question list"
+          },
+          {
+            "id": "7MGw5qRa",
+            "title": "Advertiser Status (Facebook)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · Find it in the DataLemur question list"
+          },
+          {
+            "id": "LE1WgptJ",
+            "title": "Interviews",
+            "url": "https://www.hackerrank.com/challenges/interviews/problem",
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: HackerRank"
+          },
+          {
+            "id": "9zl51s6q",
+            "title": "Follow-Up Airpod Percentage (Apple)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · 🔒 DataLemur premium · Find it in the DataLemur question list"
+          }
+        ]
+      },
+      {
+        "id": "pYOXKROr",
+        "title": "Self Joins & Relationship Queries",
+        "items": [
+          {
+            "id": "VMM2PTDm",
+            "title": "Rising Temperature",
+            "url": "https://leetcode.com/problems/rising-temperature/",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: LeetCode"
+          },
+          {
+            "id": "kNEveFj5",
+            "title": "Average Time of Process per Machine",
+            "url": "https://leetcode.com/problems/average-time-of-process-per-machine/",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: LeetCode"
+          },
+          {
+            "id": "cG-lBdlW",
+            "title": "The Number of Employees Which Report to Each Employee",
+            "url": "https://leetcode.com/problems/the-number-of-employees-which-report-to-each-employee/",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: LeetCode"
+          },
+          {
+            "id": "H-YyARSu",
+            "title": "Employees Earning More Than Their Manager",
+            "url": "https://takeuforward.org/practice/sql/employees-earning-more-than-their-manager",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward"
+          },
+          {
+            "id": "wrxH2iOA",
+            "title": "Minimum Distance Between Points",
+            "url": "https://takeuforward.org/practice/sql/minimum-distance-between-points",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward"
+          },
+          {
+            "id": "N5INkVgq",
+            "title": "Well Paid Employees (FAANG)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · Find it in the DataLemur question list"
+          },
+          {
+            "id": "UNAo34uf",
+            "title": "Managers with at Least 5 Direct Reports",
+            "url": "https://leetcode.com/problems/managers-with-at-least-5-direct-reports/",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: LeetCode"
+          },
+          {
+            "id": "WNZjAlDS",
+            "title": "Warmer Days",
+            "url": "https://takeuforward.org/practice/sql/warmer-days",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward"
+          },
+          {
+            "id": "fIzfat-4",
+            "title": "High-Report Managers",
+            "url": "https://takeuforward.org/practice/sql/high-report-managers",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward"
+          },
+          {
+            "id": "NfopyAY9",
+            "title": "Symmetric Pairs",
+            "url": "https://www.hackerrank.com/challenges/symmetric-pairs/problem",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: HackerRank"
+          },
+          {
+            "id": "1lB5YjJj",
+            "title": "Frequently Purchased Pairs (Walmart)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · 🔒 DataLemur premium · Find it in the DataLemur question list"
+          },
+          {
+            "id": "8xB2Iw9J",
+            "title": "Unique Money Transfer Relationships (PayPal)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · 🔒 DataLemur premium · Find it in the DataLemur question list"
+          },
+          {
+            "id": "DSedqpMJ",
+            "title": "3-Topping Pizzas (McKinsey)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · Find it in the DataLemur question list"
+          },
+          {
+            "id": "tjf6JICR",
+            "title": "Senior Managers (Google)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · Find it in the DataLemur question list"
+          },
+          {
+            "id": "eTUDSg6j",
+            "title": "Event Friends Recommendation (Facebook)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · 🔒 DataLemur premium · Find it in the DataLemur question list"
+          },
+          {
+            "id": "1mpQpvdK",
+            "title": "Matching Rental Amenities (Airbnb)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · 🔒 DataLemur premium · Find it in the DataLemur question list"
+          }
+        ]
+      },
+      {
+        "id": "Q1DE-fk4",
+        "title": "Subqueries & Missing Records",
+        "items": [
+          {
+            "id": "yoGq_2mY",
+            "title": "Customer Who Visited but Did Not Make Any Transactions",
+            "url": "https://leetcode.com/problems/customer-who-visited-but-did-not-make-any-transactions/",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: LeetCode"
+          },
+          {
+            "id": "1W7HqqYH",
+            "title": "Employees Whose Manager Left the Company",
+            "url": "https://leetcode.com/problems/employees-whose-manager-left-the-company/",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: LeetCode"
+          },
+          {
+            "id": "WU-Ys-6H",
+            "title": "Salespersons Without RED Orders",
+            "url": "https://takeuforward.org/practice/sql/salespersons-without-red-orders",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward"
+          },
+          {
+            "id": "NUJIPEoQ",
+            "title": "Inactive Sellers",
+            "url": "https://takeuforward.org/practice/sql/inactive-sellers",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward"
+          },
+          {
+            "id": "6O0Y8hte",
+            "title": "Inactive Customers",
+            "url": "https://takeuforward.org/practice/sql/inactive-customers",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward"
+          },
+          {
+            "id": "3ve1DpUV",
+            "title": "Students Enrolled in Non-Existent Departments",
+            "url": "https://takeuforward.org/practice/sql/students-enrolled-in-non-existent-departments",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward"
+          },
+          {
+            "id": "g_wd_h0G",
+            "title": "Orphan Employees",
+            "url": "https://takeuforward.org/practice/sql/orphan-employees",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward"
+          },
+          {
+            "id": "Hb8uYNFx",
+            "title": "Page With No Likes (Facebook)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · Find it in the DataLemur question list"
+          },
+          {
+            "id": "JbiFlsO3",
+            "title": "Article Views",
+            "url": "https://www.codechef.com/practice/course/sql-case-studies-topic-wise/SQLBP01/problems/SQLPBP06",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: CodeChef"
+          },
+          {
+            "id": "gWEMZBKX",
+            "title": "Investments in 2016",
+            "url": "https://leetcode.com/problems/investments-in-2016/",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: LeetCode"
+          },
+          {
+            "id": "ga92CIbz",
+            "title": "All-Product Buyers",
+            "url": "https://takeuforward.org/practice/sql/all-product-buyers",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward"
+          },
+          {
+            "id": "4tYA-ewV",
+            "title": "Find Quiet Students in All Exams",
+            "url": "https://takeuforward.org/practice/sql/find-quiet-students-in-all-exams",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward"
+          },
+          {
+            "id": "L49DN7Pk",
+            "title": "Photoshop Revenue Analysis (Adobe)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · 🔒 DataLemur premium · Find it in the DataLemur question list"
+          },
+          {
+            "id": "5KlagWHS",
+            "title": "Page Recommendation (Facebook)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · 🔒 DataLemur premium · Find it in the DataLemur question list"
+          }
+        ]
+      },
+      {
+        "id": "6dmE4xKa",
+        "title": "Set Operations & Combined Results",
+        "items": [
+          {
+            "id": "9C23MrD5",
+            "title": "Combine Active and Archived Users",
+            "url": "https://takeuforward.org/practice/sql/combine-active-and-archived-users",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward"
+          },
+          {
+            "id": "DzHr72q-",
+            "title": "Combine Sales Records Without Deduplication",
+            "url": "https://takeuforward.org/practice/sql/combine-sales-records-without-deduplication",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward"
+          },
+          {
+            "id": "-Oh-vn32",
+            "title": "Merge Recent Orders from Multiple Sources",
+            "url": "https://takeuforward.org/practice/sql/merge-recent-orders-from-multiple-sources",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward"
+          },
+          {
+            "id": "eoTjiovR",
+            "title": "Incomplete Employee Records",
+            "url": "https://takeuforward.org/practice/sql/incomplete-employee-records",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward"
+          },
+          {
+            "id": "jW3N-Bvl",
+            "title": "Count Salary Categories",
+            "url": "https://leetcode.com/problems/count-salary-categories/",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: LeetCode"
+          },
+          {
+            "id": "AzSFlf8J",
+            "title": "Movie Rating",
+            "url": "https://leetcode.com/problems/movie-rating/",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: LeetCode"
+          },
+          {
+            "id": "-1Ejx7bV",
+            "title": "Friend Requests II: Who Has the Most Friends",
+            "url": "https://leetcode.com/problems/friend-requests-ii-who-has-the-most-friends/",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: LeetCode"
+          },
+          {
+            "id": "xzUG3x2x",
+            "title": "Safe Investment Countries",
+            "url": "https://takeuforward.org/practice/sql/safe-investment-countries",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward"
+          },
+          {
+            "id": "OmUGM6IF",
+            "title": "Spotify Streaming History (Spotify)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · Find it in the DataLemur question list"
+          }
+        ]
+      },
+      {
+        "id": "dk3ZkHTj",
+        "title": "Date & Time Analysis",
+        "items": [
+          {
+            "id": "GBIxPKeh",
+            "title": "User Activity for the Past 30 Days I",
+            "url": "https://leetcode.com/problems/user-activity-for-the-past-30-days-i/",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: LeetCode"
+          },
+          {
+            "id": "1ySeDeZ8",
+            "title": "Kid-Friendly Movies in Last Month",
+            "url": "https://takeuforward.org/practice/sql/kid-friendly-movies-in-last-month",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward"
+          },
+          {
+            "id": "42pG32oR",
+            "title": "Latest 2020 Login",
+            "url": "https://takeuforward.org/practice/sql/latest-2020-login",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward"
+          },
+          {
+            "id": "UUDlO8SR",
+            "title": "Game Play Analysis IV",
+            "url": "https://leetcode.com/problems/game-play-analysis-iv/",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: LeetCode"
+          },
+          {
+            "id": "0gioMWMz",
+            "title": "Consulting Bench Time (Google)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · 🔒 DataLemur premium · Find it in the DataLemur question list"
+          },
+          {
+            "id": "6WwZ4e0I",
+            "title": "Active User Retention (Facebook)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · Find it in the DataLemur question list"
+          },
+          {
+            "id": "uYziu8fb",
+            "title": "Repeated Payments (Stripe)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · Find it in the DataLemur question list"
+          },
+          {
+            "id": "NlpZuIds",
+            "title": "Reactivated Users (Facebook)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · Find it in the DataLemur question list"
+          },
+          {
+            "id": "Olw9ZGdl",
+            "title": "Average Vacant Days (Airbnb)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · 🔒 DataLemur premium · Find it in the DataLemur question list"
+          },
+          {
+            "id": "cGfjTGIn",
+            "title": "Same Week Purchases (Etsy)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · 🔒 DataLemur premium · Find it in the DataLemur question list"
+          },
+          {
+            "id": "7Y4BrNgW",
+            "title": "Bad Delivery Rate (DoorDash)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · 🔒 DataLemur premium · Find it in the DataLemur question list"
+          },
+          {
+            "id": "LUJLAasu",
+            "title": "Weekly Churn Rates (Facebook)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · 🔒 DataLemur premium · Find it in the DataLemur question list"
+          }
+        ]
+      },
+      {
+        "id": "0cEV_z2f",
+        "title": "Ranking, Top-N & Window Functions",
+        "items": [
+          {
+            "id": "Of3YWPtK",
+            "title": "Find the First Device Logged In by Each Player",
+            "url": "https://takeuforward.org/practice/sql/find-the-first-device-logged-in-by-each-player",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward"
+          },
+          {
+            "id": "fIa1u0xu",
+            "title": "Find Team Size for Each Employee",
+            "url": "https://takeuforward.org/practice/sql/find-team-size-for-each-employee",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward"
+          },
+          {
+            "id": "f1-YlI1P",
+            "title": "Immediate Food Delivery II",
+            "url": "https://leetcode.com/problems/immediate-food-delivery-ii/",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: LeetCode"
+          },
+          {
+            "id": "AREpPUdW",
+            "title": "Product Sales Analysis III",
+            "url": "https://leetcode.com/problems/product-sales-analysis-iii/",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: LeetCode"
+          },
+          {
+            "id": "50XdpQEY",
+            "title": "Product Price at a Given Date",
+            "url": "https://leetcode.com/problems/product-price-at-a-given-date/",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: LeetCode"
+          },
+          {
+            "id": "e2LpCWT_",
+            "title": "Last Person to Fit in the Bus",
+            "url": "https://leetcode.com/problems/last-person-to-fit-in-the-bus/",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: LeetCode"
+          },
+          {
+            "id": "b66hSqA9",
+            "title": "Restaurant Growth",
+            "url": "https://leetcode.com/problems/restaurant-growth/",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: LeetCode"
+          },
+          {
+            "id": "DVg42-31",
+            "title": "Second Highest Salary",
+            "url": "https://leetcode.com/problems/second-highest-salary/",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: LeetCode + DataLemur"
+          },
+          {
+            "id": "ELERmX_Q",
+            "title": "Top Grade per Student",
+            "url": "https://takeuforward.org/practice/sql/top-grade-per-student",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward"
+          },
+          {
+            "id": "_rLT7LVA",
+            "title": "Find the Most Recent Order for Each Product",
+            "url": "https://takeuforward.org/practice/sql/find-the-most-recent-order-for-each-product",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward"
+          },
+          {
+            "id": "5i_nYvQs",
+            "title": "Restaurant Payment Trends",
+            "url": "https://takeuforward.org/practice/sql/restaurant-payment-trends",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward"
+          },
+          {
+            "id": "LiRlxG4p",
+            "title": "Most Recent Three Orders for Each Customer",
+            "url": "https://takeuforward.org/practice/sql/most-recent-three-orders-for-each-customer",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward"
+          },
+          {
+            "id": "-hdSDbQv",
+            "title": "Most Experienced Employees in Each Project",
+            "url": "https://takeuforward.org/practice/sql/most-experienced-employees-in-each-project",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward"
+          },
+          {
+            "id": "KNMoSAu5",
+            "title": "Most Frequently Ordered Product(s) for Each Customer",
+            "url": "https://takeuforward.org/practice/sql/most-frequently-ordered-product-s-for-each-customer",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward"
+          },
+          {
+            "id": "A-JkXkRt",
+            "title": "Follow-up Game Activity",
+            "url": "https://takeuforward.org/practice/sql/follow-up-game-activity",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward"
+          },
+          {
+            "id": "9o4NGl4M",
+            "title": "Find the Largest Window Between User Visits",
+            "url": "https://takeuforward.org/practice/sql/find-the-largest-window-between-user-visits",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward"
+          },
+          {
+            "id": "0CjXyQ65",
+            "title": "Find Transactions with Maximum Amount Per Day",
+            "url": "https://takeuforward.org/practice/sql/find-transactions-with-maximum-amount-per-day",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward"
+          },
+          {
+            "id": "uTu6PT77",
+            "title": "User's Third Transaction (Uber)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · Find it in the DataLemur question list"
+          },
+          {
+            "id": "djspq8PP",
+            "title": "Tweets' Rolling Averages (Twitter)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · Find it in the DataLemur question list"
+          },
+          {
+            "id": "r6LPI5tB",
+            "title": "Highest-Grossing Items (Amazon)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · Find it in the DataLemur question list"
+          },
+          {
+            "id": "qhpna4FS",
+            "title": "Top Three Salaries (FAANG)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · Find it in the DataLemur question list"
+          },
+          {
+            "id": "OnUmzPbX",
+            "title": "Odd and Even Measurements (Google)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · Find it in the DataLemur question list"
+          },
+          {
+            "id": "r2peI4AE",
+            "title": "Swapped Food Delivery (Zomato)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · Find it in the DataLemur question list"
+          },
+          {
+            "id": "gqiXMEeh",
+            "title": "FAANG Stock Min-Max Part 1 (Bloomberg)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · Find it in the DataLemur question list"
+          },
+          {
+            "id": "eArEnK0X",
+            "title": "Best-Selling Product (Amazon)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · Find it in the DataLemur question list"
+          },
+          {
+            "id": "qAxFNri4",
+            "title": "Histogram of Users and Purchases (Walmart)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · Find it in the DataLemur question list"
+          },
+          {
+            "id": "4BhdP4Ts",
+            "title": "Card Launch Success (JPMorgan)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · Find it in the DataLemur question list"
+          },
+          {
+            "id": "_b-Yy-xf",
+            "title": "Weather Observation Station 20",
+            "url": "https://www.hackerrank.com/challenges/weather-observation-station-20/problem",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: HackerRank"
+          },
+          {
+            "id": "taSSHwbF",
+            "title": "Mean, Median, Mode (Microsoft)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · 🔒 DataLemur premium · Find it in the DataLemur question list"
+          },
+          {
+            "id": "kO74iQC4",
+            "title": "2nd Ride Delay (Uber)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · 🔒 DataLemur premium · Find it in the DataLemur question list"
+          },
+          {
+            "id": "7vVVKtOG",
+            "title": "First Transaction (Etsy)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · 🔒 DataLemur premium · Find it in the DataLemur question list"
+          },
+          {
+            "id": "uAB9mYO-",
+            "title": "Cumulative Purchases by Product Type (Amazon)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · 🔒 DataLemur premium · Find it in the DataLemur question list"
+          },
+          {
+            "id": "GxanFKnj",
+            "title": "FAANG Stock Monthly Change Part 2 (Bloomberg)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · 🔒 DataLemur premium · Find it in the DataLemur question list"
+          },
+          {
+            "id": "MF8n96b8",
+            "title": "FAANG Underperforming Stocks Part 3 (Bloomberg)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · 🔒 DataLemur premium · Find it in the DataLemur question list"
+          },
+          {
+            "id": "u94iBAGH",
+            "title": "Department Top Three Salaries",
+            "url": "https://leetcode.com/problems/department-top-three-salaries/",
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: LeetCode"
+          },
+          {
+            "id": "hhJQBnGD",
+            "title": "Top 3 Salaries per Department",
+            "url": "https://takeuforward.org/practice/sql/top-3-salaries-per-department",
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward"
+          },
+          {
+            "id": "lPO0zqIs",
+            "title": "Y-on-Y Growth Rate (Wayfair)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · Find it in the DataLemur question list"
+          },
+          {
+            "id": "_oMsGHBn",
+            "title": "Server Utilization Time (Amazon)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · Find it in the DataLemur question list"
+          },
+          {
+            "id": "DmJqC88_",
+            "title": "Compressed Median (Alibaba)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · 🔒 DataLemur premium · Find it in the DataLemur question list"
+          },
+          {
+            "id": "MbLw1lFn",
+            "title": "Monthly Merchant Balance (Visa)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · 🔒 DataLemur premium · Find it in the DataLemur question list"
+          }
+        ]
+      },
+      {
+        "id": "fvqG6Gss",
+        "title": "Consecutive Sequences & Ranges",
+        "items": [
+          {
+            "id": "ABNs26Lr",
+            "title": "Available Seat Streaks",
+            "url": "https://takeuforward.org/practice/sql/available-seat-streaks",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward"
+          },
+          {
+            "id": "imW_B-re",
+            "title": "Consecutive Numbers",
+            "url": "https://leetcode.com/problems/consecutive-numbers/",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: LeetCode"
+          },
+          {
+            "id": "OZUMSkEI",
+            "title": "Find Continuous Ranges in Logs",
+            "url": "https://takeuforward.org/practice/sql/find-continuous-ranges-in-logs",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward"
+          },
+          {
+            "id": "tW8OFpn0",
+            "title": "User Shopping Sprees (Amazon)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · Find it in the DataLemur question list"
+          },
+          {
+            "id": "HwGjPua7",
+            "title": "SQL Project Planning",
+            "url": "https://www.hackerrank.com/challenges/sql-projects/problem",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: HackerRank"
+          },
+          {
+            "id": "oJ38G7Mh",
+            "title": "Track Continuous Periods of Task Failures and Successes",
+            "url": "https://takeuforward.org/practice/sql/track-continuous-periods-of-task-failures-and-successes",
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward"
+          },
+          {
+            "id": "UJbtUc2y",
+            "title": "Consecutive Filing Years (Intuit)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · Find it in the DataLemur question list"
+          },
+          {
+            "id": "X5dq4vFo",
+            "title": "Marketing Touch Streak (Snowflake)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · Find it in the DataLemur question list"
+          },
+          {
+            "id": "8Uxl3VJf",
+            "title": "15 Days of Learning SQL",
+            "url": "https://www.hackerrank.com/challenges/15-days-of-learning-sql/problem",
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: HackerRank"
+          },
+          {
+            "id": "pbyC05bt",
+            "title": "User Concurrent Sessions (Pinterest)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · 🔒 DataLemur premium · Find it in the DataLemur question list"
+          }
+        ]
+      },
+      {
+        "id": "UTD-Lj_J",
+        "title": "CTEs & Hierarchies",
+        "items": [
+          {
+            "id": "pikyxLNx",
+            "title": "Draw The Triangle 1",
+            "url": "https://www.hackerrank.com/challenges/draw-the-triangle-1/problem",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: HackerRank"
+          },
+          {
+            "id": "tRThVRib",
+            "title": "Draw The Triangle 2",
+            "url": "https://www.hackerrank.com/challenges/draw-the-triangle-2/problem",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: HackerRank"
+          },
+          {
+            "id": "79CmV3ly",
+            "title": "Find All Employees Reporting to the Head of the Company",
+            "url": "https://takeuforward.org/practice/sql/find-all-employees-reporting-to-the-head-of-the-company",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward"
+          },
+          {
+            "id": "zPurkh_N",
+            "title": "Binary Tree Nodes",
+            "url": "https://www.hackerrank.com/challenges/binary-search-tree-1/problem",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: HackerRank"
+          },
+          {
+            "id": "sVDmeojs",
+            "title": "Print Prime Numbers",
+            "url": "https://www.hackerrank.com/challenges/print-prime-numbers/problem",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: HackerRank"
+          },
+          {
+            "id": "H9SXHKCG",
+            "title": "Find Missing Subtasks for Each Task",
+            "url": "https://takeuforward.org/practice/sql/find-missing-subtasks-for-each-task",
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward"
+          }
+        ]
+      },
+      {
+        "id": "cIEryLq0",
+        "title": "Data Reshaping & Modification",
+        "items": [
+          {
+            "id": "RbmiCwnv",
+            "title": "Delete Duplicate Emails",
+            "url": "https://leetcode.com/problems/delete-duplicate-emails/",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: LeetCode"
+          },
+          {
+            "id": "4Xd_ebiI",
+            "title": "Reshape Products Data",
+            "url": "https://takeuforward.org/practice/sql/reshape-products-data",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward"
+          },
+          {
+            "id": "ra0zp5R_",
+            "title": "Employee Salary",
+            "url": "https://takeuforward.org/practice/sql/employee-salary",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward"
+          },
+          {
+            "id": "F83pcMhl",
+            "title": "System Settings",
+            "url": "https://takeuforward.org/practice/sql/system-settings",
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward"
+          },
+          {
+            "id": "PMjSMkz8",
+            "title": "Top Ratings in Feb 2020",
+            "url": "https://takeuforward.org/practice/sql/top-ratings-in-feb-2020",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward"
+          },
+          {
+            "id": "6ijInfmP",
+            "title": "Tennis Grand Slam Winners",
+            "url": "https://takeuforward.org/practice/sql/tennis-grand-slam-winners",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: takeUforward"
+          },
+          {
+            "id": "69oenl_b",
+            "title": "Occupations",
+            "url": "https://www.hackerrank.com/challenges/occupations/problem",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: HackerRank"
+          },
+          {
+            "id": "WtVW7DdJ",
+            "title": "Email Table Transformation (Facebook)",
+            "url": "https://datalemur.com/sql-interview-questions",
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Source: DataLemur · 🔒 DataLemur premium · Find it in the DataLemur question list"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "PCWKQd6r",
     "title": "System Design Roadmap (October version)",
     "intro": "From the client-server model and HTTP through caching, sharding, replication and message queues to full case studies like URL shorteners and chat systems.",

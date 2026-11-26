@@ -542,17 +542,7 @@ button.chip[aria-pressed="true"] { background: var(--accent-soft); border-color:
 .preview { display: grid; gap: 8px; min-width: 0; border: 1px dashed var(--border); border-radius: 10px; padding: 12px; max-height: 640px; overflow: auto; }
 @media (max-width: 860px) { .split { grid-template-columns: 1fr; } }
 
-/* Phones: the section tabs get their own row under the brand. */
 .toolbar.sticky { top: var(--topbar-h, 56px); }
-@media (max-width: 760px) {
-  :root { --topbar-h: 86px; }
-  .topbar nav { gap: 0; }
-  .topbar nav a { padding: 6px 8px; font-size: 0.88rem; }
-  .brand-name { display: inline; }
-  .topbar-inner { height: auto; flex-wrap: wrap; padding-top: 10px; row-gap: 4px; }
-  .topbar nav { order: 3; flex-basis: 100%; margin: 0 -8px; padding-bottom: 6px; }
-  .toolbar.sticky { top: var(--topbar-h); }
-}
 
 /* ---------- login / sign-up ---------- */
 
@@ -565,7 +555,6 @@ button.chip[aria-pressed="true"] { background: var(--accent-soft); border-color:
 
 /* ---------- landing ---------- */
 
-.landing-hero { display: grid; gap: 14px; padding: 36px 0 8px; max-width: 760px; }
 .landing-hero h1 { font-size: clamp(2rem, 1.3rem + 3vw, 3.2rem); line-height: 1.08; letter-spacing: -0.03em; }
 .landing-hero .accent { color: var(--accent); }
 .landing-hero .lede { font-size: 1.08rem; color: var(--muted); max-width: 60ch; }
@@ -822,15 +811,16 @@ html.mmi-locked, html.mmi-locked body { overflow: hidden; }
 /* ---------- home hero with floating topic icons ---------- */
 
 .landing-hero {
-  position: relative; max-width: none; display: block; padding: 40px 0 24px;
-  min-height: 440px; isolation: isolate; --px: 0; --py: 0;
+  position: relative; padding: 36px 0 24px;
+  min-height: 420px; isolation: isolate; --px: 0; --py: 0;
+  display: flex; align-items: center;
 }
-.hero-copy { position: relative; z-index: 2; display: grid; gap: 14px; max-width: 600px; }
+.hero-copy { position: relative; z-index: 2; display: grid; gap: 14px; max-width: 52%; }
 .hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; width: fit-content; padding: 4px 10px 4px 8px; border-radius: 99px; background: var(--accent-soft); color: var(--accent-strong); font-weight: 600; }
 .pulse { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 60%, transparent); animation: pulse 2.2s ease-out infinite; }
 @keyframes pulse { 70% { box-shadow: 0 0 0 8px transparent; } 100% { box-shadow: 0 0 0 0 transparent; } }
 
-.float-field { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
+.float-field { position: absolute; top: 0; right: 0; bottom: 0; left: 53%; z-index: 1; pointer-events: none; }
 .float-chip {
   pointer-events: auto; cursor: pointer; text-decoration: none; color: inherit;
   position: absolute; left: var(--x); top: var(--y);
@@ -869,10 +859,11 @@ html.mmi-locked, html.mmi-locked body { overflow: hidden; }
 /* Medium screens: fewer chips, kept to the right. */
 @media (max-width: 1000px) { .float-chip.wide-only { display: none; } }
 
-/* Phones: the chips get their own band under the text instead of sitting behind it. */
-@media (max-width: 760px) {
-  .landing-hero { min-height: 0; padding-top: 16px; }
-  .float-field { position: relative; inset: auto; height: 210px; margin: 18px -8px 0; }
+/* Tablets & phones: the chips get their own band under the text instead of sitting behind it. */
+@media (max-width: 900px) {
+  .landing-hero { display: block; min-height: 0; padding-top: 16px; }
+  .hero-copy { max-width: 100%; }
+  .float-field { position: relative; inset: auto; height: 210px; margin: 20px -8px 0; }
   .float-chip { left: var(--mx); top: var(--my); transform: translate(0, -50%); }
   .float-inner { padding: 6px 10px 6px 7px; font-size: 0.76rem; }
   .float-inner svg { width: 22px; height: 22px; padding: 3px; }
@@ -1521,4 +1512,25 @@ body, .topbar, .panel, .section-card, .rm-card {
 
 @media (max-width: 860px) {
   .orch-steps, .planner-grid { grid-template-columns: 1fr; }
+}
+
+/* ---------- DSA patterns practice block ---------- */
+
+.dsa-patterns-block { margin-top: 24px; display: grid; gap: 14px; }
+.dsa-pat-bar { width: 140px; }
+.dsa-pat-list { display: grid; gap: 10px; }
+.dsa-pat-questions { border-top: 1px solid var(--border); }
+.dsa-q-row {
+  display: flex; align-items: center; gap: 12px; padding: 9px 16px;
+  cursor: pointer; transition: background-color 0.15s;
+}
+.dsa-q-row + .dsa-q-row { border-top: 1px solid color-mix(in srgb, var(--border) 60%, transparent); }
+.dsa-q-row:hover { background: var(--surface-2); }
+.dsa-q-check {
+  width: 18px; height: 18px; flex: none; accent-color: var(--accent); cursor: pointer; margin: 0;
+}
+.dsa-q-title { flex: 1; min-width: 0; font-size: 0.9rem; font-weight: 500; }
+.dsa-q-row.is-done .dsa-q-title {
+  color: var(--muted); text-decoration: line-through;
+  text-decoration-color: color-mix(in srgb, var(--muted) 50%, transparent);
 }
