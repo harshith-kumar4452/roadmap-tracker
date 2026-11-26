@@ -26421,6 +26421,69 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "jikfa2JN",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Say \"Hello, World!\" With Python",
+            "url": "https://www.hackerrank.com/challenges/py-hello-world/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · Python: Introduction"
+          },
+          {
+            "id": "2_lirZBl",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Print Function",
+            "url": "https://www.hackerrank.com/challenges/python-print/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · Python: Introduction"
+          },
+          {
+            "id": "zcEGnXsw",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Arithmetic Operators",
+            "url": "https://www.hackerrank.com/challenges/python-arithmetic-operators/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · Python: Introduction"
+          },
+          {
+            "id": "wfytc4zO",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Python: Division",
+            "url": "https://www.hackerrank.com/challenges/python-division/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · Python: Introduction"
+          },
+          {
+            "id": "Xzdok5gV",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Guido's Gorgeous Lasagna",
+            "url": "https://exercism.org/tracks/python/exercises/guidos-gorgeous-lasagna",
+            "level": "Beginner",
+            "note": "Practice · Exercism · learning exercise: basics"
+          },
+          {
+            "id": "8yjkR0jz",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Hello World",
+            "url": "https://exercism.org/tracks/python/exercises/hello-world",
+            "level": "Beginner",
+            "note": "Practice · Exercism · practice exercise, difficulty 1/10"
+          },
+          {
+            "id": "nM6i9Zkq",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Two Fer",
+            "url": "https://exercism.org/tracks/python/exercises/two-fer",
+            "level": "Beginner",
+            "note": "Practice · Exercism · practice exercise, difficulty 1/10"
           }
         ]
       },
@@ -26454,6 +26517,168 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "8cOSydpR",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "sWAP cASE",
+            "url": "https://www.hackerrank.com/challenges/swap-case/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · Python: Strings"
+          },
+          {
+            "id": "NyIybguY",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "String Split and Join",
+            "url": "https://www.hackerrank.com/challenges/python-string-split-and-join/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · Python: Strings"
+          },
+          {
+            "id": "4WYWSm0T",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "What's Your Name?",
+            "url": "https://www.hackerrank.com/challenges/whats-your-name/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · Python: Strings"
+          },
+          {
+            "id": "-xJqJrhR",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Mutations",
+            "url": "https://www.hackerrank.com/challenges/python-mutations/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · Python: Strings"
+          },
+          {
+            "id": "JZf3dSzx",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Find a string",
+            "url": "https://www.hackerrank.com/challenges/find-a-string/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · Python: Strings"
+          },
+          {
+            "id": "lfp11I3i",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "String Validators",
+            "url": "https://www.hackerrank.com/challenges/string-validators/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · Python: Strings"
+          },
+          {
+            "id": "slH_61oH",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "String Formatting",
+            "url": "https://www.hackerrank.com/challenges/python-string-formatting/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · Python: Strings"
+          },
+          {
+            "id": "w1BKI_Uz",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Capitalize!",
+            "url": "https://www.hackerrank.com/challenges/capitalize/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · Python: Strings"
+          },
+          {
+            "id": "lBEiGmY5",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Integers Come In All Sizes",
+            "url": "https://www.hackerrank.com/challenges/python-integers-come-in-all-sizes/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · Python: Math"
+          },
+          {
+            "id": "V3_ziaGe",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Mod Divmod",
+            "url": "https://www.hackerrank.com/challenges/python-mod-divmod/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · Python: Math"
+          },
+          {
+            "id": "Y-dt3LGQ",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Power - Mod Power",
+            "url": "https://www.hackerrank.com/challenges/python-power-mod-power/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · Python: Math"
+          },
+          {
+            "id": "ecBz4vYT",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Ghost Gobble Arcade Game",
+            "url": "https://exercism.org/tracks/python/exercises/ghost-gobble-arcade-game",
+            "level": "Beginner",
+            "note": "Practice · Exercism · learning exercise: bools"
+          },
+          {
+            "id": "oBa84hdM",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Currency Exchange",
+            "url": "https://exercism.org/tracks/python/exercises/currency-exchange",
+            "level": "Beginner",
+            "note": "Practice · Exercism · learning exercise: numbers"
+          },
+          {
+            "id": "kSfFWYQa",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Little Sister's Vocabulary",
+            "url": "https://exercism.org/tracks/python/exercises/little-sisters-vocab",
+            "level": "Beginner",
+            "note": "Practice · Exercism · learning exercise: strings"
+          },
+          {
+            "id": "KvJz0dOG",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Little Sister's Essay",
+            "url": "https://exercism.org/tracks/python/exercises/little-sisters-essay",
+            "level": "Beginner",
+            "note": "Practice · Exercism · learning exercise: string methods"
+          },
+          {
+            "id": "bkQCB2yt",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Pretty Leaflet",
+            "url": "https://exercism.org/tracks/python/exercises/pretty-leaflet",
+            "level": "Beginner",
+            "note": "Practice · Exercism · learning exercise: string formatting"
+          },
+          {
+            "id": "iEfZzE7H",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Reverse String",
+            "url": "https://exercism.org/tracks/python/exercises/reverse-string",
+            "level": "Beginner",
+            "note": "Practice · Exercism · practice exercise, difficulty 1/10"
+          },
+          {
+            "id": "VNLFKAHd",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Pangram",
+            "url": "https://exercism.org/tracks/python/exercises/pangram",
+            "level": "Beginner",
+            "note": "Practice · Exercism · practice exercise, difficulty 1/10"
           }
         ]
       },
@@ -26487,6 +26712,78 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "pAI606CD",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Python If-Else",
+            "url": "https://www.hackerrank.com/challenges/py-if-else/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · Python: Introduction"
+          },
+          {
+            "id": "tewEqr71",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Loops",
+            "url": "https://www.hackerrank.com/challenges/python-loops/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · Python: Introduction"
+          },
+          {
+            "id": "wWLQCFR7",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Meltdown Mitigation",
+            "url": "https://exercism.org/tracks/python/exercises/meltdown-mitigation",
+            "level": "Beginner",
+            "note": "Practice · Exercism · learning exercise: conditionals"
+          },
+          {
+            "id": "dbtp1hDG",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Black Jack",
+            "url": "https://exercism.org/tracks/python/exercises/black-jack",
+            "level": "Beginner",
+            "note": "Practice · Exercism · learning exercise: comparisons"
+          },
+          {
+            "id": "d8hjfNyQ",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Making the Grade",
+            "url": "https://exercism.org/tracks/python/exercises/making-the-grade",
+            "level": "Beginner",
+            "note": "Practice · Exercism · learning exercise: loops"
+          },
+          {
+            "id": "WiH94U_N",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Leap",
+            "url": "https://exercism.org/tracks/python/exercises/leap",
+            "level": "Beginner",
+            "note": "Practice · Exercism · practice exercise, difficulty 1/10"
+          },
+          {
+            "id": "IO2Ax23t",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Raindrops",
+            "url": "https://exercism.org/tracks/python/exercises/raindrops",
+            "level": "Beginner",
+            "note": "Practice · Exercism · practice exercise, difficulty 1/10"
+          },
+          {
+            "id": "lWvOBLa3",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Collatz Conjecture",
+            "url": "https://exercism.org/tracks/python/exercises/collatz-conjecture",
+            "level": "Beginner",
+            "note": "Practice · Exercism · practice exercise, difficulty 1/10"
           }
         ]
       },
@@ -26538,6 +26835,159 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "9wJSWY8r",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Lists",
+            "url": "https://www.hackerrank.com/challenges/python-lists/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · Python: Basic Data Types"
+          },
+          {
+            "id": "SqESXB42",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Tuples ",
+            "url": "https://www.hackerrank.com/challenges/python-tuples/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · Python: Basic Data Types"
+          },
+          {
+            "id": "Gl63-IZ_",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "List Comprehensions",
+            "url": "https://www.hackerrank.com/challenges/list-comprehensions/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · Python: Basic Data Types"
+          },
+          {
+            "id": "u6KjHIyK",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Find the Runner-Up Score!  ",
+            "url": "https://www.hackerrank.com/challenges/find-second-maximum-number-in-a-list/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · Python: Basic Data Types"
+          },
+          {
+            "id": "lD3pmzU2",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Nested Lists",
+            "url": "https://www.hackerrank.com/challenges/nested-list/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · Python: Basic Data Types"
+          },
+          {
+            "id": "fvqaAHdo",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Finding the percentage",
+            "url": "https://www.hackerrank.com/challenges/finding-the-percentage/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · Python: Basic Data Types"
+          },
+          {
+            "id": "TbNZHPBv",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Introduction to Sets",
+            "url": "https://www.hackerrank.com/challenges/py-introduction-to-sets/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · Python: Sets"
+          },
+          {
+            "id": "2k_gTKxZ",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Set .add() ",
+            "url": "https://www.hackerrank.com/challenges/py-set-add/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · Python: Sets"
+          },
+          {
+            "id": "J35cVfMk",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Symmetric Difference",
+            "url": "https://www.hackerrank.com/challenges/symmetric-difference/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · Python: Sets"
+          },
+          {
+            "id": "DB4aqAkw",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Check Subset",
+            "url": "https://www.hackerrank.com/challenges/py-check-subset/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · Python: Sets"
+          },
+          {
+            "id": "0Jxrw1ak",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Card Games",
+            "url": "https://exercism.org/tracks/python/exercises/card-games",
+            "level": "Beginner",
+            "note": "Practice · Exercism · learning exercise: lists"
+          },
+          {
+            "id": "NBBB96Bu",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Chaitana's Colossal Coaster",
+            "url": "https://exercism.org/tracks/python/exercises/chaitanas-colossal-coaster",
+            "level": "Beginner",
+            "note": "Practice · Exercism · learning exercise: list methods"
+          },
+          {
+            "id": "6cPlBD-M",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Tisbury Treasure Hunt",
+            "url": "https://exercism.org/tracks/python/exercises/tisbury-treasure-hunt",
+            "level": "Beginner",
+            "note": "Practice · Exercism · learning exercise: tuples"
+          },
+          {
+            "id": "BwNxfaJX",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Inventory Management",
+            "url": "https://exercism.org/tracks/python/exercises/inventory-management",
+            "level": "Beginner",
+            "note": "Practice · Exercism · learning exercise: dicts"
+          },
+          {
+            "id": "aCQvuFSo",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Mecha Munch Management",
+            "url": "https://exercism.org/tracks/python/exercises/mecha-munch-management",
+            "level": "Beginner",
+            "note": "Practice · Exercism · learning exercise: dict methods"
+          },
+          {
+            "id": "YjRSSF2_",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Cater Waiter",
+            "url": "https://exercism.org/tracks/python/exercises/cater-waiter",
+            "level": "Beginner",
+            "note": "Practice · Exercism · learning exercise: sets"
+          },
+          {
+            "id": "WTqhdA1_",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Locomotive Engineer",
+            "url": "https://exercism.org/tracks/python/exercises/locomotive-engineer",
+            "level": "Beginner",
+            "note": "Practice · Exercism · learning exercise: unpacking and multiple assignment"
           }
         ]
       },
@@ -26553,6 +27003,87 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "5zcorr4L",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Map and Lambda Function",
+            "url": "https://www.hackerrank.com/challenges/map-and-lambda-expression/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · Python: Python Functionals"
+          },
+          {
+            "id": "39rNV6U-",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Zipped!",
+            "url": "https://www.hackerrank.com/challenges/zipped/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · Python: Built-Ins"
+          },
+          {
+            "id": "KCxtjn5b",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Any or All",
+            "url": "https://www.hackerrank.com/challenges/any-or-all/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · Python: Built-Ins"
+          },
+          {
+            "id": "_NHzZuKg",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Flatten Array",
+            "url": "https://exercism.org/tracks/python/exercises/flatten-array",
+            "level": "Beginner",
+            "note": "Practice · Exercism · practice exercise, difficulty 1/10"
+          },
+          {
+            "id": "9PoUKOE9",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Plane Tickets",
+            "url": "https://exercism.org/tracks/python/exercises/plane-tickets",
+            "level": "Beginner",
+            "note": "Practice · Exercism · learning exercise: generators"
+          },
+          {
+            "id": "9A9_KskX",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Write a function",
+            "url": "https://www.hackerrank.com/challenges/write-a-function/problem",
+            "level": "Intermediate",
+            "note": "Practice · HackerRank · Python: Introduction"
+          },
+          {
+            "id": "hAIg2b_i",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Reduce Function",
+            "url": "https://www.hackerrank.com/challenges/reduce-function/problem",
+            "level": "Intermediate",
+            "note": "Practice · HackerRank · Python: Python Functionals"
+          },
+          {
+            "id": "kwZccbxR",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Validating Email Addresses With a Filter ",
+            "url": "https://www.hackerrank.com/challenges/validate-list-of-email-address-with-filter/problem",
+            "level": "Intermediate",
+            "note": "Practice · HackerRank · Python: Python Functionals"
+          },
+          {
+            "id": "pmeC3r2g",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Default Arguments",
+            "url": "https://www.hackerrank.com/challenges/default-arguments/problem",
+            "level": "Intermediate",
+            "note": "Practice · HackerRank · Python: Debugging"
           }
         ]
       },
@@ -26622,6 +27153,240 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "gBaRCxri",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Class 2 - Find the Torsional Angle",
+            "url": "https://www.hackerrank.com/challenges/class-2-find-the-torsional-angle/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · Python: Classes"
+          },
+          {
+            "id": "SPtzm6Me",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "collections.Counter()",
+            "url": "https://www.hackerrank.com/challenges/collections-counter/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · Python: Collections"
+          },
+          {
+            "id": "BEDTdTE8",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "DefaultDict Tutorial",
+            "url": "https://www.hackerrank.com/challenges/defaultdict-tutorial/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · Python: Collections"
+          },
+          {
+            "id": "bDr5FfII",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Collections.namedtuple()",
+            "url": "https://www.hackerrank.com/challenges/py-collections-namedtuple/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · Python: Collections"
+          },
+          {
+            "id": "RHWXakCl",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Collections.deque()",
+            "url": "https://www.hackerrank.com/challenges/py-collections-deque/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · Python: Collections"
+          },
+          {
+            "id": "hJqB1WN5",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "itertools.product()",
+            "url": "https://www.hackerrank.com/challenges/itertools-product/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · Python: Itertools"
+          },
+          {
+            "id": "R1nzD9lH",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "itertools.permutations()",
+            "url": "https://www.hackerrank.com/challenges/itertools-permutations/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · Python: Itertools"
+          },
+          {
+            "id": "WQJGASFC",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Calendar Module",
+            "url": "https://www.hackerrank.com/challenges/calendar-module/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · Python: Date and Time"
+          },
+          {
+            "id": "H6nZAwRD",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Exceptions",
+            "url": "https://www.hackerrank.com/challenges/exceptions/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · Python: Errors and Exceptions"
+          },
+          {
+            "id": "DTCklfK1",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Incorrect Regex",
+            "url": "https://www.hackerrank.com/challenges/incorrect-regex/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · Python: Errors and Exceptions"
+          },
+          {
+            "id": "oR2p678J",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "XML 1 - Find the Score",
+            "url": "https://www.hackerrank.com/challenges/xml-1-find-the-score/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · Python: XML"
+          },
+          {
+            "id": "QCMc4owV",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Arrays",
+            "url": "https://www.hackerrank.com/challenges/np-arrays/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · Python: Numpy"
+          },
+          {
+            "id": "3681Ae20",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Shape and Reshape",
+            "url": "https://www.hackerrank.com/challenges/np-shape-reshape/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · Python: Numpy"
+          },
+          {
+            "id": "6yAHgiGn",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Ellen's Alien Game",
+            "url": "https://exercism.org/tracks/python/exercises/ellens-alien-game",
+            "level": "Beginner",
+            "note": "Practice · Exercism · learning exercise: classes"
+          },
+          {
+            "id": "JDGVDGzR",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Log Levels",
+            "url": "https://exercism.org/tracks/python/exercises/log-levels",
+            "level": "Beginner",
+            "note": "Practice · Exercism · learning exercise: enums"
+          },
+          {
+            "id": "gQ7L7cz2",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Robot Name",
+            "url": "https://exercism.org/tracks/python/exercises/robot-name",
+            "level": "Beginner",
+            "note": "Practice · Exercism · practice exercise, difficulty 2/10"
+          },
+          {
+            "id": "dloh18hM",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Big Countries",
+            "url": "https://leetcode.com/problems/big-countries/",
+            "level": "Beginner",
+            "note": "Practice · LeetCode #595 · solve it with pandas"
+          },
+          {
+            "id": "c_tVkLzd",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Combine Two Tables",
+            "url": "https://leetcode.com/problems/combine-two-tables/",
+            "level": "Beginner",
+            "note": "Practice · LeetCode #175 · solve it with pandas"
+          },
+          {
+            "id": "Mwed-zOz",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Duplicate Emails",
+            "url": "https://leetcode.com/problems/duplicate-emails/",
+            "level": "Beginner",
+            "note": "Practice · LeetCode #182 · solve it with pandas"
+          },
+          {
+            "id": "YRyckFTo",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Customers Who Never Order",
+            "url": "https://leetcode.com/problems/customers-who-never-order/",
+            "level": "Beginner",
+            "note": "Practice · LeetCode #183 · solve it with pandas"
+          },
+          {
+            "id": "wr6US90L",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Rising Temperature",
+            "url": "https://leetcode.com/problems/rising-temperature/",
+            "level": "Beginner",
+            "note": "Practice · LeetCode #197 · solve it with pandas"
+          },
+          {
+            "id": "R1392L3l",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Classes: Dealing with Complex Numbers",
+            "url": "https://www.hackerrank.com/challenges/class-1-dealing-with-complex-numbers/problem",
+            "level": "Intermediate",
+            "note": "Practice · HackerRank · Python: Classes"
+          },
+          {
+            "id": "50b4gncC",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Time Delta",
+            "url": "https://www.hackerrank.com/challenges/python-time-delta/problem",
+            "level": "Intermediate",
+            "note": "Practice · HackerRank · Python: Date and Time"
+          },
+          {
+            "id": "FBvhgT60",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Clock",
+            "url": "https://exercism.org/tracks/python/exercises/clock",
+            "level": "Intermediate",
+            "note": "Practice · Exercism · practice exercise, difficulty 3/10"
+          },
+          {
+            "id": "tzfwYSDm",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Department Highest Salary",
+            "url": "https://leetcode.com/problems/department-highest-salary/",
+            "level": "Intermediate",
+            "note": "Practice · LeetCode #184 · solve it with pandas"
+          },
+          {
+            "id": "PZoQ22CO",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Bank Account",
+            "url": "https://exercism.org/tracks/python/exercises/bank-account",
+            "level": "Advanced",
+            "note": "Practice · Exercism · practice exercise, difficulty 6/10"
           }
         ]
       },
@@ -26664,6 +27429,123 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "Vum-8QM0",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Detect Floating Point Number",
+            "url": "https://www.hackerrank.com/challenges/introduction-to-regex/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · Python: Regex and Parsing"
+          },
+          {
+            "id": "gPZUEgoj",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Re.split()",
+            "url": "https://www.hackerrank.com/challenges/re-split/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · Python: Regex and Parsing"
+          },
+          {
+            "id": "WSNV7ywK",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Re.findall() & Re.finditer()",
+            "url": "https://www.hackerrank.com/challenges/re-findall-re-finditer/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · Python: Regex and Parsing"
+          },
+          {
+            "id": "_5o3J2cf",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Validating phone numbers",
+            "url": "https://www.hackerrank.com/challenges/validating-the-phone-number/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · Python: Regex and Parsing"
+          },
+          {
+            "id": "KoecVC2_",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Validating and Parsing Email Addresses",
+            "url": "https://www.hackerrank.com/challenges/validating-named-email-addresses/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · Python: Regex and Parsing"
+          },
+          {
+            "id": "O4mvZrD4",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "HTML Parser - Part 1",
+            "url": "https://www.hackerrank.com/challenges/html-parser-part-1/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · Python: Regex and Parsing"
+          },
+          {
+            "id": "aJPmrvlj",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Detect HTML Tags, Attributes and Attribute Values",
+            "url": "https://www.hackerrank.com/challenges/detect-html-tags-attributes-and-attribute-values/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · Python: Regex and Parsing"
+          },
+          {
+            "id": "UiCDYjVZ",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Standardize Mobile Number Using Decorators",
+            "url": "https://www.hackerrank.com/challenges/standardize-mobile-number-using-decorators/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · Python: Closures and Decorators"
+          },
+          {
+            "id": "ELOYL4Eu",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Decorators 2 - Name Directory",
+            "url": "https://www.hackerrank.com/challenges/decorators-2-name-directory/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · Python: Closures and Decorators"
+          },
+          {
+            "id": "-GP1T2gf",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Regex Substitution",
+            "url": "https://www.hackerrank.com/challenges/re-sub-regex-substitution/problem",
+            "level": "Intermediate",
+            "note": "Practice · HackerRank · Python: Regex and Parsing"
+          },
+          {
+            "id": "UCEQ5lE9",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Wordy",
+            "url": "https://exercism.org/tracks/python/exercises/wordy",
+            "level": "Intermediate",
+            "note": "Practice · Exercism · practice exercise, difficulty 3/10"
+          },
+          {
+            "id": "4J3hQLsv",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Markdown",
+            "url": "https://exercism.org/tracks/python/exercises/markdown",
+            "level": "Intermediate",
+            "note": "Practice · Exercism · practice exercise, difficulty 4/10"
+          },
+          {
+            "id": "8LUwY21W",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "REST API",
+            "url": "https://exercism.org/tracks/python/exercises/rest-api",
+            "level": "Advanced",
+            "note": "Practice · Exercism · practice exercise, difficulty 8/10"
           }
         ]
       }
