@@ -788,7 +788,7 @@ function linksHtml(i, slots = groupSlots([i])) {
 
 // Notes written by the importers ("LeetCode #1 · 71k likes", "takeUforward A2Z · Fundamentals")
 // are shown as quiet metadata; anything else is the owner's own note.
-const IMPORT_NOTE = /^(LeetCode #|HackerRank\b|CodeChef\b|takeUforward A2Z|Source:|Practice · )/;
+const IMPORT_NOTE = /^(LeetCode #|HackerRank\b|CodeChef\b|takeUforward A2Z|Source:|Practice( › [^·]+)? · )/;
 // The sheet's sub-topic slugs read as "Faqs hard", "1d dp", "Triessubc"; show them as TUF does.
 const prettySub = (s) => s
   .replace(/^faqs\s*(hard|medium|dll)?$/i, (_, k) => (k ? `FAQs (${k.toLowerCase() === 'dll' ? 'DLL' : k[0].toUpperCase() + k.slice(1).toLowerCase()})` : 'FAQs'))
@@ -800,7 +800,9 @@ const prettySub = (s) => s
 // video course's lessons.
 const subTopicOf = (i) => {
   const note = noteText(i.note);
-  if (note.startsWith('Practice · ')) return 'Practice';
+  // "Practice › GROUP BY & HAVING · ..." groups questions under the lesson they practise.
+  const practice = /^Practice(?: › ([^·]+?))? · /.exec(note);
+  if (practice) return practice[1] ? `Practice: ${practice[1]}` : 'Practice';
   return prettySub(/^takeUforward A2Z · (.+)$/.exec(note)?.[1] ?? '');
 };
 
@@ -815,7 +817,7 @@ const noteText = (n) => (n || '').replace(/\s*·?\s*Also on \w+: https?:\/\/\S+/
 function itemRow(i, slots) {
   const note = noteText(i.note);
   const imported = IMPORT_NOTE.test(note);
-  const meta = imported ? note.replace(/^takeUforward A2Z · .*$/, '').replace(/^Practice · /, '') : '';
+  const meta = imported ? note.replace(/^takeUforward A2Z · .*$/, '').replace(/^Practice(?: › [^·]+)? · /, '') : '';
   const next = STATUS[STATUS[i.status]?.next ?? 'in_progress'];
   return `
     <div class="row ${i.status === 'done' ? 'is-done' : ''} ${i.status === 'in_progress' ? 'is-doing' : ''}" role="row" data-item="${esc(i.id)}">
@@ -847,12 +849,10 @@ function itemRow(i, slots) {
 // empty slots for the practice sites below it.
 function rowsHtml(g, rows) {
   const grouped = rm.group === 'topic' && g.items.some((x) => subTopicOf(x));
-  const label = (x) => {
-    if (!grouped) return '';
-    const sub = subTopicOf(x);
-    if (sub) return sub;
-    return /youtu\.?be/.test(x.url || '') ? 'Videos' : 'Topics';
-  };
+  // A step's own lessons share one heading: "Videos" when every one is a video, else "Lessons".
+  const lessons = g.items.filter((x) => !subTopicOf(x));
+  const lessonLabel = lessons.length && lessons.every((x) => /youtu\.?be/.test(x.url || '')) ? 'Videos' : 'Lessons';
+  const label = (x) => (!grouped ? '' : subTopicOf(x) || lessonLabel);
   const slotsFor = new Map();
   const slots = (sub) => {
     if (!slotsFor.has(sub)) slotsFor.set(sub, groupSlots(grouped ? g.items.filter((x) => label(x) === sub) : g.items));
