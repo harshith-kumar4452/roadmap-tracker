@@ -417,18 +417,18 @@ function continueCard(r) {
 const JOB_ROLES = [
   { id: 'all', label: 'All roles', icon: 'apps', desc: 'Every learning roadmap arranged by target job role.' },
   { id: 'sde', label: 'SDE', icon: 'code', desc: 'DSA, Core Subjects (OS & CN), Databases (DBMS & SQL), System Design (OOPS, LLD, HLD), and Git.', match: /dsa|operating systems|computer networks|dbms|\bsql\b|system design|hld|lld|arpit|oops|git/i },
-  { id: 'backend', label: 'Backend Engineer', icon: 'dns', desc: 'Backend engineering, Databases (DBMS & SQL), Redis, Kafka, Microservices, System Design, and Python.', match: /backend|node\.js|microservices|kafka|redis|dbms|\bsql\b|system design|hld|arpit|python|git/i },
+  { id: 'backend', label: 'Backend Engineer', icon: 'dns', desc: 'Backend engineering, Databases (DBMS & SQL), Redis, Kafka, Microservices, System Design, and Python.', match: /backend|node\.js|javascript|microservices|kafka|redis|dbms|\bsql\b|system design|hld|arpit|python|git/i },
   { id: 'data_engineer', label: 'Data Engineer', icon: 'storage', desc: 'Python, Databases (DBMS & SQL), Kafka streaming, Cloud (AWS), and Backend pipelines.', match: /python|dbms|\bsql\b|kafka|cloud|aws|backend/i },
   { id: 'data_analyst', label: 'Data Analyst', icon: 'analytics', desc: 'Power BI, SQL & Databases, Python, and Aptitude for analytics.', match: /power bi|\bsql\b|dbms|python|aptitude/i },
   { id: 'ai_engineer', label: 'AI Engineer', icon: 'psychology', desc: 'Machine Learning, Python, Databases (DBMS & SQL), and Cloud (AWS).', match: /\bml\b|python|dbms|\bsql\b|cloud|aws/i },
-  { id: 'frontend', label: 'Frontend / Full Stack', icon: 'web', desc: 'Web Development (React & Backend), Databases, and Git.', match: /react|backend|node\.js|\bsql\b|git/i },
+  { id: 'frontend', label: 'Frontend / Full Stack', icon: 'web', desc: 'Web Development (JavaScript, React & Backend), Databases, and Git.', match: /react|javascript|backend|node\.js|\bsql\b|git/i },
   { id: 'aptitude', label: 'Placement / GATE', icon: 'school', desc: 'Aptitude Roadmaps, DSA, GATE CS 2027, and Core Subjects.', match: /aptitude|gate|dsa|operating systems|computer networks/i },
 ];
 
 const ROADMAP_GROUPS = [
   { slug: 'core-subjects', title: 'Core Subjects', desc: 'Operating Systems and Computer Networks fundamentals.', icon: 'memory', match: /operating systems|computer networks/i },
   { slug: 'databases', title: 'Databases (DBMS & SQL)', desc: 'Database management systems, normalization, indexing, and SQL.', icon: 'storage', match: /dbms|\bsql\b/i },
-  { slug: 'web-development', title: 'Web Development', desc: 'Frontend (React) and Backend engineering (Node.js, APIs, projects).', icon: 'web', match: /backend|react/i },
+  { slug: 'web-development', title: 'Web Development', desc: 'Frontend (React) and Backend engineering (Node.js, APIs, projects).', icon: 'web', match: /backend|react|javascript/i },
   { slug: 'system-design', title: 'System Design', desc: 'OOPS, Low-Level Design (LLD), High-Level Design (HLD), and architecture projects.', icon: 'hub', match: /system design|hld|lld|arpit|oops/i },
   { slug: 'aptitude', title: 'Aptitude Roadmaps', desc: 'Quantitative, logical, verbal, and full aptitude preparation.', icon: 'school', match: /aptitude/i },
   { slug: 'redis', title: 'Redis Roadmaps', desc: 'Redis fundamentals and Redis internals.', icon: 'bolt', match: /^redis\b/i },
@@ -729,9 +729,53 @@ function groups() {
     .filter((g) => g.items.length);
 }
 
+// ---------- question links (practice sites, article, video), styled after the TUF sheet ----------
+
+const SITES = [
+  [/leetcode\.com/, 'LeetCode'], [/takeuforward\.org\/(practice|plus)/, 'TUF'], [/hackerrank\.com/, 'HackerRank'],
+  [/codechef\.com/, 'CodeChef'], [/geeksforgeeks\.org/, 'GFG'], [/datalemur\.com/, 'DataLemur'], [/codingninjas|naukri\.com\/code360/, 'Code360'],
+];
+const siteOf = (url) => SITES.find(([re]) => re.test(url))?.[1];
+
+// Every place a topic can be worked on. Uses the stored `links` when the import provided them;
+// otherwise works them out from the topic's link and any "Also on LeetCode: <url>" note.
+function itemLinks(i) {
+  const out = [];
+  const add = (l) => { if (safeUrl(l.url) && !out.some((o) => o.url === l.url)) out.push(l); };
+  (i.links ?? []).forEach(add);
+  if (i.url) {
+    const site = siteOf(i.url);
+    if (/youtu\.?be/.test(i.url)) add({ kind: 'video', site: 'YouTube', url: i.url });
+    else add(site ? { kind: 'practice', site, url: i.url } : { kind: 'article', site: 'Link', url: i.url });
+  }
+  for (const m of (i.note || '').matchAll(/Also on (\w+): (https?:\/\/\S+)/g)) add({ kind: 'practice', site: m[1], url: m[2] });
+  return out;
+}
+
+const KIND_ICON = { article: 'article', video: 'smart_display' };
+function linksHtml(i) {
+  const links = itemLinks(i);
+  const order = { practice: 0, article: 1, video: 2 };
+  return links.sort((a, b) => order[a.kind] - order[b.kind]).map((l) => {
+    const attrs = `href="${esc(l.url)}" target="_blank" rel="noopener noreferrer"`;
+    if (l.kind === 'practice') {
+      const key = l.site.toLowerCase().replace(/[^a-z0-9]/g, '');
+      return `<a class="qlink site-${key}" ${attrs} title="Solve on ${esc(l.site)}" aria-label="Solve ${esc(i.title)} on ${esc(l.site)}"><span class="qdot" aria-hidden="true"></span>${esc(l.site)}</a>`;
+    }
+    const label = l.kind === 'video' ? 'Watch the video' : l.site === 'Link' ? 'Open the link' : 'Read the article';
+    return `<a class="qicon qicon-${l.kind}" ${attrs} title="${label}" aria-label="${label}: ${esc(i.title)}"><span class="material-icons-round" aria-hidden="true">${KIND_ICON[l.kind]}</span></a>`;
+  }).join('');
+}
+
+// Practice lists read better as Easy / Medium / Hard, the way the question sites label them.
+const isPracticeList = () => /practice/i.test(rm?.title ?? '');
+const DIFFICULTY = { Beginner: 'Easy', Intermediate: 'Medium', Advanced: 'Hard' };
+const levelLabel = (l) => (isPracticeList() ? DIFFICULTY[l] ?? l : l);
+const noteText = (n) => (n || '').replace(/\s*·?\s*Also on \w+: https?:\/\/\S+/g, '').trim();
+
 function itemRow(i, idx) {
   const status = STATUS[i.status] ?? STATUS.not_started;
-  const url = safeUrl(i.url);
+  const note = noteText(i.note);
   return `
     <div class="row ${i.status === 'done' ? 'is-done' : ''}" role="row" data-item="${esc(i.id)}">
       <div class="c-name" role="cell">
@@ -739,7 +783,8 @@ function itemRow(i, idx) {
         ${tick(i.status === 'done', i.title)}
         <div class="name-body">
           ${itemTitle(i)}
-          ${i.note ? `<p class="note">${linkify(i.note)}</p>` : ''}
+          ${rm.group === 'level' ? `<span class="topic">${esc(i.sectionTitle)}</span>` : ''}
+          ${note ? `<p class="note">${linkify(note)}</p>` : ''}
           ${i.status === 'done' && i.doneAt ? `<span class="done-at">Done ${ago(i.doneAt)}</span>` : ''}
         </div>
         ${me.admin ? `<div class="item-actions">
@@ -747,20 +792,33 @@ function itemRow(i, idx) {
           <button type="button" class="icon-btn danger" data-act="delete-item" title="Delete topic" aria-label="Delete ${esc(i.title)}">${icons.trash}</button>
         </div>` : ''}
       </div>
+      <div class="c-links" role="cell">${linksHtml(i)}</div>
       <div class="c-level" role="cell">${levelPill(i.level)}</div>
-      <div class="c-topic" role="cell"><span class="topic">${esc(i.sectionTitle)}</span></div>
       <div class="c-status" role="cell">${me.admin
         ? `<button type="button" class="pill status-${i.status}" data-act="status" title="Change status">${status.label}</button>`
         : `<span class="pill status-${i.status}">${status.label}</span>`}</div>
-      <div class="c-link" role="cell">${url ? `<a class="icon-btn" href="${esc(url)}" target="_blank" rel="noopener noreferrer" aria-label="Open link for ${esc(i.title)}">${icons.ext}</a>` : ''}</div>
     </div>`;
 }
 
 function levelPill(level) {
   const cls = `pill level-${(level || 'none').toLowerCase()}`;
-  const label = level || (me.admin ? 'Set level' : '');
-  if (me.admin) return `<button type="button" class="${cls}" data-act="level" title="Change level">${esc(label)}</button>`;
-  return level ? `<span class="${cls}">${esc(level)}</span>` : '';
+  const label = levelLabel(level) || (me.admin ? (isPracticeList() ? 'Set difficulty' : 'Set level') : '');
+  if (me.admin) return `<button type="button" class="${cls}" data-act="level" title="Change ${isPracticeList() ? 'difficulty' : 'level'}">${esc(label)}</button>`;
+  return level ? `<span class="${cls}">${esc(label)}</span>` : '';
+}
+
+// Done / total for each level, shown as three tiles under the overall progress bar.
+function levelStatsHtml(items) {
+  const tiles = LEVELS.map((l) => {
+    const of = items.filter((i) => i.level === l);
+    return of.length ? { l, total: of.length, done: of.filter((i) => i.status === 'done').length } : null;
+  }).filter(Boolean);
+  if (!tiles.length) return '';
+  return `<div class="lvl-stats">${tiles.map((t) => `
+    <div class="lvl-tile lvl-${t.l.toLowerCase()}">
+      <div class="lvl-tile-top"><span>${esc(levelLabel(t.l))}</span><strong>${t.done}<span class="muted">/${t.total}</span></strong></div>
+      ${bar(t.done, t.total, 'sm')}
+    </div>`).join('')}</div>`;
 }
 
 function groupsHtml() {
@@ -770,14 +828,17 @@ function groupsHtml() {
     (rm.filter === 'all' || (rm.filter === 'todo' ? i.status !== 'done' : i.status === rm.filter)) &&
     (!q || i.title.toLowerCase().includes(q) || (i.note || '').toLowerCase().includes(q) || i.sectionTitle.toLowerCase().includes(q));
 
-  const html = groups().map((g) => {
+  const practice = isPracticeList();
+  const html = groups().map((g, gi) => {
     const total = g.items.length;
     const done = g.items.filter((i) => i.status === 'done').length;
     const rows = g.items.filter(match);
     if (filtering && !rows.length) return '';
     const saved = prefs.get(`grp:${rm.id}:${g.key}`);
     const open = filtering || (saved ? saved === 'open' : done < total || total === 0);
-    const head = g.level !== undefined ? `<span class="pill level-${(g.level || 'none').toLowerCase()}">${esc(g.title)}</span>` : `<span class="sec-title">${esc(g.title)}</span>`;
+    const head = g.level !== undefined
+      ? `<span class="pill level-${(g.level || 'none').toLowerCase()}">${esc(g.level ? levelLabel(g.level) : g.title)}</span>`
+      : `<span class="sec-title"><span class="sec-step">Step ${gi + 1}</span>${esc(g.title.replace(/^Striver A2Z: /, 'A2Z · '))}</span>`;
     return `
       <details class="sec ${total && done === total ? 'complete' : ''}" data-group="${esc(g.key)}" ${g.sectionId ? `data-sec="${esc(g.sectionId)}"` : ''} ${open ? 'open' : ''}>
         <summary>
@@ -788,7 +849,7 @@ function groupsHtml() {
         </summary>
         <div class="table" role="table">
           <div class="row head" role="row">
-            <div role="columnheader">Name</div><div role="columnheader">Level</div><div role="columnheader">Topic</div><div role="columnheader">Status</div><div role="columnheader"><span class="sr-only">Link</span></div>
+            <div role="columnheader">${practice ? 'Question' : 'Name'}</div><div role="columnheader">${practice ? 'Solve / learn' : 'Links'}</div><div role="columnheader">${practice ? 'Difficulty' : 'Level'}</div><div role="columnheader">Status</div>
           </div>
           ${rows.map((i) => itemRow(i, g.items.indexOf(i))).join('')}
         </div>
@@ -889,7 +950,8 @@ function drawRoadmap() {
 
     <div class="rm-progress">
       ${bar(done, items.length, 'lg')}
-      <div class="rm-progress-meta"><strong>${pct(done, items.length)}%</strong><span class="muted">${done} of ${plural(items.length, 'topic')} done${inProgress ? ` · ${inProgress} in progress` : ''}</span></div>
+      <div class="rm-progress-meta"><strong>${pct(done, items.length)}%</strong><span class="muted">${done} of ${plural(items.length, isPracticeList() ? 'question' : 'topic')} done${inProgress ? ` · ${inProgress} in progress` : ''}</span></div>
+      ${levelStatsHtml(items)}
     </div>
 
     ${rm.editing ? editorHtml() : pageDetailsHtml()}
@@ -897,19 +959,20 @@ function drawRoadmap() {
     ${next ? `
       <div class="upnext" data-item="${esc(next.id)}">
         ${tick(false, next.title)}
-        <div><div class="eyebrow">Up next · ${esc(next.sectionTitle)}${next.level ? ` · ${esc(next.level)}` : ''}</div>${itemTitle(next)}</div>
+        <div class="upnext-body"><div class="eyebrow">Up next · ${esc(next.sectionTitle)}${next.level ? ` · ${esc(levelLabel(next.level))}` : ''}</div>${itemTitle(next)}
+          <div class="c-links">${linksHtml(next)}</div></div>
       </div>` : items.length ? '<div class="upnext all-done">Every topic in this roadmap is done.</div>' : ''}
 
     <h2 class="index-title">Course Index</h2>
     <div class="toolbar sticky">
       <div class="seg" role="group" aria-label="Group by">
-        <button type="button" data-act="group" data-g="level" aria-pressed="${rm.group === 'level'}">By level</button>
+        <button type="button" data-act="group" data-g="level" aria-pressed="${rm.group === 'level'}">${isPracticeList() ? 'By difficulty' : 'By level'}</button>
         <button type="button" data-act="group" data-g="topic" aria-pressed="${rm.group === 'topic'}">By topic</button>
       </div>
       <div class="seg" role="group" aria-label="Show">
         ${Object.entries(filterLabels).map(([f, label]) => `<button type="button" data-act="filter" data-f="${f}" aria-pressed="${rm.filter === f}">${label}</button>`).join('')}
       </div>
-      <input type="search" id="item-search" placeholder="Search topics" aria-label="Search topics" value="${esc(rm.q)}">
+      <input type="search" id="item-search" placeholder="${isPracticeList() ? 'Search questions' : 'Search topics'}" aria-label="${isPracticeList() ? 'Search questions' : 'Search topics'}" value="${esc(rm.q)}">
       <div class="toolbar-right">
         <button type="button" class="btn ghost small" data-act="expand">Expand all</button>
         <button type="button" class="btn ghost small" data-act="collapse">Collapse all</button>
