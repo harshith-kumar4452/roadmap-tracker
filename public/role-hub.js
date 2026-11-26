@@ -226,6 +226,29 @@ export function renderRoleHubView({ role, cards, allItems, view, esc, bar, pct, 
   const noteKey = `rt:role-notes:${role.id}`;
   const savedNote = (() => { try { return localStorage.getItem(noteKey) || ''; } catch { return ''; } })();
 
+  // Practice question lists (LeetCode / HackerRank / CodeChef) for this role's roadmaps.
+  const practiceHtml = () => {
+    const lists = allItems.filter((r) => /practice/i.test(r.title));
+    if (!lists.length) return '';
+    return `
+      <section class="panel pg-practice">
+        <div class="panel-head">
+          <div>
+            <h2>Practice for ${esc(role.label)}</h2>
+            <p class="muted small">Solve these on LeetCode, HackerRank and CodeChef, then tick them off. Questions are grouped by topic and run Easy to Hard.</p>
+          </div>
+        </div>
+        <div class="pg-practice-list">
+          ${lists.map((r) => `
+            <a class="pg-practice-row" href="#/r/${esc(r.id)}">
+              <div><strong>${esc(r.title)}</strong>
+                <span class="muted small">${r.done} of ${plural(r.total, 'question')} solved${r.next ? ` · next: ${esc(r.next.title)}` : ''}</span></div>
+              ${bar(r.done, r.total, 'sm')}
+            </a>`).join('')}
+        </div>
+      </section>`;
+  };
+
   const tabBody = () => {
     if (activeTab === 'roadmaps') {
       return cards.length
@@ -303,7 +326,8 @@ export function renderRoleHubView({ role, cards, allItems, view, esc, bar, pct, 
           <div class="eyebrow">Output</div>
           <pre id="pg-output" class="pg-output">Click Run to execute...</pre>
         </div>
-      </section>`;
+      </section>
+      ${practiceHtml()}`;
   };
 
   view.innerHTML = `

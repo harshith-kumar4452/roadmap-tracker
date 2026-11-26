@@ -1534,3 +1534,16 @@ body, .topbar, .panel, .section-card, .rm-card {
   color: var(--muted); text-decoration: line-through;
   text-decoration-color: color-mix(in srgb, var(--muted) 50%, transparent);
 }
+
+/* ---------- practice lists under the role playground ---------- */
+
+.pg-practice { display: grid; gap: 12px; margin-top: 16px; }
+.pg-practice-list { display: grid; gap: 8px; }
+.pg-practice-row {
+  display: grid; grid-template-columns: 1fr 140px; align-items: center; gap: 14px;
+  padding: 10px 14px; border: 1px solid var(--border); border-radius: 10px;
+  color: inherit; text-decoration: none; transition: background-color 0.15s;
+}
+.pg-practice-row:hover { background: var(--surface-2); }
+.pg-practice-row strong { display: block; }
+@media (max-width: 600px) { .pg-practice-row { grid-template-columns: 1fr; } }
