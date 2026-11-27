@@ -49,6 +49,17 @@ router.post('/', async (req, res) => {
   res.status(201).json(store.publicTask(await store.getTaskDoc(doc._id)));
 });
 
+// Many tasks at once (sprint planner, importing calendar entries saved by the old planner).
+router.post('/bulk', async (req, res) => {
+  const list = req.body?.items;
+  if (!Array.isArray(list) || !list.length || list.length > 200) throw httpError(400, 'items must be a list of 1–200 tasks');
+  const source = oneOf(req.body.source ?? 'app', ['app', 'planner', 'import'], 'source');
+  const docs = await store.createTasks(list.map((b) => ({ ...taskFields(b), source })));
+  let pushed = 0;
+  if (await sync.connected()) for (const d of docs.slice(0, 40)) if (d.date && (await sync.pushTask(d)).eventId) pushed++;
+  res.status(201).json({ created: docs.length, pushedToGoogle: pushed });
+});
+
 router.patch('/:id', async (req, res) => {
   const b = req.body || {};
   const f = taskFields(b, { partial: true });

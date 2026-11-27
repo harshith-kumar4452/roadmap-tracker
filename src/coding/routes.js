@@ -30,7 +30,10 @@ router.get('/history', async (req, res) => {
 
 router.get('/stats', async (req, res) => {
   signedIn(req);
-  res.json(await svc.stats(dayOf(req)));
+  await ready();
+  const day = dayOf(req);
+  await svc.ensureDaily(day); // so today's pick is counted even if this request wins the race
+  res.json(await svc.stats(day));
 });
 
 const fields = (b, partial) => ({
