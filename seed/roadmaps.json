@@ -25669,6 +25669,87 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "suMHGNzt",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Welcome to Java!",
+            "url": "https://www.hackerrank.com/challenges/welcome-to-java/problem",
+            "level": "Beginner",
+            "note": "Practice › 1.1 Java Basics · HackerRank · Java"
+          },
+          {
+            "id": "yPTNOAFa",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Java Stdin and Stdout I",
+            "url": "https://www.hackerrank.com/challenges/java-stdin-and-stdout-1/problem",
+            "level": "Beginner",
+            "note": "Practice › 1.1 Java Basics · HackerRank · Java"
+          },
+          {
+            "id": "hm4HAwgf",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Java Loops I",
+            "url": "https://www.hackerrank.com/challenges/java-loops-i/problem",
+            "level": "Beginner",
+            "note": "Practice › 1.1 Java Basics · HackerRank · Java"
+          },
+          {
+            "id": "A8iEYqVi",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Quiz: Classes and Objects",
+            "url": "https://takeuforward.org/quiz/design/quiz-classes-and-objects",
+            "level": "Beginner",
+            "note": "Practice › 1.3 Classes and Objects · TUF · quiz"
+          },
+          {
+            "id": "I8CotvOE",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Practice (Classes and Objects)",
+            "url": "https://takeuforward.org/practice/design/practice-classes-and-objects",
+            "level": "Beginner",
+            "note": "Practice › 1.3 Classes and Objects · TUF · coding practice"
+          },
+          {
+            "id": "4v24o4TY",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Quiz: Attributes and Methods",
+            "url": "https://takeuforward.org/quiz/design/quiz-attributes-and-methods",
+            "level": "Beginner",
+            "note": "Practice › 1.4 Attributes and Methods · TUF · quiz"
+          },
+          {
+            "id": "ZJELcJf_",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Practice (Attributes and Methods)",
+            "url": "https://takeuforward.org/practice/design/practice-attributes-and-methods",
+            "level": "Beginner",
+            "note": "Practice › 1.4 Attributes and Methods · TUF · coding practice"
+          },
+          {
+            "id": "ewBmOk9U",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Quiz: Constructors",
+            "url": "https://takeuforward.org/quiz/design/quiz-constructors",
+            "level": "Beginner",
+            "note": "Practice › 1.5 Constructors · TUF · quiz"
+          },
+          {
+            "id": "Pbc1Uy_N",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Practice (Constructors)",
+            "url": "https://takeuforward.org/practice/design/practice-constructors",
+            "level": "Beginner",
+            "note": "Practice › 1.5 Constructors · TUF · coding practice"
           }
         ]
       },
@@ -25711,6 +25792,78 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "37otoYX9",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Quiz: Encapsulation",
+            "url": "https://takeuforward.org/quiz/design/quiz-encapsulation",
+            "level": "Beginner",
+            "note": "Practice › 2.1 Encapsulation · TUF · quiz"
+          },
+          {
+            "id": "mE0Lr7S7",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Practice (Encapsulation)",
+            "url": "https://takeuforward.org/practice/design/practice-encapsulation",
+            "level": "Beginner",
+            "note": "Practice › 2.1 Encapsulation · TUF · coding practice"
+          },
+          {
+            "id": "E4SasdVD",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Quiz: Access Modifiers",
+            "url": "https://takeuforward.org/quiz/design/quiz-access-modifiers",
+            "level": "Beginner",
+            "note": "Practice › 2.2 Access Modifiers · TUF · quiz"
+          },
+          {
+            "id": "3sKcKDwP",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Practice (Access Modifiers)",
+            "url": "https://takeuforward.org/practice/design/practice-access-modifiers",
+            "level": "Beginner",
+            "note": "Practice › 2.2 Access Modifiers · TUF · coding practice"
+          },
+          {
+            "id": "fOaMR3wH",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Quiz: Inheritance",
+            "url": "https://takeuforward.org/quiz/design/quiz-inheritance",
+            "level": "Beginner",
+            "note": "Practice › 2.3 Inheritance · TUF · quiz"
+          },
+          {
+            "id": "4nZwT4-8",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Practice (Inheritance)",
+            "url": "https://takeuforward.org/practice/design/practice-inheritance",
+            "level": "Beginner",
+            "note": "Practice › 2.3 Inheritance · TUF · coding practice"
+          },
+          {
+            "id": "evpZbcwf",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Quiz: Polymorphism",
+            "url": "https://takeuforward.org/quiz/design/quiz-polymorphism",
+            "level": "Beginner",
+            "note": "Practice › 2.4 Polymorphism · TUF · quiz"
+          },
+          {
+            "id": "vNLLdhOj",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Practice (Polymorphism)",
+            "url": "https://takeuforward.org/practice/design/practice-polymorphism",
+            "level": "Beginner",
+            "note": "Practice › 2.4 Polymorphism · TUF · coding practice"
           }
         ]
       },
@@ -25753,6 +25906,78 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "JEIxG1Ja",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Quiz: Abstraction",
+            "url": "https://takeuforward.org/quiz/design/quiz-abstraction",
+            "level": "Intermediate",
+            "note": "Practice › 3.1 Abstraction · TUF · quiz"
+          },
+          {
+            "id": "yDoja18k",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Practice (Abstraction)",
+            "url": "https://takeuforward.org/practice/design/practice-abstraction",
+            "level": "Intermediate",
+            "note": "Practice › 3.1 Abstraction · TUF · coding practice"
+          },
+          {
+            "id": "hUMmPPmd",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Quiz: Interfaces",
+            "url": "https://takeuforward.org/quiz/design/quiz-interfaces",
+            "level": "Intermediate",
+            "note": "Practice › 3.2 Interfaces · TUF · quiz"
+          },
+          {
+            "id": "lvzFcFJK",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Practice (Interfaces)",
+            "url": "https://takeuforward.org/practice/design/practice-interfaces",
+            "level": "Intermediate",
+            "note": "Practice › 3.2 Interfaces · TUF · coding practice"
+          },
+          {
+            "id": "3DYk_mKy",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Quiz: Static Keyword",
+            "url": "https://takeuforward.org/quiz/design/quiz-static-keyword",
+            "level": "Intermediate",
+            "note": "Practice › 3.3 Static Keyword · TUF · quiz"
+          },
+          {
+            "id": "cGYi8EWe",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Practice (Static Keyword)",
+            "url": "https://takeuforward.org/practice/design/practice-static-keyword",
+            "level": "Intermediate",
+            "note": "Practice › 3.3 Static Keyword · TUF · coding practice"
+          },
+          {
+            "id": "B3yTNMGq",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Quiz: Inner classes",
+            "url": "https://takeuforward.org/quiz/design/quiz-inner-classes",
+            "level": "Intermediate",
+            "note": "Practice › 3.4 Inner Classes · TUF · quiz"
+          },
+          {
+            "id": "e4n3Uac8",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Practice (Inner classes)",
+            "url": "https://takeuforward.org/practice/design/practice-inner-classes",
+            "level": "Intermediate",
+            "note": "Practice › 3.4 Inner Classes · TUF · coding practice"
           }
         ]
       },
@@ -25777,6 +26002,42 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "80ir3dZI",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Quiz: Association, Aggregation, and Composition",
+            "url": "https://takeuforward.org/quiz/design/quiz-association-aggregation-and-composition",
+            "level": "Intermediate",
+            "note": "Practice › 4.1 Association, Aggregation and Composition · TUF · quiz"
+          },
+          {
+            "id": "7k4p1CAB",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Practice (Composition)",
+            "url": "https://takeuforward.org/practice/design/practice-composition",
+            "level": "Intermediate",
+            "note": "Practice › 4.1 Association, Aggregation and Composition · TUF · coding practice"
+          },
+          {
+            "id": "MHpRhK06",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Quiz: Object Cloning",
+            "url": "https://takeuforward.org/quiz/design/quiz-object-cloning",
+            "level": "Intermediate",
+            "note": "Practice › 4.2 Object Cloning · TUF · quiz"
+          },
+          {
+            "id": "ZvGGkXwf",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Practice (Object Cloning)",
+            "url": "https://takeuforward.org/practice/design/practice-object-cloning",
+            "level": "Intermediate",
+            "note": "Practice › 4.2 Object Cloning · TUF · coding practice"
           }
         ]
       },
@@ -25810,6 +26071,60 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "xbuggaGq",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Quiz: Exception Handling",
+            "url": "https://takeuforward.org/quiz/design/quiz-exception-handling",
+            "level": "Advanced",
+            "note": "Practice › 5.1 Exception Handling · TUF · quiz"
+          },
+          {
+            "id": "lGZJuJjh",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Java Exception Handling (Try-catch)",
+            "url": "https://www.hackerrank.com/challenges/java-exception-handling-try-catch/problem",
+            "level": "Beginner",
+            "note": "Practice › 5.1 Exception Handling · HackerRank · Java"
+          },
+          {
+            "id": "rMy7y2Xp",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Java Exception Handling",
+            "url": "https://www.hackerrank.com/challenges/java-exception-handling/problem",
+            "level": "Beginner",
+            "note": "Practice › 5.1 Exception Handling · HackerRank · Java"
+          },
+          {
+            "id": "wx3XCzLA",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Quiz: Generics",
+            "url": "https://takeuforward.org/quiz/design/quiz-generics",
+            "level": "Advanced",
+            "note": "Practice › 5.2 Generics · TUF · quiz"
+          },
+          {
+            "id": "ZrlEV7HC",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Java Generics",
+            "url": "https://www.hackerrank.com/challenges/java-generics/problem",
+            "level": "Beginner",
+            "note": "Practice › 5.2 Generics · HackerRank · Java"
+          },
+          {
+            "id": "K8ht7CsV",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Quiz: File Handling",
+            "url": "https://takeuforward.org/quiz/design/quiz-file-handling",
+            "level": "Advanced",
+            "note": "Practice › 5.3 File Handling · TUF · quiz"
           }
         ]
       },
@@ -25834,6 +26149,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "ShhM0Grj",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Quiz: Design Principles",
+            "url": "https://takeuforward.org/quiz/design/quiz-design-principles",
+            "level": "Advanced",
+            "note": "Practice › 6.1 Design Principles · TUF · quiz"
+          },
+          {
+            "id": "ZCsBTKA_",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Quiz: Object Lifecycle",
+            "url": "https://takeuforward.org/quiz/design/quiz-object-lifecycle",
+            "level": "Advanced",
+            "note": "Practice › 6.2 Object Lifecycle · TUF · quiz"
           }
         ]
       }
