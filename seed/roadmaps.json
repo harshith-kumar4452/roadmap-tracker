@@ -41464,6 +41464,87 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "e17UXMnd",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Design Scale to millions of users on AWS",
+            "url": "https://github.com/donnemartin/system-design-primer/blob/master/solutions/system_design/scaling_aws/README.md",
+            "level": "Advanced",
+            "note": "Practice › Scalability & System Design Basics · System Design Primer · try the design yourself, then compare with the worked solution"
+          },
+          {
+            "id": "rU_q3y_a",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Process Tasks Using Servers",
+            "url": "https://leetcode.com/problems/process-tasks-using-servers/",
+            "level": "Intermediate",
+            "note": "Practice › Load Balancing & Proxies · LeetCode #1882 · assigning work to free servers"
+          },
+          {
+            "id": "lQ-_RGGD",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Find Servers That Handled Most Number of Requests",
+            "url": "https://leetcode.com/problems/find-servers-that-handled-most-number-of-requests/",
+            "level": "Advanced",
+            "note": "Practice › Load Balancing & Proxies · LeetCode #1606 · round-robin style request assignment"
+          },
+          {
+            "id": "pnytmYwh",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "LRU Cache",
+            "url": "https://leetcode.com/problems/lru-cache/",
+            "level": "Intermediate",
+            "note": "Practice › Caching (Redis & Cache Strategies) · LeetCode #146 · LRU eviction"
+          },
+          {
+            "id": "CwKJPhWG",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Time Based Key-Value Store",
+            "url": "https://leetcode.com/problems/time-based-key-value-store/",
+            "level": "Intermediate",
+            "note": "Practice › Caching (Redis & Cache Strategies) · LeetCode #981 · a versioned key-value store"
+          },
+          {
+            "id": "IUV6SKtN",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "LFU Cache",
+            "url": "https://leetcode.com/problems/lfu-cache/",
+            "level": "Advanced",
+            "note": "Practice › Caching (Redis & Cache Strategies) · LeetCode #460 · LFU eviction"
+          },
+          {
+            "id": "a7oaAQA6",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Encode and Decode TinyURL",
+            "url": "https://leetcode.com/problems/encode-and-decode-tinyurl/",
+            "level": "Intermediate",
+            "note": "Practice › API Design · LeetCode #535 · a URL shortener API"
+          },
+          {
+            "id": "R9Yp70KA",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "REST API",
+            "url": "https://exercism.org/tracks/javascript/exercises/rest-api",
+            "level": "Intermediate",
+            "note": "Practice › API Design · Exercism (JavaScript) · designing a small REST API"
+          },
+          {
+            "id": "5EmdRWId",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Design Parking System",
+            "url": "https://leetcode.com/problems/design-parking-system/",
+            "level": "Beginner",
+            "note": "Practice › LLD Intro & How to Approach an Interview · LeetCode #1603 · a parking lot, warm-up"
           }
         ]
       },
@@ -41551,6 +41632,60 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "6gtZ1Rgn",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Calculator with Method Chaining",
+            "url": "https://leetcode.com/problems/calculator-with-method-chaining/",
+            "level": "Beginner",
+            "note": "Practice › Creational Design Patterns · LeetCode #2726 · a fluent, builder-style API"
+          },
+          {
+            "id": "lNF2-ju5",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Peeking Iterator",
+            "url": "https://leetcode.com/problems/peeking-iterator/",
+            "level": "Intermediate",
+            "note": "Practice › Behavioural Design Patterns · LeetCode #284 · Iterator pattern"
+          },
+          {
+            "id": "VsQ0XHRR",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Flatten Nested List Iterator",
+            "url": "https://leetcode.com/problems/flatten-nested-list-iterator/",
+            "level": "Intermediate",
+            "note": "Practice › Behavioural Design Patterns · LeetCode #341 · Iterator pattern over a composite"
+          },
+          {
+            "id": "d1GN33sR",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Binary Search Tree Iterator",
+            "url": "https://leetcode.com/problems/binary-search-tree-iterator/",
+            "level": "Intermediate",
+            "note": "Practice › Behavioural Design Patterns · LeetCode #173 · Iterator pattern"
+          },
+          {
+            "id": "HJyL8tzN",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Event Emitter",
+            "url": "https://leetcode.com/problems/event-emitter/",
+            "level": "Intermediate",
+            "note": "Practice › Behavioural Design Patterns · LeetCode #2694 · Observer pattern"
+          },
+          {
+            "id": "qbpNDI9A",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Design Browser History",
+            "url": "https://leetcode.com/problems/design-browser-history/",
+            "level": "Intermediate",
+            "note": "Practice › Behavioural Design Patterns · LeetCode #1472 · back / forward history, as in Command / Memento"
           }
         ]
       },
@@ -41629,6 +41764,420 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "wn3pObRb",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Design Authentication Manager",
+            "url": "https://leetcode.com/problems/design-authentication-manager/",
+            "level": "Intermediate",
+            "note": "Practice › Authentication & Security · LeetCode #1797 · expiring and renewing tokens"
+          },
+          {
+            "id": "VWILNHso",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Design Twitter",
+            "url": "https://leetcode.com/problems/design-twitter/",
+            "level": "Intermediate",
+            "note": "Practice › HLD Case Studies · LeetCode #355 · a small Twitter: follow and news feed"
+          },
+          {
+            "id": "LsPZl4X2",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Design Pastebin / Bit.ly",
+            "url": "https://github.com/donnemartin/system-design-primer/blob/master/solutions/system_design/pastebin/README.md",
+            "level": "Advanced",
+            "note": "Practice › HLD Case Studies · System Design Primer · try the design yourself, then compare with the worked solution"
+          },
+          {
+            "id": "sa_TFbTB",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Design Twitter timeline and search",
+            "url": "https://github.com/donnemartin/system-design-primer/blob/master/solutions/system_design/twitter/README.md",
+            "level": "Advanced",
+            "note": "Practice › HLD Case Studies · System Design Primer · try the design yourself, then compare with the worked solution"
+          },
+          {
+            "id": "CgL9hRyd",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Design Web crawler",
+            "url": "https://github.com/donnemartin/system-design-primer/blob/master/solutions/system_design/web_crawler/README.md",
+            "level": "Advanced",
+            "note": "Practice › HLD Case Studies · System Design Primer · try the design yourself, then compare with the worked solution"
+          },
+          {
+            "id": "HjlJQxMl",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Design Social network graph",
+            "url": "https://github.com/donnemartin/system-design-primer/blob/master/solutions/system_design/social_graph/README.md",
+            "level": "Advanced",
+            "note": "Practice › HLD Case Studies · System Design Primer · try the design yourself, then compare with the worked solution"
+          },
+          {
+            "id": "XbPt3zRo",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Design Key-value cache for search queries",
+            "url": "https://github.com/donnemartin/system-design-primer/blob/master/solutions/system_design/query_cache/README.md",
+            "level": "Advanced",
+            "note": "Practice › HLD Case Studies · System Design Primer · try the design yourself, then compare with the worked solution"
+          },
+          {
+            "id": "VHwmO1JQ",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Design Amazon's sales rank by category",
+            "url": "https://github.com/donnemartin/system-design-primer/blob/master/solutions/system_design/sales_rank/README.md",
+            "level": "Advanced",
+            "note": "Practice › HLD Case Studies · System Design Primer · try the design yourself, then compare with the worked solution"
+          },
+          {
+            "id": "akoh562k",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Design Mint.com",
+            "url": "https://github.com/donnemartin/system-design-primer/blob/master/solutions/system_design/mint/README.md",
+            "level": "Advanced",
+            "note": "Practice › HLD Case Studies · System Design Primer · try the design yourself, then compare with the worked solution"
+          },
+          {
+            "id": "8GL4trQ1",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Print in Order",
+            "url": "https://leetcode.com/problems/print-in-order/",
+            "level": "Beginner",
+            "note": "Practice › Multithreading and Concurrency · LeetCode #1114 · ordering threads"
+          },
+          {
+            "id": "uEBXcf_D",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Print FooBar Alternately",
+            "url": "https://leetcode.com/problems/print-foobar-alternately/",
+            "level": "Intermediate",
+            "note": "Practice › Multithreading and Concurrency · LeetCode #1115 · two threads taking turns"
+          },
+          {
+            "id": "9uvRe1CE",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Print Zero Even Odd",
+            "url": "https://leetcode.com/problems/print-zero-even-odd/",
+            "level": "Intermediate",
+            "note": "Practice › Multithreading and Concurrency · LeetCode #1116 · three threads coordinating"
+          },
+          {
+            "id": "CMK-V66q",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Fizz Buzz Multithreaded",
+            "url": "https://leetcode.com/problems/fizz-buzz-multithreaded/",
+            "level": "Intermediate",
+            "note": "Practice › Multithreading and Concurrency · LeetCode #1195 · four threads sharing a counter"
+          },
+          {
+            "id": "xpVJVcHW",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Building H2O",
+            "url": "https://leetcode.com/problems/building-h2o/",
+            "level": "Intermediate",
+            "note": "Practice › Multithreading and Concurrency · LeetCode #1117 · barrier / semaphore pattern"
+          },
+          {
+            "id": "XMUKL1k_",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "The Dining Philosophers",
+            "url": "https://leetcode.com/problems/the-dining-philosophers/",
+            "level": "Intermediate",
+            "note": "Practice › Multithreading and Concurrency · LeetCode #1226 · avoiding deadlock and starvation"
+          },
+          {
+            "id": "V_AtOar4",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Design Parking Lot",
+            "url": "https://takeuforward.org/learning/design/parking-lot-lld-part-1",
+            "level": "Advanced",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/learning/design/parking-lot-lld-part-1"
+              },
+              {
+                "kind": "article",
+                "site": "TUF",
+                "url": "https://takeuforward.org/learning/design/parking-lot-lld-part-2"
+              }
+            ],
+            "note": "Practice › LLD Interview Problems · TUF · LLD interview problem: design first, then the code walkthrough"
+          },
+          {
+            "id": "qTM2U5kE",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Design Logging Framework",
+            "url": "https://takeuforward.org/learning/design/designing-logging-framework-part-1",
+            "level": "Advanced",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/learning/design/designing-logging-framework-part-1"
+              },
+              {
+                "kind": "article",
+                "site": "TUF",
+                "url": "https://takeuforward.org/learning/design/designing-logging-framework-part-2"
+              }
+            ],
+            "note": "Practice › LLD Interview Problems · TUF · LLD interview problem: design first, then the code walkthrough"
+          },
+          {
+            "id": "e6PmQRTq",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Design Traffic Signal System",
+            "url": "https://takeuforward.org/learning/design/traffic-signal-system-design",
+            "level": "Advanced",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/learning/design/traffic-signal-system-design"
+              },
+              {
+                "kind": "article",
+                "site": "TUF",
+                "url": "https://takeuforward.org/learning/design/traffic-signal-system-code"
+              }
+            ],
+            "note": "Practice › LLD Interview Problems · TUF · LLD interview problem: design first, then the code walkthrough"
+          },
+          {
+            "id": "KyI0za3_",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Design Vending Machine",
+            "url": "https://takeuforward.org/learning/design/vending-machine-design",
+            "level": "Advanced",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/learning/design/vending-machine-design"
+              },
+              {
+                "kind": "article",
+                "site": "TUF",
+                "url": "https://takeuforward.org/learning/design/vending-machine-code"
+              }
+            ],
+            "note": "Practice › LLD Interview Problems · TUF · LLD interview problem: design first, then the code walkthrough"
+          },
+          {
+            "id": "OxlYmzAD",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Design Task Management System",
+            "url": "https://takeuforward.org/learning/design/task-management-system-design",
+            "level": "Advanced",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/learning/design/task-management-system-design"
+              },
+              {
+                "kind": "article",
+                "site": "TUF",
+                "url": "https://takeuforward.org/learning/design/task-management-system-code"
+              }
+            ],
+            "note": "Practice › LLD Interview Problems · TUF · LLD interview problem: design first, then the code walkthrough"
+          },
+          {
+            "id": "ehAdkDUk",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Design Pub-Sub System",
+            "url": "https://takeuforward.org/learning/design/pubsub-system-design",
+            "level": "Advanced",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/learning/design/pubsub-system-design"
+              },
+              {
+                "kind": "article",
+                "site": "TUF",
+                "url": "https://takeuforward.org/learning/design/pubsub-system-code"
+              }
+            ],
+            "note": "Practice › LLD Interview Problems · TUF · LLD interview problem: design first, then the code walkthrough"
+          },
+          {
+            "id": "8qCD0R5N",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Design ATM Machine",
+            "url": "https://takeuforward.org/learning/design/atm-machine-design",
+            "level": "Advanced",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/learning/design/atm-machine-design"
+              },
+              {
+                "kind": "article",
+                "site": "TUF",
+                "url": "https://takeuforward.org/learning/design/atm-machine-code"
+              }
+            ],
+            "note": "Practice › LLD Interview Problems · TUF · LLD interview problem: design first, then the code walkthrough"
+          },
+          {
+            "id": "xhOfqGp5",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Design Hotel Management System",
+            "url": "https://takeuforward.org/learning/design/hotel-management-system-design",
+            "level": "Advanced",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/learning/design/hotel-management-system-design"
+              },
+              {
+                "kind": "article",
+                "site": "TUF",
+                "url": "https://takeuforward.org/learning/design/hotel-management-system-code"
+              }
+            ],
+            "note": "Practice › LLD Interview Problems · TUF · LLD interview problem: design first, then the code walkthrough"
+          },
+          {
+            "id": "WxjtGILo",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Design Elevator System",
+            "url": "https://takeuforward.org/learning/design/elevator-system-design",
+            "level": "Advanced",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/learning/design/elevator-system-design"
+              },
+              {
+                "kind": "article",
+                "site": "TUF",
+                "url": "https://takeuforward.org/learning/design/elevator-system-code"
+              }
+            ],
+            "note": "Practice › LLD Interview Problems · TUF · LLD interview problem: design first, then the code walkthrough"
+          },
+          {
+            "id": "Dr256ZAr",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Design Digital Wallet",
+            "url": "https://takeuforward.org/learning/design/digital-wallet-design",
+            "level": "Advanced",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/learning/design/digital-wallet-design"
+              },
+              {
+                "kind": "article",
+                "site": "TUF",
+                "url": "https://takeuforward.org/learning/design/digital-wallet-code"
+              }
+            ],
+            "note": "Practice › LLD Interview Problems · TUF · LLD interview problem: design first, then the code walkthrough"
+          },
+          {
+            "id": "WZSJqvkG",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Design Ride Booking App",
+            "url": "https://takeuforward.org/learning/design/ride-booking-app-design",
+            "level": "Advanced",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/learning/design/ride-booking-app-design"
+              },
+              {
+                "kind": "article",
+                "site": "TUF",
+                "url": "https://takeuforward.org/learning/design/ride-booking-app-code"
+              }
+            ],
+            "note": "Practice › LLD Interview Problems · TUF · LLD interview problem: design first, then the code walkthrough"
+          },
+          {
+            "id": "ytxvJGn_",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Design Music Streaming Platform",
+            "url": "https://takeuforward.org/learning/design/music-streaming-platform-design",
+            "level": "Advanced",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/learning/design/music-streaming-platform-design"
+              },
+              {
+                "kind": "article",
+                "site": "TUF",
+                "url": "https://takeuforward.org/learning/design/music-streaming-platform-code"
+              }
+            ],
+            "note": "Practice › LLD Interview Problems · TUF · LLD interview problem: design first, then the code walkthrough"
+          },
+          {
+            "id": "oavIyAQA",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Design HashMap",
+            "url": "https://leetcode.com/problems/design-hashmap/",
+            "level": "Beginner",
+            "note": "Practice › LLD Interview Problems · LeetCode #706 · HashMap internals"
+          },
+          {
+            "id": "By5IkfEx",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Snakes and Ladders",
+            "url": "https://leetcode.com/problems/snakes-and-ladders/",
+            "level": "Intermediate",
+            "note": "Practice › LLD Interview Problems · LeetCode #909 · Snake and Ladder board logic"
+          },
+          {
+            "id": "Q1dErG8_",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Design Underground System",
+            "url": "https://leetcode.com/problems/design-underground-system/",
+            "level": "Intermediate",
+            "note": "Practice › LLD Interview Problems · LeetCode #1396 · a check-in / check-out system"
           }
         ]
       }
@@ -41835,6 +42384,15 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "nWwHW2v0",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Calculator with Method Chaining",
+            "url": "https://leetcode.com/problems/calculator-with-method-chaining/",
+            "level": "Beginner",
+            "note": "Practice · LeetCode #2726 · a fluent, builder-style API"
           }
         ]
       },
@@ -42036,6 +42594,51 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "Xlz6T945",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Peeking Iterator",
+            "url": "https://leetcode.com/problems/peeking-iterator/",
+            "level": "Intermediate",
+            "note": "Practice · LeetCode #284 · Iterator pattern"
+          },
+          {
+            "id": "z1e6q7rp",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Flatten Nested List Iterator",
+            "url": "https://leetcode.com/problems/flatten-nested-list-iterator/",
+            "level": "Intermediate",
+            "note": "Practice · LeetCode #341 · Iterator pattern over a composite"
+          },
+          {
+            "id": "24-OBdPu",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Binary Search Tree Iterator",
+            "url": "https://leetcode.com/problems/binary-search-tree-iterator/",
+            "level": "Intermediate",
+            "note": "Practice · LeetCode #173 · Iterator pattern"
+          },
+          {
+            "id": "rq56KDPJ",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Event Emitter",
+            "url": "https://leetcode.com/problems/event-emitter/",
+            "level": "Intermediate",
+            "note": "Practice · LeetCode #2694 · Observer pattern"
+          },
+          {
+            "id": "FAtCTyl0",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Design Browser History",
+            "url": "https://leetcode.com/problems/design-browser-history/",
+            "level": "Intermediate",
+            "note": "Practice · LeetCode #1472 · back / forward history, as in Command / Memento"
           }
         ]
       },
@@ -42051,6 +42654,60 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "244QsGoz",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Print in Order",
+            "url": "https://leetcode.com/problems/print-in-order/",
+            "level": "Beginner",
+            "note": "Practice · LeetCode #1114 · ordering threads"
+          },
+          {
+            "id": "iaiVi57P",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Print FooBar Alternately",
+            "url": "https://leetcode.com/problems/print-foobar-alternately/",
+            "level": "Intermediate",
+            "note": "Practice · LeetCode #1115 · two threads taking turns"
+          },
+          {
+            "id": "vyCL5T3n",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Print Zero Even Odd",
+            "url": "https://leetcode.com/problems/print-zero-even-odd/",
+            "level": "Intermediate",
+            "note": "Practice · LeetCode #1116 · three threads coordinating"
+          },
+          {
+            "id": "QwM2EPG3",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Fizz Buzz Multithreaded",
+            "url": "https://leetcode.com/problems/fizz-buzz-multithreaded/",
+            "level": "Intermediate",
+            "note": "Practice · LeetCode #1195 · four threads sharing a counter"
+          },
+          {
+            "id": "EKN6dfiS",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Building H2O",
+            "url": "https://leetcode.com/problems/building-h2o/",
+            "level": "Intermediate",
+            "note": "Practice · LeetCode #1117 · barrier / semaphore pattern"
+          },
+          {
+            "id": "Qbhqwa3y",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "The Dining Philosophers",
+            "url": "https://leetcode.com/problems/the-dining-philosophers/",
+            "level": "Intermediate",
+            "note": "Practice · LeetCode #1226 · avoiding deadlock and starvation"
           }
         ]
       },
@@ -42192,6 +42849,294 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "F7aoA1Ks",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Design Parking Lot",
+            "url": "https://takeuforward.org/learning/design/parking-lot-lld-part-1",
+            "level": "Advanced",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/learning/design/parking-lot-lld-part-1"
+              },
+              {
+                "kind": "article",
+                "site": "TUF",
+                "url": "https://takeuforward.org/learning/design/parking-lot-lld-part-2"
+              }
+            ],
+            "note": "Practice · TUF · LLD interview problem: design first, then the code walkthrough"
+          },
+          {
+            "id": "3VJwrxpc",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Design Logging Framework",
+            "url": "https://takeuforward.org/learning/design/designing-logging-framework-part-1",
+            "level": "Advanced",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/learning/design/designing-logging-framework-part-1"
+              },
+              {
+                "kind": "article",
+                "site": "TUF",
+                "url": "https://takeuforward.org/learning/design/designing-logging-framework-part-2"
+              }
+            ],
+            "note": "Practice · TUF · LLD interview problem: design first, then the code walkthrough"
+          },
+          {
+            "id": "eA1_po1q",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Design Traffic Signal System",
+            "url": "https://takeuforward.org/learning/design/traffic-signal-system-design",
+            "level": "Advanced",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/learning/design/traffic-signal-system-design"
+              },
+              {
+                "kind": "article",
+                "site": "TUF",
+                "url": "https://takeuforward.org/learning/design/traffic-signal-system-code"
+              }
+            ],
+            "note": "Practice · TUF · LLD interview problem: design first, then the code walkthrough"
+          },
+          {
+            "id": "_3tGvoq_",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Design Vending Machine",
+            "url": "https://takeuforward.org/learning/design/vending-machine-design",
+            "level": "Advanced",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/learning/design/vending-machine-design"
+              },
+              {
+                "kind": "article",
+                "site": "TUF",
+                "url": "https://takeuforward.org/learning/design/vending-machine-code"
+              }
+            ],
+            "note": "Practice · TUF · LLD interview problem: design first, then the code walkthrough"
+          },
+          {
+            "id": "589oz_bN",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Design Task Management System",
+            "url": "https://takeuforward.org/learning/design/task-management-system-design",
+            "level": "Advanced",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/learning/design/task-management-system-design"
+              },
+              {
+                "kind": "article",
+                "site": "TUF",
+                "url": "https://takeuforward.org/learning/design/task-management-system-code"
+              }
+            ],
+            "note": "Practice · TUF · LLD interview problem: design first, then the code walkthrough"
+          },
+          {
+            "id": "HbOtP6aO",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Design Pub-Sub System",
+            "url": "https://takeuforward.org/learning/design/pubsub-system-design",
+            "level": "Advanced",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/learning/design/pubsub-system-design"
+              },
+              {
+                "kind": "article",
+                "site": "TUF",
+                "url": "https://takeuforward.org/learning/design/pubsub-system-code"
+              }
+            ],
+            "note": "Practice · TUF · LLD interview problem: design first, then the code walkthrough"
+          },
+          {
+            "id": "YawBpCGz",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Design ATM Machine",
+            "url": "https://takeuforward.org/learning/design/atm-machine-design",
+            "level": "Advanced",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/learning/design/atm-machine-design"
+              },
+              {
+                "kind": "article",
+                "site": "TUF",
+                "url": "https://takeuforward.org/learning/design/atm-machine-code"
+              }
+            ],
+            "note": "Practice · TUF · LLD interview problem: design first, then the code walkthrough"
+          },
+          {
+            "id": "PakQLyTu",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Design Hotel Management System",
+            "url": "https://takeuforward.org/learning/design/hotel-management-system-design",
+            "level": "Advanced",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/learning/design/hotel-management-system-design"
+              },
+              {
+                "kind": "article",
+                "site": "TUF",
+                "url": "https://takeuforward.org/learning/design/hotel-management-system-code"
+              }
+            ],
+            "note": "Practice · TUF · LLD interview problem: design first, then the code walkthrough"
+          },
+          {
+            "id": "wpE9OjfH",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Design Elevator System",
+            "url": "https://takeuforward.org/learning/design/elevator-system-design",
+            "level": "Advanced",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/learning/design/elevator-system-design"
+              },
+              {
+                "kind": "article",
+                "site": "TUF",
+                "url": "https://takeuforward.org/learning/design/elevator-system-code"
+              }
+            ],
+            "note": "Practice · TUF · LLD interview problem: design first, then the code walkthrough"
+          },
+          {
+            "id": "eu2Hphdc",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Design Digital Wallet",
+            "url": "https://takeuforward.org/learning/design/digital-wallet-design",
+            "level": "Advanced",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/learning/design/digital-wallet-design"
+              },
+              {
+                "kind": "article",
+                "site": "TUF",
+                "url": "https://takeuforward.org/learning/design/digital-wallet-code"
+              }
+            ],
+            "note": "Practice · TUF · LLD interview problem: design first, then the code walkthrough"
+          },
+          {
+            "id": "l1SG0_BI",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Design Ride Booking App",
+            "url": "https://takeuforward.org/learning/design/ride-booking-app-design",
+            "level": "Advanced",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/learning/design/ride-booking-app-design"
+              },
+              {
+                "kind": "article",
+                "site": "TUF",
+                "url": "https://takeuforward.org/learning/design/ride-booking-app-code"
+              }
+            ],
+            "note": "Practice · TUF · LLD interview problem: design first, then the code walkthrough"
+          },
+          {
+            "id": "cKcaust8",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Design Music Streaming Platform",
+            "url": "https://takeuforward.org/learning/design/music-streaming-platform-design",
+            "level": "Advanced",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/learning/design/music-streaming-platform-design"
+              },
+              {
+                "kind": "article",
+                "site": "TUF",
+                "url": "https://takeuforward.org/learning/design/music-streaming-platform-code"
+              }
+            ],
+            "note": "Practice · TUF · LLD interview problem: design first, then the code walkthrough"
+          },
+          {
+            "id": "NCBqz1Wf",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Design Parking System",
+            "url": "https://leetcode.com/problems/design-parking-system/",
+            "level": "Beginner",
+            "note": "Practice · LeetCode #1603 · a parking lot, warm-up"
+          },
+          {
+            "id": "CIKYrBeU",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Design HashMap",
+            "url": "https://leetcode.com/problems/design-hashmap/",
+            "level": "Beginner",
+            "note": "Practice · LeetCode #706 · HashMap internals"
+          },
+          {
+            "id": "-Yf8hwwJ",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Snakes and Ladders",
+            "url": "https://leetcode.com/problems/snakes-and-ladders/",
+            "level": "Intermediate",
+            "note": "Practice · LeetCode #909 · Snake and Ladder board logic"
+          },
+          {
+            "id": "VPz3TQVS",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Design Underground System",
+            "url": "https://leetcode.com/problems/design-underground-system/",
+            "level": "Intermediate",
+            "note": "Practice · LeetCode #1396 · a check-in / check-out system"
           }
         ]
       },
@@ -42231,6 +43176,15 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "iS4ciaJR",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Design Scale to millions of users on AWS",
+            "url": "https://github.com/donnemartin/system-design-primer/blob/master/solutions/system_design/scaling_aws/README.md",
+            "level": "Advanced",
+            "note": "Practice · System Design Primer · try the design yourself, then compare with the worked solution"
           }
         ]
       },
@@ -42282,6 +43236,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "sO8sXOil",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Process Tasks Using Servers",
+            "url": "https://leetcode.com/problems/process-tasks-using-servers/",
+            "level": "Intermediate",
+            "note": "Practice · LeetCode #1882 · assigning work to free servers"
+          },
+          {
+            "id": "exZtWZ2I",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Find Servers That Handled Most Number of Requests",
+            "url": "https://leetcode.com/problems/find-servers-that-handled-most-number-of-requests/",
+            "level": "Advanced",
+            "note": "Practice · LeetCode #1606 · round-robin style request assignment"
           }
         ]
       },
@@ -42333,6 +43305,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "ZjKn888p",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "LRU Cache",
+            "url": "https://leetcode.com/problems/lru-cache/",
+            "level": "Intermediate",
+            "note": "Practice · LeetCode #146 · LRU eviction"
+          },
+          {
+            "id": "JjUI4GOQ",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "LFU Cache",
+            "url": "https://leetcode.com/problems/lfu-cache/",
+            "level": "Advanced",
+            "note": "Practice · LeetCode #460 · LFU eviction"
           }
         ]
       },
@@ -42384,6 +43374,15 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "6OA7pUcL",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Time Based Key-Value Store",
+            "url": "https://leetcode.com/problems/time-based-key-value-store/",
+            "level": "Intermediate",
+            "note": "Practice · LeetCode #981 · a versioned key-value store"
           }
         ]
       },
@@ -42564,6 +43563,33 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "aO1ojIO8",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Encode and Decode TinyURL",
+            "url": "https://leetcode.com/problems/encode-and-decode-tinyurl/",
+            "level": "Intermediate",
+            "note": "Practice · LeetCode #535 · a URL shortener API"
+          },
+          {
+            "id": "izRUpNdB",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "REST API",
+            "url": "https://exercism.org/tracks/javascript/exercises/rest-api",
+            "level": "Intermediate",
+            "note": "Practice · Exercism (JavaScript) · designing a small REST API"
+          },
+          {
+            "id": "e1MOwmc-",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Design Authentication Manager",
+            "url": "https://leetcode.com/problems/design-authentication-manager/",
+            "level": "Intermediate",
+            "note": "Practice · LeetCode #1797 · expiring and renewing tokens"
           }
         ]
       },
@@ -42606,6 +43632,78 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "kTLOm6Su",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Design Twitter",
+            "url": "https://leetcode.com/problems/design-twitter/",
+            "level": "Intermediate",
+            "note": "Practice · LeetCode #355 · a small Twitter: follow and news feed"
+          },
+          {
+            "id": "Hse7eRkd",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Design Pastebin / Bit.ly",
+            "url": "https://github.com/donnemartin/system-design-primer/blob/master/solutions/system_design/pastebin/README.md",
+            "level": "Advanced",
+            "note": "Practice · System Design Primer · try the design yourself, then compare with the worked solution"
+          },
+          {
+            "id": "rrZLfJW3",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Design Twitter timeline and search",
+            "url": "https://github.com/donnemartin/system-design-primer/blob/master/solutions/system_design/twitter/README.md",
+            "level": "Advanced",
+            "note": "Practice · System Design Primer · try the design yourself, then compare with the worked solution"
+          },
+          {
+            "id": "PRxfD3_Q",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Design Web crawler",
+            "url": "https://github.com/donnemartin/system-design-primer/blob/master/solutions/system_design/web_crawler/README.md",
+            "level": "Advanced",
+            "note": "Practice · System Design Primer · try the design yourself, then compare with the worked solution"
+          },
+          {
+            "id": "S2ODZovS",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Design Social network graph",
+            "url": "https://github.com/donnemartin/system-design-primer/blob/master/solutions/system_design/social_graph/README.md",
+            "level": "Advanced",
+            "note": "Practice · System Design Primer · try the design yourself, then compare with the worked solution"
+          },
+          {
+            "id": "fClpYsxV",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Design Key-value cache for search queries",
+            "url": "https://github.com/donnemartin/system-design-primer/blob/master/solutions/system_design/query_cache/README.md",
+            "level": "Advanced",
+            "note": "Practice · System Design Primer · try the design yourself, then compare with the worked solution"
+          },
+          {
+            "id": "QVdcPAdk",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Design Amazon's sales rank by category",
+            "url": "https://github.com/donnemartin/system-design-primer/blob/master/solutions/system_design/sales_rank/README.md",
+            "level": "Advanced",
+            "note": "Practice · System Design Primer · try the design yourself, then compare with the worked solution"
+          },
+          {
+            "id": "w0dpQ0Gp",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Design Mint.com",
+            "url": "https://github.com/donnemartin/system-design-primer/blob/master/solutions/system_design/mint/README.md",
+            "level": "Advanced",
+            "note": "Practice · System Design Primer · try the design yourself, then compare with the worked solution"
           }
         ]
       }
