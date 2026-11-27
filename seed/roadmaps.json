@@ -1995,6 +1995,15 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "nz8Y6OGF",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Hamming Distance",
+            "url": "https://leetcode.com/problems/hamming-distance/",
+            "level": "Beginner",
+            "note": "Practice · LeetCode #461 · Hamming distance, the idea behind error-detecting codes"
           }
         ]
       },
@@ -2064,6 +2073,15 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "4OuJpxTN",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Min Cost to Connect All Points",
+            "url": "https://leetcode.com/problems/min-cost-to-connect-all-points/",
+            "level": "Intermediate",
+            "note": "Practice · LeetCode #1584 · a minimum spanning tree, the idea behind loop-free switched networks"
           }
         ]
       },
@@ -2178,6 +2196,33 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "jJC6kf1Q",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "IP Address Validation",
+            "url": "https://www.hackerrank.com/challenges/ip-address-validation/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · telling IPv4 from IPv6 with regex"
+          },
+          {
+            "id": "q4TWbw0G",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Validate IP Address",
+            "url": "https://leetcode.com/problems/validate-ip-address/",
+            "level": "Intermediate",
+            "note": "Practice · LeetCode #468 · IPv4 and IPv6 address formats"
+          },
+          {
+            "id": "zwvFb-uH",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Restore IP Addresses",
+            "url": "https://leetcode.com/problems/restore-ip-addresses/",
+            "level": "Intermediate",
+            "note": "Practice · LeetCode #93 · valid IPv4 octets"
           }
         ]
       },
@@ -2265,6 +2310,42 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "3EdDuWqI",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Network Delay Time",
+            "url": "https://leetcode.com/problems/network-delay-time/",
+            "level": "Intermediate",
+            "note": "Practice · LeetCode #743 · link-state routing: shortest paths with Dijkstra (OSPF)"
+          },
+          {
+            "id": "qZzXX8QG",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Cheapest Flights Within K Stops",
+            "url": "https://leetcode.com/problems/cheapest-flights-within-k-stops/",
+            "level": "Intermediate",
+            "note": "Practice · LeetCode #787 · distance-vector routing with a hop limit (Bellman-Ford, RIP)"
+          },
+          {
+            "id": "aZTou4AY",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Find the City With the Smallest Number of Neighbors at a Threshold Distance",
+            "url": "https://leetcode.com/problems/find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance/",
+            "level": "Intermediate",
+            "note": "Practice · LeetCode #1334 · all-pairs routing tables (Floyd-Warshall)"
+          },
+          {
+            "id": "wieH8qe4",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Critical Connections in a Network",
+            "url": "https://leetcode.com/problems/critical-connections-in-a-network/",
+            "level": "Advanced",
+            "note": "Practice · LeetCode #1192 · links whose failure splits the network"
           }
         ]
       },
@@ -2439,6 +2520,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "z5ackYL8",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Encode and Decode TinyURL",
+            "url": "https://leetcode.com/problems/encode-and-decode-tinyurl/",
+            "level": "Intermediate",
+            "note": "Practice · LeetCode #535 · a URL shortener behind HTTP"
+          },
+          {
+            "id": "WXkcGQDe",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "REST API",
+            "url": "https://exercism.org/tracks/javascript/exercises/rest-api",
+            "level": "Intermediate",
+            "note": "Practice · Exercism (JavaScript) · designing a small REST API"
           }
         ]
       },
@@ -2877,6 +2976,159 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "jMubPmHV",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Security Functions",
+            "url": "https://www.hackerrank.com/challenges/security-tutorial-functions/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · functions as used in ciphers"
+          },
+          {
+            "id": "Z59jlpap",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Security Functions II",
+            "url": "https://www.hackerrank.com/challenges/security-function-ii/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · functions as used in ciphers"
+          },
+          {
+            "id": "lDFHF6r1",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Security Bijective Functions",
+            "url": "https://www.hackerrank.com/challenges/security-bijective-functions/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · why an encryption function must be reversible"
+          },
+          {
+            "id": "OMot77U9",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Security Function Inverses",
+            "url": "https://www.hackerrank.com/challenges/security-inverse-of-a-function/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · decryption as the inverse function"
+          },
+          {
+            "id": "aRL1XzZw",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Security Permutations",
+            "url": "https://www.hackerrank.com/challenges/security-tutorial-permutations/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · permutations behind transposition ciphers"
+          },
+          {
+            "id": "AlIKOScu",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Security Involution",
+            "url": "https://www.hackerrank.com/challenges/security-involution/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · involutions: ciphers that undo themselves"
+          },
+          {
+            "id": "k7ihvkVM",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Security - Message Space and Ciphertext Space",
+            "url": "https://www.hackerrank.com/challenges/security-message-space-and-ciphertext-space/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · message and ciphertext spaces"
+          },
+          {
+            "id": "7s24n7Fj",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Security Key Spaces",
+            "url": "https://www.hackerrank.com/challenges/security-key-spaces/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · key spaces"
+          },
+          {
+            "id": "59zaLUc9",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Security Encryption Scheme",
+            "url": "https://www.hackerrank.com/challenges/security-encryption-scheme/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · counting encryption schemes"
+          },
+          {
+            "id": "GDXTnutF",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Decode the Message",
+            "url": "https://leetcode.com/problems/decode-the-message/",
+            "level": "Beginner",
+            "note": "Practice · LeetCode #2325 · a substitution cipher"
+          },
+          {
+            "id": "gwYrVI0G",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Rotational Cipher",
+            "url": "https://exercism.org/tracks/javascript/exercises/rotational-cipher",
+            "level": "Beginner",
+            "note": "Practice · Exercism (JavaScript) · the Caesar cipher"
+          },
+          {
+            "id": "cpHwYW7S",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Diffie-Hellman",
+            "url": "https://exercism.org/tracks/javascript/exercises/diffie-hellman",
+            "level": "Beginner",
+            "note": "Practice · Exercism (JavaScript) · Diffie-Hellman key exchange"
+          },
+          {
+            "id": "ovDVuQDE",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Keyword Transposition Cipher",
+            "url": "https://www.hackerrank.com/challenges/keyword-transposition-cipher/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · a keyword transposition cipher"
+          },
+          {
+            "id": "upA3nYy4",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Affine Cipher",
+            "url": "https://exercism.org/tracks/javascript/exercises/affine-cipher",
+            "level": "Intermediate",
+            "note": "Practice · Exercism (JavaScript) · the affine cipher"
+          },
+          {
+            "id": "q0CK2tnT",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Simple Cipher",
+            "url": "https://exercism.org/tracks/javascript/exercises/simple-cipher",
+            "level": "Intermediate",
+            "note": "Practice · Exercism (JavaScript) · the Vigenère cipher"
+          },
+          {
+            "id": "YjnXeloU",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "PRNG Sequence Guessing",
+            "url": "https://www.hackerrank.com/challenges/prng-sequence-guessing/problem",
+            "level": "Intermediate",
+            "note": "Practice · HackerRank · why predictable random numbers break security"
+          },
+          {
+            "id": "xHz1SKCz",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Basic Cryptanalysis",
+            "url": "https://www.hackerrank.com/challenges/basic-cryptanalysis/problem",
+            "level": "Advanced",
+            "note": "Practice · HackerRank · breaking a substitution cipher"
           }
         ]
       },
@@ -3132,6 +3384,15 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "EUnsqJjI",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Number of Recent Calls",
+            "url": "https://leetcode.com/problems/number-of-recent-calls/",
+            "level": "Beginner",
+            "note": "Practice · LeetCode #933 · counting requests in a time window, the core of rate limiting"
           }
         ]
       }
