@@ -1,6 +1,9 @@
 import { StrictMode, createContext, useContext, useEffect, useMemo, useState } from 'react';
 import { createRoot } from 'react-dom/client';
-import { CssBaseline, ThemeProvider, useMediaQuery } from '@mui/material';
+import { CssBaseline, GlobalStyles, ThemeProvider, useMediaQuery } from '@mui/material';
+import { alpha } from '@mui/material/styles';
+import './styles/mindmap.css';
+import './styles/home.css';
 import { HashRouter } from 'react-router-dom';
 import { makeTheme } from './theme.js';
 import { AuthProvider } from './lib/auth.jsx';
@@ -28,6 +31,12 @@ function Root() {
     <ColorModeContext.Provider value={colorMode}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
+        {/* CSS variables for the plain-CSS parts (mind maps), taken from the MUI theme. */}
+        <GlobalStyles styles={{ ':root': {
+          '--accent': theme.palette.primary.main, '--accent-strong': theme.palette.primary.dark, '--on-accent': theme.palette.primary.contrastText, '--accent-soft': alpha(theme.palette.primary.main, 0.16),
+          '--surface': theme.palette.background.paper, '--surface-2': theme.palette.action.hover, '--text': theme.palette.text.primary,
+          '--muted': theme.palette.text.secondary, '--border': theme.palette.divider, '--radius': '12px', '--shadow': 'none',
+        } }} />
         <NotifyProvider>
           <AuthProvider>
             {/* Hash routes keep every existing #/... link working. */}

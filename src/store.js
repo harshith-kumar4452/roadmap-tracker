@@ -254,6 +254,11 @@ export async function listPages(kind) {
   return docs.map(publicDoc);
 }
 
+export async function countPages() {
+  const rows = await (await pages()).aggregate([{ $group: { _id: '$kind', n: { $sum: 1 } } }]).toArray();
+  return Object.fromEntries(rows.map((r) => [r._id, r.n]));
+}
+
 export async function getPage(id) {
   const doc = await (await pages()).findOne({ _id: id });
   return doc ? publicDoc(doc) : null;

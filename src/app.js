@@ -109,7 +109,7 @@ app.use('/api/plans', planRoutes);
 
 // Overview lists are public; opening a specific roadmap, page, or links requires login.
 // Editing requires the owner session.
-const AUTH_GET_ROUTES = [/^\/roadmaps\/[^/]+$/, /^\/pages\/[^/]+$/, /^\/resources$/];
+const AUTH_GET_ROUTES = [/^\/roadmaps\/[^/]+$/, /^\/pages\/(?!counts$)[^/]+$/, /^\/resources$/];
 app.use('/api', (req, res, next) => {
   if (req.method !== 'GET') res.on('finish', store.bustCache);
   if (req.method === 'GET') {
@@ -212,6 +212,8 @@ const tags = (v) => {
 
 app.get('/api/pages', async (req, res) => res.json(await store.listPages(kind(req.query.kind))));
 
+// Page counts per kind (public, like the lists). Registered before /api/pages/:id.
+app.get('/api/pages/counts', async (req, res) => res.json(await store.countPages()));
 app.get('/api/pages/:id', async (req, res) => res.json(found(await store.getPage(id(req)), 'Page')));
 
 app.post('/api/pages', async (req, res) => {
