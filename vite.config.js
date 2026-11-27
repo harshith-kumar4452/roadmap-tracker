@@ -22,4 +22,9 @@ export default defineConfig({
     port: 5173,
     proxy: { '/api': `http://127.0.0.1:${process.env.API_PORT || 4321}` },
   },
+  // `npm run preview` serves the production build with the same /api proxy.
+  preview: {
+    port: 4173,
+    proxy: { '/api': `http://127.0.0.1:${process.env.API_PORT || 4321}` },
+  },
 });
