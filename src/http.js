@@ -4,6 +4,7 @@ import * as auth from './auth.js';
 export function httpError(status, message) {
   const err = new Error(message);
   err.status = status;
+  err.expose = true; // written for the user, safe to show even for 5xx
   return err;
 }
 

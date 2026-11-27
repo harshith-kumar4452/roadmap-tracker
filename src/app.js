@@ -9,6 +9,7 @@ import taskRoutes from './tasks/routes.js';
 import googleRoutes from './google/routes.js';
 import codingRoutes from './coding/routes.js';
 import cronRoutes from './cron.js';
+import planRoutes from './plans/routes.js';
 
 const app = express();
 app.set('trust proxy', 1);
@@ -104,6 +105,7 @@ app.use('/api/tasks', taskRoutes);
 app.use('/api/google', googleRoutes);
 app.use('/api/coding', codingRoutes);
 app.use('/api/cron', cronRoutes);
+app.use('/api/plans', planRoutes);
 
 // Overview lists are public; opening a specific roadmap, page, or links requires login.
 // Editing requires the owner session.
@@ -384,7 +386,7 @@ app.post('/api/import/markdown', async (req, res) => {
 app.use('/api', (req, res) => res.status(404).json({ error: 'Not found' }));
 app.use((err, req, res, next) => {
   const status = err.status || (err.type === 'entity.parse.failed' ? 400 : 500);
-  if (status >= 500) console.error(err);
+  if (status >= 500 && !err.expose) console.error(err);
   res.status(status).json({ error: status >= 500 && !err.expose ? 'Something went wrong' : err.message });
 });
 
