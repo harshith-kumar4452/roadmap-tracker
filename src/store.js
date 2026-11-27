@@ -17,7 +17,7 @@ export const LEVELS = ['', 'Beginner', 'Intermediate', 'Advanced'];
 export const newId = () => randomBytes(6).toString('base64url');
 
 let clientPromise;
-async function collection(name) {
+export async function collection(name) {
   if (!process.env.MONGODB_URI) {
     const err = new Error('MONGODB_URI is not set. Add it to .env (local) or the Vercel project settings.');
     err.status = 500;
@@ -29,6 +29,12 @@ async function collection(name) {
   const client = await clientPromise;
   return client.db(process.env.MONGODB_DB || 'roadmap_tracker').collection(name);
 }
+// Used by tests to let the process exit.
+export async function closeDb() {
+  if (clientPromise) (await clientPromise).close();
+  clientPromise = undefined;
+}
+
 // Short-lived in-memory cache for read-heavy lookups (the database is remote, so each
 // query costs a round trip). Any write request busts it; the TTL bounds staleness when
 // another serverless instance wrote.

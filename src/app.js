@@ -3,32 +3,16 @@ import * as store from './store.js';
 import { parseMarkdown, countItems } from './parse.js';
 import * as auth from './auth.js';
 import { codingStats } from './profile.js';
+import { httpError, text, optionalUrl, found, id, date, ownerOnly } from './http.js';
+import interviewRoutes from './interview/routes.js';
 
 const app = express();
 app.set('trust proxy', 1);
 app.use(express.json({ limit: '5mb' }));
+// The signed-in user (or null) for every request.
+app.use((req, res, next) => { req.session = auth.getSession(req); next(); });
 
-function httpError(status, message) {
-  const err = new Error(message);
-  err.status = status;
-  return err;
-}
-const text = (v, name, { required = true, max = 500 } = {}) => {
-  if (v === undefined && !required) return undefined;
-  if (typeof v !== 'string' || (required && !v.trim())) throw httpError(400, `${name} is required`);
-  return v.trim().slice(0, max);
-};
-const optionalUrl = (v) => {
-  if (v === undefined) return undefined;
-  if (v === null || v === '') return null;
-  if (typeof v !== 'string' || !/^https?:\/\//i.test(v.trim())) throw httpError(400, 'Links must start with http:// or https://');
-  return v.trim();
-};
-const found = (v, what) => {
-  if (!v) throw httpError(404, `${what} not found`);
-  return v;
-};
-const id = (req) => text(req.params.id, 'id', { max: 64 });
+
 
 const links = (list) => {
   if (!Array.isArray(list)) throw httpError(400, 'resources must be a list');
@@ -108,6 +92,10 @@ app.post('/api/logout', (req, res) => {
   auth.clearSession(req, res);
   res.json({ authenticated: false, admin: false });
 });
+
+// Feature routers check their own access (some writes are allowed for members), so they are
+// mounted before the owner-only write guard below.
+app.use('/api/interview', interviewRoutes);
 
 // Overview lists are public; opening a specific roadmap, page, or links requires login.
 // Editing requires the owner session.
@@ -240,11 +228,6 @@ app.delete('/api/pages/:id', async (req, res) => {
 
 // ---------- routine (habits), check-ins and tasks ----------
 
-const DATE = /^\d{4}-\d{2}-\d{2}$/;
-const date = (v, name = 'date') => {
-  if (typeof v !== 'string' || !DATE.test(v) || Number.isNaN(Date.parse(v))) throw httpError(400, `${name} must be YYYY-MM-DD`);
-  return v;
-};
 const days = (v) => {
   if (v === undefined) return undefined;
   if (!Array.isArray(v) || !v.length || v.some((d) => !Number.isInteger(d) || d < 0 || d > 6)) {
@@ -252,9 +235,7 @@ const days = (v) => {
   }
   return [...new Set(v)].sort();
 };
-const ownerOnly = (req) => {
-  if (!auth.isAdmin(req)) throw httpError(401, 'Log in to see your tasks');
-};
+
 
 // The routine and its check-ins are public, like roadmap progress.
 app.get('/api/habits', async (req, res) => {
@@ -290,7 +271,7 @@ app.put('/api/habits/:id/checkins/:date', async (req, res) => {
 
 // Tasks are private: only the owner can see them.
 app.get('/api/tasks', async (req, res) => {
-  ownerOnly(req);
+  ownerOnly(req, 'Log in to see your tasks');
   res.json(await store.listTasks());
 });
 
