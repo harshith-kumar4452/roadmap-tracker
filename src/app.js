@@ -7,6 +7,8 @@ import { httpError, text, optionalUrl, found, id, date, ownerOnly } from './http
 import interviewRoutes from './interview/routes.js';
 import taskRoutes from './tasks/routes.js';
 import googleRoutes from './google/routes.js';
+import codingRoutes from './coding/routes.js';
+import cronRoutes from './cron.js';
 
 const app = express();
 app.set('trust proxy', 1);
@@ -100,6 +102,8 @@ app.post('/api/logout', (req, res) => {
 app.use('/api/interview', interviewRoutes);
 app.use('/api/tasks', taskRoutes);
 app.use('/api/google', googleRoutes);
+app.use('/api/coding', codingRoutes);
+app.use('/api/cron', cronRoutes);
 
 // Overview lists are public; opening a specific roadmap, page, or links requires login.
 // Editing requires the owner session.
