@@ -1692,6 +1692,7 @@ body, .topbar, .panel, .section-card, .rm-card {
   /* The filter bar is three rows tall on a phone; pinned, it would hide a fifth of the screen. */
   .toolbar.sticky { position: static; padding: 6px 0 10px; gap: 8px; }
   /* Tab strips become one row you can swipe instead of a ragged grid. */
+  .subhead > span:first-child { display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; line-clamp: 2; overflow: hidden; }
   .role-hub-tabs, .lib-tabs { display: flex; flex-wrap: nowrap; overflow-x: auto; width: 100%; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
   .role-hub-tabs::-webkit-scrollbar, .lib-tabs::-webkit-scrollbar { display: none; }
   .role-hub-tabs .lib-tab, .lib-tabs .lib-tab { flex: none; white-space: nowrap; }

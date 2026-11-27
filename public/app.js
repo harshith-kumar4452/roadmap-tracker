@@ -874,7 +874,7 @@ function rowsHtml(g, rows) {
     let head = '';
     if (sub && sub !== last) {
       const of = g.items.filter((x) => label(x) === sub);
-      head = `<div class="subhead" role="row"><span role="cell">${esc(sub)}</span><span class="sec-count">${of.filter((x) => x.status === 'done').length} / ${of.length}</span></div>`;
+      head = `<div class="subhead" role="row"><span role="cell" title="${esc(sub)}">${esc(sub)}</span><span class="sec-count">${of.filter((x) => x.status === 'done').length} / ${of.length}</span></div>`;
     }
     last = sub;
     return head + itemRow(i, slots(sub));
