@@ -790,7 +790,7 @@ function linksHtml(i, slots = groupSlots([i])) {
 
 // Notes written by the importers ("LeetCode #1 · 71k likes", "takeUforward A2Z · Fundamentals")
 // are shown as quiet metadata; anything else is the owner's own note.
-const IMPORT_NOTE = /^(LeetCode #|HackerRank\b|CodeChef\b|takeUforward A2Z|Source:|Practice( › [^·]+)? · )/;
+const IMPORT_NOTE = /^(LeetCode #|HackerRank\b|CodeChef\b|takeUforward A2Z|Source:|Practice( › [^·]+)? · |Interview · )/;
 // The sheet's sub-topic slugs read as "Faqs hard", "1d dp", "Triessubc"; show them as TUF does.
 const prettySub = (s) => s
   .replace(/^faqs\s*(hard|medium|dll)?$/i, (_, k) => (k ? `FAQs (${k.toLowerCase() === 'dll' ? 'DLL' : k[0].toUpperCase() + k.slice(1).toLowerCase()})` : 'FAQs'))
@@ -802,6 +802,7 @@ const prettySub = (s) => s
 // video course's lessons.
 const subTopicOf = (i) => {
   const note = noteText(i.note);
+  if (note.startsWith('Interview · ')) return 'Interview questions';
   // "Practice › GROUP BY & HAVING · ..." groups questions under the lesson they practise.
   const practice = /^Practice(?: › ([^·]+?))? · /.exec(note);
   if (practice) return practice[1] ? `Practice: ${practice[1]}` : 'Practice';
@@ -819,7 +820,7 @@ const noteText = (n) => (n || '').replace(/\s*·?\s*Also on \w+: https?:\/\/\S+/
 function itemRow(i, slots) {
   const note = noteText(i.note);
   const imported = IMPORT_NOTE.test(note);
-  const meta = imported ? note.replace(/^takeUforward A2Z · .*$/, '').replace(/^Practice(?: › [^·]+)? · /, '') : '';
+  const meta = imported ? note.replace(/^takeUforward A2Z · .*$/, '').replace(/^Practice(?: › [^·]+)? · /, '').replace(/^Interview · .*$/, '') : '';
   const next = STATUS[STATUS[i.status]?.next ?? 'in_progress'];
   return `
     <div class="row ${i.status === 'done' ? 'is-done' : ''} ${i.status === 'in_progress' ? 'is-doing' : ''}" role="row" data-item="${esc(i.id)}">

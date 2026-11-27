@@ -1803,6 +1803,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "9Z_PO5-_",
+            "title": "LAN vs MAN vs WAN: give an example of each.",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "s4DDz8FK",
+            "title": "What is the difference between client-server and peer-to-peer?",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -1863,6 +1881,33 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "WpqqBzRd",
+            "title": "Name the seven OSI layers and one protocol at each.",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "i5dodIVT",
+            "title": "How does the TCP/IP model map onto the OSI model?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "ZEmuHow-",
+            "title": "What is encapsulation? Describe what headers a web request gets as it goes down the stack.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -2004,6 +2049,42 @@
             "url": "https://leetcode.com/problems/hamming-distance/",
             "level": "Beginner",
             "note": "Practice · LeetCode #461 · Hamming distance, the idea behind error-detecting codes"
+          },
+          {
+            "id": "8XxTyHcp",
+            "title": "What is a MAC address and how is it different from an IP address?",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "hXDrRz4D",
+            "title": "How does ARP find a MAC address for an IP?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "T4Tvlu8o",
+            "title": "How do CRC and parity detect errors?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "Qcq37S-y",
+            "title": "What is CSMA/CD and why is it not used in Wi-Fi?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -2082,6 +2163,33 @@
             "url": "https://leetcode.com/problems/min-cost-to-connect-all-points/",
             "level": "Intermediate",
             "note": "Practice · LeetCode #1584 · a minimum spanning tree, the idea behind loop-free switched networks"
+          },
+          {
+            "id": "mpoaR92F",
+            "title": "Compare star, bus, ring and mesh topologies.",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "q7gmwvZ7",
+            "title": "What does a switch do that a hub does not?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "q2X143tb",
+            "title": "What is a VLAN and why would you use one?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -2223,6 +2331,42 @@
             "url": "https://leetcode.com/problems/restore-ip-addresses/",
             "level": "Intermediate",
             "note": "Practice · LeetCode #93 · valid IPv4 octets"
+          },
+          {
+            "id": "9AEvcdT2",
+            "title": "Public vs private IP addresses: what are the private ranges?",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "hZt_F947",
+            "title": "Subnet 192.168.1.0/24 into four equal subnets. Give their ranges.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "ZvwfKHP_",
+            "title": "What is CIDR and why did it replace classful addressing?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "tcey7ZuI",
+            "title": "What are the main differences between IPv4 and IPv6?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -2346,6 +2490,33 @@
             "url": "https://leetcode.com/problems/critical-connections-in-a-network/",
             "level": "Advanced",
             "note": "Practice · LeetCode #1192 · links whose failure splits the network"
+          },
+          {
+            "id": "it-WewMS",
+            "title": "Distance-vector vs link-state routing: how does each learn routes?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "2Fuh0S2M",
+            "title": "What is the count-to-infinity problem and how is it handled?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "6Cr-IyRs",
+            "title": "How does BGP choose a path between autonomous systems?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -2415,6 +2586,42 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "S-NHeBsd",
+            "title": "TCP vs UDP: when would you use each?",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "6jlMskMg",
+            "title": "Explain the TCP three-way handshake and the four-way close.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "DT9Pp1KF",
+            "title": "How do flow control and congestion control differ?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "QZSNy2vZ",
+            "title": "Explain slow start, congestion avoidance and fast retransmit.",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -2538,6 +2745,51 @@
             "url": "https://exercism.org/tracks/javascript/exercises/rest-api",
             "level": "Intermediate",
             "note": "Practice · Exercism (JavaScript) · designing a small REST API"
+          },
+          {
+            "id": "SdRoCyNi",
+            "title": "What happens when you type a URL into a browser and press Enter?",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "mwqKFDiZ",
+            "title": "What are the common HTTP methods and status code classes?",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "cUcbSPln",
+            "title": "How do HTTP/1.1, HTTP/2 and HTTP/3 differ?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "XyiDhFRu",
+            "title": "How does HTTPS use TLS to secure a connection?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "Uucw1sAF",
+            "title": "Cookies vs sessions vs tokens: how do they keep a user logged in?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -2634,6 +2886,42 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "VTsb0Y__",
+            "title": "What is DNS and how is a domain name resolved?",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "3feEpQZ1",
+            "title": "What is NAT and why is it needed?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "ZqgO1wBh",
+            "title": "Name the common DNS record types (A, AAAA, CNAME, MX, TXT) and their uses.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "H0mIMFLZ",
+            "title": "How does DHCP assign an IP address?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -2748,6 +3036,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "lWSzpb8D",
+            "title": "Circuit switching vs packet switching.",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "5WckgfT4",
+            "title": "Datagram vs virtual-circuit packet switching.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -2835,6 +3141,42 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "-RlVI3qI",
+            "title": "What is the CIA triad?",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "W6z9F3pD",
+            "title": "What does a firewall do, and how is a layer-7 firewall different from a layer-3 one?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "5-wN2gUQ",
+            "title": "What is a VPN and how does it protect traffic?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "Go07ITNm",
+            "title": "What are DoS, MITM and phishing attacks?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -3129,6 +3471,42 @@
             "url": "https://www.hackerrank.com/challenges/basic-cryptanalysis/problem",
             "level": "Advanced",
             "note": "Practice · HackerRank · breaking a substitution cipher"
+          },
+          {
+            "id": "pdEypCk7",
+            "title": "Symmetric vs asymmetric encryption: pros and cons.",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "tG9jVTUK",
+            "title": "How does Diffie-Hellman let two parties agree on a key over an open channel?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "obEB4nwJ",
+            "title": "What is a hash function and how is HMAC different from a plain hash?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "0M4qmYyJ",
+            "title": "How do digital signatures and certificates prove identity?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -3225,6 +3603,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "TGJvoCSr",
+            "title": "How does a device join a Wi-Fi network?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "fssHxaLm",
+            "title": "Why does Wi-Fi use CSMA/CA instead of CSMA/CD?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -3393,6 +3789,33 @@
             "url": "https://leetcode.com/problems/number-of-recent-calls/",
             "level": "Beginner",
             "note": "Practice · LeetCode #933 · counting requests in a time window, the core of rate limiting"
+          },
+          {
+            "id": "5-6xDOMS",
+            "title": "Latency vs bandwidth vs throughput.",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "Mn8MnWjT",
+            "title": "What is the bandwidth-delay product?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "B42nweIH",
+            "title": "How do fixed-window and token-bucket rate limiters work?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       }
@@ -3515,6 +3938,42 @@
             "url": "https://takeuforward.org/quiz/core-subject/quiz-1-introduction-to-dbms",
             "level": "Intermediate",
             "note": "Practice · TUF · topic quiz from the takeUforward DBMS course, 30 mins"
+          },
+          {
+            "id": "QFWgqLbC",
+            "title": "Why use a DBMS instead of storing data in plain files? Name three problems it solves.",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "hH9r_BSy",
+            "title": "Explain the three levels of data abstraction and what physical vs logical data independence mean.",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "HRJcf5C0",
+            "title": "Walk through what happens inside a DBMS from receiving a SQL query to returning rows.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "wpAb9QnQ",
+            "title": "Compare relational, document, key-value and graph databases. When would you pick each?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -3629,6 +4088,42 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "Ywt90ZGm",
+            "title": "What is the difference between a primary key, a unique key and a foreign key?",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "qmJFOqAr",
+            "title": "DDL vs DML vs DCL vs TCL: give two commands of each.",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "yYqS8ohy",
+            "title": "How do NULL, 0 and an empty string differ, and how does NULL behave in comparisons and aggregates?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "b4Td_WmS",
+            "title": "What is an index, and why can adding too many indexes slow a table down?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -3680,6 +4175,42 @@
             "url": "https://takeuforward.org/quiz/core-subject/quiz-2-data-models-and-er-models",
             "level": "Intermediate",
             "note": "Practice · TUF · topic quiz from the takeUforward DBMS course, 30 mins"
+          },
+          {
+            "id": "oKGdrvmV",
+            "title": "What are entities, attributes and relationships in an ER diagram? Give an example of each.",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "WXOsCruL",
+            "title": "Explain cardinality (1:1, 1:N, M:N) and participation constraints with a real example.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "doWQo0DN",
+            "title": "What is a weak entity and why does it need an identifying relationship?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "8PuJ5LGj",
+            "title": "How do you map an M:N relationship and a multivalued attribute to relational tables?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -3785,6 +4316,42 @@
             "url": "https://www.hackerrank.com/challenges/database-normalization-4/problem",
             "level": "Beginner",
             "note": "Practice · HackerRank · Databases: Normalization"
+          },
+          {
+            "id": "KoagllVo",
+            "title": "What are super, candidate, primary and alternate keys?",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "YTb6Myy8",
+            "title": "Design the tables for a library that tracks books, members and loans. Which keys and constraints do you add?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "MKBvbRHm",
+            "title": "What is normalization and what problems does it prevent?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "mt-JKM4p",
+            "title": "When would you deliberately denormalize a schema, and what do you give up?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -3881,6 +4448,42 @@
             "url": "https://www.hackerrank.com/challenges/relational-algebra-4/problem",
             "level": "Beginner",
             "note": "Practice · HackerRank · Databases: Relational algebra"
+          },
+          {
+            "id": "dL_5myNo",
+            "title": "What do selection, projection, union and set difference do in relational algebra?",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "UTUgxNsU",
+            "title": "Express \"students enrolled in every course\" using relational algebra (division).",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "TzK91ZQb",
+            "title": "What is the difference between a view and a materialized view? When would you use each?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "JkLyvjqp",
+            "title": "What are triggers and stored procedures good for, and what are the risks of putting business logic in the database?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -4013,6 +4616,42 @@
             "url": "https://www.hackerrank.com/challenges/database-normalization-9/problem",
             "level": "Advanced",
             "note": "Practice · HackerRank · Databases: Normalization"
+          },
+          {
+            "id": "1nxamt25",
+            "title": "What is a functional dependency? How do you find the candidate keys of a relation from its FDs?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "PjgUwSog",
+            "title": "Explain 1NF, 2NF, 3NF and BCNF, each with a table that violates it.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "VABuhw0y",
+            "title": "What are attribute closure and minimal cover, and why do we compute them?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "blh7Grvw",
+            "title": "What do lossless-join and dependency-preserving decomposition mean? Can BCNF always give both?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -4382,6 +5021,42 @@
             "url": "https://www.hackerrank.com/challenges/name-of-employees/problem",
             "level": "Beginner",
             "note": "Practice · HackerRank"
+          },
+          {
+            "id": "z_MnlNc9",
+            "title": "In what order does a database logically evaluate FROM, WHERE, GROUP BY, HAVING, SELECT and ORDER BY?",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "Dghwna2m",
+            "title": "What is the difference between WHERE x IN (...) and WHERE x = ANY (...)?",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "MVTOYwbh",
+            "title": "Why does WHERE col <> 5 not return rows where col is NULL? How do you include them?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "-CZC8fH3",
+            "title": "How does LIKE with a leading wildcard affect index use?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -4730,6 +5405,42 @@
             "url": "https://www.hackerrank.com/challenges/revising-aggregations-the-count-function/problem",
             "level": "Beginner",
             "note": "Practice · HackerRank"
+          },
+          {
+            "id": "k6Z9t6V0",
+            "title": "What is the difference between WHERE and HAVING?",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "O1bc_hrJ",
+            "title": "COUNT(*) vs COUNT(col) vs COUNT(DISTINCT col): what does each count?",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "fWOEir_A",
+            "title": "Find the department with the highest average salary. Write the query.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "Pvvd2JXA",
+            "title": "Can you SELECT a column that is not in GROUP BY? What do different databases do?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -4892,6 +5603,33 @@
             "url": "https://leetcode.com/problems/friend-requests-ii-who-has-the-most-friends/",
             "level": "Intermediate",
             "note": "Practice · LeetCode"
+          },
+          {
+            "id": "AnnPx0uf",
+            "title": "UNION vs UNION ALL: which is faster and why?",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "HnAOL1DF",
+            "title": "How would you write INTERSECT or EXCEPT in a database that does not support them?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "TTFxozPw",
+            "title": "What rules must two queries follow to be combined with UNION?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -5621,6 +6359,42 @@
             "url": "https://leetcode.com/problems/the-number-of-employees-which-report-to-each-employee/",
             "level": "Beginner",
             "note": "Practice · LeetCode"
+          },
+          {
+            "id": "3eYGuzRo",
+            "title": "Explain INNER, LEFT, RIGHT, FULL OUTER and CROSS joins with a small example.",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "dmzVN4fx",
+            "title": "Why can moving a condition from ON to WHERE turn a LEFT JOIN into an inner join?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "39299fAO",
+            "title": "Find employees who earn more than their manager using a self join.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "6zWJLMzn",
+            "title": "What join algorithms (nested loop, hash, merge) does a database use and when?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -6140,6 +6914,42 @@
             "url": "https://leetcode.com/problems/investments-in-2016/",
             "level": "Intermediate",
             "note": "Practice · LeetCode"
+          },
+          {
+            "id": "v-wEoGxl",
+            "title": "What is a correlated subquery and how is it different from a regular subquery?",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "xTCSgLgX",
+            "title": "EXISTS vs IN: when does one beat the other, and how do NULLs affect NOT IN?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "VAHY7Pa-",
+            "title": "Find the second highest salary in three different ways.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "1RAgO3xl",
+            "title": "When should you rewrite a subquery as a join or a CTE?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -6278,6 +7088,33 @@
             "url": "https://www.hackerrank.com/challenges/occupations/problem",
             "level": "Intermediate",
             "note": "Practice · HackerRank"
+          },
+          {
+            "id": "Q_6ZzN_C",
+            "title": "DELETE vs TRUNCATE vs DROP: what does each remove and can it be rolled back?",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "RvjuoyEk",
+            "title": "How do you write an upsert, and what race condition does it avoid?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "RvA9HJd_",
+            "title": "How would you add a NOT NULL column to a large live table without downtime?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -6374,6 +7211,42 @@
             "url": "https://www.hackerrank.com/challenges/indexes-4/problem",
             "level": "Beginner",
             "note": "Practice · HackerRank · Databases: Indexes"
+          },
+          {
+            "id": "w_NKYLy0",
+            "title": "What is the difference between a clustered and a non-clustered index?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "1vKoc7GH",
+            "title": "Why do databases use B+ trees instead of binary search trees or hash tables for most indexes?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "Slbb02NP",
+            "title": "Explain static vs extendible hashing. What problem does extendible hashing solve?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "741vEtFD",
+            "title": "What is a covering index and how does it avoid table lookups?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -6425,6 +7298,33 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "n95mscP1",
+            "title": "Why can a random UUID primary key hurt insert performance in a clustered table?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "YpNg9GOz",
+            "title": "How do composite indexes work, and why does column order matter?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "9KIZyA-p",
+            "title": "What is index selectivity and when will the optimizer ignore an index?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -6476,6 +7376,33 @@
             "url": "https://takeuforward.org/quiz/core-subject/quiz-4-sql-and-query-optimization",
             "level": "Intermediate",
             "note": "Practice · TUF · topic quiz from the takeUforward DBMS course, 30 mins"
+          },
+          {
+            "id": "XE82sOYF",
+            "title": "What are the steps from parsing a query to executing a plan?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "1ekh7up_",
+            "title": "How does a cost-based optimizer choose a join order?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "Qahd3cUF",
+            "title": "Why do stale table statistics lead to bad query plans?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -6527,6 +7454,33 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "-exsFkzV",
+            "title": "How do you read an EXPLAIN plan? What signs point to a slow query?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "uC3PpV64",
+            "title": "What is the N+1 query problem and how do you fix it?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "mwci1CVw",
+            "title": "A query was fast yesterday and slow today. How do you investigate?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -6632,6 +7586,33 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "4h75kzos",
+            "title": "What do COMMIT, ROLLBACK and SAVEPOINT do?",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "E8PoInSI",
+            "title": "How do GRANT and REVOKE work, and what does WITH GRANT OPTION allow?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "1YCT5tUf",
+            "title": "Why do applications use a connection pool, and what goes wrong when it is too small?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -6719,6 +7700,51 @@
             "url": "https://takeuforward.org/quiz/core-subject/quiz-7-transactions-and-concurrency",
             "level": "Intermediate",
             "note": "Practice · TUF · topic quiz from the takeUforward DBMS course, 30 mins"
+          },
+          {
+            "id": "NzDJx4iV",
+            "title": "Explain ACID with an example of a bank transfer.",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "Fmk0J_Ue",
+            "title": "What are dirty reads, non-repeatable reads and phantom reads? Which isolation level prevents each?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "DycSrOsI",
+            "title": "What is conflict serializability and how do you test a schedule for it?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "H93ST8qe",
+            "title": "Compare two-phase locking with MVCC. Which do PostgreSQL and MySQL InnoDB use?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "xV1rTS1q",
+            "title": "How does a database detect and resolve deadlocks?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -6770,6 +7796,33 @@
             "url": "https://takeuforward.org/quiz/core-subject/quiz-9-recovery-and-backup",
             "level": "Intermediate",
             "note": "Practice · TUF · topic quiz from the takeUforward DBMS course, 30 mins"
+          },
+          {
+            "id": "ubNDnYVy",
+            "title": "What is write-ahead logging and why must the log be written before the data page?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "v20uSvyQ",
+            "title": "What are the undo and redo phases of recovery, and what do checkpoints change?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "C3HhrpE4",
+            "title": "How does point-in-time recovery work using backups and logs?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -6830,6 +7883,33 @@
             "url": "https://takeuforward.org/quiz/core-subject/quiz-11-database-monitoring-and-caching",
             "level": "Intermediate",
             "note": "Practice · TUF · topic quiz from the takeUforward DBMS course, 30 mins"
+          },
+          {
+            "id": "Gb6s08Wp",
+            "title": "What is SQL injection and how do prepared statements prevent it?",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "3YB0i0JD",
+            "title": "How can views and roles be used to limit what a user can see?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "-Is2sKA5",
+            "title": "Which database metrics would you monitor in production and why?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -6989,6 +8069,51 @@
             "url": "https://www.hackerrank.com/challenges/map-reduce-advanced-matrix-multiplication/problem",
             "level": "Advanced",
             "note": "Practice · HackerRank · Databases: MapReduce"
+          },
+          {
+            "id": "8j7381wN",
+            "title": "What is the difference between sharding and replication?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "I2hBj9vz",
+            "title": "Explain the CAP theorem with an example of a CP and an AP system.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "OqA8N5N5",
+            "title": "How does two-phase commit work, and what happens if the coordinator fails?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "tWNX7GbS",
+            "title": "OLTP vs OLAP: why do analytical databases store data by column?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "kx1j8W5H",
+            "title": "When would you choose a NoSQL database over a relational one?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -21866,6 +22991,33 @@
             "url": "https://gitexercises.fracz.com/exercise/remove-ignored",
             "level": "Intermediate",
             "note": "Practice · Git Exercises · untracking an ignored file"
+          },
+          {
+            "id": "347GZgHb",
+            "title": "What are the working directory, staging area and repository?",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "CYQF9mdW",
+            "title": "git fetch vs git pull.",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "5Ebfcu2u",
+            "title": "What does Git store in a commit object?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -22034,6 +23186,42 @@
             "url": "https://gitexercises.fracz.com/exercise/rebase-complex",
             "level": "Advanced",
             "note": "Practice · Git Exercises · rebase --onto"
+          },
+          {
+            "id": "aDWVvs27",
+            "title": "What is a branch in Git, internally?",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "aC5l1zPk",
+            "title": "Merge vs rebase: what does each do to history, and when should you avoid rebasing?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "pXuIS60d",
+            "title": "How do you resolve a merge conflict?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "b--yU5o4",
+            "title": "Compare Git flow, GitHub flow and trunk-based development.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -22166,6 +23354,33 @@
             "url": "https://github.com/skills/release-based-workflow",
             "level": "Advanced",
             "note": "Practice · GitHub Skills · release branches and tags"
+          },
+          {
+            "id": "wSLSbSxO",
+            "title": "What is the difference between origin and upstream?",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "cWeffOYS",
+            "title": "Fork-and-pull-request vs shared-repository workflow.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "6udWhNRq",
+            "title": "Why is git push --force dangerous, and what does --force-with-lease add?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -22313,6 +23528,42 @@
             "url": "https://gitexercises.fracz.com/exercise/find-bug",
             "level": "Advanced",
             "note": "Practice · Git Exercises · git bisect"
+          },
+          {
+            "id": "VJA_7kLv",
+            "title": "git reset vs git revert: which is safe on a shared branch?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "JxPPdBn7",
+            "title": "How do you recover a commit you lost after a reset?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "NMGgiIlN",
+            "title": "What does git stash do and when would you use it?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "D1ZBjWbb",
+            "title": "How does git bisect help find the commit that introduced a bug?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       }
@@ -26119,6 +27370,33 @@
             "url": "https://takeuforward.org/practice/design/practice-constructors",
             "level": "Beginner",
             "note": "Practice › 1.5 Constructors · TUF · coding practice"
+          },
+          {
+            "id": "B2VeHiRp",
+            "title": "What is object-oriented programming and how is it different from procedural programming?",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "nNIZH460",
+            "title": "What is the difference between a class and an object?",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "wbLYVw4h",
+            "title": "What is a constructor? Can a constructor be private, and why would it be?",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -26233,6 +27511,42 @@
             "url": "https://takeuforward.org/practice/design/practice-polymorphism",
             "level": "Beginner",
             "note": "Practice › 2.4 Polymorphism · TUF · coding practice"
+          },
+          {
+            "id": "h85kuJ_N",
+            "title": "Explain the four pillars of OOP with one example each.",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "PLF4zNsx",
+            "title": "Method overloading vs overriding: compile time or run time?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "N1rmhzlK",
+            "title": "Why does Java not support multiple inheritance of classes? How do interfaces help?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "JLrsTsq7",
+            "title": "What do public, protected, default and private allow?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -26347,6 +27661,33 @@
             "url": "https://takeuforward.org/practice/design/practice-inner-classes",
             "level": "Intermediate",
             "note": "Practice › 3.4 Inner Classes · TUF · coding practice"
+          },
+          {
+            "id": "j6xmN6vl",
+            "title": "Abstract class vs interface: when would you use each?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "y_em-bk-",
+            "title": "What does the static keyword mean for a field, a method and a block?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "LLSvXfjC",
+            "title": "What are inner, static nested and anonymous classes used for?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -26407,6 +27748,33 @@
             "url": "https://takeuforward.org/practice/design/practice-object-cloning",
             "level": "Intermediate",
             "note": "Practice › 4.2 Object Cloning · TUF · coding practice"
+          },
+          {
+            "id": "yxHmeneR",
+            "title": "Association vs aggregation vs composition: give a real example of each.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "em8trJ5y",
+            "title": "Shallow copy vs deep copy: when does each cause bugs?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "IMnpteNS",
+            "title": "Why is composition often preferred over inheritance?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -26494,6 +27862,33 @@
             "url": "https://takeuforward.org/quiz/design/quiz-file-handling",
             "level": "Advanced",
             "note": "Practice › 5.3 File Handling · TUF · quiz"
+          },
+          {
+            "id": "-xtypxcs",
+            "title": "Checked vs unchecked exceptions in Java.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "439O2Bwq",
+            "title": "What does finally guarantee, and when does it not run?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "jvKLKWqk",
+            "title": "What is type erasure in Java generics?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -26536,6 +27931,33 @@
             "url": "https://takeuforward.org/quiz/design/quiz-object-lifecycle",
             "level": "Advanced",
             "note": "Practice › 6.2 Object Lifecycle · TUF · quiz"
+          },
+          {
+            "id": "TPszJblf",
+            "title": "Explain the SOLID principles with an example of breaking each one.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "GuOU8N5o",
+            "title": "How does garbage collection decide an object can be freed?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "Z0lcRQKd",
+            "title": "What is dependency injection and how does it improve testability?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       }
@@ -26940,6 +28362,33 @@
             "url": "https://takeuforward.org/quiz/core-subject/quiz-1-basics-of-operating-systems",
             "level": "Intermediate",
             "note": "Practice · TUF · topic quiz from the takeUforward OS course, 30 mins"
+          },
+          {
+            "id": "EcUQ-2Qg",
+            "title": "What does an operating system do? Name its main responsibilities.",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "yWNouqoo",
+            "title": "What is the difference between user mode and kernel mode?",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "Z7hnLWVW",
+            "title": "What happens, step by step, when you double-click an app to open it?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -26991,6 +28440,42 @@
             "url": "https://takeuforward.org/quiz/core-subject/quiz-2-process-management",
             "level": "Intermediate",
             "note": "Practice · TUF · topic quiz from the takeUforward OS course, 30 mins"
+          },
+          {
+            "id": "odQgJaRW",
+            "title": "What is the difference between a program, a process and a thread?",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "-iF5Ujgv",
+            "title": "Draw the process state diagram and explain each transition.",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "ttWLTqf5",
+            "title": "What is stored in a Process Control Block?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "N2gDiT7C",
+            "title": "How do fork() and exec() work together to start a new program?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -27123,6 +28608,42 @@
             "url": "https://leetcode.com/problems/process-tasks-using-servers/",
             "level": "Intermediate",
             "note": "Practice · LeetCode #1882 · assigning tasks to servers as they free up"
+          },
+          {
+            "id": "icFFKlfE",
+            "title": "Define arrival, burst, waiting, turnaround and response time.",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "kiUdB_rR",
+            "title": "Compare FCFS, SJF, SRTF and Round Robin. Which can starve a process?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "I-BlK7oV",
+            "title": "How does the time quantum in Round Robin affect performance?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "zimjqCZb",
+            "title": "How does a multilevel feedback queue decide a process priority?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -27192,6 +28713,33 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "eZwtZ0sE",
+            "title": "Monolithic kernel vs microkernel: trade-offs and examples.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "26kjhrca",
+            "title": "Why do real OS schedulers (like Linux CFS) not use textbook SJF?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "IYKXCCqr",
+            "title": "What are CPU affinity and NUMA, and why do they matter on multicore machines?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -27288,6 +28836,42 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "4AsbfbcZ",
+            "title": "What do threads of the same process share, and what does each thread have of its own?",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "QdbI4UgF",
+            "title": "User-level vs kernel-level threads: pros and cons.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "3OdbbSMf",
+            "title": "Concurrency vs parallelism: explain with an example.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "jpu-thmm",
+            "title": "What is a thread pool and why is it used?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -27501,6 +29085,51 @@
             "url": "https://leetcode.com/problems/building-h2o/",
             "level": "Intermediate",
             "note": "Practice · LeetCode #1117 · barrier / semaphore pattern"
+          },
+          {
+            "id": "LCmLuMeg",
+            "title": "What is a race condition? Give a code example.",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "mIJrqt-g",
+            "title": "What three conditions must a critical-section solution satisfy?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "-hEAWLsL",
+            "title": "Mutex vs semaphore: when would you use each?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "9syT2QwN",
+            "title": "Solve the producer-consumer problem with semaphores.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "CQNslzSM",
+            "title": "What is compare-and-swap and how are lock-free structures built on it?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -27624,6 +29253,42 @@
             "url": "https://leetcode.com/problems/the-dining-philosophers/",
             "level": "Intermediate",
             "note": "Practice · LeetCode #1226 · avoiding deadlock and starvation"
+          },
+          {
+            "id": "2h-Geaoe",
+            "title": "What are the four necessary conditions for deadlock?",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "Tp1jV0SJ",
+            "title": "Deadlock prevention vs avoidance vs detection: how does each work?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "Q91ZFGrv",
+            "title": "Run the Banker's algorithm on a small example and decide if the state is safe.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "DOP5QLP5",
+            "title": "What is priority inversion and how does priority inheritance fix it?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -27774,6 +29439,42 @@
             "url": "https://takeuforward.org/quiz/core-subject/quiz-7-inter-process-communication",
             "level": "Intermediate",
             "note": "Practice · TUF · topic quiz from the takeUforward OS course, 30 mins"
+          },
+          {
+            "id": "CrSZEi-n",
+            "title": "What is a system call? Give five examples.",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "Y9zdSK7Y",
+            "title": "What are zombie and orphan processes?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "7upuB1YM",
+            "title": "Compare pipes, message queues and shared memory for IPC.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "2rqHTMZQ",
+            "title": "How does mmap work and when is it faster than read()?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -27888,6 +29589,42 @@
             "url": "https://leetcode.com/problems/design-memory-allocator/",
             "level": "Intermediate",
             "note": "Practice · LeetCode #2502 · first-fit contiguous allocation and freeing"
+          },
+          {
+            "id": "IjveCoZb",
+            "title": "What is the difference between a logical and a physical address?",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "30aQ2Ki7",
+            "title": "Internal vs external fragmentation: what causes each?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "m74g9kUs",
+            "title": "Compare first fit, best fit and worst fit.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "KZLbaqP3",
+            "title": "What lives in the stack, heap, code and data segments of a process?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -28002,6 +29739,51 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "kb7aELTE",
+            "title": "What is paging and how does it remove external fragmentation?",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "J27xRa8R",
+            "title": "How is a virtual address translated with a page table and a TLB?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "Bg6o0_cG",
+            "title": "Calculate the effective memory access time given a TLB hit ratio.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "M5mm3UBO",
+            "title": "What happens on a page fault, from the trap to resuming the instruction?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "1rgYPQgY",
+            "title": "What is copy-on-write and how does fork() use it?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -28107,6 +29889,33 @@
             "url": "https://leetcode.com/problems/lfu-cache/",
             "level": "Advanced",
             "note": "Practice · LeetCode #460 · LFU page replacement"
+          },
+          {
+            "id": "3WmPCoym",
+            "title": "Compare FIFO, Optimal and LRU page replacement on a reference string.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "Ew6bAMqN",
+            "title": "What is Belady's anomaly and which algorithms suffer from it?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "eOU6DesY",
+            "title": "What is thrashing and how does the working-set model prevent it?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -28266,6 +30075,42 @@
             "url": "https://leetcode.com/problems/find-duplicate-file-in-system/",
             "level": "Intermediate",
             "note": "Practice · LeetCode #609 · walking directories and file contents"
+          },
+          {
+            "id": "zUVxu2L9",
+            "title": "What is an inode and what does it store?",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "RrLOC7dk",
+            "title": "Hard link vs soft link: what happens to each when the original file is deleted?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "AnPKRy2X",
+            "title": "Compare contiguous, linked and indexed file allocation.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "_MkT5r0r",
+            "title": "What is a file descriptor?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -28434,6 +30279,42 @@
             "url": "https://takeuforward.org/quiz/core-subject/quiz-6-disk-management-and-scheduling",
             "level": "Intermediate",
             "note": "Practice · TUF · topic quiz from the takeUforward OS course, 30 mins"
+          },
+          {
+            "id": "csyaInvA",
+            "title": "Compare FCFS, SSTF, SCAN and C-SCAN disk scheduling.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "ls3-1-ys",
+            "title": "What makes SSDs different from HDDs for an OS?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "HGU9-TrG",
+            "title": "Explain RAID 0, 1, 5 and 10.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "Fdq-kS7S",
+            "title": "What is DMA and why is it better than programmed I/O?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -28575,6 +30456,33 @@
             "url": "https://takeuforward.org/quiz/core-subject/quiz-9-advanced-topics",
             "level": "Intermediate",
             "note": "Practice · TUF · topic quiz from the takeUforward OS course, 30 mins"
+          },
+          {
+            "id": "t7KjkRFX",
+            "title": "Virtual machine vs container: how is each isolated?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "NUBishii",
+            "title": "What are namespaces and cgroups in Linux?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "zRGAH8l2",
+            "title": "What is the difference between an access control list and a capability?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       }
@@ -29403,6 +31311,24 @@
             "url": "https://exercism.org/tracks/python/exercises/pangram",
             "level": "Beginner",
             "note": "Practice · Exercism · practice exercise, difficulty 1/10"
+          },
+          {
+            "id": "5g1kD-mJ",
+            "title": "Mutable vs immutable types in Python, with examples.",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "qXyrk4sw",
+            "title": "What is the difference between is and ==?",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -29712,6 +31638,33 @@
             "url": "https://exercism.org/tracks/python/exercises/locomotive-engineer",
             "level": "Beginner",
             "note": "Practice · Exercism · learning exercise: unpacking and multiple assignment"
+          },
+          {
+            "id": "oL_kfTIG",
+            "title": "List vs tuple vs set vs dict: when would you use each?",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "U107Z97m",
+            "title": "How are dicts and sets implemented, and why are lookups O(1) on average?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "kQDdA9KA",
+            "title": "What is a list comprehension and when is a generator expression better?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -29808,6 +31761,33 @@
             "url": "https://www.hackerrank.com/challenges/default-arguments/problem",
             "level": "Intermediate",
             "note": "Practice · HackerRank · Python: Debugging"
+          },
+          {
+            "id": "QLMFCACA",
+            "title": "What are *args and **kwargs?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "AihxS7iQ",
+            "title": "Why is a mutable default argument a bug?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "oa0wq-Aj",
+            "title": "What is a lambda and where is it useful?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -30111,6 +32091,42 @@
             "url": "https://exercism.org/tracks/python/exercises/bank-account",
             "level": "Advanced",
             "note": "Practice · Exercism · practice exercise, difficulty 6/10"
+          },
+          {
+            "id": "EDafvN6P",
+            "title": "What are dunder methods like __init__, __str__ and __repr__?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "f7IzFoBL",
+            "title": "How does try / except / else / finally work?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "I4EE5Hz9",
+            "title": "What is the difference between a module and a package?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "bSC5a1B2",
+            "title": "What are context managers and how does with work?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -30270,6 +32286,33 @@
             "url": "https://exercism.org/tracks/python/exercises/rest-api",
             "level": "Advanced",
             "note": "Practice · Exercism · practice exercise, difficulty 8/10"
+          },
+          {
+            "id": "_RcK-ErG",
+            "title": "How does a decorator work? Write one that times a function.",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "RVys0Fv3",
+            "title": "What is the GIL and how does it affect threads vs processes?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "IJ9_VOGr",
+            "title": "Generators vs iterators: how does yield work?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       }
@@ -33809,6 +35852,33 @@
             "url": "https://exercism.org/tracks/javascript/exercises/recycling-robot",
             "level": "Beginner",
             "note": "Practice · Exercism · learning exercise: type checking"
+          },
+          {
+            "id": "l0LjQDN-",
+            "title": "var vs let vs const: scope, hoisting and reassignment.",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "iRef3_mO",
+            "title": "What are JavaScript's primitive types?",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "ZDk6kjb4",
+            "title": "== vs ===: what does type coercion do in each?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -34145,6 +36215,24 @@
             "url": "https://leetcode.com/problems/snail-traversal/",
             "level": "Intermediate",
             "note": "Practice · LeetCode #2624"
+          },
+          {
+            "id": "XVadYXSw",
+            "title": "How do you copy an object, and when do you need a deep copy?",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "hjqQLFeq",
+            "title": "What does destructuring do? Show it for arrays and objects.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -34295,6 +36383,33 @@
             "url": "https://leetcode.com/problems/allow-one-function-call/",
             "level": "Beginner",
             "note": "Practice · LeetCode #2666"
+          },
+          {
+            "id": "heeDqoLO",
+            "title": "What is hoisting? How are function declarations and expressions hoisted differently?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "RllEZ3v-",
+            "title": "How does this behave in a normal function vs an arrow function?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "TRnY-sz6",
+            "title": "Explain the call stack and the execution context.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -34577,6 +36692,24 @@
             "url": "https://www.hackerrank.com/challenges/js10-binary-calculator/problem",
             "level": "Intermediate",
             "note": "Practice · HackerRank · 10 Days of JavaScript, Day 9"
+          },
+          {
+            "id": "THwyfTtK",
+            "title": "What are event bubbling, capturing and delegation?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "vQxl_w1h",
+            "title": "How do you add many elements to the DOM efficiently?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -34718,6 +36851,33 @@
             "url": "https://leetcode.com/problems/execute-asynchronous-functions-in-parallel/",
             "level": "Intermediate",
             "note": "Practice · LeetCode #2721"
+          },
+          {
+            "id": "UAo8hJW9",
+            "title": "Explain the event loop, the callback queue and the microtask queue.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "0pwPP1_o",
+            "title": "Promises vs async/await: how is error handling different?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "jDdyIzRK",
+            "title": "What does Promise.all do when one promise rejects? How do allSettled and race differ?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -34877,6 +37037,33 @@
             "url": "https://leetcode.com/problems/check-if-object-instance-of-class/",
             "level": "Intermediate",
             "note": "Practice · LeetCode #2618"
+          },
+          {
+            "id": "QDn2a6C2",
+            "title": "What is the prototype chain?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "1i3AQ8iq",
+            "title": "call vs apply vs bind.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "2mfTRUuT",
+            "title": "What does a class compile down to in terms of prototypes?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -34991,6 +37178,33 @@
             "url": "https://leetcode.com/problems/design-cancellable-function/",
             "level": "Advanced",
             "note": "Practice · LeetCode #2650"
+          },
+          {
+            "id": "H24tSFD5",
+            "title": "What is a closure? Give a practical use.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "R71jYcZv",
+            "title": "Why does a loop with var and setTimeout print the same number, and how do you fix it?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "GspRFuDQ",
+            "title": "How do debounce and throttle work, and when would you use each?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       }
@@ -36417,6 +38631,33 @@
             "url": "https://app.codecrafters.io/courses/redis/stages/jm1",
             "level": "Intermediate",
             "note": "Practice · CodeCrafters · 4 stages: Bind to a port → Handle concurrent clients"
+          },
+          {
+            "id": "6mhD1UEv",
+            "title": "What is Redis and why is it so fast?",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "fFfNISbM",
+            "title": "How can single-threaded Redis handle thousands of clients at once?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "5WoejsFi",
+            "title": "What is RESP?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -36564,6 +38805,42 @@
             "url": "https://leetcode.com/problems/stock-price-fluctuation/",
             "level": "Intermediate",
             "note": "Practice · LeetCode #2034 · values kept ordered by score, like a sorted set"
+          },
+          {
+            "id": "xv2z-zSa",
+            "title": "Name the core Redis data types and one use case for each.",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "YHJMhO1b",
+            "title": "How would you build a leaderboard with sorted sets?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "1VAZOB8_",
+            "title": "How do EXPIRE and TTL work, and how does Redis remove expired keys?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "8ps8abB4",
+            "title": "When would you store an object as a hash instead of a JSON string?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -36738,6 +39015,51 @@
             "url": "https://leetcode.com/problems/lfu-cache/",
             "level": "Advanced",
             "note": "Practice · LeetCode #460 · allkeys-lfu eviction"
+          },
+          {
+            "id": "4-3lKaEX",
+            "title": "RDB vs AOF persistence: trade-offs.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "1N9nEoRW",
+            "title": "What eviction policies does Redis offer when memory is full?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "SjZ2H6ip",
+            "title": "How do MULTI/EXEC transactions differ from database transactions?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "p7P2luXK",
+            "title": "Redis Sentinel vs Redis Cluster: what problem does each solve?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "80CceRKN",
+            "title": "What are cache stampede and cache penetration, and how do you prevent them?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       }
@@ -37277,6 +39599,51 @@
             "url": "https://takeuforward.org/practice/sql/special-bonus-calculation",
             "level": "Beginner",
             "note": "Practice › NULL Handling & DISTINCT · takeUforward"
+          },
+          {
+            "id": "mttX9zUB",
+            "title": "What is the difference between CHAR and VARCHAR?",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "Mh3eEO4v",
+            "title": "DISTINCT vs GROUP BY: can both remove duplicates?",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "0jhW3IRl",
+            "title": "How do you find duplicate emails in a table?",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "40KAg7Sw",
+            "title": "WHERE vs HAVING with an example.",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "UoYCN7qn",
+            "title": "How do COALESCE and NULLIF help with NULL values?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -37661,6 +40028,42 @@
             "url": "https://takeuforward.org/practice/sql/system-settings",
             "level": "Beginner",
             "note": "Practice › INSERT, UPDATE & DELETE · takeUforward"
+          },
+          {
+            "id": "5TBkUtyt",
+            "title": "LEFT JOIN vs NOT EXISTS for \"customers with no orders\": which is clearer and faster?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "qmCqTJv0",
+            "title": "What is a view and can you update data through one?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "_OjirRKp",
+            "title": "What do ON DELETE CASCADE and ON DELETE SET NULL do?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "dAMy7YK2",
+            "title": "Write a query to get the top 3 products by revenue in each category.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -37955,6 +40358,51 @@
             "url": "https://takeuforward.org/practice/sql/find-missing-subtasks-for-each-task",
             "level": "Advanced",
             "note": "Practice › Recursive CTEs · takeUforward"
+          },
+          {
+            "id": "gSl0E4Lx",
+            "title": "ROW_NUMBER vs RANK vs DENSE_RANK: when do their results differ?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "GxpLFQXS",
+            "title": "What is a recursive CTE? Use one to list an employee's full management chain.",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "-MmuYAqP",
+            "title": "How would you find gaps and islands (consecutive runs) in a sequence of dates?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "F-9_xLlt",
+            "title": "What does an index on (a, b) speed up, and which queries can it not help?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "RuXZaga_",
+            "title": "What is the difference between a stored procedure and a function?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       }
@@ -42490,6 +44938,51 @@
             "url": "https://leetcode.com/problems/design-parking-system/",
             "level": "Beginner",
             "note": "Practice › LLD Intro & How to Approach an Interview · LeetCode #1603 · a parking lot, warm-up"
+          },
+          {
+            "id": "_itnRMrR",
+            "title": "Vertical vs horizontal scaling: trade-offs.",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "sgRfCP3O",
+            "title": "What does a load balancer do, and what algorithms can it use?",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "NlF590k4",
+            "title": "Explain cache-aside, write-through and write-back caching.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "fcOEBVHr",
+            "title": "SQL vs NoSQL: how do you choose for a new service?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "1pl675yD",
+            "title": "REST vs GraphQL vs gRPC: when would you use each?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -42631,6 +45124,51 @@
             "url": "https://leetcode.com/problems/design-browser-history/",
             "level": "Intermediate",
             "note": "Practice › Behavioural Design Patterns · LeetCode #1472 · back / forward history, as in Command / Memento"
+          },
+          {
+            "id": "1hsC6F1H",
+            "title": "What is consistent hashing and why is it used for sharding and caches?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "-M1s64DJ",
+            "title": "Leader-follower vs leader-less replication.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "PeNMw5kX",
+            "title": "Explain the CAP theorem and give examples of CP and AP systems.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "9-vV0pY_",
+            "title": "Which design patterns would you use for a notification system that sends email, SMS and push?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "fQGCJmd9",
+            "title": "How do you make an API idempotent?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -43123,6 +45661,60 @@
             "url": "https://leetcode.com/problems/design-underground-system/",
             "level": "Intermediate",
             "note": "Practice › LLD Interview Problems · LeetCode #1396 · a check-in / check-out system"
+          },
+          {
+            "id": "iv1-PM74",
+            "title": "Design a URL shortener: API, storage, ID generation and scaling.",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "ZGL4MJd5",
+            "title": "Design a rate limiter for an API gateway.",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "RNDBc8rL",
+            "title": "Monolith vs microservices: when should you split, and what new problems appear?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "OWOZMQZf",
+            "title": "How do you do a back-of-the-envelope estimate for storage and QPS?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "UXLuSgH5",
+            "title": "Design a parking lot system: classes, relationships and key methods.",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "3eiOEqed",
+            "title": "How does the saga pattern handle a transaction that spans several services?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       }
