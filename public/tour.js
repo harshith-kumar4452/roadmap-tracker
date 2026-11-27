@@ -123,7 +123,9 @@ export function startTour(allSteps) {
   }
 
   function end() {
+    if (!layer.isConnected || layer.classList.contains('out')) return;
     markSeen();
+    removeEventListener('hashchange', end);
     removeEventListener('resize', onMove);
     removeEventListener('scroll', onMove, true);
     document.removeEventListener('keydown', onKey, true);
@@ -150,6 +152,9 @@ export function startTour(allSteps) {
   addEventListener('resize', onMove);
   addEventListener('scroll', onMove, true);
   document.addEventListener('keydown', onKey, true);
+  // The tour explains the home page; leaving it (nav link, back button) ends the tour instead of
+  // leaving the card on top of another page.
+  addEventListener('hashchange', end);
   layer.addEventListener('click', (e) => {
     const b = e.target.closest('[data-tour]');
     if (!b) return;

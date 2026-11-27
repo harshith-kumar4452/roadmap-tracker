@@ -1665,3 +1665,34 @@ body, .topbar, .panel, .section-card, .rm-card {
 .pg-practice-row:hover { background: var(--surface-2); }
 .pg-practice-row strong { display: block; }
 @media (max-width: 600px) { .pg-practice-row { grid-template-columns: 1fr; } }
+
+/* ---------- phones and touch screens ---------- */
+
+/* Touch: everything you tap gets at least a ~40px target. */
+@media (pointer: coarse) {
+  .tick { position: relative; width: 26px; height: 26px; }
+  .tick::after { content: ''; position: absolute; inset: -9px; } /* 44px hit area around the box */
+  .seg button { padding: 8px 12px; }
+  button.chip { padding: 7px 12px; }
+  .btn.small { min-height: 36px; }
+  .qbadge, .qicon, .qslot-empty { width: 38px; height: 34px; }
+  .answer > summary { padding: 6px 0; }
+  .item-actions .icon-btn { width: 36px; height: 36px; }
+}
+
+/* Roadmap rows on narrow screens: link badges share the title's line when there is room and
+   wrap below it (right-aligned) when there isn't. */
+@media (max-width: 760px) {
+  .row { display: flex; flex-wrap: wrap; align-items: center; column-gap: 10px; row-gap: 6px; }
+  .row .c-name { flex: 1 1 200px; min-width: 0; }
+  .row .c-links { flex: 0 0 auto; margin-left: auto; padding-left: 0; }
+}
+
+@media (max-width: 640px) {
+  /* The filter bar is three rows tall on a phone; pinned, it would hide a fifth of the screen. */
+  .toolbar.sticky { position: static; padding: 6px 0 10px; gap: 8px; }
+  /* Tab strips become one row you can swipe instead of a ragged grid. */
+  .role-hub-tabs, .lib-tabs { display: flex; flex-wrap: nowrap; overflow-x: auto; width: 100%; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+  .role-hub-tabs::-webkit-scrollbar, .lib-tabs::-webkit-scrollbar { display: none; }
+  .role-hub-tabs .lib-tab, .lib-tabs .lib-tab { flex: none; white-space: nowrap; }
+}
