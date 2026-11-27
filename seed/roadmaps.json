@@ -25968,6 +25968,15 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "gKD1ReCG",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Quiz: Basics of Operating Systems",
+            "url": "https://takeuforward.org/quiz/core-subject/quiz-1-basics-of-operating-systems",
+            "level": "Intermediate",
+            "note": "Practice · TUF · topic quiz from the takeUforward OS course, 30 mins"
           }
         ]
       },
@@ -26010,6 +26019,15 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "oBp_LItZ",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Quiz: Process Management",
+            "url": "https://takeuforward.org/quiz/core-subject/quiz-2-process-management",
+            "level": "Intermediate",
+            "note": "Practice · TUF · topic quiz from the takeUforward OS course, 30 mins"
           }
         ]
       },
@@ -26115,6 +26133,33 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "laq6gu3i",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Single-Threaded CPU",
+            "url": "https://leetcode.com/problems/single-threaded-cpu/",
+            "level": "Intermediate",
+            "note": "Practice · LeetCode #1834 · shortest-job-first scheduling with a priority queue"
+          },
+          {
+            "id": "ELmzGcFW",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Task Scheduler",
+            "url": "https://leetcode.com/problems/task-scheduler/",
+            "level": "Intermediate",
+            "note": "Practice · LeetCode #621 · scheduling with cooldowns"
+          },
+          {
+            "id": "y2K8mQV3",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Process Tasks Using Servers",
+            "url": "https://leetcode.com/problems/process-tasks-using-servers/",
+            "level": "Intermediate",
+            "note": "Practice · LeetCode #1882 · assigning tasks to servers as they free up"
           }
         ]
       },
@@ -26439,6 +26484,60 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "NupMqCKU",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Quiz: Synchronization and Concurrency",
+            "url": "https://takeuforward.org/quiz/core-subject/quiz-3-synchronization-and-concurrency",
+            "level": "Intermediate",
+            "note": "Practice · TUF · topic quiz from the takeUforward OS course, 30 mins"
+          },
+          {
+            "id": "JuSK_bYB",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Print in Order",
+            "url": "https://leetcode.com/problems/print-in-order/",
+            "level": "Beginner",
+            "note": "Practice · LeetCode #1114 · ordering threads"
+          },
+          {
+            "id": "W87x882I",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Print FooBar Alternately",
+            "url": "https://leetcode.com/problems/print-foobar-alternately/",
+            "level": "Intermediate",
+            "note": "Practice · LeetCode #1115 · two threads taking turns"
+          },
+          {
+            "id": "Zzb13pGk",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Print Zero Even Odd",
+            "url": "https://leetcode.com/problems/print-zero-even-odd/",
+            "level": "Intermediate",
+            "note": "Practice · LeetCode #1116 · three threads coordinating"
+          },
+          {
+            "id": "0VxxQUPj",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Fizz Buzz Multithreaded",
+            "url": "https://leetcode.com/problems/fizz-buzz-multithreaded/",
+            "level": "Intermediate",
+            "note": "Practice · LeetCode #1195 · four threads sharing a counter"
+          },
+          {
+            "id": "C_A1Ia-x",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Building H2O",
+            "url": "https://leetcode.com/problems/building-h2o/",
+            "level": "Intermediate",
+            "note": "Practice · LeetCode #1117 · barrier / semaphore pattern"
           }
         ]
       },
@@ -26553,6 +26652,15 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "xZci4A6e",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "The Dining Philosophers",
+            "url": "https://leetcode.com/problems/the-dining-philosophers/",
+            "level": "Intermediate",
+            "note": "Practice · LeetCode #1226 · avoiding deadlock and starvation"
           }
         ]
       },
@@ -26694,6 +26802,15 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "sarA0X8l",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Quiz: Inter-Process Communication (IPC)",
+            "url": "https://takeuforward.org/quiz/core-subject/quiz-7-inter-process-communication",
+            "level": "Intermediate",
+            "note": "Practice · TUF · topic quiz from the takeUforward OS course, 30 mins"
           }
         ]
       },
@@ -26790,6 +26907,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "CQz_IChW",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Quiz: Memory Management",
+            "url": "https://takeuforward.org/quiz/core-subject/quiz-4-memory-management",
+            "level": "Intermediate",
+            "note": "Practice · TUF · topic quiz from the takeUforward OS course, 30 mins"
+          },
+          {
+            "id": "N-kFcGwe",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Design Memory Allocator",
+            "url": "https://leetcode.com/problems/design-memory-allocator/",
+            "level": "Intermediate",
+            "note": "Practice · LeetCode #2502 · first-fit contiguous allocation and freeing"
           }
         ]
       },
@@ -26991,6 +27126,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "fSzKEUcA",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "LRU Cache",
+            "url": "https://leetcode.com/problems/lru-cache/",
+            "level": "Intermediate",
+            "note": "Practice · LeetCode #146 · LRU page replacement"
+          },
+          {
+            "id": "9SJJKXlC",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "LFU Cache",
+            "url": "https://leetcode.com/problems/lfu-cache/",
+            "level": "Advanced",
+            "note": "Practice · LeetCode #460 · LFU page replacement"
           }
         ]
       },
@@ -27123,6 +27276,33 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "eMo0BTmC",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Quiz: File Systems",
+            "url": "https://takeuforward.org/quiz/core-subject/quiz-5-file-systems",
+            "level": "Intermediate",
+            "note": "Practice · TUF · topic quiz from the takeUforward OS course, 30 mins"
+          },
+          {
+            "id": "CmmfFRoF",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Simplify Path",
+            "url": "https://leetcode.com/problems/simplify-path/",
+            "level": "Intermediate",
+            "note": "Practice · LeetCode #71 · resolving . and .. in paths"
+          },
+          {
+            "id": "XNLcOuNo",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Find Duplicate File in System",
+            "url": "https://leetcode.com/problems/find-duplicate-file-in-system/",
+            "level": "Intermediate",
+            "note": "Practice · LeetCode #609 · walking directories and file contents"
           }
         ]
       },
@@ -27282,6 +27462,15 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "IeBd7pWT",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Quiz: Disk Management and Scheduling",
+            "url": "https://takeuforward.org/quiz/core-subject/quiz-6-disk-management-and-scheduling",
+            "level": "Intermediate",
+            "note": "Practice · TUF · topic quiz from the takeUforward OS course, 30 mins"
           }
         ]
       },
@@ -27405,6 +27594,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "BFYojsrO",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Quiz: System and Performance",
+            "url": "https://takeuforward.org/quiz/core-subject/quiz-8-system-and-performance",
+            "level": "Intermediate",
+            "note": "Practice · TUF · topic quiz from the takeUforward OS course, 30 mins"
+          },
+          {
+            "id": "_RqI2oM0",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Quiz: Advanced Topics",
+            "url": "https://takeuforward.org/quiz/core-subject/quiz-9-advanced-topics",
+            "level": "Intermediate",
+            "note": "Practice · TUF · topic quiz from the takeUforward OS course, 30 mins"
           }
         ]
       }
