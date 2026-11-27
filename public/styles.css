@@ -487,6 +487,14 @@ button.pill:hover { filter: brightness(0.95); outline: 1px solid var(--border); 
 .row.is-done .qbadge, .row.is-done .qicon { opacity: 0.6; }
 .row.is-done .qbadge:hover, .row.is-done .qicon:hover { opacity: 1; }
 
+/* Answers to practice problems stay hidden until asked for. */
+.answer { font-size: 0.84rem; }
+.answer > summary { cursor: pointer; color: var(--accent); font-weight: 500; width: fit-content; list-style: none; }
+.answer > summary::-webkit-details-marker { display: none; }
+.answer > summary::before { content: '▸ '; }
+.answer[open] > summary::before { content: '▾ '; }
+.answer > p { margin: 4px 0 0; padding: 6px 10px; border-radius: 8px; background: var(--surface-2); color: var(--text); }
+
 /* Sub-topics inside a step (Fundamentals, FAQs (Medium)...). */
 .subhead {
   display: flex; justify-content: space-between; align-items: center; gap: 12px;

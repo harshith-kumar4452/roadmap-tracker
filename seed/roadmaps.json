@@ -83,6 +83,42 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "ZrbyGgl6",
+            "title": "Find 15% of 640.",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: 96"
+          },
+          {
+            "id": "807qCoMG",
+            "title": "Divide ₹900 in the ratio 4:5.",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: ₹400 and ₹500"
+          },
+          {
+            "id": "wCWi_ADG",
+            "title": "A shirt marked ₹1,200 is sold at a 15% discount. What is the selling price?",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: ₹1,020"
+          },
+          {
+            "id": "yaW3a1g2",
+            "title": "A train runs at 72 km/h. How far does it go in 15 seconds?",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: 300 m"
           }
         ]
       },
@@ -161,6 +197,42 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "5ubPy8bW",
+            "title": "12 men finish a job in 18 days. How many days will 27 men take?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: 8 days"
+          },
+          {
+            "id": "o7n2g-Dc",
+            "title": "How many 3-letter arrangements can be made from A, B, C, D, E without repetition?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: 60"
+          },
+          {
+            "id": "ghCJIsmc",
+            "title": "A card is drawn from a pack of 52. What is the probability it is a king or a heart?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: 4/13 (16/52)"
+          },
+          {
+            "id": "aSeAeN7Z",
+            "title": "Find the area of a triangle with sides 13, 14 and 15.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: 84 (Heron's formula)"
           }
         ]
       },
@@ -239,6 +311,42 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "5zw65DGq",
+            "title": "Pointing to a woman, Aman says: \"She is the daughter of my grandfather's only son.\" How is she related to Aman?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: His sister"
+          },
+          {
+            "id": "cZK_sE3v",
+            "title": "Some pens are books. All books are bags. Does \"Some pens are bags\" follow?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: Yes"
+          },
+          {
+            "id": "gpujzB6E",
+            "title": "Find the next term: 3, 7, 15, 31, 63, ?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: 127 (× 2 + 1)"
+          },
+          {
+            "id": "VUZe_uob",
+            "title": "Walk 10 m west, turn left and walk 10 m, turn left again and walk 10 m. Where are you from the start?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: 10 m south"
           }
         ]
       }
@@ -349,6 +457,33 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "_12bV8J9",
+            "title": "Forward proxy vs reverse proxy: where does each sit?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "a7Q1J9HO",
+            "title": "How does DNS resolution scale to billions of lookups (caching, TTLs, anycast)?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "mMwpzetT",
+            "title": "Why do browsers keep HTTP connections alive, and what is head-of-line blocking?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -454,6 +589,33 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "SE5cGjSS",
+            "title": "CHAR vs VARCHAR vs TEXT in PostgreSQL: does the choice change performance?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "q_DHhuH5",
+            "title": "Why does PostgreSQL use a process per connection, and why add a pooler like PgBouncer?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "DVce7xrS",
+            "title": "How does MVCC keep old row versions, and why does PostgreSQL need VACUUM?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -541,6 +703,33 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "pT1bm0yT",
+            "title": "What is the thundering herd problem, and how do you avoid it when a hot key expires?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "-2WWzWXs",
+            "title": "Why should retries use exponential backoff with jitter?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "ALmKyF7S",
+            "title": "How would you invalidate caches across many services when data changes?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -601,6 +790,33 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "T7vWEtHJ",
+            "title": "How does consistent hashing reduce data movement when nodes are added?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "VjaAv3Vq",
+            "title": "What are the key design choices in GFS (a single master, large chunks, append-heavy workloads)?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "C8fKgMed",
+            "title": "How do quorums (N, R, W) in Dynamo-style systems trade consistency for availability?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -733,6 +949,33 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "WLjBSduN",
+            "title": "How can you shard a live database without downtime?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "5CbIaI2G",
+            "title": "What is a hot shard, and how do you prevent one?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "1N_vxCX9",
+            "title": "How do you give users read-your-writes consistency with read replicas?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -802,6 +1045,33 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "7L2ZrJAq",
+            "title": "Design a real-time gaming leaderboard for millions of players.",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "3g7FiXFm",
+            "title": "Design an emergency SOS service that must never drop a request.",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "qkgp759h",
+            "title": "How does an inverted index make full-text search fast?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       }
@@ -855,6 +1125,33 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "w5mkeoCI",
+            "title": "How do you generate short codes that never collide?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "M7LMVMFj",
+            "title": "Which index does the redirect lookup need, and why?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "-WQAmt1u",
+            "title": "How would you count clicks without slowing down redirects?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -888,6 +1185,33 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "CNHUlBcr",
+            "title": "Why hash passwords with bcrypt instead of SHA-256?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "E5zrQ8Mf",
+            "title": "Access token vs refresh token: why use both?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "pARKFkwU",
+            "title": "How do CSRF and XSS attacks differ, and how do you defend against each?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -921,6 +1245,33 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "sR5ED8tP",
+            "title": "Why process videos in a background job instead of inside the request?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "T6tvY0sk",
+            "title": "What is a dead-letter queue, and when does a job end up there?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "bVpNuS2n",
+            "title": "How do you make a job safe to retry?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -954,6 +1305,33 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "tDl4IAGp",
+            "title": "What is cache-aside, and when do you invalidate the cache?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "d9NmfUSN",
+            "title": "How do you choose a TTL for cached data?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "RATE7RrB",
+            "title": "How do you stop a cache stampede when a popular key expires?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -987,6 +1365,33 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "NSCtpEjt",
+            "title": "WebSocket vs long polling vs server-sent events.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "WC8QJ84R",
+            "title": "How do you broadcast messages when users are connected to different servers?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "hjeZ1fxP",
+            "title": "How do you show delivered and read receipts reliably?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       }
@@ -1047,6 +1452,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "gg8ZowVK",
+            "title": "What does a backend do that a frontend cannot?",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "zMyNjoRI",
+            "title": "What happens between a client sending a request and the server sending the response?",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -1107,6 +1530,42 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "2M7YCK6C",
+            "title": "HTTP is stateless. How do apps keep state anyway?",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "OfvveZYc",
+            "title": "Which HTTP methods are idempotent, and why does it matter?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "PRI3E3EC",
+            "title": "How do you version a REST API?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "RTr80J8d",
+            "title": "What are serialization and deserialization, and what can go wrong?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -1131,6 +1590,33 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "1LZQyuf4",
+            "title": "Authentication vs authorization.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "7vfexAVd",
+            "title": "Session cookies vs JWTs: trade-offs.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "TbFZMktA",
+            "title": "How do you store secrets like API keys safely?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -1173,6 +1659,33 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "Jc-kZDI8",
+            "title": "Why split code into controllers, services and repositories?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "U0--qGYe",
+            "title": "Where should input validation happen, and why?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "eW4Ub98q",
+            "title": "Unit vs integration vs end-to-end tests.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -1215,6 +1728,33 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "yfzZFEBH",
+            "title": "How does an index speed up reads and slow down writes?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "tPTcbFw3",
+            "title": "When would you add Elasticsearch next to Postgres?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "72YY5p3J",
+            "title": "Why store files in object storage instead of the database?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -1275,6 +1815,33 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "tNz2yM50",
+            "title": "What should and should not be cached?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "HHgfo68B",
+            "title": "When do you move work into a background queue?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "qjsR4EMR",
+            "title": "How do you find the bottleneck of a slow endpoint?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -1326,6 +1893,33 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "QabiyEbq",
+            "title": "What is graceful shutdown and why does it matter during deploys?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "vrOI3-AY",
+            "title": "Logs vs metrics vs traces.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "os-O6e7o",
+            "title": "How do you manage configuration across dev, staging and production?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       }
@@ -1384,6 +1978,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "PrfhRn4m",
+            "title": "IaaS vs PaaS vs SaaS vs FaaS, with an AWS example of each.",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "oS8sv88n",
+            "title": "What are regions and availability zones, and why deploy across several zones?",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -1444,6 +2056,42 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "rVyyLVhm",
+            "title": "IAM user vs role vs policy.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "EixsX7Q1",
+            "title": "Public vs private subnet: what makes a subnet public?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "HUq3tnJe",
+            "title": "Security group vs network ACL.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "hEa5kHui",
+            "title": "What does a NAT gateway do?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -1468,6 +2116,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "qDkW9sk9",
+            "title": "Why manage infrastructure as code?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "VUF6ZrKw",
+            "title": "What is Terraform state, and why keep it remote?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -1519,6 +2185,33 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "Ym_Gl4qc",
+            "title": "How does an Auto Scaling Group decide to add or remove instances?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "i-nkfPjF",
+            "title": "Application Load Balancer vs Network Load Balancer.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "IgfYHmH5",
+            "title": "On-demand vs reserved vs spot instances.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -1579,6 +2272,33 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "UZYrzw4m",
+            "title": "S3 storage classes and when to use each.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "j1aQ3qZ3",
+            "title": "What is a pre-signed URL?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "EjyuZ_BJ",
+            "title": "How does CloudFront speed up content delivery?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -1630,6 +2350,33 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "cV2FYRIr",
+            "title": "SQS vs SNS: when do you use each, or both together?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "K4yY0rgX",
+            "title": "What is a Lambda cold start, and how do you reduce it?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "HmKtA4Lu",
+            "title": "Standard vs FIFO SQS queues.",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -1741,6 +2488,33 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "7cqzwj2A",
+            "title": "RDS vs DynamoDB: how do you choose?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "vQVP7-x1",
+            "title": "ECS vs EKS.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "cbjv3vdI",
+            "title": "What would you monitor in CloudWatch for a web app?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       }
@@ -8263,6 +9037,51 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "pNa5rYTU",
+            "title": "What is time complexity? Compare O(n log n) and O(n²) for n = 10⁶.",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "uNyOfHkJ",
+            "title": "How does binary search work, and what must be true of the input?",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "j7qecT14",
+            "title": "Stable vs unstable sorting: give an example of each.",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "5xd3F2P2",
+            "title": "How does hashing give O(1) average lookups, and what is the worst case?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "xgg6Vp-O",
+            "title": "Two pointers vs sliding window: which problems fit each?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -8341,6 +9160,51 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "YCtMUnIG",
+            "title": "How do you detect a cycle in a linked list using O(1) extra space?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "_faSilfQ",
+            "title": "How do you check whether a number is a power of two with bit operations?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "HwOuz_7W",
+            "title": "When does a greedy algorithm give the optimal answer?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "e4hZAW3i",
+            "title": "Recursion vs iteration: what does recursion cost in memory?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "npaLolMJ",
+            "title": "Explain backtracking using N-Queens.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -8419,6 +9283,60 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "LRpFUREY",
+            "title": "BFS vs DFS: when would you choose each?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "MswO34yn",
+            "title": "How does Dijkstra's algorithm work, and why does it fail with negative edges?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "x4TVZNN-",
+            "title": "Memoization vs tabulation in dynamic programming.",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "bSiFqyy0",
+            "title": "How do you recognise that a problem needs dynamic programming?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "dZJaaPQs",
+            "title": "What is a trie, and when is it better than a hash map?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "uvaxB9LG",
+            "title": "Kruskal vs Prim for a minimum spanning tree.",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       }
@@ -22728,6 +23646,33 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "BNo3HA9-",
+            "title": "6 workers finish a task in 10 days. How many days will 15 workers take?",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: 4 days"
+          },
+          {
+            "id": "gc_0QzkH",
+            "title": "Find the next term: 1, 4, 9, 16, 25, ?",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: 36"
+          },
+          {
+            "id": "Jv6aY9h1",
+            "title": "A coin is tossed 3 times. What is the probability of at least one head?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: 7/8"
           }
         ]
       },
@@ -22770,6 +23715,42 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "wObT95dG",
+            "title": "How many edges does a complete graph on 6 vertices have?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: 15"
+          },
+          {
+            "id": "DIwGsPMg",
+            "title": "What are the eigenvalues of the diagonal matrix [[2, 0], [0, 3]]?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: 2 and 3"
+          },
+          {
+            "id": "YG9UsKAI",
+            "title": "P(A) = 0.5, P(B) = 0.4 and A, B are independent. Find P(A ∪ B).",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: 0.7"
+          },
+          {
+            "id": "pm1uC2s8",
+            "title": "How many binary relations are there on a set of 3 elements?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: 512 (2⁹)"
           }
         ]
       },
@@ -22857,6 +23838,42 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "JC1zTguZ",
+            "title": "What is the worst-case time of quicksort and when does it happen?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: O(n²), when the pivot is always the smallest or largest element"
+          },
+          {
+            "id": "ciLGgkVf",
+            "title": "How many page faults does FIFO give for 1, 2, 3, 4, 1, 2, 5, 1, 2, 3, 4, 5 with 3 frames?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: 9"
+          },
+          {
+            "id": "D7VebO3G",
+            "title": "R(A, B, C) has FDs A → B and B → C. Decompose it into 3NF.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: Two tables: (A, B) and (B, C)"
+          },
+          {
+            "id": "bpiOTlin",
+            "title": "In a 3-stage pipeline with no stalls, how many cycles do 100 instructions take?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: 102 (3 + 99)"
           }
         ]
       }
@@ -23653,6 +24670,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "U-3m3uNc",
+            "title": "How does a frontend talk to a backend, and what is CORS?",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "eOYrW5iU",
+            "title": "How would you keep a live quiz in sync for many players?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -23695,6 +24730,33 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "lc8OoOl8",
+            "title": "How do you validate chess moves so a client cannot cheat?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "xqymF13e",
+            "title": "How do you scale WebSocket servers behind a load balancer?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "ldFi_gwY",
+            "title": "How would you build a live fantasy-sports scoreboard for millions of users?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -23755,6 +24817,33 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "3LuwgH4x",
+            "title": "How do you design multi-tenant data so one customer never sees another's?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "iMqzEMKG",
+            "title": "How do you run long AI generation jobs without blocking the request?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "akcPUcE-",
+            "title": "How would you bill users by usage?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -23824,6 +24913,33 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "uY1A_rMy",
+            "title": "Design a Vercel-like deploy system: build, store artifacts, serve by subdomain.",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "CkbDH773",
+            "title": "How would you isolate untrusted user code in an online IDE?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "wJF419PB",
+            "title": "How do Kubernetes pods, deployments and services fit together?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       }
@@ -23909,6 +25025,33 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "StLqzqjD",
+            "title": "What is event-driven architecture, and why use Kafka for it?",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "QCnpL8Cw",
+            "title": "Topics, partitions, offsets and consumer groups: how do they fit together?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "MNdsbYQ4",
+            "title": "How does Kafka keep messages in order, and in what scope?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -23942,6 +25085,33 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "Rqqf8FEF",
+            "title": "What do acks=0, acks=1 and acks=all mean?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "YnKOwZBx",
+            "title": "How does an idempotent producer avoid duplicates?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "IgsbZ5cB",
+            "title": "How does a producer choose the partition for a key?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -23984,6 +25154,33 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "l2Rl6mUG",
+            "title": "What happens during a consumer group rebalance?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "b-7thYrP",
+            "title": "Auto vs manual offset commit: what can go wrong with each?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "03rr06c2",
+            "title": "What is a dead-letter topic, and when do you use one?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -24035,6 +25232,33 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "3am28IuW",
+            "title": "At-most-once vs at-least-once vs exactly-once delivery.",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "miZpsepw",
+            "title": "How do Kafka transactions give exactly-once processing?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "jq3lSzpw",
+            "title": "What are the ISR and min.insync.replicas?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -24113,6 +25337,33 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "9cOsKmtO",
+            "title": "KStream vs KTable.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "YrvXJf9t",
+            "title": "What is windowing, and when do you need it?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "GK1avSv_",
+            "title": "How do Kafka Streams state stores recover after a crash?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -24244,6 +25495,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "VNrcaa6g",
+            "title": "What is the angle between the hands of a clock at 3:30?",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: 75°"
+          },
+          {
+            "id": "U4r31ss6",
+            "title": "At what time between 4 and 5 o'clock are the hands together?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: 21 9/11 minutes past 4"
           }
         ]
       },
@@ -24313,6 +25582,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "-s8YRkZT",
+            "title": "1 January 2026 is a Thursday. What day is 1 January 2027?",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: Friday (2026 is not a leap year, so one odd day)"
+          },
+          {
+            "id": "yzk1nC3Q",
+            "title": "How many odd days are there in 400 years?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: 0"
           }
         ]
       },
@@ -24382,6 +25669,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "r6vqqybp",
+            "title": "Pointing to a man, Riya says: \"His mother is my mother's only daughter.\" How is the man related to Riya?",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: Her son"
+          },
+          {
+            "id": "rBw5Bush",
+            "title": "A is B's brother. C is A's mother. D is C's father. How is B related to D?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: Grandchild"
           }
         ]
       },
@@ -24451,6 +25756,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "X5yOwX9z",
+            "title": "Book : Author :: Painting : ?",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: Painter"
+          },
+          {
+            "id": "-pxJdmWH",
+            "title": "4 : 64 :: 6 : ?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: 216 (cubes)"
           }
         ]
       },
@@ -24520,6 +25843,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "APYq22N8",
+            "title": "If CAT is written as DBU, how is DOG written?",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: EPH (each letter +1)"
+          },
+          {
+            "id": "zX_YiB_X",
+            "title": "If APPLE is coded as 50 (sum of letter positions), what is the code for MANGO?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: 50 (13 + 1 + 14 + 7 + 15)"
           }
         ]
       },
@@ -24589,6 +25930,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "Clt5Ar7f",
+            "title": "Five people A–E sit in a row. D is at the left end, E is in the middle, and A sits left of B who sits left of C. Who is at the right end?",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: C"
+          },
+          {
+            "id": "XvNPr0hn",
+            "title": "A farmer must cross a river with a wolf, a goat and a cabbage; the boat carries him and one item. How does he get all three across safely?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: Take the goat; return; take the wolf; bring the goat back; take the cabbage; return; take the goat"
           }
         ]
       },
@@ -24658,6 +26017,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "TKsFm6c1",
+            "title": "On a standard die opposite faces add up to 7. Which face is opposite 4?",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: 3"
+          },
+          {
+            "id": "bSG3UbVh",
+            "title": "A standard die is rolled so that 2 is on top. Which number is at the bottom?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: 5"
           }
         ]
       },
@@ -24727,6 +26104,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "4iMI2rj0",
+            "title": "Find the next term: 2, 6, 12, 20, 30, ?",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: 42 (n × (n + 1))"
+          },
+          {
+            "id": "v70DaJ7w",
+            "title": "Find the next letter: A, C, F, J, O, ?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: U (gaps +2, +3, +4, +5, +6)"
           }
         ]
       },
@@ -24796,6 +26191,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "KmAIb2SS",
+            "title": "All dogs are animals. Some animals are pets. Does \"Some dogs are pets\" follow?",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: No"
+          },
+          {
+            "id": "pkUo4QQm",
+            "title": "All roses are flowers. No flower is a tree. Which follow: (I) No rose is a tree. (II) Some trees are roses.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: Only I"
           }
         ]
       },
@@ -24865,6 +26278,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "i9u_3KBP",
+            "title": "Is the integer x even? (1) x² is even. (2) x is a multiple of 3.",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: Statement 1 alone is enough"
+          },
+          {
+            "id": "AGLZ3L3q",
+            "title": "What is the area of a rectangle? (1) Its perimeter is 20. (2) Its diagonal is √52.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: Both together are needed: area 24"
           }
         ]
       },
@@ -24934,6 +26365,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "zj6-D0uc",
+            "title": "Statement: \"Use our toothpaste for whiter teeth.\" Is \"People want whiter teeth\" an implicit assumption?",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: Yes"
+          },
+          {
+            "id": "pKt0n8BX",
+            "title": "\"The city will add 50 buses to reduce traffic.\" Which assumptions are implicit: (I) more buses will draw people away from cars, (II) roads have room for more buses?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: Both I and II"
           }
         ]
       },
@@ -25003,6 +26452,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "8_DJ3VJG",
+            "title": "A 4 cm cube painted on all faces is cut into 1 cm cubes. How many small cubes have exactly two painted faces?",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: 24 (12 edges × 2)"
+          },
+          {
+            "id": "4YED_NsX",
+            "title": "In the same cube, how many small cubes have no painted face?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: 8 ((4 − 2)³)"
           }
         ]
       },
@@ -25072,6 +26539,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "HMiucJ7v",
+            "title": "Walk 5 km north, turn right and walk 3 km, turn right and walk 5 km. Where are you from the start?",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: 3 km east"
+          },
+          {
+            "id": "_-8usS5M",
+            "title": "Walk 6 km south, then 8 km east. How far are you from the start and in which direction?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: 10 km south-east"
           }
         ]
       },
@@ -25141,6 +26626,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "owyhlMmT",
+            "title": "In how many ways can 6 people sit around a round table?",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: 120 ((6 − 1)!)"
+          },
+          {
+            "id": "8Njzy0Km",
+            "title": "8 people sit around a round table. In how many arrangements do two particular people sit together?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: 1,440 (2 × 6!)"
           }
         ]
       }
@@ -25197,6 +26700,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "XlYqvy7i",
+            "title": "Synchronous REST vs asynchronous messaging between services.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "dgI7Q_nO",
+            "title": "What does a declarative HTTP client like Feign save you from writing?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -25221,6 +26742,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "NK3F-Dc2",
+            "title": "Why do microservices need service discovery?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "1S0oQKdB",
+            "title": "Client-side vs server-side load balancing.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -25263,6 +26802,33 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "NKMTbh2u",
+            "title": "How does a circuit breaker work? Describe its three states.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "9vT-AV8K",
+            "title": "What is the bulkhead pattern?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "4kaQkh0L",
+            "title": "When are retries harmful, and how do you make them safe?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -25314,6 +26880,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "ApPiAhG9",
+            "title": "What does an API gateway do?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "QNeqeBwJ",
+            "title": "Why centralize configuration, and how do services pick up changes?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -25365,6 +26949,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "CoX-sZHr",
+            "title": "What is distributed tracing, and how is a trace ID passed between services?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "qXfNjwqU",
+            "title": "How do you find all the logs for one request across many services?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -25407,6 +27009,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "VIU8LVgc",
+            "title": "How do you make sure a scheduled job runs only once across many instances?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "bqAbEGLa",
+            "title": "Fixed rate vs fixed delay scheduling.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -25556,6 +27176,42 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "aOSJcllX",
+            "title": "Supervised vs unsupervised learning.",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "kZkGM5Dv",
+            "title": "Why split data into train, validation and test sets?",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "nwpUajin",
+            "title": "How do you handle missing values in a dataset?",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "z3YOqjvG",
+            "title": "Why scale features, and when does it matter?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -25634,6 +27290,51 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "KzDU7tEl",
+            "title": "Explain the bias-variance trade-off.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "b-z9G_D2",
+            "title": "How does logistic regression turn a linear score into a probability?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "rQl-TFSe",
+            "title": "What is overfitting, and how do L1 and L2 regularization help?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "6YD7574O",
+            "title": "Precision vs recall vs F1: when would you favour each?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "uC_jEY1u",
+            "title": "How does a decision tree choose where to split?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -25712,6 +27413,51 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "4mfkjhTE",
+            "title": "Bagging vs boosting.",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "slbmZbSJ",
+            "title": "How does K-means work, and how do you choose K?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "dW1V9LS2",
+            "title": "What does PCA do, and when would you use it?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "ZO-EJO3-",
+            "title": "How does cross-validation help with hyperparameter tuning?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "ybaD2fDL",
+            "title": "How do you deploy a model and notice data drift?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       }
@@ -27014,6 +28760,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "Ogep7KFO",
+            "title": "How do the frontend and backend talk during development, and what is a proxy for?",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "O8Ucm1jE",
+            "title": "How does Node.js handle many requests with one thread?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -27056,6 +28820,33 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "8T2QB4Jm",
+            "title": "Why use Mongoose schemas with MongoDB?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "ERUycgsa",
+            "title": "When do you embed documents, and when do you reference them?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "B6pxsPgc",
+            "title": "How do you structure a professional Express project?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -27152,6 +28943,42 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "XUuFmkZf",
+            "title": "How does Express middleware work? Describe a request's path through it.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "SqmITBHT",
+            "title": "How do you handle errors in async route handlers?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "4kcahVxk",
+            "title": "How do access and refresh tokens work together?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "9FR_yrqs",
+            "title": "How does Multer handle file uploads?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -27194,6 +29021,33 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "47B-6aR_",
+            "title": "What is an aggregation pipeline? Explain $match, $lookup, $group and $project.",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "meQF-WuG",
+            "title": "How would you model likes, comments and subscriptions in MongoDB?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "V1rhqYlT",
+            "title": "Which indexes would a video platform need?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -30554,6 +32408,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "mH1GzlAY",
+            "title": "What is business intelligence?",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "COZnUyLl",
+            "title": "Import vs DirectQuery vs live connection.",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -30614,6 +32486,33 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "INjWp9Fc",
+            "title": "Fact table vs dimension table.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "o75PwmMI",
+            "title": "Star schema vs snowflake schema.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "RM-G7R-X",
+            "title": "What do relationship cardinality and cross-filter direction control?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -30647,6 +32546,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "hwPkyjx-",
+            "title": "Merge vs append in Power Query.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "biDAF6Mt",
+            "title": "When would you unpivot data?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -30698,6 +32615,42 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "5uBHhFUI",
+            "title": "Calculated column vs measure.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "0lFcuQvS",
+            "title": "What does CALCULATE do?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "ViGlvXub",
+            "title": "Row context vs filter context.",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "ZlqSQzWO",
+            "title": "Why use variables in DAX?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -30809,6 +32762,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "BrhxoZDw",
+            "title": "Drill-down vs drill-through.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "1sYqhCqR",
+            "title": "How do slicers differ from filters?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -30869,6 +32840,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "TtDzkJN5",
+            "title": "How does row-level security work in Power BI?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "DiZ-zt4g",
+            "title": "What are sensitivity labels for?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -30920,6 +32909,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "X8gO4-jZ",
+            "title": "Report vs dashboard vs app.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "oFUM9ol_",
+            "title": "What does Premium capacity give you over Pro?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -33557,6 +35564,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "iQq5CLrq",
+            "title": "A car covers 180 km in 3 hours. What is its speed in m/s?",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: 16.67 m/s (60 km/h × 5/18)"
+          },
+          {
+            "id": "QBkEENbo",
+            "title": "You travel to a place at 40 km/h and return at 60 km/h. What is your average speed for the round trip?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: 48 km/h (2 × 40 × 60 / 100)"
           }
         ]
       },
@@ -33626,6 +35651,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "kfgu1A5W",
+            "title": "What is the remainder when 2^10 is divided by 7?",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: 2 (2^3 = 8 leaves 1, so 2^9 leaves 1 and 2^10 leaves 2)"
+          },
+          {
+            "id": "cdn2r7u2",
+            "title": "How many trailing zeros does 100! have?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: 24 (100/5 + 100/25 = 20 + 4)"
           }
         ]
       },
@@ -33695,6 +35738,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "LHuuguBx",
+            "title": "Find the HCF and LCM of 36 and 48.",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: HCF 12, LCM 144"
+          },
+          {
+            "id": "jsTrDk9-",
+            "title": "The HCF of two numbers is 12 and their LCM is 360. One number is 60. Find the other.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: 72 (12 × 360 / 60)"
           }
         ]
       },
@@ -33764,6 +35825,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "6A-jgrWY",
+            "title": "A finishes a job in 10 days and B in 15 days. How long do they take together?",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: 6 days (1/10 + 1/15 = 1/6)"
+          },
+          {
+            "id": "44DuXxqE",
+            "title": "A and B together finish a job in 12 days; A alone takes 20 days. How long does B take alone?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: 30 days (1/12 − 1/20 = 1/30)"
           }
         ]
       },
@@ -33833,6 +35912,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "fLA4f9kI",
+            "title": "Pipe A fills a tank in 6 hours; pipe B empties it in 9 hours. With both open, how long does the tank take to fill?",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: 18 hours (1/6 − 1/9 = 1/18)"
+          },
+          {
+            "id": "r-1vrGa6",
+            "title": "Two pipes fill a tank in 10 and 15 minutes. Both are opened and the first is closed after 3 minutes. How much longer does the second pipe take?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: 7.5 minutes (both fill half in 3 minutes; the other half at 1/15 per minute)"
           }
         ]
       },
@@ -33902,6 +35999,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "F_PEy74Z",
+            "title": "A 150 m train passes a pole in 10 seconds. What is its speed in km/h?",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: 54 km/h (15 m/s)"
+          },
+          {
+            "id": "vQjBIIFe",
+            "title": "A boat goes 24 km downstream in 2 hours and back upstream in 4 hours. Find the boat speed in still water and the stream speed.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: Boat 9 km/h, stream 3 km/h (downstream 12, upstream 6)"
           }
         ]
       },
@@ -33971,6 +36086,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "Mp18lVt3",
+            "title": "In how many ways can the letters of LEVEL be arranged?",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: 30 (5! / (2! × 2!))"
+          },
+          {
+            "id": "VQF6FUZb",
+            "title": "From 6 men and 4 women, how many 5-person committees have exactly 2 women?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: 120 (C(4,2) × C(6,3) = 6 × 20)"
           }
         ]
       },
@@ -34040,6 +36173,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "cPbvnMcf",
+            "title": "Two dice are thrown. What is the probability that the sum is 7?",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: 1/6 (6 of 36 outcomes)"
+          },
+          {
+            "id": "zLLsA1Ht",
+            "title": "A bag has 4 red and 6 blue balls. Two are drawn without replacement. What is the probability both are red?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: 2/15 (4/10 × 3/9)"
           }
         ]
       },
@@ -34109,6 +36260,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "87Pg9dzq",
+            "title": "The angles of a triangle are in the ratio 2:3:4. Find the largest angle.",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: 80°"
+          },
+          {
+            "id": "mfz7O7S0",
+            "title": "A 16 cm chord is 6 cm from the centre of a circle. Find the radius.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: 10 cm (√(8² + 6²))"
           }
         ]
       },
@@ -34178,6 +36347,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "X-X7cxGM",
+            "title": "In what ratio should rice at ₹20/kg be mixed with rice at ₹30/kg to get a mix worth ₹24/kg?",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: 3:2 (30 − 24 : 24 − 20)"
+          },
+          {
+            "id": "8lbPct2n",
+            "title": "A 40 L mix has milk and water in the ratio 3:1. How much water must be added to make it 3:2?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: 10 L (milk 30 L, so water must become 20 L)"
           }
         ]
       },
@@ -34247,6 +36434,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "ZICo1D55",
+            "title": "If x + 1/x = 3, find x² + 1/x².",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: 7 (3² − 2)"
+          },
+          {
+            "id": "VUAG4ieS",
+            "title": "Solve 2x + 3y = 12 and 3x − y = 7.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: x = 3, y = 2"
           }
         ]
       },
@@ -34316,6 +36521,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "b7Rc35xZ",
+            "title": "If sin θ = 3/5 for an acute θ, find cos θ and tan θ.",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: cos θ = 4/5, tan θ = 3/4"
+          },
+          {
+            "id": "UymRwMXh",
+            "title": "From a point 30 m from the foot of a tower, the angle of elevation of the top is 60°. Find the height.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: 30√3 ≈ 51.96 m"
           }
         ]
       },
@@ -34385,6 +36608,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "grgqVgDP",
+            "title": "Find the sum of the first 20 natural numbers.",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: 210"
+          },
+          {
+            "id": "_ubORIPa",
+            "title": "The 3rd term of an AP is 7 and the 7th is 15. Find the 20th term.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: 41 (d = 2, a = 3)"
           }
         ]
       },
@@ -34454,6 +36695,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "KotF42hI",
+            "title": "A father is 3 times as old as his son. In 10 years he will be twice as old. Find their ages now.",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: Son 10, father 30"
+          },
+          {
+            "id": "6tA3F-wI",
+            "title": "The ratio of A's and B's ages is 4:5. Eight years ago it was 3:4. Find their ages now.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: A 32, B 40"
           }
         ]
       },
@@ -34523,6 +36782,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "_O3vRMxx",
+            "title": "An item bought for ₹800 is sold for ₹920. Find the profit percent.",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: 15%"
+          },
+          {
+            "id": "BRiQyDAB",
+            "title": "A shopkeeper marks goods 40% above cost and gives a 20% discount. Find the profit percent.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: 12% (1.4 × 0.8 = 1.12)"
           }
         ]
       },
@@ -34592,6 +36869,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "eUGO-bAg",
+            "title": "Simplify: 25% of 480 + 12.5% of 640.",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: 200 (120 + 80)"
+          },
+          {
+            "id": "crikYFaO",
+            "title": "Find √0.0121 + √1.44.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: 1.31 (0.11 + 1.2)"
           }
         ]
       },
@@ -34661,6 +36956,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "WTVgUmIm",
+            "title": "Find the simple interest on ₹5,000 at 8% a year for 3 years.",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: ₹1,200"
+          },
+          {
+            "id": "xvupxZRZ",
+            "title": "A sum doubles in 8 years at simple interest. What is the rate?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: 12.5% a year"
           }
         ]
       },
@@ -34730,6 +37043,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "cU32yJnU",
+            "title": "Find the compound interest on ₹10,000 at 10% a year for 2 years.",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: ₹2,100"
+          },
+          {
+            "id": "ZW3e1pcT",
+            "title": "The difference between compound and simple interest on a sum at 10% for 2 years is ₹50. Find the sum.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: ₹5,000 (difference = P × r² = P × 0.01)"
           }
         ]
       },
@@ -34799,6 +37130,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "O7vo7SjR",
+            "title": "The average of 5 numbers is 20. Removing one number makes the average 18. Which number was removed?",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: 28 (100 − 72)"
+          },
+          {
+            "id": "e_2enMYR",
+            "title": "The average age of 30 students is 15. Including the teacher raises it by 1. How old is the teacher?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: 46 (31 × 16 − 30 × 15)"
           }
         ]
       },
@@ -34868,6 +37217,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "pfOQfiT-",
+            "title": "Divide ₹1,200 in the ratio 3:5.",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: ₹450 and ₹750"
+          },
+          {
+            "id": "sKuUP_Tk",
+            "title": "If a:b = 2:3 and b:c = 4:5, find a:b:c.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: 8:12:15"
           }
         ]
       },
@@ -34937,6 +37304,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "slcNa_KB",
+            "title": "Find the area of a circle with diameter 14 cm (π = 22/7).",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: 154 cm²"
+          },
+          {
+            "id": "D-Tx56IA",
+            "title": "A cylinder has radius 7 cm and height 10 cm. Find its volume and curved surface area (π = 22/7).",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: Volume 1,540 cm³, curved surface 440 cm²"
           }
         ]
       },
@@ -35006,6 +37391,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "xI19UgUH",
+            "title": "A invests ₹20,000 and B ₹30,000 for the same time. How is a profit of ₹10,000 shared?",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: A ₹4,000, B ₹6,000"
+          },
+          {
+            "id": "_-U8eKKl",
+            "title": "A invests ₹12,000 for 12 months and B ₹18,000 for 6 months. Share a profit of ₹7,000.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: A ₹4,000, B ₹3,000 (144 : 108 = 4 : 3)"
           }
         ]
       },
@@ -35075,6 +37478,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "seee3v43",
+            "title": "Find log₂ 64 + log₁₀ 1000.",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: 9 (6 + 3)"
+          },
+          {
+            "id": "wHv0qm9M",
+            "title": "If log 2 = 0.3010, find log 8 and log 5.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: log 8 = 0.9030, log 5 = 0.6990"
           }
         ]
       },
@@ -35144,6 +37565,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "ziEXiw1_",
+            "title": "A number is increased by 20% and then decreased by 20%. What is the net change?",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: A 4% decrease"
+          },
+          {
+            "id": "mPcLxMCy",
+            "title": "A earns 25% more than B. By what percent does B earn less than A?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: 20%"
           }
         ]
       },
@@ -35213,6 +37652,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "rBdbPNpN",
+            "title": "Find the mean, median and mode of 3, 5, 7, 7, 8.",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: Mean 6, median 7, mode 7"
+          },
+          {
+            "id": "fP80urWj",
+            "title": "Find the variance and standard deviation of 2, 4, 4, 4, 5, 5, 7, 9.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: Variance 4, standard deviation 2 (mean 5)"
           }
         ]
       }
@@ -37315,6 +39772,42 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "3iKoBuv3",
+            "title": "What is JSX and what does it compile to?",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "9sQK1ym0",
+            "title": "Props vs state.",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "NkYX0D5n",
+            "title": "What is the virtual DOM and how does reconciliation work?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "J0cguTh2",
+            "title": "Why do list items need a key?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -37375,6 +39868,42 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "yBd6MW2i",
+            "title": "When does useEffect run, and what is its cleanup for?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "gazZrU5h",
+            "title": "useMemo vs useCallback.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "qiG9-7uc",
+            "title": "Context API vs Redux: when do you need Redux?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "3888i_sx",
+            "title": "How does client-side routing work?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -37516,6 +40045,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "oEKOXZO7",
+            "title": "How do you protect routes that need login?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "VBImmcPS",
+            "title": "Which environment variables are safe in a frontend app, and what must never go there?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -37567,6 +40114,33 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "6nFRcNGr",
+            "title": "Why does a component re-render, and how do you avoid unnecessary renders?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "BbQHn5m4",
+            "title": "Controlled vs uncontrolled components.",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "6OJu3do9",
+            "title": "How do you split a large bundle with lazy loading?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -38299,6 +40873,24 @@
             "url": "https://app.codecrafters.io/courses/redis/stages/jm1",
             "level": "Intermediate",
             "note": "Practice · CodeCrafters · 4 stages: Bind to a port → Handle concurrent clients"
+          },
+          {
+            "id": "SZcMUYPp",
+            "title": "How does an event loop with epoll or kqueue serve many connections on one thread?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "bLkLtqZt",
+            "title": "How is RESP parsed, and why is it easy to parse?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -38368,6 +40960,33 @@
             "url": "https://app.codecrafters.io/courses/redis/stages/uj3",
             "level": "Advanced",
             "note": "Practice · CodeCrafters · 10 stages: Default AOF options → Replay multiple commands"
+          },
+          {
+            "id": "DGT2jAYU",
+            "title": "How does Redis expire keys: lazy vs active expiry?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "CNLFfXSB",
+            "title": "What is pipelining, and why does it improve throughput?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "Cy1BpEV7",
+            "title": "How does an AOF rewrite keep the file small?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -38446,6 +41065,33 @@
             "url": "https://leetcode.com/problems/lru-cache/",
             "level": "Intermediate",
             "note": "Practice · LeetCode #146 · the LRU cache that approximated LRU imitates"
+          },
+          {
+            "id": "0bnjcWTW",
+            "title": "Why is Redis's LRU approximate instead of exact?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "dAGKWZA-",
+            "title": "What happens when maxmemory is reached?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "x72NQ1SI",
+            "title": "What are the int, embstr and raw string encodings?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -38551,6 +41197,33 @@
             "url": "https://leetcode.com/problems/lfu-cache/",
             "level": "Advanced",
             "note": "Practice · LeetCode #460 · LFU eviction"
+          },
+          {
+            "id": "IwFxjG-B",
+            "title": "How does a quicklist store lists efficiently?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "VsAaoIOr",
+            "title": "How does HyperLogLog estimate unique counts in about 12 KB?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "EbRXPsvV",
+            "title": "How does a Morris counter make LFU cheap?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       }
@@ -43400,6 +46073,42 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "eKOf5ZGe",
+            "title": "What happens when a client calls an API over HTTP?",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "pNYlpzlK",
+            "title": "Vertical vs horizontal scaling.",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "5htutyqs",
+            "title": "SQL vs NoSQL.",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "QxlshH9g",
+            "title": "What does a load balancer do when a server dies?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -43478,6 +46187,42 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "cm_pblnn",
+            "title": "Sharding vs partitioning vs replication.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "U8G6bVYx",
+            "title": "Explain the CAP theorem.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "gnB4owoI",
+            "title": "Why put a message queue between services?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "g16vNCxK",
+            "title": "Token bucket vs sliding window rate limiting.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -43556,6 +46301,42 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "cU_gYHLz",
+            "title": "How does leader election work, for example in Raft?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "wZ6U08-b",
+            "title": "Logs vs metrics vs traces.",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "RZcc_G8p",
+            "title": "How do OAuth 2.0 and JWT fit together?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "mh9yrO5W",
+            "title": "When should you move from a monolith to microservices?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       }
@@ -43681,6 +46462,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "deotIFaT",
+            "title": "What do scalability, availability and reliability mean?",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "jWaKYoKl",
+            "title": "Latency vs throughput: how do they trade off?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -43768,6 +46567,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "T4vhXa8X",
+            "title": "TCP vs UDP for a video call.",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "kO4AxKlN",
+            "title": "Roughly how long do a memory read, an SSD read and a cross-continent round trip take?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -43900,6 +46717,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "wShNE5M-",
+            "title": "REST vs GraphQL vs gRPC vs WebSocket.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "H1twRgSd",
+            "title": "How do you design pagination for an API?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -43960,6 +46795,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "1mFUPDKR",
+            "title": "What can go wrong with caching (stale data, stampede, penetration)?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "kR1FFR0S",
+            "title": "What does a CDN cache, and how is it invalidated?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -44011,6 +46864,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "cp82etTj",
+            "title": "Round robin vs least connections vs consistent hashing for load balancing.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "6nl36mP0",
+            "title": "API gateway vs reverse proxy.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -44080,6 +46951,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "fqzqIapL",
+            "title": "How do you scale a database: replicas, caching, sharding, partitioning?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "Dm9Yxmov",
+            "title": "In what order does SQL logically execute a query?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -44158,6 +47047,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "OIViql7m",
+            "title": "Kafka vs RabbitMQ.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "tA56mszq",
+            "title": "Why is Kafka fast (sequential I/O, zero copy, batching)?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -44218,6 +47125,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "bI3T2B0T",
+            "title": "What are saga, CQRS, event sourcing and sidecar?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "qvC2t6bu",
+            "title": "BASE vs ACID.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -44287,6 +47212,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "-2fSN-dG",
+            "title": "Bare metal vs virtual machines vs containers.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "2W-2qiGi",
+            "title": "What does Kubernetes do for you?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -44356,6 +47299,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "IidikwjU",
+            "title": "CI vs CD.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "AYPOjTWz",
+            "title": "Blue-green vs canary vs rolling deployment.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -44389,6 +47350,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "VTwkH9Qc",
+            "title": "Session vs JWT.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "mpRBMpCq",
+            "title": "Explain the OAuth 2.0 authorization code flow.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -44449,6 +47428,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "Twi6zzYa",
+            "title": "Why might a team move from microservices back to a monolith?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "6wubImlp",
+            "title": "How would you store trillions of chat messages?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -44650,6 +47647,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "83QbC-ly",
+            "title": "What questions do you ask first in a system design interview?",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "ovYlllcu",
+            "title": "How do you estimate QPS and storage for a new system?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -44709,6 +47724,33 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "KEd52qoX",
+            "title": "Synchronous vs asynchronous replication, and what is replication lag?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "T7AlX97N",
+            "title": "Token bucket vs sliding window rate limiting.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "j0JF38iZ",
+            "title": "What is event-driven architecture?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -44759,6 +47801,33 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "Oq0jDzhP",
+            "title": "Design Google Docs: how do you handle concurrent edits?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "8ImYqONv",
+            "title": "Design Uber: how do you match riders with nearby drivers?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "RsLDB08K",
+            "title": "Design Instagram Reels: storage, feed and video delivery.",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       }
@@ -45813,6 +48882,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "fHtMqZje",
+            "title": "2PC vs 3PC vs saga for distributed transactions.",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "ILxusqXT",
+            "title": "Optimistic vs pessimistic locking.",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -45837,6 +48924,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "1u0ZjCDf",
+            "title": "Explain the Liskov substitution principle with an example that breaks it.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "T6y_7S1h",
+            "title": "What does a class diagram show, and how do you draw composition vs aggregation?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -45870,6 +48975,15 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "WwYEiQty",
+            "title": "What steps do you follow in a low-level design interview?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -45930,6 +49044,24 @@
             "url": "https://leetcode.com/problems/calculator-with-method-chaining/",
             "level": "Beginner",
             "note": "Practice · LeetCode #2726 · a fluent, builder-style API"
+          },
+          {
+            "id": "bc6dN_qb",
+            "title": "Factory vs abstract factory vs builder.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "thFhhHbi",
+            "title": "Why is double-checked locking in a singleton broken without volatile?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -46008,6 +49140,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "R3A9TSSw",
+            "title": "Adapter vs facade vs decorator vs proxy.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "sPvUiWOz",
+            "title": "When would you use the composite pattern?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -46176,6 +49326,33 @@
             "url": "https://leetcode.com/problems/design-browser-history/",
             "level": "Intermediate",
             "note": "Practice · LeetCode #1472 · back / forward history, as in Command / Memento"
+          },
+          {
+            "id": "HwZMzSOV",
+            "title": "Strategy vs state pattern.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "S7EDSC7p",
+            "title": "How does the observer pattern work?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "5PlFx1LG",
+            "title": "How would you build undo and redo with the command pattern?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -46245,6 +49422,15 @@
             "url": "https://leetcode.com/problems/the-dining-philosophers/",
             "level": "Intermediate",
             "note": "Practice · LeetCode #1226 · avoiding deadlock and starvation"
+          },
+          {
+            "id": "Y8va_0Om",
+            "title": "How do you make a class thread-safe?",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -46674,6 +49860,24 @@
             "url": "https://leetcode.com/problems/design-underground-system/",
             "level": "Intermediate",
             "note": "Practice · LeetCode #1396 · a check-in / check-out system"
+          },
+          {
+            "id": "bKhPAwGu",
+            "title": "Design Tic-Tac-Toe so checking for a winner is O(1) per move.",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "udtsiwvO",
+            "title": "Design BookMyShow seat booking so two users can never book the same seat.",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -46689,6 +49893,15 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "BL0Oi3Zy",
+            "title": "What is MVC, and why separate the three parts?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -46722,6 +49935,24 @@
             "url": "https://github.com/donnemartin/system-design-primer/blob/master/solutions/system_design/scaling_aws/README.md",
             "level": "Advanced",
             "note": "Practice · System Design Primer · try the design yourself, then compare with the worked solution"
+          },
+          {
+            "id": "DPOviJj-",
+            "title": "How does a system grow from one server to a million users?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "Dc-Z0s_v",
+            "title": "Estimate the storage for 100 million users posting one photo a day.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -46791,6 +50022,15 @@
             "url": "https://leetcode.com/problems/find-servers-that-handled-most-number-of-requests/",
             "level": "Advanced",
             "note": "Practice · LeetCode #1606 · round-robin style request assignment"
+          },
+          {
+            "id": "Wl-rX2jx",
+            "title": "Layer 4 vs layer 7 load balancing.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -46860,6 +50100,15 @@
             "url": "https://leetcode.com/problems/lfu-cache/",
             "level": "Advanced",
             "note": "Practice · LeetCode #460 · LFU eviction"
+          },
+          {
+            "id": "zRS-6_X0",
+            "title": "Cache-aside vs write-through vs write-back.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -46920,6 +50169,15 @@
             "url": "https://leetcode.com/problems/time-based-key-value-store/",
             "level": "Intermediate",
             "note": "Practice · LeetCode #981 · a versioned key-value store"
+          },
+          {
+            "id": "uX1DyaKG",
+            "title": "Strong vs eventual consistency, with examples.",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -46971,6 +50229,15 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "LHAmZhzL",
+            "title": "Circuit breaker vs retry vs bulkhead.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -47040,6 +50307,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "FeaKUh7P",
+            "title": "What problem does CQRS solve?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "fVTmTE6z",
+            "title": "What does a service mesh add?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -47127,6 +50412,24 @@
             "url": "https://leetcode.com/problems/design-authentication-manager/",
             "level": "Intermediate",
             "note": "Practice · LeetCode #1797 · expiring and renewing tokens"
+          },
+          {
+            "id": "nxGZNsqs",
+            "title": "How do you design an idempotent POST API?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
+          },
+          {
+            "id": "MkQPupu3",
+            "title": "How do CSRF, XSS and SQL injection attacks work?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       },
@@ -47241,6 +50544,15 @@
             "url": "https://github.com/donnemartin/system-design-primer/blob/master/solutions/system_design/mint/README.md",
             "level": "Advanced",
             "note": "Practice · System Design Primer · try the design yourself, then compare with the worked solution"
+          },
+          {
+            "id": "BGyaDasz",
+            "title": "Design WhatsApp: message delivery, online status and group chats.",
+            "url": null,
+            "level": "Advanced",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · question to answer out loud, then check yourself"
           }
         ]
       }
@@ -47303,6 +50615,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "Zw1emi4n",
+            "title": "Put in a logical order: Fruit, Seed, Flower, Plant.",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: Seed, Plant, Flower, Fruit"
+          },
+          {
+            "id": "BsZShkeM",
+            "title": "Arrange in dictionary order: Neglect, Nectar, Negative, Necessary.",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: Necessary, Nectar, Negative, Neglect"
           }
         ]
       },
@@ -47354,6 +50684,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "GNuOkakq",
+            "title": "How do you spot the opening sentence of a jumbled paragraph?",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: It introduces the topic and has no pronoun or connector (he, this, however) pointing back to something earlier"
+          },
+          {
+            "id": "8zAjtsyJ",
+            "title": "How do linking words like \"however\", \"then\" and \"as a result\" help in para-jumbles?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: They fix the order of two sentences relative to each other"
           }
         ]
       },
@@ -47405,6 +50753,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "MsiHPDKM",
+            "title": "Find the error: \"Each of the students have submitted their assignment.\"",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: \"have\" should be \"has\""
+          },
+          {
+            "id": "Z_-CUm7D",
+            "title": "Find the error: \"He is senior than me by two years.\"",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: \"than\" should be \"to\" (senior to)"
           }
         ]
       },
@@ -47456,6 +50822,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "VAFhq3v-",
+            "title": "One word for \"a person who cannot be corrected\".",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: Incorrigible"
+          },
+          {
+            "id": "ZBqG5bQT",
+            "title": "One word for \"government by the wealthy\".",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: Plutocracy"
           }
         ]
       },
@@ -47507,6 +50891,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "q7owcdQK",
+            "title": "Correct the sentence: \"She don't like coffee.\"",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: She doesn't like coffee."
+          },
+          {
+            "id": "3UJ8Ocp_",
+            "title": "Correct the sentence: \"Neither the manager nor the employees was present.\"",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: \"was\" should be \"were\": the verb agrees with the nearer subject"
           }
         ]
       },
@@ -47558,6 +50960,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "9-gWSEKQ",
+            "title": "Synonym of \"candid\".",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: Frank"
+          },
+          {
+            "id": "FqwqNf_T",
+            "title": "Antonym of \"ephemeral\".",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: Permanent"
           }
         ]
       },
@@ -47609,6 +51029,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "sxYSLPH1",
+            "title": "He has been working here ___ 2020. (since / for)",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: since"
+          },
+          {
+            "id": "AvETHM6Q",
+            "title": "The committee ___ divided in their opinions. (is / are)",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: are (the members act individually)"
           }
         ]
       },
@@ -47660,6 +51098,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "OBXpz1ar",
+            "title": "What does \"beat around the bush\" mean?",
+            "url": null,
+            "level": "Beginner",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: Avoid talking about the main point"
+          },
+          {
+            "id": "bZJxSTOk",
+            "title": "What does \"a blessing in disguise\" mean?",
+            "url": null,
+            "level": "Intermediate",
+            "status": "not_started",
+            "doneAt": null,
+            "note": "Interview · Answer: Something that seems bad at first but turns out to be good"
           }
         ]
       }

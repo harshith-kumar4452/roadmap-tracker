@@ -790,7 +790,9 @@ function linksHtml(i, slots = groupSlots([i])) {
 
 // Notes written by the importers ("LeetCode #1 · 71k likes", "takeUforward A2Z · Fundamentals")
 // are shown as quiet metadata; anything else is the owner's own note.
-const IMPORT_NOTE = /^(LeetCode #|HackerRank\b|CodeChef\b|takeUforward A2Z|Source:|Practice( › [^·]+)? · |Interview · )/;
+// Practice problems carry their answer in the note ("Interview · Answer: 48 km/h").
+const answerOf = (note) => /^Interview · Answer: (.+)$/s.exec(note || '')?.[1] ?? '';
+const IMPORT_NOTE =/^(LeetCode #|HackerRank\b|CodeChef\b|takeUforward A2Z|Source:|Practice( › [^·]+)? · |Interview · )/;
 // The sheet's sub-topic slugs read as "Faqs hard", "1d dp", "Triessubc"; show them as TUF does.
 const prettySub = (s) => s
   .replace(/^faqs\s*(hard|medium|dll)?$/i, (_, k) => (k ? `FAQs (${k.toLowerCase() === 'dll' ? 'DLL' : k[0].toUpperCase() + k.slice(1).toLowerCase()})` : 'FAQs'))
@@ -834,6 +836,7 @@ function itemRow(i, slots) {
           </div>
           ${rm.group === 'level' ? `<span class="topic">${esc(i.sectionTitle)}</span>` : ''}
           ${meta ? `<span class="meta">${linkify(meta)}</span>` : ''}
+          ${answerOf(note) ? `<details class="answer"><summary>Show answer</summary><p>${esc(answerOf(note))}</p></details>` : ''}
           ${note && !imported ? `<p class="note">${linkify(note)}</p>` : ''}
           ${i.status === 'done' && i.doneAt ? `<span class="done-at">Done ${ago(i.doneAt)}</span>` : ''}
         </div>
