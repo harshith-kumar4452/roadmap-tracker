@@ -736,6 +736,7 @@ const SITES = [
   [/codechef\.com/, 'CodeChef'], [/geeksforgeeks\.org/, 'GFG'], [/datalemur\.com/, 'DataLemur'], [/codingninjas|naukri\.com\/code360/, 'Code360'],
   [/exercism\.org/, 'Exercism'], [/github\.com\/donnemartin\/system-design-primer/, 'SD Primer'],
   [/learngitbranching\.js\.org\/\?/, 'Learn Git Branching'], [/gitexercises\.fracz\.com\/exercise/, 'Git Exercises'], [/github\.com\/skills\//, 'GitHub Skills'],
+  [/app\.codecrafters\.io\/courses\//, 'CodeCrafters'],
 ];
 const siteOf = (url) => SITES.find(([re]) => re.test(url))?.[1];
 
@@ -756,8 +757,8 @@ function itemLinks(i) {
 
 // Links sit in fixed slots, one per site/kind used anywhere in the group, so icons line up from
 // row to row (as on the TUF sheet). A question without that link shows a faint placeholder.
-const SITE_ORDER = ['TUF', 'LeetCode', 'GFG', 'HackerRank', 'CodeChef', 'Exercism', 'SD Primer', 'Learn Git Branching', 'Git Exercises', 'GitHub Skills', 'DataLemur', 'Code360'];
-const SITE_SHORT = { TUF: 'TUF', LeetCode: 'LC', GFG: 'GFG', HackerRank: 'HR', CodeChef: 'CC', Exercism: 'EX', 'SD Primer': 'SDP', 'Learn Git Branching': 'LGB', 'Git Exercises': 'GX', 'GitHub Skills': 'GH', DataLemur: 'DL', Code360: 'C360' };
+const SITE_ORDER = ['TUF', 'LeetCode', 'GFG', 'HackerRank', 'CodeChef', 'Exercism', 'SD Primer', 'Learn Git Branching', 'Git Exercises', 'GitHub Skills', 'CodeCrafters', 'DataLemur', 'Code360'];
+const SITE_SHORT = { TUF: 'TUF', LeetCode: 'LC', GFG: 'GFG', HackerRank: 'HR', CodeChef: 'CC', Exercism: 'EX', 'SD Primer': 'SDP', 'Learn Git Branching': 'LGB', 'Git Exercises': 'GX', 'GitHub Skills': 'GH', CodeCrafters: 'CCR', DataLemur: 'DL', Code360: 'C360' };
 const KIND_ICON = { article: 'article', video: 'smart_display' };
 const slotKey = (l) => (l.kind === 'practice' ? `p:${l.site}` : l.kind);
 const slotRank = (k) => (k.startsWith('p:') ? (SITE_ORDER.indexOf(k.slice(2)) + 1 || 50) : k === 'article' ? 100 : 101);

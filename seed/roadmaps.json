@@ -36076,6 +36076,15 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "cTMyX0__",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Build Redis: a TCP server that answers PING",
+            "url": "https://app.codecrafters.io/courses/redis/stages/jm1",
+            "level": "Intermediate",
+            "note": "Practice · CodeCrafters · 4 stages: Bind to a port → Handle concurrent clients"
           }
         ]
       },
@@ -36127,6 +36136,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "dziKEmuX",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Build Redis: ECHO, SET / GET and key expiry",
+            "url": "https://app.codecrafters.io/courses/redis/stages/qq0",
+            "level": "Intermediate",
+            "note": "Practice · CodeCrafters · 3 stages: Implement the ECHO command → Expiry"
+          },
+          {
+            "id": "0mejkI92",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Build Redis: AOF persistence",
+            "url": "https://app.codecrafters.io/courses/redis/stages/uj3",
+            "level": "Advanced",
+            "note": "Practice · CodeCrafters · 10 stages: Default AOF options → Replay multiple commands"
           }
         ]
       },
@@ -36196,6 +36223,15 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "jklcbW49",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "LRU Cache",
+            "url": "https://leetcode.com/problems/lru-cache/",
+            "level": "Intermediate",
+            "note": "Practice · LeetCode #146 · the LRU cache that approximated LRU imitates"
           }
         ]
       },
@@ -36265,6 +36301,42 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "0GM0rdgn",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Build Redis: lists",
+            "url": "https://app.codecrafters.io/courses/redis/stages/mh6",
+            "level": "Intermediate",
+            "note": "Practice · CodeCrafters · 11 stages: Create a list → Blocking retrieval with timeout"
+          },
+          {
+            "id": "Oe5elePn",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Build Redis: transactions (MULTI / EXEC)",
+            "url": "https://app.codecrafters.io/courses/redis/stages/si4",
+            "level": "Advanced",
+            "note": "Practice · CodeCrafters · 11 stages: The INCR command (1/3) → Multiple transactions"
+          },
+          {
+            "id": "lvdlGKKt",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Build Redis: geospatial commands (geohash)",
+            "url": "https://app.codecrafters.io/courses/redis/stages/zt4",
+            "level": "Advanced",
+            "note": "Practice · CodeCrafters · 8 stages: Respond to GEOADD → Search within radius"
+          },
+          {
+            "id": "nZUh6vr8",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "LFU Cache",
+            "url": "https://leetcode.com/problems/lfu-cache/",
+            "level": "Advanced",
+            "note": "Practice · LeetCode #460 · LFU eviction"
           }
         ]
       }
@@ -36336,6 +36408,15 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "ZFpM7x1N",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Build Redis: a TCP server that answers PING",
+            "url": "https://app.codecrafters.io/courses/redis/stages/jm1",
+            "level": "Intermediate",
+            "note": "Practice · CodeCrafters · 4 stages: Bind to a port → Handle concurrent clients"
           }
         ]
       },
@@ -36402,6 +36483,87 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "kMFwgTIK",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Build Redis: ECHO, SET / GET and key expiry",
+            "url": "https://app.codecrafters.io/courses/redis/stages/qq0",
+            "level": "Intermediate",
+            "note": "Practice · CodeCrafters · 3 stages: Implement the ECHO command → Expiry"
+          },
+          {
+            "id": "eENeTi8d",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Build Redis: lists",
+            "url": "https://app.codecrafters.io/courses/redis/stages/mh6",
+            "level": "Intermediate",
+            "note": "Practice · CodeCrafters · 11 stages: Create a list → Blocking retrieval with timeout"
+          },
+          {
+            "id": "Z0CIV-PG",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Build Redis: sorted sets",
+            "url": "https://app.codecrafters.io/courses/redis/stages/ct1",
+            "level": "Intermediate",
+            "note": "Practice · CodeCrafters · 8 stages: Create a sorted set → Remove a member"
+          },
+          {
+            "id": "AEdKJ4hY",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Build Redis: bitmaps",
+            "url": "https://app.codecrafters.io/courses/redis/stages/bq9",
+            "level": "Intermediate",
+            "note": "Practice · CodeCrafters · 9 stages: Create a bitmap → OR two bitmaps"
+          },
+          {
+            "id": "LjWYwYKW",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Time Based Key-Value Store",
+            "url": "https://leetcode.com/problems/time-based-key-value-store/",
+            "level": "Intermediate",
+            "note": "Practice · LeetCode #981 · a string / hash store with versions"
+          },
+          {
+            "id": "3b1miFaB",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Design Authentication Manager",
+            "url": "https://leetcode.com/problems/design-authentication-manager/",
+            "level": "Intermediate",
+            "note": "Practice · LeetCode #1797 · keys that expire (TTL)"
+          },
+          {
+            "id": "iJDFLzQd",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Design Circular Queue",
+            "url": "https://leetcode.com/problems/design-circular-queue/",
+            "level": "Intermediate",
+            "note": "Practice · LeetCode #622 · a list used as a queue"
+          },
+          {
+            "id": "9YREsvSi",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Insert Delete GetRandom O(1)",
+            "url": "https://leetcode.com/problems/insert-delete-getrandom-o1/",
+            "level": "Intermediate",
+            "note": "Practice · LeetCode #380 · a set with SADD / SREM / SRANDMEMBER"
+          },
+          {
+            "id": "WRXY6T0X",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Stock Price Fluctuation ",
+            "url": "https://leetcode.com/problems/stock-price-fluctuation/",
+            "level": "Intermediate",
+            "note": "Practice · LeetCode #2034 · values kept ordered by score, like a sorted set"
           }
         ]
       },
@@ -36495,6 +36657,87 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "6sAnYcnI",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Build Redis: RDB persistence",
+            "url": "https://app.codecrafters.io/courses/redis/stages/zg5",
+            "level": "Intermediate",
+            "note": "Practice · CodeCrafters · 6 stages: RDB file config → Read value with expiry"
+          },
+          {
+            "id": "PuBoQpmz",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Build Redis: optimistic locking (WATCH)",
+            "url": "https://app.codecrafters.io/courses/redis/stages/jb7",
+            "level": "Intermediate",
+            "note": "Practice · CodeCrafters · 8 stages: The WATCH command → Unwatch on DISCARD"
+          },
+          {
+            "id": "gGY_GG_f",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "LRU Cache",
+            "url": "https://leetcode.com/problems/lru-cache/",
+            "level": "Intermediate",
+            "note": "Practice · LeetCode #146 · allkeys-lru eviction"
+          },
+          {
+            "id": "SL0lfXEQ",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Build Redis: AOF persistence",
+            "url": "https://app.codecrafters.io/courses/redis/stages/uj3",
+            "level": "Advanced",
+            "note": "Practice · CodeCrafters · 10 stages: Default AOF options → Replay multiple commands"
+          },
+          {
+            "id": "b2111qb0",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Build Redis: pub/sub",
+            "url": "https://app.codecrafters.io/courses/redis/stages/mx3",
+            "level": "Advanced",
+            "note": "Practice · CodeCrafters · 7 stages: Subscribe to a channel → Unsubscribe"
+          },
+          {
+            "id": "A8gmSsVQ",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Build Redis: streams",
+            "url": "https://app.codecrafters.io/courses/redis/stages/cc3",
+            "level": "Advanced",
+            "note": "Practice · CodeCrafters · 13 stages: The TYPE command → Blocking reads using $"
+          },
+          {
+            "id": "wbt0KDKM",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Build Redis: transactions (MULTI / EXEC)",
+            "url": "https://app.codecrafters.io/courses/redis/stages/si4",
+            "level": "Advanced",
+            "note": "Practice · CodeCrafters · 11 stages: The INCR command (1/3) → Multiple transactions"
+          },
+          {
+            "id": "2akNXsPC",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Build Redis: replication",
+            "url": "https://app.codecrafters.io/courses/redis/stages/bw1",
+            "level": "Advanced",
+            "note": "Practice · CodeCrafters · 18 stages: Configure listening port → WAIT with multiple commands"
+          },
+          {
+            "id": "6yl8Fr0A",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "LFU Cache",
+            "url": "https://leetcode.com/problems/lfu-cache/",
+            "level": "Advanced",
+            "note": "Practice · LeetCode #460 · allkeys-lfu eviction"
           }
         ]
       }
