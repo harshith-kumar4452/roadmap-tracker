@@ -32,16 +32,19 @@ export async function startApp() {
 
 // A tiny cookie-keeping client.
 export function client(base) {
-  let cookie = '';
+  const jar = new Map();
   const call = async (method, path, body) => {
     const res = await fetch(base + path, {
       method,
-      headers: { ...(body !== undefined ? { 'Content-Type': 'application/json' } : {}), ...(cookie ? { Cookie: cookie } : {}) },
+      headers: { ...(body !== undefined ? { 'Content-Type': 'application/json' } : {}), ...(jar.size ? { Cookie: [...jar].map(([k, v]) => `${k}=${v}`).join('; ') } : {}) },
       body: body !== undefined ? JSON.stringify(body) : undefined,
       redirect: 'manual',
     });
-    const set = res.headers.get('set-cookie');
-    if (set) cookie = set.split(';')[0];
+    for (const c of res.headers.getSetCookie()) {
+      const [pair, ...attrs] = c.split(';');
+      const [k, ...v] = pair.trim().split('=');
+      if (attrs.some((a) => /max-age=0/i.test(a.trim())) || !v.join('=')) jar.delete(k); else jar.set(k, v.join('='));
+    }
     const type = res.headers.get('content-type') || '';
     return { status: res.status, headers: res.headers, body: type.includes('json') ? await res.json() : await res.text() };
   };

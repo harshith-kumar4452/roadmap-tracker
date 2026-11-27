@@ -54,7 +54,6 @@ const pages = () => collection('pages');
 const accounts = () => collection('accounts');
 const habits = () => collection('habits');
 const checkins = () => collection('checkins');
-const tasks = () => collection('tasks');
 const links = () => collection('links');
 
 const allItems = (doc) => doc.sections.flatMap((s) => s.items.map((i) => ({ ...i, section: s.title })));
@@ -359,39 +358,6 @@ export async function setCheckin(habitId, date, done) {
   if (done) await col.updateOne({ _id }, { $setOnInsert: { habitId, date, at: new Date().toISOString() } }, { upsert: true });
   else await col.deleteOne({ _id });
   return { habitId, date, done };
-}
-
-// ---------- tasks ----------
-// { _id, title, date: "YYYY-MM-DD" | null (someday), done, doneAt, createdAt }
-
-export async function listTasks() {
-  const monthAgo = new Date(Date.now() - 30 * 86400000).toISOString();
-  const docs = await (await tasks())
-    .find({ $or: [{ done: false }, { doneAt: { $gte: monthAgo } }] })
-    .sort({ date: 1, createdAt: 1 })
-    .toArray();
-  return docs.map(publicDoc);
-}
-
-export async function createTask({ title, date = null }) {
-  const doc = { _id: newId(), title, date, done: false, doneAt: null, createdAt: new Date().toISOString() };
-  await (await tasks()).insertOne(doc);
-  return publicDoc(doc);
-}
-
-export async function updateTask(id, patch) {
-  const $set = {};
-  for (const key of ['title', 'date']) if (patch[key] !== undefined) $set[key] = patch[key];
-  if (patch.done !== undefined) {
-    $set.done = patch.done;
-    $set.doneAt = patch.done ? new Date().toISOString() : null;
-  }
-  const res = await (await tasks()).findOneAndUpdate({ _id: id }, { $set }, { returnDocument: 'after' });
-  return res ? publicDoc(res) : null;
-}
-
-export async function deleteTask(id) {
-  return (await (await tasks()).deleteOne({ _id: id })).deletedCount > 0;
 }
 
 // ---------- resources ----------

@@ -5,6 +5,8 @@ import * as auth from './auth.js';
 import { codingStats } from './profile.js';
 import { httpError, text, optionalUrl, found, id, date, ownerOnly } from './http.js';
 import interviewRoutes from './interview/routes.js';
+import taskRoutes from './tasks/routes.js';
+import googleRoutes from './google/routes.js';
 
 const app = express();
 app.set('trust proxy', 1);
@@ -96,6 +98,8 @@ app.post('/api/logout', (req, res) => {
 // Feature routers check their own access (some writes are allowed for members), so they are
 // mounted before the owner-only write guard below.
 app.use('/api/interview', interviewRoutes);
+app.use('/api/tasks', taskRoutes);
+app.use('/api/google', googleRoutes);
 
 // Overview lists are public; opening a specific roadmap, page, or links requires login.
 // Editing requires the owner session.
@@ -267,33 +271,6 @@ app.delete('/api/habits/:id', async (req, res) => {
 
 app.put('/api/habits/:id/checkins/:date', async (req, res) => {
   res.json(found(await store.setCheckin(id(req), date(req.params.date), req.body?.done !== false), 'Routine item'));
-});
-
-// Tasks are private: only the owner can see them.
-app.get('/api/tasks', async (req, res) => {
-  ownerOnly(req, 'Log in to see your tasks');
-  res.json(await store.listTasks());
-});
-
-app.post('/api/tasks', async (req, res) => {
-  res.status(201).json(await store.createTask({
-    title: text(req.body.title, 'Task', { max: 300 }),
-    date: req.body.date ? date(req.body.date) : null,
-  }));
-});
-
-app.patch('/api/tasks/:id', async (req, res) => {
-  const b = req.body;
-  res.json(found(await store.updateTask(id(req), {
-    title: text(b.title, 'Task', { required: false, max: 300 }),
-    date: b.date === undefined ? undefined : b.date ? date(b.date) : null,
-    done: b.done === undefined ? undefined : Boolean(b.done),
-  }), 'Task'));
-});
-
-app.delete('/api/tasks/:id', async (req, res) => {
-  found(await store.deleteTask(id(req)), 'Task');
-  res.status(204).end();
 });
 
 // ---------- student profile ----------
