@@ -3245,6 +3245,15 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "q25-ixX1",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Quiz: Introduction to DBMS",
+            "url": "https://takeuforward.org/quiz/core-subject/quiz-1-introduction-to-dbms",
+            "level": "Intermediate",
+            "note": "Practice · TUF · topic quiz from the takeUforward DBMS course, 30 mins"
           }
         ]
       },
@@ -3401,6 +3410,15 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "2lKR2w9q",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Quiz: Data Models and ER Models",
+            "url": "https://takeuforward.org/quiz/core-subject/quiz-2-data-models-and-er-models",
+            "level": "Intermediate",
+            "note": "Practice · TUF · topic quiz from the takeUforward DBMS course, 30 mins"
           }
         ]
       },
@@ -3488,6 +3506,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "6hqTMeKZ",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Database Normalization #1 - 1NF",
+            "url": "https://www.hackerrank.com/challenges/database-normalization-1-1nf/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · Databases: Normalization"
+          },
+          {
+            "id": "nl0V1-Qq",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Database Normalization #4",
+            "url": "https://www.hackerrank.com/challenges/database-normalization-4/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · Databases: Normalization"
           }
         ]
       },
@@ -3548,6 +3584,42 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "uDc7O08O",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Quiz: Triggers and Procedural Features",
+            "url": "https://takeuforward.org/quiz/core-subject/quiz-8-triggers-and-procedural-features",
+            "level": "Intermediate",
+            "note": "Practice · TUF · topic quiz from the takeUforward DBMS course, 30 mins"
+          },
+          {
+            "id": "wRPwcAmD",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Database Query Languages",
+            "url": "https://www.hackerrank.com/challenges/database-query-languages/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · Databases: Relational algebra"
+          },
+          {
+            "id": "53xroGh_",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Relational Algebra - 3",
+            "url": "https://www.hackerrank.com/challenges/relational-algebra-3/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · Databases: Relational algebra"
+          },
+          {
+            "id": "86b_OICQ",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Relational Algebra - 4",
+            "url": "https://www.hackerrank.com/challenges/relational-algebra-4/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · Databases: Relational algebra"
           }
         ]
       },
@@ -3608,6 +3680,78 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "HQX1Q8g7",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Quiz: Relational Model and Normalization",
+            "url": "https://takeuforward.org/quiz/core-subject/quiz-3-relational-model-and-normalization",
+            "level": "Intermediate",
+            "note": "Practice · TUF · topic quiz from the takeUforward DBMS course, 30 mins"
+          },
+          {
+            "id": "fScjX9xl",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Database Normalization #5",
+            "url": "https://www.hackerrank.com/challenges/database-normalization-5/problem",
+            "level": "Intermediate",
+            "note": "Practice · HackerRank · Databases: Normalization"
+          },
+          {
+            "id": "bPqh8ouf",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Database Normalization #6",
+            "url": "https://www.hackerrank.com/challenges/database-normalization-6/problem",
+            "level": "Intermediate",
+            "note": "Practice · HackerRank · Databases: Normalization"
+          },
+          {
+            "id": "5lFVggdI",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Database Normalization #7",
+            "url": "https://www.hackerrank.com/challenges/database-normalization-7/problem",
+            "level": "Intermediate",
+            "note": "Practice · HackerRank · Databases: Normalization"
+          },
+          {
+            "id": "8_C2jl9M",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Database Normalization #8",
+            "url": "https://www.hackerrank.com/challenges/database-normalization-8/problem",
+            "level": "Intermediate",
+            "note": "Practice · HackerRank · Databases: Normalization"
+          },
+          {
+            "id": "9kWr6shy",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Database Normalization #10",
+            "url": "https://www.hackerrank.com/challenges/database-normalization-10/problem",
+            "level": "Intermediate",
+            "note": "Practice · HackerRank · Databases: Normalization"
+          },
+          {
+            "id": "VXBMwtVf",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Database Normalization #3",
+            "url": "https://www.hackerrank.com/challenges/database-normalization-3/problem",
+            "level": "Advanced",
+            "note": "Practice · HackerRank · Databases: Normalization"
+          },
+          {
+            "id": "PNH4W0wR",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Database Normalization #9",
+            "url": "https://www.hackerrank.com/challenges/database-normalization-9/problem",
+            "level": "Advanced",
+            "note": "Practice · HackerRank · Databases: Normalization"
           }
         ]
       },
@@ -3694,7 +3838,19 @@
             "level": "Intermediate",
             "status": "not_started",
             "doneAt": null,
-            "note": ""
+            "note": "",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "LeetCode",
+                "url": "https://leetcode.com/problems/big-countries/"
+              },
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/core-subject/big-countries"
+              }
+            ]
           },
           {
             "id": "BAP4NdLZ",
@@ -3703,7 +3859,19 @@
             "level": "Intermediate",
             "status": "not_started",
             "doneAt": null,
-            "note": ""
+            "note": "",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/sql/profitable-customers-in-2021"
+              },
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/core-subject/profitable-customers-in-2021"
+              }
+            ]
           },
           {
             "id": "D95OqhHW",
@@ -3712,7 +3880,19 @@
             "level": "Intermediate",
             "status": "not_started",
             "doneAt": null,
-            "note": ""
+            "note": "",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/sql/odd-non-boring-movies"
+              },
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/core-subject/odd-non-boring-movies"
+              }
+            ]
           },
           {
             "id": "SXSCwn4w",
@@ -3757,7 +3937,19 @@
             "level": "Intermediate",
             "status": "not_started",
             "doneAt": null,
-            "note": ""
+            "note": "",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/sql/filter-records-excluding-a-specific-pattern"
+              },
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/core-subject/filter-records-excluding-a-specific-pattern"
+              }
+            ]
           },
           {
             "id": "mmSMEeuN",
@@ -3766,7 +3958,19 @@
             "level": "Intermediate",
             "status": "not_started",
             "doneAt": null,
-            "note": ""
+            "note": "",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/sql/find-records-excluding-a-given-set-of-values"
+              },
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/core-subject/find-records-excluding-a-given-set-of-values"
+              }
+            ]
           },
           {
             "id": "XKoXaHYI",
@@ -3775,7 +3979,19 @@
             "level": "Intermediate",
             "status": "not_started",
             "doneAt": null,
-            "note": ""
+            "note": "",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/sql/find-salaries-outside-the-expected-range"
+              },
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/core-subject/find-salaries-outside-the-expected-range"
+              }
+            ]
           },
           {
             "id": "2Y85T09S",
@@ -3784,7 +4000,127 @@
             "level": "Intermediate",
             "status": "not_started",
             "doneAt": null,
-            "note": ""
+            "note": "",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/sql/non-referred-customers"
+              },
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/core-subject/non-referred-customers"
+              }
+            ]
+          },
+          {
+            "id": "JA514wS0",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Recyclable and Low Fat Products",
+            "url": "https://leetcode.com/problems/recyclable-and-low-fat-products/",
+            "level": "Beginner",
+            "note": "Practice · LeetCode"
+          },
+          {
+            "id": "B6rjHzUc",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Article Views I",
+            "url": "https://leetcode.com/problems/article-views-i/",
+            "level": "Beginner",
+            "note": "Practice · LeetCode"
+          },
+          {
+            "id": "QPmpLFaW",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Not Boring Movies",
+            "url": "https://leetcode.com/problems/not-boring-movies/",
+            "level": "Beginner",
+            "note": "Practice · LeetCode"
+          },
+          {
+            "id": "FdhORO9C",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Revising the Select Query I",
+            "url": "https://www.hackerrank.com/challenges/revising-the-select-query/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank"
+          },
+          {
+            "id": "uBeupgr8",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Revising the Select Query II",
+            "url": "https://www.hackerrank.com/challenges/revising-the-select-query-2/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank"
+          },
+          {
+            "id": "Woslcxpb",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Select All",
+            "url": "https://www.hackerrank.com/challenges/select-all-sql/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank"
+          },
+          {
+            "id": "1jHDCw3e",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Select By ID",
+            "url": "https://www.hackerrank.com/challenges/select-by-id/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank"
+          },
+          {
+            "id": "C96CTaHJ",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Japanese Cities' Attributes",
+            "url": "https://www.hackerrank.com/challenges/japanese-cities-attributes/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank"
+          },
+          {
+            "id": "4qEoIK-0",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Japanese Cities' Names",
+            "url": "https://www.hackerrank.com/challenges/japanese-cities-name/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank"
+          },
+          {
+            "id": "d9dY_mke",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Weather Observation Station 1",
+            "url": "https://www.hackerrank.com/challenges/weather-observation-station-1/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank"
+          },
+          {
+            "id": "HwWtnBaz",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Weather Observation Station 3",
+            "url": "https://www.hackerrank.com/challenges/weather-observation-station-3/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank"
+          },
+          {
+            "id": "fBxzLYb8",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Employee Names",
+            "url": "https://www.hackerrank.com/challenges/name-of-employees/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank"
           }
         ]
       },
@@ -3844,7 +4180,19 @@
             "level": "Intermediate",
             "status": "not_started",
             "doneAt": null,
-            "note": ""
+            "note": "",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/sql/first-login-analysis"
+              },
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/core-subject/first-login-analysis"
+              }
+            ]
           },
           {
             "id": "ghLhFHB2",
@@ -3853,7 +4201,19 @@
             "level": "Intermediate",
             "status": "not_started",
             "doneAt": null,
-            "note": ""
+            "note": "",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/sql/employee-work-time-summary"
+              },
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/core-subject/employee-work-time-summary"
+              }
+            ]
           },
           {
             "id": "o9I5sJSN",
@@ -3862,7 +4222,19 @@
             "level": "Intermediate",
             "status": "not_started",
             "doneAt": null,
-            "note": ""
+            "note": "",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/sql/unique-subjects-per-teacher"
+              },
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/core-subject/unique-subjects-per-teacher"
+              }
+            ]
           },
           {
             "id": "J06DeVwI",
@@ -3871,7 +4243,19 @@
             "level": "Intermediate",
             "status": "not_started",
             "doneAt": null,
-            "note": ""
+            "note": "",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/sql/user-follower-count"
+              },
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/core-subject/user-follower-count"
+              }
+            ]
           },
           {
             "id": "zTj19mdd",
@@ -3880,7 +4264,19 @@
             "level": "Intermediate",
             "status": "not_started",
             "doneAt": null,
-            "note": ""
+            "note": "",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/sql/crm-automotive-sales-analysis"
+              },
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/core-subject/crm-automotive-sales-analysis"
+              }
+            ]
           },
           {
             "id": "av_z2kVU",
@@ -3889,7 +4285,19 @@
             "level": "Intermediate",
             "status": "not_started",
             "doneAt": null,
-            "note": ""
+            "note": "",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/sql/highest-order-placing-customer"
+              },
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/core-subject/highest-order-placing-customer"
+              }
+            ]
           },
           {
             "id": "Wsyv9kaj",
@@ -3898,7 +4306,19 @@
             "level": "Intermediate",
             "status": "not_started",
             "doneAt": null,
-            "note": ""
+            "note": "",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/sql/frequent-actor-director-duos"
+              },
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/core-subject/frequent-actor-director-duos"
+              }
+            ]
           },
           {
             "id": "GnfiZ8U8",
@@ -3907,7 +4327,19 @@
             "level": "Intermediate",
             "status": "not_started",
             "doneAt": null,
-            "note": ""
+            "note": "",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/sql/large-classes"
+              },
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/core-subject/large-classes"
+              }
+            ]
           },
           {
             "id": "pj8IRy3U",
@@ -3916,7 +4348,127 @@
             "level": "Intermediate",
             "status": "not_started",
             "doneAt": null,
-            "note": ""
+            "note": "",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/sql/email-duplicates"
+              },
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/core-subject/email-duplicates"
+              }
+            ]
+          },
+          {
+            "id": "A6DLujho",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Percentage of Users Attended a Contest",
+            "url": "https://leetcode.com/problems/percentage-of-users-attended-a-contest/",
+            "level": "Beginner",
+            "note": "Practice · LeetCode"
+          },
+          {
+            "id": "jPpsmcJH",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Queries Quality and Percentage",
+            "url": "https://leetcode.com/problems/queries-quality-and-percentage/",
+            "level": "Beginner",
+            "note": "Practice · LeetCode"
+          },
+          {
+            "id": "N2knPTPj",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Number of Unique Subjects Taught by Each Teacher",
+            "url": "https://leetcode.com/problems/number-of-unique-subjects-taught-by-each-teacher/",
+            "level": "Beginner",
+            "note": "Practice · LeetCode"
+          },
+          {
+            "id": "BqXTqj6u",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Classes With at Least 5 Students",
+            "url": "https://leetcode.com/problems/classes-with-at-least-5-students/",
+            "level": "Beginner",
+            "note": "Practice · LeetCode"
+          },
+          {
+            "id": "JH-E4vsY",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Find Followers Count",
+            "url": "https://leetcode.com/problems/find-followers-count/",
+            "level": "Beginner",
+            "note": "Practice · LeetCode"
+          },
+          {
+            "id": "4Owe1TQf",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Biggest Single Number",
+            "url": "https://leetcode.com/problems/biggest-single-number/",
+            "level": "Beginner",
+            "note": "Practice · LeetCode"
+          },
+          {
+            "id": "x20qzQLQ",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Primary Department for Each Employee",
+            "url": "https://leetcode.com/problems/primary-department-for-each-employee/",
+            "level": "Beginner",
+            "note": "Practice · LeetCode"
+          },
+          {
+            "id": "vFw9-vUf",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Group Sold Products By The Date",
+            "url": "https://leetcode.com/problems/group-sold-products-by-the-date/",
+            "level": "Beginner",
+            "note": "Practice · LeetCode"
+          },
+          {
+            "id": "K2zu9Vwo",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "List the Products Ordered in a Period",
+            "url": "https://leetcode.com/problems/list-the-products-ordered-in-a-period/",
+            "level": "Beginner",
+            "note": "Practice · LeetCode"
+          },
+          {
+            "id": "47gZyi1a",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Weather Observation Station 2",
+            "url": "https://www.hackerrank.com/challenges/weather-observation-station-2/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank"
+          },
+          {
+            "id": "jXP_rrPn",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Weather Observation Station 4",
+            "url": "https://www.hackerrank.com/challenges/weather-observation-station-4/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank"
+          },
+          {
+            "id": "R5sQmtML",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Revising Aggregations - The Count Function",
+            "url": "https://www.hackerrank.com/challenges/revising-aggregations-the-count-function/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank"
           }
         ]
       },
@@ -3976,7 +4528,19 @@
             "level": "Intermediate",
             "status": "not_started",
             "doneAt": null,
-            "note": ""
+            "note": "",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/sql/combine-active-and-archived-users"
+              },
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/core-subject/combine-active-and-archived-users"
+              }
+            ]
           },
           {
             "id": "Fa5wEES9",
@@ -3985,7 +4549,19 @@
             "level": "Intermediate",
             "status": "not_started",
             "doneAt": null,
-            "note": ""
+            "note": "",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/sql/merge-recent-orders-from-multiple-sources"
+              },
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/core-subject/merge-recent-orders-from-multiple-sources"
+              }
+            ]
           },
           {
             "id": "4kYlRYpQ",
@@ -3994,7 +4570,19 @@
             "level": "Intermediate",
             "status": "not_started",
             "doneAt": null,
-            "note": ""
+            "note": "",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/sql/combine-sales-records-without-deduplication"
+              },
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/core-subject/combine-sales-records-without-deduplication"
+              }
+            ]
           },
           {
             "id": "FYX-QAYz",
@@ -4003,7 +4591,46 @@
             "level": "Intermediate",
             "status": "not_started",
             "doneAt": null,
-            "note": ""
+            "note": "",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/sql/reshape-products-data"
+              },
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/core-subject/reshape-products-data"
+              }
+            ]
+          },
+          {
+            "id": "Q6VUm5Yy",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Count Salary Categories",
+            "url": "https://leetcode.com/problems/count-salary-categories/",
+            "level": "Intermediate",
+            "note": "Practice · LeetCode"
+          },
+          {
+            "id": "j4V_oEBv",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Movie Rating",
+            "url": "https://leetcode.com/problems/movie-rating/",
+            "level": "Intermediate",
+            "note": "Practice · LeetCode"
+          },
+          {
+            "id": "KA3Ha_5-",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Friend Requests II: Who Has the Most Friends",
+            "url": "https://leetcode.com/problems/friend-requests-ii-who-has-the-most-friends/",
+            "level": "Intermediate",
+            "note": "Practice · LeetCode"
           }
         ]
       },
@@ -4108,7 +4735,19 @@
             "level": "Intermediate",
             "status": "not_started",
             "doneAt": null,
-            "note": ""
+            "note": "",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/sql/employees-and-their-departments"
+              },
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/core-subject/employees-and-their-departments"
+              }
+            ]
           },
           {
             "id": "EoQTlNFo",
@@ -4117,7 +4756,19 @@
             "level": "Intermediate",
             "status": "not_started",
             "doneAt": null,
-            "note": ""
+            "note": "",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/sql/customer-orders-overview"
+              },
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/core-subject/customer-orders-overview"
+              }
+            ]
           },
           {
             "id": "q3MWVmsk",
@@ -4126,7 +4777,19 @@
             "level": "Intermediate",
             "status": "not_started",
             "doneAt": null,
-            "note": ""
+            "note": "",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/sql/employees-with-confirmed-salary-records"
+              },
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/core-subject/employees-with-confirmed-salary-records"
+              }
+            ]
           },
           {
             "id": "0ReQX3l3",
@@ -4135,7 +4798,19 @@
             "level": "Intermediate",
             "status": "not_started",
             "doneAt": null,
-            "note": ""
+            "note": "",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/sql/generate-all-possible-user-category-pairs"
+              },
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/core-subject/generate-all-possible-user-category-pairs"
+              }
+            ]
           },
           {
             "id": "p7CpTxG8",
@@ -4144,7 +4819,19 @@
             "level": "Intermediate",
             "status": "not_started",
             "doneAt": null,
-            "note": ""
+            "note": "",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/sql/employees-with-or-without-salary-records"
+              },
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/core-subject/employees-with-or-without-salary-records"
+              }
+            ]
           },
           {
             "id": "Yzd2a5Gg",
@@ -4153,7 +4840,19 @@
             "level": "Intermediate",
             "status": "not_started",
             "doneAt": null,
-            "note": ""
+            "note": "",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/sql/match-employees-with-their-salaries"
+              },
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/core-subject/match-employees-with-their-salaries"
+              }
+            ]
           },
           {
             "id": "LgirJv9-",
@@ -4162,7 +4861,19 @@
             "level": "Intermediate",
             "status": "not_started",
             "doneAt": null,
-            "note": ""
+            "note": "",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/sql/employees-earning-more-than-their-manager"
+              },
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/core-subject/employees-earning-more-than-their-manager"
+              }
+            ]
           },
           {
             "id": "pd7CKuR0",
@@ -4171,7 +4882,19 @@
             "level": "Intermediate",
             "status": "not_started",
             "doneAt": null,
-            "note": ""
+            "note": "",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/sql/students-enrolled-in-courses"
+              },
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/core-subject/students-enrolled-in-courses"
+              }
+            ]
           },
           {
             "id": "wrYuwVDA",
@@ -4180,7 +4903,19 @@
             "level": "Intermediate",
             "status": "not_started",
             "doneAt": null,
-            "note": ""
+            "note": "",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/sql/sales-analysis"
+              },
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/core-subject/sales-analysis"
+              }
+            ]
           },
           {
             "id": "y3_Wg71P",
@@ -4189,7 +4924,19 @@
             "level": "Intermediate",
             "status": "not_started",
             "doneAt": null,
-            "note": ""
+            "note": "",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/sql/minimum-distance-between-points"
+              },
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/core-subject/minimum-distance-between-points"
+              }
+            ]
           },
           {
             "id": "Fep77YQN",
@@ -4198,7 +4945,19 @@
             "level": "Intermediate",
             "status": "not_started",
             "doneAt": null,
-            "note": ""
+            "note": "",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/sql/suspended-accounts"
+              },
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/core-subject/suspended-accounts"
+              }
+            ]
           },
           {
             "id": "ANShM-lh",
@@ -4207,7 +4966,19 @@
             "level": "Intermediate",
             "status": "not_started",
             "doneAt": null,
-            "note": ""
+            "note": "",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/sql/find-team-size-for-each-employee"
+              },
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/core-subject/find-team-size-for-each-employee"
+              }
+            ]
           },
           {
             "id": "Yse-W9ns",
@@ -4216,7 +4987,19 @@
             "level": "Intermediate",
             "status": "not_started",
             "doneAt": null,
-            "note": ""
+            "note": "",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/sql/average-experience-by-project"
+              },
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/core-subject/average-experience-by-project"
+              }
+            ]
           },
           {
             "id": "8V_-fnLO",
@@ -4225,7 +5008,19 @@
             "level": "Intermediate",
             "status": "not_started",
             "doneAt": null,
-            "note": ""
+            "note": "",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/sql/warehouse-stock-manager"
+              },
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/core-subject/warehouse-stock-manager"
+              }
+            ]
           },
           {
             "id": "xh7IdM8_",
@@ -4234,7 +5029,19 @@
             "level": "Intermediate",
             "status": "not_started",
             "doneAt": null,
-            "note": ""
+            "note": "",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/sql/table-join-operation"
+              },
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/core-subject/table-join-operation"
+              }
+            ]
           },
           {
             "id": "R-LqW13v",
@@ -4243,7 +5050,19 @@
             "level": "Intermediate",
             "status": "not_started",
             "doneAt": null,
-            "note": ""
+            "note": "",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/sql/inactive-customers"
+              },
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/core-subject/inactive-customers"
+              }
+            ]
           },
           {
             "id": "AFrUOseL",
@@ -4252,7 +5071,19 @@
             "level": "Intermediate",
             "status": "not_started",
             "doneAt": null,
-            "note": ""
+            "note": "",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/sql/students-enrolled-in-non-existent-departments"
+              },
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/core-subject/students-enrolled-in-non-existent-departments"
+              }
+            ]
           },
           {
             "id": "_TwxGwXD",
@@ -4261,7 +5092,19 @@
             "level": "Intermediate",
             "status": "not_started",
             "doneAt": null,
-            "note": ""
+            "note": "",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/sql/low-bonus-employees"
+              },
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/core-subject/low-bonus-employees"
+              }
+            ]
           },
           {
             "id": "atAeQbdi",
@@ -4270,7 +5113,19 @@
             "level": "Intermediate",
             "status": "not_started",
             "doneAt": null,
-            "note": ""
+            "note": "",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/sql/available-seat-streaks"
+              },
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/core-subject/available-seat-streaks"
+              }
+            ]
           },
           {
             "id": "tcg2QykV",
@@ -4279,7 +5134,19 @@
             "level": "Intermediate",
             "status": "not_started",
             "doneAt": null,
-            "note": ""
+            "note": "",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/sql/visitors-without-transactions"
+              },
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/core-subject/visitors-without-transactions"
+              }
+            ]
           },
           {
             "id": "Sqvszw-7",
@@ -4288,7 +5155,19 @@
             "level": "Intermediate",
             "status": "not_started",
             "doneAt": null,
-            "note": ""
+            "note": "",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/sql/a-b-buyers-without-c"
+              },
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/core-subject/a-b-buyers-without-c"
+              }
+            ]
           },
           {
             "id": "mGxn5c3i",
@@ -4297,7 +5176,19 @@
             "level": "Intermediate",
             "status": "not_started",
             "doneAt": null,
-            "note": ""
+            "note": "",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/sql/product-selling-price-report"
+              },
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/core-subject/product-selling-price-report"
+              }
+            ]
           },
           {
             "id": "e_xV9P8v",
@@ -4306,7 +5197,19 @@
             "level": "Intermediate",
             "status": "not_started",
             "doneAt": null,
-            "note": ""
+            "note": "",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/sql/updated-bank-balances"
+              },
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/core-subject/updated-bank-balances"
+              }
+            ]
           },
           {
             "id": "7thYFhWf",
@@ -4315,7 +5218,19 @@
             "level": "Intermediate",
             "status": "not_started",
             "doneAt": null,
-            "note": ""
+            "note": "",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/sql/most-frequent-travellers"
+              },
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/core-subject/most-frequent-travellers"
+              }
+            ]
           },
           {
             "id": "rr-8cZ8i",
@@ -4324,7 +5239,127 @@
             "level": "Intermediate",
             "status": "not_started",
             "doneAt": null,
-            "note": ""
+            "note": "",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/sql/suggested-pages"
+              },
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/core-subject/suggested-pages"
+              }
+            ]
+          },
+          {
+            "id": "d7-046Qc",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Replace Employee ID With The Unique Identifier",
+            "url": "https://leetcode.com/problems/replace-employee-id-with-the-unique-identifier/",
+            "level": "Beginner",
+            "note": "Practice · LeetCode"
+          },
+          {
+            "id": "7bWZxNe8",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Product Sales Analysis I",
+            "url": "https://leetcode.com/problems/product-sales-analysis-i/",
+            "level": "Beginner",
+            "note": "Practice · LeetCode"
+          },
+          {
+            "id": "TANrDiQN",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Employee Bonus",
+            "url": "https://leetcode.com/problems/employee-bonus/",
+            "level": "Beginner",
+            "note": "Practice · LeetCode"
+          },
+          {
+            "id": "yJ3ue9Jl",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Students and Examinations",
+            "url": "https://leetcode.com/problems/students-and-examinations/",
+            "level": "Beginner",
+            "note": "Practice · LeetCode"
+          },
+          {
+            "id": "koMXA-K4",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Average Selling Price",
+            "url": "https://leetcode.com/problems/average-selling-price/",
+            "level": "Beginner",
+            "note": "Practice · LeetCode"
+          },
+          {
+            "id": "pn_Nbz4C",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Project Employees I",
+            "url": "https://leetcode.com/problems/project-employees-i/",
+            "level": "Beginner",
+            "note": "Practice · LeetCode"
+          },
+          {
+            "id": "uOp-CA9x",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Population Census",
+            "url": "https://www.hackerrank.com/challenges/asian-population/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank"
+          },
+          {
+            "id": "8LvIcuZQ",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "African Cities",
+            "url": "https://www.hackerrank.com/challenges/african-cities/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank"
+          },
+          {
+            "id": "Neucm8eg",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Average Population of Each Continent",
+            "url": "https://www.hackerrank.com/challenges/average-population-of-each-continent/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank"
+          },
+          {
+            "id": "UWR8od5f",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Rising Temperature",
+            "url": "https://leetcode.com/problems/rising-temperature/",
+            "level": "Beginner",
+            "note": "Practice · LeetCode"
+          },
+          {
+            "id": "NN5ErXLZ",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Average Time of Process per Machine",
+            "url": "https://leetcode.com/problems/average-time-of-process-per-machine/",
+            "level": "Beginner",
+            "note": "Practice · LeetCode"
+          },
+          {
+            "id": "c8GWHSr0",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "The Number of Employees Which Report to Each Employee",
+            "url": "https://leetcode.com/problems/the-number-of-employees-which-report-to-each-employee/",
+            "level": "Beginner",
+            "note": "Practice · LeetCode"
           }
         ]
       },
@@ -4375,7 +5410,19 @@
             "level": "Intermediate",
             "status": "not_started",
             "doneAt": null,
-            "note": ""
+            "note": "",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/sql/contest-participation-rate"
+              },
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/core-subject/contest-participation-rate"
+              }
+            ]
           },
           {
             "id": "v2s3NNCc",
@@ -4384,7 +5431,19 @@
             "level": "Intermediate",
             "status": "not_started",
             "doneAt": null,
-            "note": ""
+            "note": "",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/sql/high-report-managers"
+              },
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/core-subject/high-report-managers"
+              }
+            ]
           },
           {
             "id": "tDPzmhJn",
@@ -4393,7 +5452,19 @@
             "level": "Intermediate",
             "status": "not_started",
             "doneAt": null,
-            "note": ""
+            "note": "",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/sql/all-product-buyers"
+              },
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/core-subject/all-product-buyers"
+              }
+            ]
           },
           {
             "id": "7hkRS5mW",
@@ -4402,7 +5473,19 @@
             "level": "Intermediate",
             "status": "not_started",
             "doneAt": null,
-            "note": ""
+            "note": "",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/sql/highest-non-repeating-number"
+              },
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/core-subject/highest-non-repeating-number"
+              }
+            ]
           },
           {
             "id": "1MvA_nTv",
@@ -4411,7 +5494,19 @@
             "level": "Intermediate",
             "status": "not_started",
             "doneAt": null,
-            "note": ""
+            "note": "",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/sql/find-the-first-device-logged-in-by-each-player"
+              },
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/core-subject/find-the-first-device-logged-in-by-each-player"
+              }
+            ]
           },
           {
             "id": "6pDU3UZk",
@@ -4420,7 +5515,19 @@
             "level": "Intermediate",
             "status": "not_started",
             "doneAt": null,
-            "note": ""
+            "note": "",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/sql/salespersons-without-red-orders"
+              },
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/core-subject/salespersons-without-red-orders"
+              }
+            ]
           },
           {
             "id": "_UdjAyZA",
@@ -4429,7 +5536,19 @@
             "level": "Intermediate",
             "status": "not_started",
             "doneAt": null,
-            "note": ""
+            "note": "",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/sql/employees-with-the-highest-salary-in-each-department"
+              },
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/core-subject/employees-with-the-highest-salary-in-each-department"
+              }
+            ]
           },
           {
             "id": "fD4cBH_e",
@@ -4438,7 +5557,19 @@
             "level": "Intermediate",
             "status": "not_started",
             "doneAt": null,
-            "note": ""
+            "note": "",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/sql/find-the-most-recent-order-for-each-product"
+              },
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/core-subject/find-the-most-recent-order-for-each-product"
+              }
+            ]
           },
           {
             "id": "OMY8RVxO",
@@ -4447,7 +5578,19 @@
             "level": "Intermediate",
             "status": "not_started",
             "doneAt": null,
-            "note": ""
+            "note": "",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/sql/find-transactions-with-maximum-amount-per-day"
+              },
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/core-subject/find-transactions-with-maximum-amount-per-day"
+              }
+            ]
           },
           {
             "id": "IKAoeT7Z",
@@ -4456,7 +5599,19 @@
             "level": "Intermediate",
             "status": "not_started",
             "doneAt": null,
-            "note": ""
+            "note": "",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/sql/incomplete-employee-records"
+              },
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/core-subject/incomplete-employee-records"
+              }
+            ]
           },
           {
             "id": "06xzLFxl",
@@ -4465,7 +5620,19 @@
             "level": "Intermediate",
             "status": "not_started",
             "doneAt": null,
-            "note": ""
+            "note": "",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/sql/find-quiet-students-in-all-exams"
+              },
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/core-subject/find-quiet-students-in-all-exams"
+              }
+            ]
           },
           {
             "id": "9t89Zwov",
@@ -4474,7 +5641,19 @@
             "level": "Intermediate",
             "status": "not_started",
             "doneAt": null,
-            "note": ""
+            "note": "",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/sql/top-grade-per-student"
+              },
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/core-subject/top-grade-per-student"
+              }
+            ]
           },
           {
             "id": "HDDlZjve",
@@ -4483,7 +5662,19 @@
             "level": "Intermediate",
             "status": "not_started",
             "doneAt": null,
-            "note": ""
+            "note": "",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/sql/swap-consecutive-seats"
+              },
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/core-subject/swap-consecutive-seats"
+              }
+            ]
           },
           {
             "id": "SI8DvfBu",
@@ -4492,7 +5683,19 @@
             "level": "Intermediate",
             "status": "not_started",
             "doneAt": null,
-            "note": ""
+            "note": "",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/sql/safe-investment-countries"
+              },
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/core-subject/safe-investment-countries"
+              }
+            ]
           },
           {
             "id": "96mt7NNu",
@@ -4501,7 +5704,19 @@
             "level": "Intermediate",
             "status": "not_started",
             "doneAt": null,
-            "note": ""
+            "note": "",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/sql/tennis-grand-slam-winners"
+              },
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/core-subject/tennis-grand-slam-winners"
+              }
+            ]
           },
           {
             "id": "7lpv1MNb",
@@ -4510,7 +5725,19 @@
             "level": "Intermediate",
             "status": "not_started",
             "doneAt": null,
-            "note": ""
+            "note": "",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/sql/football-team-scores"
+              },
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/core-subject/football-team-scores"
+              }
+            ]
           },
           {
             "id": "bYJ0nWIM",
@@ -4519,7 +5746,19 @@
             "level": "Intermediate",
             "status": "not_started",
             "doneAt": null,
-            "note": ""
+            "note": "",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/sql/order-count-per-customer"
+              },
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/core-subject/order-count-per-customer"
+              }
+            ]
           },
           {
             "id": "269Jf8Sr",
@@ -4528,7 +5767,19 @@
             "level": "Intermediate",
             "status": "not_started",
             "doneAt": null,
-            "note": ""
+            "note": "",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/sql/boolean-expression-evaluator"
+              },
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/core-subject/boolean-expression-evaluator"
+              }
+            ]
           },
           {
             "id": "yx_CFMRA",
@@ -4537,7 +5788,19 @@
             "level": "Intermediate",
             "status": "not_started",
             "doneAt": null,
-            "note": ""
+            "note": "",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/sql/immediate-first-orders-percentage"
+              },
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/core-subject/immediate-first-orders-percentage"
+              }
+            ]
           },
           {
             "id": "CT9DLK6q",
@@ -4546,7 +5809,19 @@
             "level": "Intermediate",
             "status": "not_started",
             "doneAt": null,
-            "note": ""
+            "note": "",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/sql/find-all-employees-reporting-to-the-head-of-the-company"
+              },
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/core-subject/find-all-employees-reporting-to-the-head-of-the-company"
+              }
+            ]
           },
           {
             "id": "MROFZxuy",
@@ -4555,7 +5830,55 @@
             "level": "Intermediate",
             "status": "not_started",
             "doneAt": null,
-            "note": ""
+            "note": "",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/sql/orphan-employees"
+              },
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/core-subject/orphan-employees"
+              }
+            ]
+          },
+          {
+            "id": "QIPwSxYc",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Customer Who Visited but Did Not Make Any Transactions",
+            "url": "https://leetcode.com/problems/customer-who-visited-but-did-not-make-any-transactions/",
+            "level": "Beginner",
+            "note": "Practice · LeetCode"
+          },
+          {
+            "id": "CZ0lJdMK",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Employees Whose Manager Left the Company",
+            "url": "https://leetcode.com/problems/employees-whose-manager-left-the-company/",
+            "level": "Beginner",
+            "note": "Practice · LeetCode"
+          },
+          {
+            "id": "tuPb7KzJ",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Article Views",
+            "url": "https://www.codechef.com/practice/course/sql-case-studies-topic-wise/SQLBP01/problems/SQLPBP06",
+            "level": "Beginner",
+            "note": "Practice · CodeChef"
+          },
+          {
+            "id": "TdC7FkN9",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Investments in 2016",
+            "url": "https://leetcode.com/problems/investments-in-2016/",
+            "level": "Intermediate",
+            "note": "Practice · LeetCode"
           }
         ]
       },
@@ -4642,7 +5965,19 @@
             "level": "Intermediate",
             "status": "not_started",
             "doneAt": null,
-            "note": ""
+            "note": "",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/sql/system-settings"
+              },
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/core-subject/system-settings"
+              }
+            ]
           },
           {
             "id": "zcFmjWjy",
@@ -4651,7 +5986,37 @@
             "level": "Intermediate",
             "status": "not_started",
             "doneAt": null,
-            "note": ""
+            "note": "",
+            "links": [
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/sql/employee-salary"
+              },
+              {
+                "kind": "practice",
+                "site": "TUF",
+                "url": "https://takeuforward.org/practice/core-subject/employee-salary"
+              }
+            ]
+          },
+          {
+            "id": "7fBAvQ78",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Delete Duplicate Emails",
+            "url": "https://leetcode.com/problems/delete-duplicate-emails/",
+            "level": "Beginner",
+            "note": "Practice · LeetCode"
+          },
+          {
+            "id": "oqrpMqUb",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Occupations",
+            "url": "https://www.hackerrank.com/challenges/occupations/problem",
+            "level": "Intermediate",
+            "note": "Practice · HackerRank"
           }
         ]
       },
@@ -4703,6 +6068,51 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "uJDkEABi",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Quiz: Indexing and Performance Tuning",
+            "url": "https://takeuforward.org/quiz/core-subject/quiz-10-indexing-and-performance-tuning",
+            "level": "Intermediate",
+            "note": "Practice · TUF · topic quiz from the takeUforward DBMS course, 30 mins"
+          },
+          {
+            "id": "JJK8IoTJ",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Index Architecture Types",
+            "url": "https://www.hackerrank.com/challenges/indexes-1/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · Databases: Indexes"
+          },
+          {
+            "id": "e-s2hUw1",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Indexes - 2",
+            "url": "https://www.hackerrank.com/challenges/indexes-2/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · Databases: Indexes"
+          },
+          {
+            "id": "vJcLfH_H",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Indexes - 3",
+            "url": "https://www.hackerrank.com/challenges/indexes-3/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · Databases: Indexes"
+          },
+          {
+            "id": "4mK3ET1_",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Indexes - 4",
+            "url": "https://www.hackerrank.com/challenges/indexes-4/problem",
+            "level": "Beginner",
+            "note": "Practice · HackerRank · Databases: Indexes"
           }
         ]
       },
@@ -4796,6 +6206,15 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "Ng6-KBC5",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Quiz: SQL and Query Optimization",
+            "url": "https://takeuforward.org/quiz/core-subject/quiz-4-sql-and-query-optimization",
+            "level": "Intermediate",
+            "note": "Practice · TUF · topic quiz from the takeUforward DBMS course, 30 mins"
           }
         ]
       },
@@ -5030,6 +6449,15 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "QpSnBAr-",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Quiz: Transactions and Concurrency",
+            "url": "https://takeuforward.org/quiz/core-subject/quiz-7-transactions-and-concurrency",
+            "level": "Intermediate",
+            "note": "Practice · TUF · topic quiz from the takeUforward DBMS course, 30 mins"
           }
         ]
       },
@@ -5072,6 +6500,15 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "OQqndOIA",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Quiz: Recovery and Backup",
+            "url": "https://takeuforward.org/quiz/core-subject/quiz-9-recovery-and-backup",
+            "level": "Intermediate",
+            "note": "Practice · TUF · topic quiz from the takeUforward DBMS course, 30 mins"
           }
         ]
       },
@@ -5114,6 +6551,24 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "BkCV1ga8",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Quiz: Security and Access Control",
+            "url": "https://takeuforward.org/quiz/core-subject/quiz-12-security-and-access-control",
+            "level": "Intermediate",
+            "note": "Practice · TUF · topic quiz from the takeUforward DBMS course, 30 mins"
+          },
+          {
+            "id": "N99A3ywt",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Quiz: Database Monitoring and Caching",
+            "url": "https://takeuforward.org/quiz/core-subject/quiz-11-database-monitoring-and-caching",
+            "level": "Intermediate",
+            "note": "Practice · TUF · topic quiz from the takeUforward DBMS course, 30 mins"
           }
         ]
       },
@@ -5174,6 +6629,105 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "6tNuigE5",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Quiz: Distributed Database Systems",
+            "url": "https://takeuforward.org/quiz/core-subject/quiz-6-distributed-database-systems",
+            "level": "Intermediate",
+            "note": "Practice · TUF · topic quiz from the takeUforward DBMS course, 30 mins"
+          },
+          {
+            "id": "RCFrJrIg",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Quiz: NoSQL Databases",
+            "url": "https://takeuforward.org/quiz/core-subject/quiz-5-nosql-databases",
+            "level": "Intermediate",
+            "note": "Practice · TUF · topic quiz from the takeUforward DBMS course, 30 mins"
+          },
+          {
+            "id": "WP0ELYd1",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Quiz: Scalability and Big Data",
+            "url": "https://takeuforward.org/quiz/core-subject/quiz-13-scalability-and-big-data",
+            "level": "Intermediate",
+            "note": "Practice · TUF · topic quiz from the takeUforward DBMS course, 30 mins"
+          },
+          {
+            "id": "411OT_-p",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Quiz: Data Warehousing and Migration",
+            "url": "https://takeuforward.org/quiz/core-subject/quiz-14-data-warehousing-and-migration",
+            "level": "Intermediate",
+            "note": "Practice · TUF · topic quiz from the takeUforward DBMS course, 30 mins"
+          },
+          {
+            "id": "ULRLJakM",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "OLAP Operations - 1",
+            "url": "https://www.hackerrank.com/challenges/olap-operations-1/problem",
+            "level": "Advanced",
+            "note": "Practice · HackerRank · Databases: OLAP"
+          },
+          {
+            "id": "vz_UC81E",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "OLAP Operations - 2",
+            "url": "https://www.hackerrank.com/challenges/olap-operations-2/problem",
+            "level": "Advanced",
+            "note": "Practice · HackerRank · Databases: OLAP"
+          },
+          {
+            "id": "lBkNkZDG",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "OLAP Performance",
+            "url": "https://www.hackerrank.com/challenges/olap-performance/problem",
+            "level": "Advanced",
+            "note": "Practice · HackerRank · Databases: OLAP"
+          },
+          {
+            "id": "6488iHOr",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "OLAP Cube Metadata",
+            "url": "https://www.hackerrank.com/challenges/olap-cube-metadata/problem",
+            "level": "Advanced",
+            "note": "Practice · HackerRank · Databases: OLAP"
+          },
+          {
+            "id": "QDwke62p",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Map Reduce Advanced - Count number of friends",
+            "url": "https://www.hackerrank.com/challenges/map-reduce-advanced-count-number-of-friends/problem",
+            "level": "Advanced",
+            "note": "Practice · HackerRank · Databases: MapReduce"
+          },
+          {
+            "id": "d-7BOrF0",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Map Reduce Advanced - Relational Join",
+            "url": "https://www.hackerrank.com/challenges/map-reduce-advanced-relational-join/problem",
+            "level": "Advanced",
+            "note": "Practice · HackerRank · Databases: MapReduce"
+          },
+          {
+            "id": "waNICJLS",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Map Reduce Advanced - Matrix Multiplication",
+            "url": "https://www.hackerrank.com/challenges/map-reduce-advanced-matrix-multiplication/problem",
+            "level": "Advanced",
+            "note": "Practice · HackerRank · Databases: MapReduce"
           }
         ]
       },

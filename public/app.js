@@ -732,7 +732,7 @@ function groups() {
 // ---------- question links (practice sites, article, video), styled after the TUF sheet ----------
 
 const SITES = [
-  [/leetcode\.com/, 'LeetCode'], [/takeuforward\.org\/(practice|plus)/, 'TUF'], [/hackerrank\.com/, 'HackerRank'],
+  [/leetcode\.com/, 'LeetCode'], [/takeuforward\.org\/(practice|plus|quiz)/, 'TUF'], [/hackerrank\.com/, 'HackerRank'],
   [/codechef\.com/, 'CodeChef'], [/geeksforgeeks\.org/, 'GFG'], [/datalemur\.com/, 'DataLemur'], [/codingninjas|naukri\.com\/code360/, 'Code360'],
   [/exercism\.org/, 'Exercism'],
 ];
