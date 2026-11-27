@@ -470,6 +470,9 @@ button.pill:hover { filter: brightness(0.95); outline: 1px solid var(--border); 
 .site-code360 { --site: #e0692c; }
 .site-exercism { --site: #604fcd; }
 .site-sdprimer { --site: #6e7781; }
+.site-learngitbranching { --site: #2e86de; }
+.site-gitexercises { --site: #f05033; }
+.site-githubskills { --site: #8250df; }
 .qicon { display: grid; place-items: center; color: var(--muted); text-decoration: none; transition: color 0.15s, background-color 0.15s; }
 .qicon .material-icons-round { font-size: 20px; }
 .qicon:hover { background: var(--surface-2); }

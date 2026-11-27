@@ -21794,6 +21794,78 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "y30wvgIh",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Introduction to Git Commits",
+            "url": "https://learngitbranching.js.org/?locale=en_US&level=intro1",
+            "level": "Beginner",
+            "note": "Practice · Learn Git Branching · making commits"
+          },
+          {
+            "id": "0rBaztQi",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "The Staging Area",
+            "url": "https://learngitbranching.js.org/?locale=en_US&level=move3",
+            "level": "Beginner",
+            "note": "Practice · Learn Git Branching · the staging area"
+          },
+          {
+            "id": "HlDmGJ-S",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Getting started (master)",
+            "url": "https://gitexercises.fracz.com/exercise/master",
+            "level": "Beginner",
+            "note": "Practice · Git Exercises · getting started"
+          },
+          {
+            "id": "d3faXe0u",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Commit one file",
+            "url": "https://gitexercises.fracz.com/exercise/commit-one-file",
+            "level": "Beginner",
+            "note": "Practice · Git Exercises · committing part of your changes"
+          },
+          {
+            "id": "wN0nTpW-",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Commit one file staged",
+            "url": "https://gitexercises.fracz.com/exercise/commit-one-file-staged",
+            "level": "Beginner",
+            "note": "Practice · Git Exercises · unstaging a file"
+          },
+          {
+            "id": "eOvKtKs0",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Ignore them",
+            "url": "https://gitexercises.fracz.com/exercise/ignore-them",
+            "level": "Beginner",
+            "note": "Practice · Git Exercises · .gitignore"
+          },
+          {
+            "id": "GsfF_WGi",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Introduction to GitHub",
+            "url": "https://github.com/skills/introduction-to-github",
+            "level": "Beginner",
+            "note": "Practice · GitHub Skills · branches, commits and a first pull request on GitHub"
+          },
+          {
+            "id": "CtWoEkqB",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Remove ignored",
+            "url": "https://gitexercises.fracz.com/exercise/remove-ignored",
+            "level": "Intermediate",
+            "note": "Practice · Git Exercises · untracking an ignored file"
           }
         ]
       },
@@ -21836,6 +21908,132 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "u2DIZDJT",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Branching in Git",
+            "url": "https://learngitbranching.js.org/?locale=en_US&level=intro2",
+            "level": "Beginner",
+            "note": "Practice · Learn Git Branching · branches"
+          },
+          {
+            "id": "lJ-3YGyd",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Merging in Git",
+            "url": "https://learngitbranching.js.org/?locale=en_US&level=intro3",
+            "level": "Beginner",
+            "note": "Practice · Learn Git Branching · merging"
+          },
+          {
+            "id": "wkvQW0-R",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Rebase Introduction",
+            "url": "https://learngitbranching.js.org/?locale=en_US&level=intro4",
+            "level": "Intermediate",
+            "note": "Practice · Learn Git Branching · rebasing"
+          },
+          {
+            "id": "VH7alIrj",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Detach yo' HEAD",
+            "url": "https://learngitbranching.js.org/?locale=en_US&level=rampup1",
+            "level": "Intermediate",
+            "note": "Practice · Learn Git Branching · detaching HEAD"
+          },
+          {
+            "id": "K5CBukn7",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Relative Refs (^)",
+            "url": "https://learngitbranching.js.org/?locale=en_US&level=rampup2",
+            "level": "Intermediate",
+            "note": "Practice · Learn Git Branching · relative refs (^)"
+          },
+          {
+            "id": "P27qXcgk",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Relative Refs #2 (~)",
+            "url": "https://learngitbranching.js.org/?locale=en_US&level=rampup3",
+            "level": "Intermediate",
+            "note": "Practice · Learn Git Branching · relative refs (~)"
+          },
+          {
+            "id": "rKb7AYjE",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Cherry-pick Intro",
+            "url": "https://learngitbranching.js.org/?locale=en_US&level=move1",
+            "level": "Intermediate",
+            "note": "Practice · Learn Git Branching · cherry-pick"
+          },
+          {
+            "id": "ZYwjk6nv",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Chase branch",
+            "url": "https://gitexercises.fracz.com/exercise/chase-branch",
+            "level": "Intermediate",
+            "note": "Practice · Git Exercises · fast-forwarding a branch"
+          },
+          {
+            "id": "GIsCQvJX",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Merge conflict",
+            "url": "https://gitexercises.fracz.com/exercise/merge-conflict",
+            "level": "Intermediate",
+            "note": "Practice · Git Exercises · resolving a merge conflict"
+          },
+          {
+            "id": "XM_ayfWi",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Change branch history",
+            "url": "https://gitexercises.fracz.com/exercise/change-branch-history",
+            "level": "Intermediate",
+            "note": "Practice · Git Exercises · rebasing a branch"
+          },
+          {
+            "id": "Py9Q0sZC",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Pick your features",
+            "url": "https://gitexercises.fracz.com/exercise/pick-your-features",
+            "level": "Intermediate",
+            "note": "Practice · Git Exercises · cherry-picking commits"
+          },
+          {
+            "id": "HlPHOEd4",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Resolve merge conflicts",
+            "url": "https://github.com/skills/resolve-merge-conflicts",
+            "level": "Intermediate",
+            "note": "Practice · GitHub Skills · resolving a merge conflict on GitHub"
+          },
+          {
+            "id": "jAiQpL1D",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Interactive Rebase Intro",
+            "url": "https://learngitbranching.js.org/?locale=en_US&level=move2",
+            "level": "Advanced",
+            "note": "Practice · Learn Git Branching · interactive rebase"
+          },
+          {
+            "id": "eJ8qscFy",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Rebase complex",
+            "url": "https://gitexercises.fracz.com/exercise/rebase-complex",
+            "level": "Advanced",
+            "note": "Practice · Git Exercises · rebase --onto"
           }
         ]
       },
@@ -21878,6 +22076,96 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "KEvV6gqF",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Clone Intro",
+            "url": "https://learngitbranching.js.org/?locale=en_US&level=remote1",
+            "level": "Intermediate",
+            "note": "Practice · Learn Git Branching · git clone"
+          },
+          {
+            "id": "HKViyyMC",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Remote Branches",
+            "url": "https://learngitbranching.js.org/?locale=en_US&level=remote2",
+            "level": "Intermediate",
+            "note": "Practice · Learn Git Branching · remote branches"
+          },
+          {
+            "id": "9x0n8OaT",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Git Fetchin'",
+            "url": "https://learngitbranching.js.org/?locale=en_US&level=remote3",
+            "level": "Intermediate",
+            "note": "Practice · Learn Git Branching · git fetch"
+          },
+          {
+            "id": "RaPiCFfh",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Git Pullin'",
+            "url": "https://learngitbranching.js.org/?locale=en_US&level=remote4",
+            "level": "Intermediate",
+            "note": "Practice · Learn Git Branching · git pull"
+          },
+          {
+            "id": "VVK5DDC_",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Faking Teamwork",
+            "url": "https://learngitbranching.js.org/?locale=en_US&level=remote5",
+            "level": "Intermediate",
+            "note": "Practice · Learn Git Branching · simulating teammates"
+          },
+          {
+            "id": "swuDUki7",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Git Pushin'",
+            "url": "https://learngitbranching.js.org/?locale=en_US&level=remote6",
+            "level": "Intermediate",
+            "note": "Practice · Learn Git Branching · git push"
+          },
+          {
+            "id": "h9S1olDM",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Review pull requests",
+            "url": "https://github.com/skills/review-pull-requests",
+            "level": "Intermediate",
+            "note": "Practice · GitHub Skills · reviewing a pull request"
+          },
+          {
+            "id": "DaMK9P9y",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Diverged History",
+            "url": "https://learngitbranching.js.org/?locale=en_US&level=remote7",
+            "level": "Advanced",
+            "note": "Practice · Learn Git Branching · diverged history"
+          },
+          {
+            "id": "ClimAm6H",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Locked Main",
+            "url": "https://learngitbranching.js.org/?locale=en_US&level=remote8",
+            "level": "Advanced",
+            "note": "Practice · Learn Git Branching · a locked main branch"
+          },
+          {
+            "id": "5vilK5rV",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Release based workflow",
+            "url": "https://github.com/skills/release-based-workflow",
+            "level": "Advanced",
+            "note": "Practice · GitHub Skills · release branches and tags"
           }
         ]
       },
@@ -21944,6 +22232,87 @@
             "status": "not_started",
             "doneAt": null,
             "note": ""
+          },
+          {
+            "id": "Thr6_0cL",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Save your work",
+            "url": "https://gitexercises.fracz.com/exercise/save-your-work",
+            "level": "Intermediate",
+            "note": "Practice · Git Exercises · git stash"
+          },
+          {
+            "id": "d5NH_u8m",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Fix typo",
+            "url": "https://gitexercises.fracz.com/exercise/fix-typo",
+            "level": "Intermediate",
+            "note": "Practice · Git Exercises · amending the last commit"
+          },
+          {
+            "id": "6HDLl4Kb",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Reversing Changes in Git",
+            "url": "https://learngitbranching.js.org/?locale=en_US&level=rampup4",
+            "level": "Intermediate",
+            "note": "Practice · Learn Git Branching · reset vs revert"
+          },
+          {
+            "id": "wNFa0nQH",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Commit lost",
+            "url": "https://gitexercises.fracz.com/exercise/commit-lost",
+            "level": "Intermediate",
+            "note": "Practice · Git Exercises · recovering a commit with the reflog"
+          },
+          {
+            "id": "8s3zEiEZ",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Git Tags",
+            "url": "https://learngitbranching.js.org/?locale=en_US&level=mixed4",
+            "level": "Intermediate",
+            "note": "Practice · Learn Git Branching · tags"
+          },
+          {
+            "id": "1pUEA78p",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Too many commits",
+            "url": "https://gitexercises.fracz.com/exercise/too-many-commits",
+            "level": "Intermediate",
+            "note": "Practice · Git Exercises · squashing commits"
+          },
+          {
+            "id": "Amhxk3ST",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Fix old typo",
+            "url": "https://gitexercises.fracz.com/exercise/fix-old-typo",
+            "level": "Advanced",
+            "note": "Practice · Git Exercises · editing an old commit with interactive rebase"
+          },
+          {
+            "id": "78somM2I",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Split commit",
+            "url": "https://gitexercises.fracz.com/exercise/split-commit",
+            "level": "Advanced",
+            "note": "Practice · Git Exercises · splitting a commit"
+          },
+          {
+            "id": "o_yYxptr",
+            "status": "not_started",
+            "doneAt": null,
+            "title": "Find bug",
+            "url": "https://gitexercises.fracz.com/exercise/find-bug",
+            "level": "Advanced",
+            "note": "Practice · Git Exercises · git bisect"
           }
         ]
       }
