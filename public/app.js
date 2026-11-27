@@ -14,9 +14,12 @@ const $ = (sel, el = document) => el.querySelector(sel);
 // ---------- helpers ----------
 
 async function api(method, url, body) {
+  // The roadmap list and stats are cached on the CDN for visitors. Signed-in users ask for a
+  // fresh copy (a unique query string skips the shared cache) so their own ticks show at once.
+  const bypass = method === 'GET' && /^\/(roadmaps|stats)$/.test(url) && me?.authenticated;
   let res;
   try {
-    res = await fetch('/api' + url, {
+    res = await fetch('/api' + url + (bypass ? `?fresh=${Date.now()}` : ''), {
       method,
       headers: body ? { 'Content-Type': 'application/json' } : {},
       body: body ? JSON.stringify(body) : undefined,

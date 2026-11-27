@@ -126,7 +126,11 @@ app.use('/api', (req, res, next) => {
 
 // ---------- roadmaps ----------
 
-app.get('/api/roadmaps', async (req, res) => res.json(await store.listRoadmaps()));
+// The roadmap list and stats are the same for every visitor, so Vercel's CDN may share them:
+// fresh for 15 s, then served stale while one request refreshes them in the background. Visitors
+// never wait on a cold function or the database for these; browsers still revalidate each time.
+const SHARED = 'public, max-age=0, s-maxage=15, stale-while-revalidate=600';
+app.get('/api/roadmaps', async (req, res) => res.set('Cache-Control', SHARED).json(await store.listRoadmaps()));
 
 app.post('/api/roadmaps', async (req, res) => {
   res.status(201).json(await store.createRoadmap({ title: text(req.body.title, 'Title', { max: 200 }) }));
@@ -400,7 +404,7 @@ app.delete('/api/links/:id', async (req, res) => {
 
 // ---------- stats & import ----------
 
-app.get('/api/stats', async (req, res) => res.json(await store.stats()));
+app.get('/api/stats', async (req, res) => res.set('Cache-Control', SHARED).json(await store.stats()));
 
 app.post('/api/import/markdown', async (req, res) => {
   const parsed = parseMarkdown(text(req.body.markdown, 'Markdown', { max: 2_000_000 }));
