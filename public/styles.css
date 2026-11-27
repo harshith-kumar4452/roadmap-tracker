@@ -506,7 +506,7 @@ button.pill:hover { filter: brightness(0.95); outline: 1px solid var(--border); 
 }
 .subhead + .row { border-top: 0; }
 .table > .subhead:first-child { border-top: 0; }
-.subhead .sec-count { font-weight: 500; }
+.subhead .sec-count { font-weight: 500; white-space: nowrap; }
 
 /* Up next shows the same links under the title. */
 .upnext-body { display: grid; gap: 8px; min-width: 0; }
@@ -1684,7 +1684,7 @@ body, .topbar, .panel, .section-card, .rm-card {
    wrap below it (right-aligned) when there isn't. */
 @media (max-width: 760px) {
   .row { display: flex; flex-wrap: wrap; align-items: center; column-gap: 10px; row-gap: 6px; }
-  .row .c-name { flex: 1 1 200px; min-width: 0; }
+  .row .c-name { flex: 1 1 150px; min-width: 0; }
   .row .c-links { flex: 0 0 auto; margin-left: auto; padding-left: 0; }
 }
 

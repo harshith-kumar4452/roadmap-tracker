@@ -78,6 +78,8 @@ npm run dev               # http://localhost:4321
 
 Open **Create account** (`/#/signup`), pick a name, username and password, and enter your `ADMIN_PASSWORD` as the setup key. That key stops anyone else from claiming the owner account. After that, log in with your username and password.
 
+For testing pages that need sign-in, `npm run test-account` creates a read-only member login (`tester` by default). It generates a password and saves it as `TEST_PASSWORD` in `.env`, never printing it.
+
 `npm run seed` only adds roadmaps and pages that aren't in the database yet, so it never overwrites your edits. `npm run seed -- --reset` deletes every roadmap first, which also wipes your progress (pages are kept).
 
 ## Practice and interview questions
