@@ -87,7 +87,7 @@ const publicSession = (s) => {
     id: s._id, category: s.category, difficulty: s.difficulty, count: s.items.length, status: s.status,
     createdAt: s.createdAt, completedAt: s.completedAt || null, current: current === -1 ? null : current,
     // Unanswered questions after the current one stay hidden, like a real interview.
-    items: s.items.map((it, i) => publicItem(it, i, current)).filter((it) => it.answered || it.current),
+    items: s.items.map((it, i) => publicItem(it, i, current)).filter((it) => it.answered || (it.current && s.status === 'active')),
     report: s.report || null,
   };
 };

@@ -55,6 +55,15 @@ export const ROADMAP_CATEGORY = {
 
 const LEVEL = { B: 'Easy', I: 'Medium', A: 'Hard' };
 
+// A readable topic: the section name, or the roadmap's subject when sections are only levels.
+function topicOf(roadmap, section) {
+  const clean = section.replace(/^(\d+\.|Module \d+:|Phase \d+:|Project \d+:)\s*/, '').replace(/ \(.*?\)$/, '').trim();
+  if (/^(beginner|intermediate|advanced)( level)?$/i.test(clean)) {
+    return roadmap.replace(/ Roadmap.*$| \(.*\)$|–.*$/g, '').trim() || clean;
+  }
+  return clean;
+}
+
 // Stable id from the question text, so rebuilding the bank never duplicates or loses progress.
 export const questionId = (q) => createHash('sha1').update(q.trim().toLowerCase().replace(/\s+/g, ' ')).digest('base64url').slice(0, 12);
 
@@ -83,7 +92,7 @@ export function bankFromRoadmapData(dataFiles) {
             a: short ? short.trim() : '',
             answerSource: short ? 'author' : '',
             category,
-            topic: section.replace(/^(\d+\.|Module \d+:|Phase \d+:|Project \d+:)\s*/, '').replace(/ \(.*?\)$/, '').trim(),
+            topic: topicOf(roadmap, section),
             difficulty: LEVEL[lvl],
             type: guessType(category, q, Boolean(short)),
             source: `roadmap:${roadmap}`,

@@ -1,0 +1,9 @@
+{
+  "name": "Learning hub",
+  "short_name": "Learning",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f6f5f1",
+  "theme_color": "#0f766e",
+  "icons": [{ "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }]
+}
