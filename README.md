@@ -1,12 +1,23 @@
 # Roadmap Tracker
 
-A personal tracker for learning roadmaps. I kept my roadmaps (backend, system design, DSA, core CS, aptitude, GATE) in Notion, but tracking progress across dozens of pages of checkboxes there got hard. This app puts them all in one place, with practice questions and interview questions next to every topic.
+A personal tracker for learning roadmaps. I kept my roadmaps (backend, system design, DSA, core CS, aptitude, GATE) in Notion, but tracking progress across dozens of pages of checkboxes there got hard. This app puts them all in one place, with practice questions and interview questions next to every topic, an AI mock interviewer, a daily coding pick, tasks and a calendar that syncs with Google Calendar.
 
 **40 roadmaps · 4,600+ topics**: lessons linked to their video or article, practice questions linked to the site you solve them on, and interview questions to answer out loud.
 
 **Live:** https://roadmaps-tracker.vercel.app
 
 ## Features
+
+New in v3 (details in [docs/](docs/README.md)):
+
+- **Interview prep**: 718 questions in 15 categories with answers, filters, bookmarks and Not started / Learning / Completed progress, plus an **AI mock interview** (Gemini) that scores every answer on six skills and writes a report, with your score history.
+- **Google Calendar sync**: tasks sync both ways with a separate "Learning hub" calendar; your other calendars are never touched.
+- **Daily coding**: one recommended problem a day (from your practice lists, then Codeforces), a manual checklist, streaks and stats.
+- **Today widget** on the home page with critical-deadline alerts from 2 days before the due date.
+- **Upload your plan**: PDF, Word, Excel, CSV, images or text are read into calendar entries you review before adding.
+- A colour-coded calendar (month / week / agenda) and the whole interface rebuilt in **React + Material UI**.
+
+Existing features:
 
 - **Home page**: a hero with floating icons for every topic you study (they drift and lean towards the pointer), your progress and streaks, the last two weeks of your practice routine, and a card for every section.
 - **Quick tour**: a 7-step guided tour that spotlights each part of the home page. It runs on your first visit, and the **?** button in the header replays it any time.
@@ -29,40 +40,37 @@ A personal tracker for learning roadmaps. I kept my roadmaps (backend, system de
 
 | Part | Choice |
 | --- | --- |
-| Frontend | Plain HTML, CSS and JavaScript (no build step), in `public/` |
+| Frontend | React 18 + Material UI 6, built with Vite, in `web/` (output `dist/`) |
+| AI | Google Gemini API (`GEMINI_MODEL`, default `gemini-2.5-flash`) |
+| Calendar | Google Calendar API v3 + OAuth 2.0 |
 | Backend | Node.js + Express 5 (`src/app.js`) |
 | Database | MongoDB Atlas: `roadmaps` (sections and topics embedded), `pages` (cheat sheets, projects, mindmaps), `habits` + `checkins` (routine), `tasks`, `links`, `accounts` |
 | Auth | Owner and member accounts (scrypt-hashed passwords), HMAC-signed HttpOnly session cookie. `ADMIN_PASSWORD` is the one-time setup key for the owner account and signs the cookie |
-| Hosting | Vercel: `public/` as static files, `api/index.js` as a serverless function |
+| Hosting | Vercel: `dist/` as static files, `api/index.js` as a serverless function, one daily cron |
 | Speed | The roadmap list and stats are cached in memory for 30 s (cleared on every write) and shared by Vercel's CDN for 15 s, served stale while they refresh, so visitors don't wait on cold starts. Signed-in users always get a fresh copy |
 
 ## Project structure
 
 ```
 api/index.js           Vercel serverless entry (wraps the Express app)
-src/app.js             REST API routes and validation
-src/store.js           MongoDB data access, caching, and progress sync across roadmaps
+src/app.js             Core REST routes; mounts the feature routers
+src/http.js            Validation helpers
+src/store.js           MongoDB access, caching, progress sync across roadmaps
 src/auth.js            Accounts, signed session cookie
-src/profile.js         Live coding-profile stats (LeetCode, GitHub, Codeforces)
-src/parse.js           Markdown / Notion checklist parser
-public/app.js          The web app: routing, pages, roadmap layout, link badges
-public/styles.css      All styles (light and dark)
-public/role-hub.js     Job-role pages and the playground
-public/planner.js      Study planner and calendar
-public/render.js       Markdown renderer and mind map layout
-public/mindmap.js      Interactive mind map (fold, pan, zoom, search)
-public/tour.js         Guided tour
-seed/roadmaps.json     All roadmaps with their practice and interview questions
-seed/pages.json        Starter cheat sheets, projects and mindmaps
-seed/sql-questions.md  The SQL practice list, copied from Notion
-scripts/seed.mjs       Loads both seed files into MongoDB
-scripts/run-imports.mjs  Runs every practice / interview importer in order
-scripts/import-*.mjs   One importer per roadmap or source (see below)
-scripts/build-practice.mjs  Builds the practice lists from LeetCode, HackerRank, CodeChef and TUF
-scripts/data/          Interview questions and practice problems (written for this project)
-scripts/check-links.mjs Checks every stored link and reports broken ones
-server.js              Local development server
-vercel.json            Vercel config (static output + /api rewrite)
+src/ai/gemini.js       Gemini client (JSON output, retries)
+src/interview/         Question bank, progress, AI interviews
+src/tasks/             Tasks and calendar entries
+src/google/            Google OAuth, Calendar sync, webhook
+src/coding/            Daily coding pick, checklist, stats
+src/plans/             Study-plan upload and extraction
+src/cron.js            Daily job
+web/                   React + MUI app (pages, components, theme)
+docs/                  Architecture, technology decisions, feature docs
+test/                  `npm test`
+seed/                  Roadmaps and starter pages
+scripts/               Seed, importers, interview bank builder, test account
+server.js              Local server (API + dist/)
+vercel.json            Build, function, cron and header config
 ```
 
 ## Run it locally
@@ -73,7 +81,11 @@ Requires Node.js 20 or newer and a MongoDB database (a free [MongoDB Atlas](http
 npm install
 cp .env.example .env      # then fill in MONGODB_URI and ADMIN_PASSWORD
 npm run seed              # loads the roadmaps (with practice and interview questions) and starter pages
-npm run dev               # http://localhost:4321
+npm run interview:bank    # builds the interview question bank
+npm run build             # builds the web app into dist/
+npm run dev               # http://localhost:4321 (API + built app)
+npm run dev:web           # optional: http://localhost:5173 with hot reload (proxies /api to :4321)
+npm test                  # needs TEST_MONGODB_URI pointing at a throwaway MongoDB
 ```
 
 Open **Create account** (`/#/signup`), pick a name, username and password, and enter your `ADMIN_PASSWORD` as the setup key. That key stops anyone else from claiming the owner account. After that, log in with your username and password.
@@ -98,7 +110,7 @@ To add or change interview questions, edit `scripts/data/interview-questions.mjs
 
 1. Create a free MongoDB Atlas cluster. Under **Network Access**, allow `0.0.0.0/0`, because Vercel functions don't have fixed IP addresses. Copy the connection string from **Connect → Drivers**.
 2. Import this repository at [vercel.com/new](https://vercel.com/new). Keep the framework preset at **Other** and leave the build settings empty.
-3. Under **Environment Variables**, add `MONGODB_URI` and `ADMIN_PASSWORD`.
+3. Under **Environment Variables**, add `MONGODB_URI` and `ADMIN_PASSWORD`, plus `GEMINI_API_KEY`, `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET` and `CRON_SECRET` for the AI, calendar and daily-job features (all listed in [docs/README.md](docs/README.md); Google setup steps in [docs/implementation/calendar-integration.md](docs/implementation/calendar-integration.md)).
 4. Deploy. Run `npm run seed` once from your machine (with the same `MONGODB_URI` in `.env`) to load the roadmaps.
 5. Open `/#/signup` on the live site and create your account, using `ADMIN_PASSWORD` as the setup key.
 
