@@ -1,7 +1,7 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": null,
-  "outputDirectory": "public",
+  "outputDirectory": "dist",
   "rewrites": [
     {
       "source": "/api/(.*)",
@@ -25,6 +25,15 @@
           "value": "DENY"
         }
       ]
+    },
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
     }
   ],
   "functions": {
@@ -37,5 +46,7 @@
       "path": "/api/cron/daily",
       "schedule": "30 0 * * *"
     }
-  ]
+  ],
+  "buildCommand": "npm run build",
+  "installCommand": "npm ci"
 }
