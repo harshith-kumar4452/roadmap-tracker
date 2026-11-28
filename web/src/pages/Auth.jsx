@@ -5,7 +5,8 @@ import LoginOutlined from '@mui/icons-material/LoginOutlined';
 import PersonAddAlt1Outlined from '@mui/icons-material/PersonAddAlt1Outlined';
 import { useAuth } from '../lib/auth.jsx';
 
-const safeNext = (n) => (n && n.startsWith('/') && !n.startsWith('//') ? n : '/');
+// Only in-app paths: no protocol-relative (//) or backslash tricks.
+const safeNext = (n) => (typeof n === 'string' && n.startsWith('/') && !n.startsWith('//') && !n.includes('\\') ? n : '/');
 
 function Shell({ icon: Icon, title, subtitle, children }) {
   return (
