@@ -89,7 +89,7 @@ export default function Layout() {
   const brand = (
     <Box component={RouterLink} to="/" sx={{ display: 'flex', alignItems: 'center', gap: 1, color: 'text.primary', textDecoration: 'none' }} aria-label="Learning hub home">
       <TaskAlt color="primary" />
-      <Typography variant="h6" component="span" sx={{ fontWeight: 700 }}>Learning hub</Typography>
+      <Typography variant="h6" component="span" sx={{ fontWeight: 700, whiteSpace: 'nowrap', display: { xs: 'none', sm: 'inline' } }}>Learning hub</Typography>
     </Box>
   );
 
@@ -97,7 +97,7 @@ export default function Layout() {
     <Box sx={{ display: 'flex', minHeight: '100vh' }}>
       <Box component="a" href="#main" sx={{ position: 'absolute', left: -9999, '&:focus': { left: 8, top: 8, zIndex: 2000, bgcolor: 'background.paper', p: 1, borderRadius: 1 } }}>Skip to content</Box>
       <AppBar position="fixed" sx={{ zIndex: (t) => t.zIndex.drawer + 1 }}>
-        <Toolbar sx={{ gap: 1 }}>
+        <Toolbar sx={{ gap: { xs: 0.5, sm: 1 } }}>
           {!desktop && (
             <IconButton edge="start" className="menu-btn" aria-label="Open navigation" onClick={() => setOpen(true)}><MenuIcon /></IconButton>
           )}
@@ -130,7 +130,7 @@ export default function Layout() {
           ) : (
             <>
               <Button component={RouterLink} to={`/login?next=${encodeURIComponent(loc.pathname)}`} sx={{ display: { xs: 'none', sm: 'inline-flex' } }}>Log in</Button>
-              <Button variant="contained" component={RouterLink} to="/signup">Sign up</Button>
+              <Button variant="contained" component={RouterLink} to="/signup" sx={{ whiteSpace: 'nowrap', flexShrink: 0 }}>Sign up</Button>
             </>
           )}
           </Box>

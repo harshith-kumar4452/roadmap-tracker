@@ -55,7 +55,8 @@
   .landing-hero { display: block; min-height: 0; padding-top: 16px; }
   .hero-copy { max-width: 100%; }
   .float-field { position: relative; inset: auto; height: 210px; margin: 20px -8px 0; }
-  .float-chip { left: var(--mx); top: var(--my); transform: translate(0, -50%); }
+  .float-chip { left: min(var(--mx), calc(100% - 128px)); top: var(--my); transform: translate(0, -50%); }
+  .float-field { overflow: hidden; }
   .float-inner { padding: 6px 10px 6px 7px; font-size: 0.76rem; }
   .float-inner svg { width: 22px; height: 22px; padding: 3px; }
 }
