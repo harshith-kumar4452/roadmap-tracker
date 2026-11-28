@@ -10,6 +10,18 @@ import { AuthProvider } from './lib/auth.jsx';
 import { NotifyProvider } from './lib/notify.jsx';
 import App from './App.jsx';
 
+// After a deploy, a tab still running the old build asks for page chunks that no longer exist.
+// Reload once to pick up the new build (guarded so a real outage can't cause a reload loop).
+window.addEventListener('vite:preloadError', (e) => {
+  try {
+    const last = Number(sessionStorage.getItem('rt:chunk-reload') || 0);
+    if (Date.now() - last < 30_000) return;
+    sessionStorage.setItem('rt:chunk-reload', String(Date.now()));
+  } catch { /* storage unavailable: still try once */ }
+  e.preventDefault();
+  window.location.reload();
+});
+
 const ColorModeContext = createContext({ mode: 'light', toggle: () => {} });
 export const useColorMode = () => useContext(ColorModeContext);
 

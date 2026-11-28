@@ -24,7 +24,10 @@ export default function TodayWidget() {
   const mobile = useMediaQuery(theme.breakpoints.down('sm'));
   const notify = useNotify();
   // Remembered separately for phones (starts collapsed there) and larger screens.
-  const [open, setOpen] = useLocalStorage(mobile ? 'rt:today-open-m' : 'rt:today-open', !mobile);
+  // Starts open only on wide screens, where it fits beside the page; the choice is remembered
+  // separately for phones and larger screens.
+  const wide = useMediaQuery(theme.breakpoints.up('lg'));
+  const [open, setOpen] = useLocalStorage(mobile ? 'rt:today-open-m' : 'rt:today-open-d', wide);
   const [dialog, setDialog] = useState(null);
   const [today, setToday] = useState(isoDay());
   const { data, setData, reload } = useApi('/tasks', { topics: ['tasks'] });

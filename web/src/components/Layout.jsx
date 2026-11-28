@@ -20,7 +20,10 @@ import DarkModeOutlined from '@mui/icons-material/DarkModeOutlined';
 import LightModeOutlined from '@mui/icons-material/LightModeOutlined';
 import TaskAlt from '@mui/icons-material/TaskAlt';
 import Logout from '@mui/icons-material/Logout';
+import HelpOutline from '@mui/icons-material/HelpOutline';
+import { useEffect } from 'react';
 import { useAuth } from '../lib/auth.jsx';
+import ErrorBoundary from './ErrorBoundary.jsx';
 import { useColorMode } from '../main.jsx';
 
 const DRAWER = 248;
@@ -46,7 +49,7 @@ export const NAV = [
 
 function NavList({ onNavigate }) {
   return (
-    <Box component="nav" aria-label="Main" sx={{ px: 1.5, py: 1 }}>
+    <Box component="nav" id="site-nav" aria-label="Main" sx={{ px: 1.5, py: 1 }}>
       {NAV.map((g) => (
         <List key={g.group} dense subheader={<ListSubheader disableSticky sx={{ bgcolor: 'transparent', lineHeight: '32px', fontSize: 12, textTransform: 'uppercase', letterSpacing: '0.06em' }}>{g.group}</ListSubheader>}>
           {g.items.map((it) => (
@@ -80,6 +83,8 @@ export default function Layout() {
   const [anchor, setAnchor] = useState(null);
   const navigate = useNavigate();
   const loc = useLocation();
+  // New page: start at the top, like a normal navigation.
+  useEffect(() => { window.scrollTo(0, 0); }, [loc.pathname]);
 
   const brand = (
     <Box component={RouterLink} to="/" sx={{ display: 'flex', alignItems: 'center', gap: 1, color: 'text.primary', textDecoration: 'none' }} aria-label="Learning hub home">
@@ -94,13 +99,21 @@ export default function Layout() {
       <AppBar position="fixed" sx={{ zIndex: (t) => t.zIndex.drawer + 1 }}>
         <Toolbar sx={{ gap: 1 }}>
           {!desktop && (
-            <IconButton edge="start" aria-label="Open navigation" onClick={() => setOpen(true)}><MenuIcon /></IconButton>
+            <IconButton edge="start" className="menu-btn" aria-label="Open navigation" onClick={() => setOpen(true)}><MenuIcon /></IconButton>
           )}
           {brand}
           <Box sx={{ flex: 1 }} />
+          <Tooltip title="Take the tour">
+            <IconButton className="help-btn" aria-label="Take the tour" onClick={() => {
+              // The tour explains the home page; open it there first.
+              if (loc.pathname !== '/') { navigate('/'); setTimeout(() => window.dispatchEvent(new Event('rt:tour')), 900); }
+              else window.dispatchEvent(new Event('rt:tour'));
+            }}><HelpOutline /></IconButton>
+          </Tooltip>
           <Tooltip title={mode === 'dark' ? 'Light mode' : 'Dark mode'}>
             <IconButton onClick={toggle} aria-label="Toggle dark mode">{mode === 'dark' ? <LightModeOutlined /> : <DarkModeOutlined />}</IconButton>
           </Tooltip>
+          <Box id="auth" sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
           {authenticated ? (
             <>
               <Tooltip title="Account">
@@ -120,6 +133,7 @@ export default function Layout() {
               <Button variant="contained" component={RouterLink} to="/signup">Sign up</Button>
             </>
           )}
+          </Box>
         </Toolbar>
       </AppBar>
 
@@ -138,7 +152,7 @@ export default function Layout() {
       <Box component="main" id="main" tabIndex={-1} sx={{ flex: 1, minWidth: 0, outline: 'none' }}>
         <Toolbar />
         <Box sx={{ px: { xs: 2, sm: 3, md: 4 }, py: { xs: 2.5, md: 4 }, maxWidth: 1240, mx: 'auto' }}>
-          <Outlet />
+          <ErrorBoundary resetKey={loc.pathname}><Outlet /></ErrorBoundary>
         </Box>
       </Box>
     </Box>
